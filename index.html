@@ -1,0 +1,2746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Independent Watchmakers — A Global Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #B8984A;
+    --gold-light: #D4B87A;
+    --gold-pale: #F5EDD8;
+    --dark: #0E0D0B;
+    --dark-2: #1A1916;
+    --dark-3: #242320;
+    --mid: #4A4640;
+    --muted: #7A7368;
+    --light: #E8E2D8;
+    --white: #FAF8F4;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --border: 1px solid rgba(184,152,74,0.2);
+    --border-hover: 1px solid rgba(184,152,74,0.5);
+    --radius: 2px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--dark-2);
+    border-bottom: 1px solid rgba(184,152,74,0.3);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .site-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .site-title span {
+    color: var(--muted);
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 0.5rem;
+  }
+
+  .header-count {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark-2);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(184,152,74,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(184,152,74,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  /* SEARCH & FILTERS */
+  .controls {
+    background: var(--dark-2);
+    border-bottom: 1px solid rgba(184,152,74,0.15);
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 64px;
+    z-index: 90;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .search-wrap svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  #search {
+    width: 100%;
+    background: var(--dark-3);
+    border: 1px solid rgba(184,152,74,0.25);
+    border-radius: var(--radius);
+    color: var(--light);
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 10px 14px 10px 42px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #search:focus { border-color: var(--gold); }
+  #search::placeholder { color: var(--muted); }
+
+  .filter-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid rgba(184,152,74,0.25);
+    border-radius: 100px;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 6px 14px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .filter-btn.active { background: rgba(184,152,74,0.15); border-color: var(--gold); color: var(--gold-light); }
+
+  /* REGION FILTERS */
+  .region-filters {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(184,152,74,0.1);
+    margin-top: 0.5rem;
+  }
+
+  .region-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    align-self: center;
+    margin-right: 0.25rem;
+  }
+
+  /* RESULTS INFO */
+  .results-bar {
+    padding: 1rem 2rem;
+    font-size: 13px;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(184,152,74,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #result-count { color: var(--gold-light); }
+
+  .sort-select {
+    background: transparent;
+    border: 1px solid rgba(184,152,74,0.2);
+    border-radius: var(--radius);
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 12px;
+    padding: 4px 10px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .sort-select option { background: var(--dark-3); }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1px;
+    background: rgba(184,152,74,0.08);
+    padding: 0;
+  }
+
+  /* CARD IMAGE */
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(184,152,74,0.1);
+  }
+
+  .card-img-placeholder {
+    width: 100%;
+    height: 200px;
+    background: var(--dark-3);
+    border-bottom: 1px solid rgba(184,152,74,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--mid);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .card-img-placeholder svg { opacity: 0.3; }
+
+  /* CARD */
+  .card {
+    background: var(--dark);
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-body {
+    padding: 1.5rem 1.75rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .card:hover { background: var(--dark-2); }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .card-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .card-brand {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  .card-location {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .card-location svg { flex-shrink: 0; }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.25rem;
+  }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(184,152,74,0.25);
+    border-radius: 100px;
+    padding: 3px 10px;
+  }
+
+  .tag.region {
+    color: var(--muted);
+    border-color: rgba(122,115,104,0.3);
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid rgba(184,152,74,0.08);
+    padding-top: 0.75rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+  }
+
+  .card-meta a {
+    color: var(--gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+  }
+
+  .card-meta a:hover { color: var(--gold-light); }
+
+  .volume-badge {
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(184,152,74,0.06);
+    border: 1px solid rgba(184,152,74,0.12);
+    border-radius: 2px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  /* GPHG badge */
+  .gphg {
+    font-size: 11px;
+    color: #C9A227;
+    background: rgba(201,162,39,0.08);
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 2px;
+    padding: 2px 8px;
+    letter-spacing: 0.04em;
+  }
+
+  /* NO RESULTS */
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 6rem 2rem;
+    color: var(--muted);
+  }
+
+  .no-results h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--light);
+    margin-bottom: 0.5rem;
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 200;
+    overflow-y: auto;
+    padding: 2rem;
+  }
+
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+  .modal {
+    background: var(--dark-2);
+    border: 1px solid rgba(184,152,74,0.3);
+    border-radius: 4px;
+    max-width: 700px;
+    width: 100%;
+    padding: 2.5rem;
+    position: relative;
+    margin: auto;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+    padding: 4px;
+  }
+
+  .modal-close:hover { color: var(--gold-light); }
+
+  .modal-img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .modal-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background: var(--dark-3);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--mid);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px dashed rgba(184,152,74,0.15);
+  }
+
+  .modal-img-placeholder svg { opacity: 0.25; }
+
+  .modal-img-credit {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    margin-top: -1.25rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.04em;
+  }
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .modal-name {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+  }
+
+  .modal-brand {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-divider {
+    height: 1px;
+    background: rgba(184,152,74,0.15);
+    margin: 1.5rem 0;
+  }
+
+  .modal-desc {
+    font-size: 15px;
+    color: var(--light);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-field label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .modal-field p {
+    font-size: 14px;
+    color: var(--light);
+  }
+
+  .modal-field a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .modal-field a:hover { text-decoration: underline; }
+
+  .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(184,152,74,0.15);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  .hidden { display: none !important; }
+
+  @media (max-width: 640px) {
+    header { padding: 0 1rem; }
+    .controls { padding: 1rem; }
+    .grid { grid-template-columns: 1fr; }
+    .modal { padding: 1.5rem; }
+    .modal-grid { grid-template-columns: 1fr; }
+    .hero { padding: 3rem 1rem 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-title">Independent Watchmakers <span>A Global Catalogue</span></div>
+  <div class="header-count"><span id="header-count">—</span> makers listed</div>
+</header>
+
+<section class="hero">
+  <p class="hero-eyebrow">Horology's Independent Masters</p>
+  <h1>The Art of<br><em>Independent</em> Watchmaking</h1>
+  <p class="hero-sub">A living catalogue of independent watchmakers worldwide — those who work outside the major conglomerates, making timepieces with uncompromising craft, vision, and soul.</p>
+</section>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search" placeholder="Search by name, location, specialty…" autocomplete="off">
+  </div>
+  <div class="filter-group" id="specialty-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="tourbillon">Tourbillon</button>
+    <button class="filter-btn" data-filter="skeleton">Skeleton</button>
+    <button class="filter-btn" data-filter="guilloché">Guilloché</button>
+    <button class="filter-btn" data-filter="complications">Complications</button>
+    <button class="filter-btn" data-filter="gphg">GPHG Winner</button>
+    <button class="filter-btn" data-filter="bespoke">Bespoke</button>
+  </div>
+  <div class="region-filters">
+    <span class="region-label">Region:</span>
+    <button class="filter-btn active" data-region="all">All</button>
+    <button class="filter-btn" data-region="switzerland">Switzerland</button>
+    <button class="filter-btn" data-region="germany">Germany</button>
+    <button class="filter-btn" data-region="france">France</button>
+    <button class="filter-btn" data-region="uk">United Kingdom</button>
+    <button class="filter-btn" data-region="japan">Japan</button>
+    <button class="filter-btn" data-region="usa">USA</button>
+    <button class="filter-btn" data-region="netherlands">Netherlands</button>
+    <button class="filter-btn" data-region="other">Other</button>
+  </div>
+</div>
+
+<div class="results-bar">
+  <span>Showing <strong id="result-count">—</strong> watchmakers</span>
+  <select class="sort-select" id="sort-select">
+    <option value="name">Sort: Name A–Z</option>
+    <option value="name-desc">Sort: Name Z–A</option>
+    <option value="country">Sort: Country</option>
+    <option value="volume">Sort: Annual Volume</option>
+  </select>
+</div>
+
+<main class="grid" id="grid"></main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div id="m-img-container"></div>
+    <p class="modal-eyebrow" id="m-eyebrow"></p>
+    <h2 class="modal-name" id="m-name"></h2>
+    <p class="modal-brand" id="m-brand"></p>
+    <div class="modal-divider"></div>
+    <p class="modal-desc" id="m-desc"></p>
+    <div class="modal-grid">
+      <div class="modal-field"><label>Location</label><p id="m-location"></p></div>
+      <div class="modal-field"><label>Founded</label><p id="m-founded"></p></div>
+      <div class="modal-field"><label>Annual Production</label><p id="m-volume"></p></div>
+      <div class="modal-field"><label>Price Range</label><p id="m-price"></p></div>
+      <div class="modal-field"><label>Website</label><p id="m-website"></p></div>
+      <div class="modal-field"><label>Instagram</label><p id="m-instagram"></p></div>
+    </div>
+    <div class="modal-divider"></div>
+    <div class="modal-tags" id="m-tags"></div>
+  </div>
+</div>
+
+<footer>
+  <p><strong style="color:var(--light);font-family:var(--font-display);font-size:1rem;font-weight:400;">Independent Watchmakers</strong></p>
+  <p style="margin-top:0.5rem;">A community-curated reference for horology's independent masters.</p>
+  <p style="margin-top:0.5rem;">Corrections, additions, and updates welcome — this catalogue is a living document.</p>
+  <p style="margin-top:1rem; font-size:12px;">independentwatchmaking.com</p>
+</footer>
+
+<script>
+const makers = [
+  {
+    id: 1,
+    name: "H. Moser & Cie.",
+    brand: "",
+    location: "Schaffhausen, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1828 (re-est. 2005)",
+    volume: "1,200–1,500/yr",
+    volumeNum: 1350,
+    price: "CHF 10,000–100,000+",
+    website: "https://www.h-moser.com",
+    instagram: "@hmosercie",
+    desc: "One of the most distinctive voices in modern watchmaking, Moser is celebrated for its fumé dials — a gradient color technique reminiscent of smoke — and unapologetically minimal aesthetic. Their Endeavour and Pioneer collections strip away excess, revealing fine Swiss movement craft. Known for irreverent marketing that challenges industry conventions.",
+    tags: ["fumé dials","minimalist","in-house movements","gphg"],
+    specialties: ["guilloché","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 2,
+    name: "Habring²",
+    brand: "",
+    location: "Völkermarkt, Austria",
+    country: "Austria",
+    region: "other",
+    founded: "2004",
+    volume: "Up to 150/yr (up to 12 per model)",
+    volumeNum: 100,
+    price: "€10,000–60,000",
+    website: "https://www.habring2.com",
+    instagram: "@habring2",
+    desc: "Run by husband-and-wife team Richard and Maria Habring from their workshop in Carinthia, Austria. Richard previously worked at IWC and Lange. Their watches offer extraordinary value — in-house split-seconds chronographs, jumping seconds, and tourbillons at prices a fraction of what major houses charge. GPHG winners in 2012 (Doppel 2.0), 2013 (Jumping Second Pilot), 2015 (Felix), and 2018 (Doppel-Felix).",
+    tags: ["GPHG 2012","GPHG 2013","GPHG 2015","GPHG 2018","chronograph","jumping seconds"],
+    specialties: ["complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 3,
+    name: "AkriviA",
+    brand: "AkriviA Rexhep Rexhepi",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2012",
+    volume: "~25/yr",
+    volumeNum: 25,
+    price: "CHF 50,000–200,000+",
+    website: "https://www.akrivia.com",
+    instagram: "@akrivia_rexhep_rexhepi",
+    desc: "Rexhep Rexhepi trained at Patek Philippe and Rolex before striking out alone — virtually unheard of in modern watchmaking. AkriviA means 'precision' in Greek, and Rexhepi's watches live up to that name: supremely finished, architecturally pure, and utterly personal. GPHG 2018 Men's Watch winner with the Chronomètre Contemporain. Rexhepi is considered one of the most important young watchmakers alive.",
+    tags: ["GPHG 2018","Patek trained","in-house","time-only","architecture"],
+    specialties: ["guilloché","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 4,
+    name: "Kari Voutilainen",
+    brand: "Voutilainen",
+    location: "Môtiers, Switzerland (Finnish maker)",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2002",
+    volume: "30–50/yr",
+    volumeNum: 40,
+    price: "CHF 50,000–500,000+",
+    website: "https://www.voutilainen.ch",
+    instagram: "@karivo",
+    desc: "Finnish master Kari Voutilainen trained at the Watchmaking School of Le Sentier and worked at Urban Jürgensen before establishing his atelier in Môtiers. Renowned for extraordinary dial artistry — hand-engraved, enameled, and guilloché — combined with exceptional movement finishing. Multiple GPHG winner. He also designed the dial hands for Urban Jürgensen and mentors Shane Tulloch. Among the most coveted names in independent watchmaking.",
+    tags: ["GPHG 2013","GPHG 2014","GPHG 2015","GPHG 2017","GPHG 2019","dial artistry","enamel","guilloché"],
+    specialties: ["guilloché","gphg","bespoke"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 5,
+    name: "Urban Jürgensen",
+    brand: "Urban Jürgensen & Sønnerne",
+    location: "Copenhagen, Denmark / Switzerland",
+    country: "Denmark",
+    region: "other",
+    founded: "1773",
+    volume: "~200/yr",
+    volumeNum: 200,
+    price: "CHF 15,000–80,000",
+    website: "https://www.urbanjurgensen.com",
+    instagram: "@urbanjurgensenwatches",
+    desc: "One of watchmaking's great historic names, founded in 1773 in Copenhagen. The modern era watches feature signature cowhorn lugs, curved guilloche dials, and modified Breguet-style hands designed by Kari Voutilainen during his tenure. The Central Second won the GPHG 2014 Men's Watch award. A rare house that blends genuine historic lineage with modern independent spirit.",
+    tags: ["GPHG 2014","cowhorn lugs","guilloché","Breguet hands","historic"],
+    specialties: ["guilloché","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 6,
+    name: "Grönefeld",
+    brand: "Grönefeld Brothers",
+    location: "Oldenzaal, Netherlands",
+    country: "Netherlands",
+    region: "netherlands",
+    founded: "2008",
+    volume: "~60/yr",
+    volumeNum: 60,
+    price: "€25,000–200,000+",
+    website: "https://www.gronefeld.com",
+    instagram: "@gronefeld",
+    desc: "Brothers Bart and Tim Grönefeld — 'the horological brothers' — represent the best of Dutch watchmaking. Self-taught and independently spirited, they build movements and cases to an exceptionally high standard. GPHG 2014 Tourbillon winner (Parallax Tourbillon) and 2016 Men's watch winner (1941 Remontoire). Their finishing quality rivals anything from Switzerland.",
+    tags: ["GPHG 2014","GPHG 2016","tourbillon","remontoire","Dutch"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 7,
+    name: "Romain Gauthier",
+    brand: "",
+    location: "Le Solliat, Vallée de Joux, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2005",
+    volume: "~60/yr",
+    volumeNum: 60,
+    price: "CHF 30,000–150,000",
+    website: "https://www.romaingauthier.com",
+    instagram: "@romaingauthier",
+    desc: "Former machine-tool entrepreneur turned master watchmaker, Romain Gauthier taught himself horology before creating some of the most mechanically inventive watches of the modern era. The Logical One features a revolutionary mainspring system with constant force; the Insight Micro-Rotor showcases exceptional finishing. GPHG 2013 Men's Complications winner.",
+    tags: ["GPHG 2013","constant force","Logical One","micro-rotor","in-house"],
+    specialties: ["complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 8,
+    name: "F.P. Journe",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1999",
+    volume: "~900/yr",
+    volumeNum: 900,
+    price: "CHF 30,000–1,000,000+",
+    website: "https://www.fpjourne.com",
+    instagram: "@fp.journe",
+    desc: "François-Paul Journe is arguably the most celebrated living independent watchmaker. His brass-movement watches from his first decade are among the most coveted in the world. Inventions include a souscription tourbillon with constant force remontoire, a decimal repeater, and a chronomètre à résonance using mechanical resonance for timekeeping accuracy. His watches carry the motto 'Invenit et Fecit' — invented and made.",
+    tags: ["resonance","tourbillon","brass movements","complications","icon"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 9,
+    name: "Moritz Grossmann",
+    brand: "",
+    location: "Glashütte, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "2008 (re-est.; original 1854)",
+    volume: "~250/yr",
+    volumeNum: 250,
+    price: "€15,000–80,000",
+    website: "https://www.grossmann-uhren.com",
+    instagram: "@moritz_grossmann",
+    desc: "Re-establishing the Grossmann name in Glashütte, this modern atelier upholds the town's finest traditions with three-quarter plates, hand-finished movements, and exceptional dial typography. Their watches feature the distinctive hand-made hairspring collet and a perlage finish applied with a wooden peg — techniques unchanged since the 19th century. GPHG 2014 Men's nominee.",
+    tags: ["Glashütte","three-quarter plate","in-house","hand-finished","German"],
+    specialties: ["complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 10,
+    name: "Atelier de Chronométrie",
+    brand: "AdC",
+    location: "Barcelona, Spain",
+    country: "Spain",
+    region: "other",
+    founded: "2015",
+    volume: "Very limited (every watch unique)",
+    volumeNum: 20,
+    price: "POA",
+    website: "https://www.atelierdechronometrie.com",
+    instagram: "@atelierdechronometrie",
+    desc: "Founded by Santi Martínez in Barcelona, Atelier de Chronométrie uses Omega hand-wound movements as a foundation, adding bespoke finishing, unique dials, and highly personalized details. Every watch made is unique. A Spanish voice in independent horology — unusual and compelling.",
+    tags: ["bespoke","unique pieces","Omega movement","Barcelona"],
+    specialties: ["bespoke","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 11,
+    name: "Naoya Hida & Co.",
+    brand: "",
+    location: "Tokyo, Japan",
+    country: "Japan",
+    region: "japan",
+    founded: "2018",
+    volume: "~10 per model per year",
+    volumeNum: 30,
+    price: "¥2,000,000–4,000,000",
+    website: "https://www.naoyahida.com",
+    instagram: "@naoyahidaandco",
+    desc: "Naoya Hida creates refined, aesthetically restrained time-only watches combining the elegance of Swiss independent watchmaking with Japanese sensibility. Models feature small seconds at 9:00 with engraved Breguet numerals, or center seconds with tri-arabic engraved numerals. All are manual-wind, limited to 10 pieces per model per year, and finished to an extraordinary level.",
+    tags: ["Japanese","time-only","Breguet numerals","manual wind","limited"],
+    specialties: ["bespoke","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 12,
+    name: "J.N. Shapiro",
+    brand: "",
+    location: "California, USA",
+    country: "USA",
+    region: "usa",
+    founded: "2015",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "$15,000–40,000",
+    website: "https://www.jnshapiro.com",
+    instagram: "@jnshapiro",
+    desc: "Joshua Shapiro makes watches in California, known for his unique engine-turned 'infinity weave' dial pattern — a geometric guilloche made entirely by hand. Cases are 40mm, polished and brushed steel. Movements are made by Uhren Werke Dresden (UWD) in Germany. A genuinely American independent voice with a signature aesthetic unlike anyone else.",
+    tags: ["California","infinity weave","engine-turned","guilloché","UWD movement"],
+    specialties: ["guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 13,
+    name: "Théo Auffret",
+    brand: "",
+    location: "Paris, France",
+    country: "France",
+    region: "france",
+    founded: "c.2018",
+    volume: "Extremely limited (subscription series)",
+    volumeNum: 5,
+    price: "POA",
+    website: "https://www.theoauffret.com",
+    instagram: "@theo_auffret",
+    desc: "One of the most remarkable young watchmakers on earth: Théo Auffret began making watches entirely by hand using exclusively traditional manual machines at age 24 in Paris. His subscription-series tourbillon regulators feature dial-side exposed mainspring barrels, elegant bridges, tourbillon at 7–8 o'clock, and silver, gold or platinum cases. Movement beats at 18,000 vph with 50-hour power reserve. Cases 38.5×12mm. Hand-turned and polished hands, artisanal hand-molded mineral glass or sapphire crystal.",
+    tags: ["Paris","tourbillon","regulator","hand made","young maker","subscription"],
+    specialties: ["tourbillon","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 14,
+    name: "Holthinrichs Watches",
+    brand: "",
+    location: "Delft, Netherlands",
+    country: "Netherlands",
+    region: "netherlands",
+    founded: "c.2016",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "Under $5,000 (most models)",
+    website: "https://www.holthinrichs.com",
+    instagram: "@holthinrichs",
+    desc: "Based in Delft, Holthinrichs creates bespoke 3D-printed watches for under $5,000 (except gold models), with handmade enamel dials available. The combination of modern manufacturing technology with traditional hand-made finishing is uniquely compelling. They offered a project to create a 36×45mm watch with 19mm lug width.",
+    tags: ["bespoke","3D printed","enamel dials","affordable","Dutch"],
+    specialties: ["bespoke","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 15,
+    name: "Kurono Tokyo",
+    brand: "Kurono Tokyo by Hajime Asaoka",
+    location: "Tokyo, Japan",
+    country: "Japan",
+    region: "japan",
+    founded: "2018",
+    volume: "Limited drops",
+    volumeNum: 200,
+    price: "$2,000–5,000",
+    website: "https://www.kurono-tokyo.com",
+    instagram: "@kurono.tokyo",
+    desc: "Hajime Asaoka's accessible line Kurono Tokyo offers beautifully designed watches at surprisingly accessible prices. The 'Bunkyō Tokyo' and 'Reiwa' editions feature 37.5mm stainless steel cases with premium Myota automatic movements. Limited drops sell out instantly. The Reiwa (2nd edition) offered silver/charcoal grey or brown and copper dial variants — 50 of each.",
+    tags: ["Japanese","accessible","automatic","Myota","Bunkyō","Reiwa"],
+    specialties: [],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 16,
+    name: "Hajime Asaoka",
+    brand: "",
+    location: "Tokyo, Japan",
+    country: "Japan",
+    region: "japan",
+    founded: "2012",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "¥5,000,000+",
+    website: "https://www.hajimeasaoka.com",
+    instagram: "@hajimeasaoka",
+    desc: "Hajime Asaoka is Japan's most celebrated independent watchmaker, building movements almost entirely by hand with in-house calibres. A self-taught engineer turned horologist, his work — including a highly original tourbillon — represents the pinnacle of Japanese independent watchmaking. He also created the accessible Kurono Tokyo brand for a wider audience.",
+    tags: ["Japanese","in-house","tourbillon","hand made","master"],
+    specialties: ["tourbillon","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 17,
+    name: "Laine Watches",
+    brand: "",
+    location: "Le Locle, Switzerland (Finnish maker)",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "c.2016",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "CHF 5,900–8,800",
+    website: "https://www.lainewatches.com",
+    instagram: "@lainewatches",
+    desc: "Torsti Laine from Finland makes and finishes watches entirely in-house in Le Locle, including dials. The Gelidus 2 features skeleton syringe hands over dials that are sandblasted, circular-grained, hand-painted gradient, or PVD-plated, with frosted case-side cavities. The Gelidus Guilloche adds swirl guilloche dials and sculpted polished case sides. Outstanding value for the level of handwork.",
+    tags: ["Finnish","in-house dials","guilloché","affordable","skeleton hands"],
+    specialties: ["guilloché","skeleton","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 18,
+    name: "Stefan Kudoke",
+    brand: "",
+    location: "Glashütte, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "c.2013",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "Under €10,000",
+    website: "https://www.kudoke.com",
+    instagram: "@stefankudoke",
+    desc: "Working in the German watchmaking tradition of Glashütte, Stefan Kudoke produces hand-made watches with in-house calibres, gold movement, hand-made dials, engraving, and skeletonization. Unique pieces available. Remarkable value at under €10,000 for a level of handwork that commands multiples elsewhere.",
+    tags: ["Glashütte","in-house","skeleton","engraving","gold movement","affordable"],
+    specialties: ["skeleton","guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 19,
+    name: "Ming Watches",
+    brand: "MING",
+    location: "Kuala Lumpur, Malaysia (made in Switzerland)",
+    country: "Malaysia",
+    region: "other",
+    founded: "2017",
+    volume: "Limited drops",
+    volumeNum: 500,
+    price: "CHF 2,000–8,000",
+    website: "https://www.ming.watch",
+    instagram: "@ming.watch",
+    desc: "Designed by Ming Thein in Kuala Lumpur and manufactured in Switzerland, MING watches are celebrated for their innovative multi-layer composite dials, thoughtful proportions, and excellent ETA/SchwartzEtienne movements. The 17.06 (Slate and Copper) features a 38mm case and fully lumed hands; the 27.01 a 6.9mm-thin profile. Strong community, instant sellouts, and exceptional design at accessible prices.",
+    tags: ["Malaysian design","Swiss made","composite dials","ETA","affordable","sellout"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 20,
+    name: "Philippe Dufour",
+    brand: "",
+    location: "Vallée de Joux, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1992",
+    volume: "~5–10/yr",
+    volumeNum: 7,
+    price: "CHF 500,000–2,000,000+",
+    website: "https://www.philippedufour.com",
+    instagram: "@philippedufour_officiel",
+    desc: "Philippe Dufour is perhaps the most revered living watchmaker — the spiritual grandfather of the modern independent movement. His Simplicity (time-only) and Grande et Petite Sonnerie chiming watches set standards that define the entire field. Uncompromising finishing standards: every surface hand-polished to mirror finish, every anglage chamfered by hand. One of the most copied and celebrated aesthetics in watchmaking.",
+    tags: ["legend","grande sonnerie","simplicity","hand-finished","icon","ultra-premium"],
+    specialties: ["complications","guilloché","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 21,
+    name: "Roger W. Smith",
+    brand: "",
+    location: "Isle of Man, UK",
+    country: "UK",
+    region: "uk",
+    founded: "2001",
+    volume: "~10/yr",
+    volumeNum: 10,
+    price: "£150,000–500,000+",
+    website: "https://www.rwsmithwatches.com",
+    instagram: "@rwsmithwatches",
+    desc: "The chosen successor of George Daniels, Roger W. Smith carries on the English watchmaking tradition from his workshop on the Isle of Man. Like Daniels, he makes virtually every component of his watches by hand, including the co-axial escapement. Series 2, 4, and 5 watches are among the most desirable in the world. A true one-person workshop making about 10 watches per year.",
+    tags: ["co-axial","George Daniels legacy","Isle of Man","hand made","English tradition","ultra-premium"],
+    specialties: ["tourbillon","complications","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 22,
+    name: "George Daniels",
+    brand: "",
+    location: "London, UK",
+    country: "UK",
+    region: "uk",
+    founded: "1969",
+    volume: "~30 total lifetime",
+    volumeNum: 1,
+    price: "£1,000,000–5,000,000+",
+    website: "https://www.georgesdaniels.com",
+    instagram: "@georgesdaniels",
+    desc: "The most important British watchmaker of the 20th century, George Daniels invented the co-axial escapement — the first new escapement in 250 years. He also created the dual-wheel escapement. His watches feature Breguet-like guilloché on dial and lugs, crown at 7:30, and all-gold movements. Made approximately 30 watches in his lifetime. Mentor to Roger W. Smith. Passed away in 2011.",
+    tags: ["co-axial escapement","legend","London","historical","ultra-premium"],
+    specialties: ["complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 23,
+    name: "Rudis Sylva",
+    brand: "",
+    location: "Swiss Jura, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2009",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "CHF 50,000+",
+    website: "https://www.rudissylva.com",
+    instagram: "@rudissylva",
+    desc: "Founded by Jacky Epitaux, Rudis Sylva is known for its Harmonious Oscillator — two interlocked, synchronizing balance wheels with opposing balance springs. 44×14.3mm tonneau cases with multi-layered dials, time at 12, delta hands, Roman numerals, and the double balance at 6 o'clock on the dial side. Brushed and polished cases with evacuated lug flanks.",
+    tags: ["dual balance","Harmonious Oscillator","Swiss Jura","complications","unique mechanism"],
+    specialties: ["complications","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 24,
+    name: "Lecomte Watchmaker",
+    brand: "@lecomte_watchmaker",
+    location: "Morteau, France (near Swiss border)",
+    country: "France",
+    region: "france",
+    founded: "c.2015",
+    volume: "Extremely limited",
+    volumeNum: 5,
+    price: "POA",
+    website: "",
+    instagram: "@lecomte_watchmaker",
+    desc: "A professor at the Edgar Faure watchmaking school in Morteau, France, who makes watches in small quantities in his time off. An example of the rare craftsman who teaches the art and also practices it at the highest independent level.",
+    tags: ["French","independent","small quantity","professor","artisan"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 25,
+    name: "Ochs und Junior",
+    brand: "",
+    location: "Lucerne, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2006",
+    volume: "~130/yr",
+    volumeNum: 130,
+    price: "CHF 5,000–50,000",
+    website: "https://www.ochsundjunior.swiss",
+    instagram: "@ochsundjunior",
+    desc: "Founded by Dr. Ludwig Oechslin (formerly of Ulysse Nardin) and Beat Weinmann, with movements from UN and ETA. Their annual perpetual calendar takes only 9 parts. Their famous moon phase is accurate for 3,478.21 years before losing a day. Oechslin's philosophy: mechanical simplicity is more reliable than complexity.",
+    tags: ["perpetual calendar","moon phase","simplified","Ludwig Oechslin","affordable"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 26,
+    name: "Laurent Ferrier",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2009",
+    volume: "~300/yr",
+    volumeNum: 300,
+    price: "CHF 30,000–200,000",
+    website: "https://www.laurentferrier.com",
+    instagram: "@laurentferrier_geneve",
+    desc: "Former Le Mans racing driver and Patek Philippe watchmaker Laurent Ferrier creates watches with rare elegance and technical depth. The Galet Square won the 2015 GPHG Horological Revelation prize; the Galet Annual Calendar School Piece won 2018 Men's Complication. His micro-rotor movements and enamel dials are exceptional. Restrained, architectural, and supremely fine.",
+    tags: ["GPHG 2015","GPHG 2018","enamel dials","micro-rotor","annual calendar","Geneva"],
+    specialties: ["complications","guilloché","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 27,
+    name: "Stefan Ketelaars",
+    brand: "",
+    location: "Netherlands",
+    country: "Netherlands",
+    region: "netherlands",
+    founded: "c.2012",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "From $4,300",
+    website: "",
+    instagram: "@stefan_ketelaars",
+    desc: "42mm steel case with signature 'flying regulator' featuring a balance suspended with a full bridge on the dial side and spherical day/night indicator. Time sundial with modified ETA Unitas 6498 calibre. Onion crown. Starting at $4,300 — extraordinary value for a complication of this originality and handwork.",
+    tags: ["Dutch","flying regulator","day/night","ETA 6498","affordable"],
+    specialties: ["complications","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 28,
+    name: "De Bethune",
+    brand: "",
+    location: "L'Auberson, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2002",
+    volume: "~150/yr",
+    volumeNum: 150,
+    price: "CHF 30,000–500,000+",
+    website: "https://www.debethune.ch",
+    instagram: "@de_bethune",
+    desc: "De Bethune, founded by Denis Flageollet and Pierre Jacques, is one of the most innovative independent houses. Known for moon phase displays accurate to 1 second per year, silicon balance wheels, titanium dials with polished gold indices, and unique case shapes. Multiple GPHG winners. The DB28 and DB25 series are iconic modern complications.",
+    tags: ["moon phase","silicon","titanium","innovative","GPHG winner"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 29,
+    name: "Ressence",
+    brand: "",
+    location: "Antwerp, Belgium",
+    country: "Belgium",
+    region: "other",
+    founded: "2010",
+    volume: "Very limited",
+    volumeNum: 100,
+    price: "€30,000–70,000",
+    website: "https://www.ressencewatches.com",
+    instagram: "@ressence.watches",
+    desc: "Belgian designer Benoît Mintiens reimagined the watch interface entirely. Ressence watches use a ROCS (Ressence Orbital Convex System) — a patented system where all time information is displayed on co-planar, oil-filled discs, eliminating parallax and the hands/dial relationship. The Type 3 uses oil-filled sapphire. A true conceptual breakthrough in how we read time.",
+    tags: ["Belgian","orbital display","oil-filled","no hands","innovative","ROCS"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 30,
+    name: "HYT",
+    brand: "Hydro Mechanical Horologists",
+    location: "Biel, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2012",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "CHF 40,000–300,000+",
+    website: "https://www.hytwatches.com",
+    instagram: "@hytwatches",
+    desc: "HYT — Hydro Mechanical Horologists — invented a new way to display time using fluid dynamics. Two micro-reservoirs of fluid (one fluorescent, one clear) contract and expand to push a meniscus through a curved tube, indicating hours. Entirely mechanical bellows drive the system. A genuine invention: the first new time-display medium in watchmaking history.",
+    tags: ["fluid display","innovative","mechanical bellows","unique","Swiss"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 31,
+    name: "MB&F",
+    brand: "Maximilian Büsser & Friends",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2005",
+    volume: "~200/yr",
+    volumeNum: 200,
+    price: "CHF 50,000–300,000+",
+    website: "https://www.mbandf.com",
+    instagram: "@mbandf",
+    desc: "Maximilian Büsser creates 'horological machines' collaborating with master watchmakers as friends rather than employees. The HM series features wild sculptural cases housing exceptional complications. David Candaux worked here before founding his own atelier. LM (Legacy Machine) series offers a more traditional aesthetic with innovative construction. GPHG winner multiple times.",
+    tags: ["horological machines","collaborative","sculptural","complications","GPHG winner"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 32,
+    name: "Urwerk",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1997",
+    volume: "~150/yr",
+    volumeNum: 150,
+    price: "CHF 50,000–200,000+",
+    website: "https://www.urwerk.com",
+    instagram: "@urwerk_official",
+    desc: "Felix Baumgartner and Martin Frei founded Urwerk on the concept of satellite hour indication — a system of rotating, orbiting arms carrying hour numerals, developed from a 17th-century wandering hours concept. Each watch is a technical and sculptural statement. The UR-210 features a satellite complication with automatic efficiency indicator. Consistently avant-garde.",
+    tags: ["satellite hours","wandering hours","sculptural","Swiss","avant-garde"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 33,
+    name: "Speake-Marin",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2002",
+    volume: "~100/yr",
+    volumeNum: 100,
+    price: "CHF 10,000–60,000",
+    website: "https://www.speake-marin.com",
+    instagram: "@speakemarin",
+    desc: "Peter Speake-Marin trained at Patek and Renaud & Papi before founding his own house. Signature visible lug screws and distinct 'London' case profile. Known for hand-engraved movements, tourbillons, and playful crown-topped case designs. A British sensibility expressed through Swiss craftsmanship.",
+    tags: ["visible lugs","engraved movements","London case","British-Swiss","tourbillon"],
+    specialties: ["tourbillon","guilloché","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 34,
+    name: "Greubel Forsey",
+    brand: "",
+    location: "La Chaux-de-Fonds, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2004",
+    volume: "~100/yr",
+    volumeNum: 100,
+    price: "CHF 200,000–2,000,000+",
+    website: "https://www.greubelforsey.com",
+    instagram: "@greubelforsey",
+    desc: "Robert Greubel and Stephen Forsey created an atelier dedicated to advancing the tourbillon — and completely reimagined it. The double, triple, and quadruple tourbillons rotate on multiple axes simultaneously for unparalleled accuracy compensation. Their Hand Made 1 watch takes 6,000 hours to produce. The Art Piece series features miniature paintings inside the movement. GPHG winners many times over.",
+    tags: ["multi-axis tourbillon","GPHG winner","hand made","ultra-premium","complications"],
+    specialties: ["tourbillon","complications","guilloché","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 35,
+    name: "Montres Karsten Frässdorf",
+    brand: "",
+    location: "Switzerland (German maker)",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "c.2010",
+    volume: "12–24/yr",
+    volumeNum: 18,
+    price: "POA",
+    website: "",
+    instagram: "@karsten_frassdorf",
+    desc: "German watchmaker based in Switzerland producing hand-made and custom watches with hand-finished in-house movements, including a large tourbillon designed to be shock-proof and anti-magnetic for daily wear. Makes 12–24 watches per year. Offers a 5-year warranty with a free first service that resets to another 5-year warranty.",
+    tags: ["tourbillon","shock-proof","daily wear","hand made","5-year warranty"],
+    specialties: ["tourbillon","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 36,
+    name: "Ferdinand Berthoud",
+    brand: "Chronomètre Ferdinand Berthoud",
+    location: "Fleurier, Jura, Switzerland (owned by Chopard)",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1753 (re-est. 2015)",
+    volume: "~20/yr",
+    volumeNum: 20,
+    price: "CHF 200,000+",
+    website: "https://www.ferdinandberthoud.ch",
+    instagram: "@ferdinandberthoud",
+    desc: "Re-established by Chopard using the original 18th-century name, Ferdinand Berthoud produces marine chronometer-inspired tourbillons of extraordinary quality. The FB1 won the GPHG 2016 Aiguille d'Or — the highest prize in watchmaking. Fusée-and-chain transmission, vertical tourbillon, and cases inspired by 18th-century marine instruments.",
+    tags: ["GPHG 2016 Aiguille d'Or","fusée chain","tourbillon","marine chronometer","Chopard"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 37,
+    name: "D. Candaux",
+    brand: "",
+    location: "Sainte-Croix, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2012",
+    volume: "~12/yr",
+    volumeNum: 12,
+    price: "From CHF 250,000",
+    website: "https://www.dcandaux.com",
+    instagram: "@dcandaux",
+    desc: "David Candaux worked as concepteur horloger at MB&F and JLC (on HM6 Space Pirate and Hybris Mechanica Sonnerie). His own watches feature a remarkable asymmetric design: symmetrical 9–3 o'clock, asymmetric 12–6 o'clock with a crown that pops up from the dial at 6. Tonneau/oval titanium and white gold cases, 43mm. Tourbillon, guilloché, and all movements engineered in-house and hand made. 10-year warranty. ~$250k+.",
+    tags: ["tourbillon","asymmetric","titanium","crown on dial","MB&F alumni","10-year warranty"],
+    specialties: ["tourbillon","complications","guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 38,
+    name: "Aaron Becsei / Bexei",
+    brand: "Bexei",
+    location: "Budapest, Hungary",
+    country: "Hungary",
+    region: "other",
+    founded: "c.2010",
+    volume: "Extremely limited",
+    volumeNum: 5,
+    price: "POA",
+    website: "https://www.bexei.com",
+    instagram: "@aaronbecsei",
+    desc: "A 3rd-generation watchmaker and clockmaker, Aaron Becsei creates watches from scratch with Gothic aesthetics and elaborate, heavily engraved movement finishing. One of the most decoratively artistic independent watchmakers working today, drawing on a deep family tradition of horology.",
+    tags: ["Gothic","engraving","from scratch","Hungarian","3rd generation"],
+    specialties: ["skeleton","guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 39,
+    name: "RGM",
+    brand: "RGM Watch Co.",
+    location: "Lancaster, Pennsylvania, USA",
+    country: "USA",
+    region: "usa",
+    founded: "1992",
+    volume: "Limited",
+    volumeNum: 100,
+    price: "$3,000–50,000",
+    website: "https://www.rgmwatches.com",
+    instagram: "@rgmwatches",
+    desc: "Roland G. Murphy founded RGM in Pennsylvania, making some of the finest American watches. Movements range from modified Swiss ebauches to fully in-house Pennsylvania Tourbillon calibres. Dials feature exquisite engine-turning and enamel. The only American watchmaker producing watches at this level of finishing, using traditional watchmaking tools.",
+    tags: ["American","Pennsylvania","tourbillon","enamel","engine-turned","in-house"],
+    specialties: ["tourbillon","guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 40,
+    name: "Charles Frodsham & Co.",
+    brand: "",
+    location: "London, UK",
+    country: "UK",
+    region: "uk",
+    founded: "1834",
+    volume: "~10/yr",
+    volumeNum: 10,
+    price: "£30,000–200,000+",
+    website: "https://www.frodsham.com",
+    instagram: "@charlesfrodsham",
+    desc: "Continuously operating for nearly 200 years, Charles Frodsham is the last surviving London watch company with an unbroken lineage. They produce 22k yellow gold or 18k rose/white gold watches with double impulse escapements, hand-finished movements, and cases of extraordinary quality. Champions of the English watchmaking tradition.",
+    tags: ["London","English tradition","200 years","gold","historical","double impulse"],
+    specialties: ["complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 41,
+    name: "Ludovic Ballouard",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2009",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "CHF 100,000+",
+    website: "https://www.ludovicballouard.com",
+    instagram: "@ludovicballouard",
+    desc: "Known for 'eccentric complications' — the Upside Down displays 11 hours face-down and only the correct hour face-up; the Half Time shows each half-hour differently. Ballouard trained at F.P. Journe and creates watches that are conceptually playful yet mechanically serious. A truly original mind in watchmaking.",
+    tags: ["eccentric","upside down","Half Time","F.P. Journe alumnus","Geneva","playful"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 42,
+    name: "Vianney Halter",
+    brand: "",
+    location: "Sainte-Croix, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1998",
+    volume: "Less than 500 total ever made",
+    volumeNum: 15,
+    price: "CHF 50,000–200,000+",
+    website: "https://www.vianney-halter.com",
+    instagram: "@vianneyhalter",
+    desc: "Three-time GPHG Innovation winner, Vianney Halter creates high complications in a traditional manner with an unconventional, often steampunk/cyberpunk style. Multi-window cases, vintage sci-fi inspiration, and complex movements hand-made by Vianney himself. 10 models total, with fewer than 500 watches ever made. Among the most distinctive aesthetics in independent watchmaking.",
+    tags: ["GPHG Innovation","steampunk","hand made","3x GPHG","rare","avant-garde"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 43,
+    name: "Andreas Strehler",
+    brand: "",
+    location: "Pfaffhausen, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2000",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "CHF 100,000–500,000+",
+    website: "https://www.andreasstrehler.com",
+    instagram: "@andreasstrehler",
+    desc: "All watches are handmade and hand-finished by Andreas himself. TV/cushion cases, in-house movements and components. Holds the record for most accurate mechanical moon phase display: accurate to 2 million years per day of error. Also makes tourbillons, creative construction, and skeletonization. Chapter 3 of Maîtres du Temps was designed with Kari Voutilainen.",
+    tags: ["moon phase 2M years","hand made","tourbillon","skeletonization","ultra-accurate"],
+    specialties: ["tourbillon","skeleton","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 44,
+    name: "Czapek & Cie",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1839 (re-est. 2012)",
+    volume: "Limited",
+    volumeNum: 200,
+    price: "CHF 10,000–100,000",
+    website: "https://www.czapek.com",
+    instagram: "@czapekgeneve",
+    desc: "François Czapek was Patek Philippe's original co-founder before their split. The re-established Czapek uses in-house calibres, crowdfunded by enthusiasts and made in collaboration with SchwartzEtienne. The Antarctique and Faubourg de Cracovie collections balance historic elegance with modern openwork dials. A rare brand with genuine 1839 heritage.",
+    tags: ["Patek co-founder","Geneva","in-house","crowdfunded","openwork","historic"],
+    specialties: ["skeleton","complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 45,
+    name: "D. Dornblüth & Sohn",
+    brand: "",
+    location: "Kalbe an der Milde, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "1999",
+    volume: "Very limited (bespoke)",
+    volumeNum: 20,
+    price: "€5,000–30,000",
+    website: "https://www.dornblueth.com",
+    instagram: "@dornblueth_sohn",
+    desc: "A father-and-son workshop in rural eastern Germany producing bespoke watches with rose gold in-house movements and beautiful, unpretentious dials. Plain white, black, and navy blue dials with white or blue hands, or silver guilloché dials ennobled by Jochen Benzinger's engraving. One of Germany's best-kept watchmaking secrets.",
+    tags: ["bespoke","German","guilloché","Benzinger engraving","rose gold movement","affordable"],
+    specialties: ["guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 46,
+    name: "Emmanuel Bouchet",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2016",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "CHF 50,000–200,000",
+    website: "https://www.emmanuelbouchet.com",
+    instagram: "@emmanuelbouchet_watches",
+    desc: "High complications, partial skeletonization, lugs extending from the top of the case, colorful dials and cases. All-Swiss components in-house calibres. Can customize each watch to produce a unique piece. His Complication One features 12 simultaneous complications visible through the dial.",
+    tags: ["complications","skeletonization","colorful","customizable","Geneva","in-house"],
+    specialties: ["tourbillon","complications","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 47,
+    name: "Lang & Heyne",
+    brand: "",
+    location: "Dresden, Saxony, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "2001",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "€15,000–80,000",
+    website: "https://www.lang-heyne.de",
+    instagram: "@langandheyne",
+    desc: "Marco Lang and Mirko Heyne create watches in the great Saxon tradition from Dresden. Gold movements, three lugs on each side (a distinctive signature), intricate hands, and custom hand engraving. Their movements channel the finishing philosophy of classic Glashütte, with warm gold plates and exceptional anglage. Among Germany's finest independent voices.",
+    tags: ["Dresden","Saxony","gold movement","three lugs","engraving","German"],
+    specialties: ["guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 48,
+    name: "Konstantin Chaykin",
+    brand: "Russian Exclusive Watchcraft",
+    location: "Moscow, Russia",
+    country: "Russia",
+    region: "other",
+    founded: "2003",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "$10,000–100,000+",
+    website: "https://www.chaykin.ru",
+    instagram: "@chaykin_watchmaker",
+    desc: "Russia's leading independent watchmaker, Konstantin Chaykin creates eccentric, often humorous complications. The Joker watch features a clown face as time display; the Wristmon a monster. One watch uses a single hand for both hours and minutes simultaneously. Irreverent, skilled, and completely original. He also makes astronomical complications of great complexity.",
+    tags: ["Russian","Joker","eccentric","single hand","astronomical","humorous"],
+    specialties: ["complications","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 49,
+    name: "Garrick Watchmakers",
+    brand: "",
+    location: "Norfolk, England, UK",
+    country: "UK",
+    region: "uk",
+    founded: "2012",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "£5,000–30,000",
+    website: "https://www.garrickwatchmakers.com",
+    instagram: "@garrickwatchmakers",
+    desc: "One of England's independent watchmaking revival stories, Garrick produces hand-finished watches in Norfolk drawing on the English watchmaking tradition. Guilloche dials, hand-made parts, and a commitment to keeping English watchmaking alive in the 21st century.",
+    tags: ["English","Norfolk","guilloché","hand-made","revival"],
+    specialties: ["guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 50,
+    name: "Sarpaneva",
+    brand: "",
+    location: "Helsinki, Finland",
+    country: "Finland",
+    region: "other",
+    founded: "c.2003",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "€5,000–50,000",
+    website: "https://www.sarpaneva.fi",
+    instagram: "@sarpaneva_watches",
+    desc: "Stepan Sarpaneva, from Helsinki, is famed for moon phase complications of extraordinary accuracy. His new in-house movement features a moon phase that deviates by only 1 second every 14,000 years — making it among the most accurate mechanical moon phases ever made. Dark, moody Finnish design aesthetic with hand-finished movements.",
+    tags: ["Finnish","moon phase","ultra-accurate","in-house movement","dark aesthetic"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 51,
+    name: "Haldimann Horology",
+    brand: "",
+    location: "Thun, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1997",
+    volume: "A few dozen/yr",
+    volumeNum: 20,
+    price: "CHF 100,000–500,000+",
+    website: "https://www.haldimann.eu",
+    instagram: "@haldimannhorology",
+    desc: "Beat Haldimann is the master of what he calls 'Flying Haute Horlogerie.' Best known for his central tourbillon — a flying tourbillon positioned in the centre of the dial with no seconds or other indicators, only the rotation of the tourbillon itself to mark time. Also makes a remarkable double-tourbillon resonance. Offers a lifetime warranty on all his watches.",
+    tags: ["central tourbillon","double tourbillon","resonance","lifetime warranty","flying"],
+    specialties: ["tourbillon","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 52,
+    name: "Andersen Genève",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1980",
+    volume: "Very limited (bespoke)",
+    volumeNum: 20,
+    price: "CHF 20,000–100,000+",
+    website: "https://www.andersen-geneve.ch",
+    instagram: "@andersengeneve",
+    desc: "Svend Andersen has spent over 40 years in Geneva creating hand-made bespoke watches and miniature artworks. Known for his unique historical recreations and unusual complications, including a 'Secular Perpetual' and worldtime watches. A living legend of Geneva's independent scene.",
+    tags: ["bespoke","Geneva","secular perpetual","hand made","worldtime","historic"],
+    specialties: ["complications","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 53,
+    name: "Maîtres du Temps",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2007",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "CHF 100,000–300,000+",
+    website: "https://www.maitresdutemps.com",
+    instagram: "@maitresdutemps",
+    desc: "A collaborative platform where master watchmakers create limited-edition timepieces together. Early movements designed by Christophe Claret. Chapter 3 models were designed and finished by Kari Voutilainen and Andreas Strehler. The Chapter One was a collaboration between Strehler, Grönefeld, and Daniell Roth — an unprecedented creative partnership.",
+    tags: ["collaborative","Voutilainen","Strehler","Christophe Claret","Chapter series"],
+    specialties: ["tourbillon","complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 54,
+    name: "Antoine Preziuso",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1989",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "CHF 50,000–500,000+",
+    website: "https://www.antoinepreziuso.com",
+    instagram: "@antoinepreziuso",
+    desc: "Antoine Preziuso is a virtuoso of the tourbillon — his 'Tourbillon of Tourbillons' won the GPHG 2015 Public Prize. The watch features a triple tourbillon mechanism where three individual tourbillons revolve around each other. An extraordinary mechanical achievement combining watchmaking tradition with avant-garde architecture.",
+    tags: ["GPHG 2015 Public Prize","triple tourbillon","tourbillon of tourbillons","Geneva","avant-garde"],
+    specialties: ["tourbillon","complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 55,
+    name: "Singer Reimagined",
+    brand: "",
+    location: "Los Angeles, USA (made in Geneva)",
+    country: "USA",
+    region: "usa",
+    founded: "2017",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "$30,000–100,000",
+    website: "https://www.singerwatch.com",
+    instagram: "@singerwatch",
+    desc: "Founded by Rob Schnyder and the car customizers Singer Vehicle Design, Singer Reimagined makes award-winning automatic chronographs designed in LA and made in Geneva. The Track1 features a unique vertical clutch, column wheel, and flyback function in a 43mm case with exposed movement through an architectural dial. GPHG Chronograph Prize winner.",
+    tags: ["GPHG chronograph","Singer Vehicle","LA design","Geneva made","chronograph","flyback"],
+    specialties: ["complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 56,
+    name: "McGonigle Watches",
+    brand: "",
+    location: "Ireland",
+    country: "Ireland",
+    region: "uk",
+    founded: "c.2008",
+    volume: "Very limited",
+    volumeNum: 10,
+    price: "POA",
+    website: "https://www.mcgoniglewatches.com",
+    instagram: "@mcgoniglewatches",
+    desc: "Irish independent watchmaker creating hand-finished watches of exceptional quality. McGonigle is also behind Orlean Watches. One of the few independent watchmakers working from Ireland, a country not historically associated with fine watchmaking.",
+    tags: ["Irish","hand-finished","rare location","independent"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 57,
+    name: "Reservoir",
+    brand: "",
+    location: "Paris, France (Swiss made)",
+    country: "France",
+    region: "france",
+    founded: "2017",
+    volume: "Limited",
+    volumeNum: 300,
+    price: "€4,000–30,000",
+    website: "https://www.reservoir-watch.com",
+    instagram: "@reservoir_watch",
+    desc: "Designed in Paris with Art Deco automotive and aviation inspiration, Reservoir watches feature a linear retrograde power reserve display inspired by fuel gauges, speedometers, and aircraft instruments. Highly customizable. Swiss-made movements. A fresh French design voice that has rapidly grown a devoted following.",
+    tags: ["French design","Art Deco","linear display","retrograde","customizable","Swiss made"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 58,
+    name: "Armin Strom",
+    brand: "",
+    location: "Biel, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1967 (in-house since 2008)",
+    volume: "~200/yr",
+    volumeNum: 200,
+    price: "CHF 10,000–60,000",
+    website: "https://www.arminstrom.com",
+    instagram: "@arminstrom",
+    desc: "Armin Strom began as a dial maker and movement skeletonizer for other brands before creating its own in-house calibres. Now known for its Mirrored Force Resonance — a mechanical resonance complication where two movements synchronize through a spring. Clean, architectural dials and cases, made entirely in Biel.",
+    tags: ["resonance","skeleton","in-house","Mirrored Force","Swiss"],
+    specialties: ["skeleton","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 59,
+    name: "Christophe Claret",
+    brand: "",
+    location: "Le Locle, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1989",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "CHF 100,000–1,000,000+",
+    website: "https://www.christopheclaret.com",
+    instagram: "@christopheclaret",
+    desc: "Among the world's great complications specialists, Christophe Claret designed movements for Dior, Franck Muller, MB&F, and Maîtres du Temps before establishing his eponymous label. Known for extraordinary striking mechanisms, ultra-complex chronographs, and theatrical complications including a blackjack-playing watch.",
+    tags: ["complications","striking","chronograph","Le Locle","complications specialist"],
+    specialties: ["tourbillon","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 60,
+    name: "Schon Horology",
+    brand: "",
+    location: "USA",
+    country: "USA",
+    region: "usa",
+    founded: "c.2015",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "$2,000–8,000",
+    website: "https://www.schonhorology.com",
+    instagram: "@schonhorology",
+    desc: "Case, dial, and hands made in the USA from steel or titanium. Features a unique seconds display — seconds markers rotate under the dial, visible through a window at 6 o'clock. A genuinely American independent micro-brand making excellent use of design and materials.",
+    tags: ["American","rotating seconds","USA made","steel","titanium","unique display"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 61,
+    name: "Keaton Myrick",
+    brand: "",
+    location: "Oregon, USA",
+    country: "USA",
+    region: "usa",
+    founded: "c.2015",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "$5,000–15,000",
+    website: "https://www.keatonmyrick.com",
+    instagram: "@keatonmyrick",
+    desc: "All watches entirely handmade by the proprietor watchmaker in Oregon. Based on the ETA/Unitas 6497 calibre, extensively modified and finished by hand. A true one-person workshop producing watches of surprising quality and originality, representing the American studio watchmaker at his best.",
+    tags: ["Oregon","hand made","6497","one-person","American studio"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 62,
+    name: "Christiaan van der Klaauw",
+    brand: "",
+    location: "Hengelo, Netherlands",
+    country: "Netherlands",
+    region: "netherlands",
+    founded: "1974",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "€15,000–100,000",
+    website: "https://www.cvdk.com",
+    instagram: "@cvdk_astronomical_watches",
+    desc: "Christiaan van der Klaauw is the Netherlands' master of astronomical complications, creating mechanisms that display the solar system's movements — orreries, planispheres, lunar calendars, and sunrise/sunset indicators. Over 50 years of experience. His Real Moon uses a miniature depiction of the actual moon's surface accurate to 122 years.",
+    tags: ["Dutch","astronomical","orrery","moon phase","planisphere","50+ years"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 63,
+    name: "Schwarz Etienne",
+    brand: "",
+    location: "La Chaux-de-Fonds, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1902",
+    volume: "Limited",
+    volumeNum: 200,
+    price: "CHF 5,000–50,000",
+    website: "https://www.schwarzetienne.com",
+    instagram: "@schwarzetienne",
+    desc: "Founded in 1902, Schwarz Etienne produces in-house movements and finishes watches for themselves and other independent brands (including MING). Their Roma series features an exceptional micro-rotor calibre. The movements they supply to independents like MING are finished to an extraordinary standard for the price.",
+    tags: ["Swiss","in-house","1902","Roma","micro-rotor","movement maker"],
+    specialties: ["complications","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 64,
+    name: "Itay Noy",
+    brand: "",
+    location: "Tel Aviv, Israel",
+    country: "Israel",
+    region: "other",
+    founded: "c.2005",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "POA",
+    website: "https://www.itaynoy.com",
+    instagram: "@itaynoy",
+    desc: "An Israeli independent making conceptually fascinating watches where the right side of the watch displays daytime-related information (sun, etc.) and the left side shows nighttime information (moon, stars, etc.). A uniquely poetic approach to complication layout that turns the dial into a landscape.",
+    tags: ["Israeli","day/night","conceptual","unique layout","moon","sun"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 65,
+    name: "Machiel Hulsman",
+    brand: "",
+    location: "Netherlands",
+    country: "Netherlands",
+    region: "netherlands",
+    founded: "c.2010",
+    volume: "Extremely limited",
+    volumeNum: 5,
+    price: "POA",
+    website: "https://www.machielhulsman.com",
+    instagram: "@machielhulsman",
+    desc: "100% hand-made bespoke watches from the Netherlands. Machiel Hulsman makes every component himself — one of the most demanding standards in independent watchmaking. Each watch is entirely unique.",
+    tags: ["Dutch","100% hand made","bespoke","every component","unique"],
+    specialties: ["bespoke","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 66,
+    name: "Krayon",
+    brand: "",
+    location: "Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2015",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "CHF 100,000+",
+    website: "https://www.krayon.swiss",
+    instagram: "@krayon.swiss",
+    desc: "Krayon, from founder Romain Gauthier's collaborator Phong Nguyen, specializes in astronomical complications. Their Everywhere Latitude watches display sunrise and sunset times for any latitude on earth — a genuinely universal complication of rare usefulness and beauty. In-house movement with extraordinary finishing.",
+    tags: ["astronomical","sunrise/sunset","latitude","in-house","Swiss"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 67,
+    name: "Trilobe",
+    brand: "",
+    location: "Paris, France",
+    country: "France",
+    region: "france",
+    founded: "2018",
+    volume: "Very limited",
+    volumeNum: 100,
+    price: "€5,000–20,000",
+    website: "https://www.trilobe.com",
+    instagram: "@trilobe_paris",
+    desc: "Parisian atelier known for its Une Folie de Plus — a unique time display where three rotating discs show hours, minutes, and seconds through a sapphire dial, with no traditional hands. Contemporary French aesthetic, Swiss movements, and design-forward thinking. A fresh voice in French watchmaking.",
+    tags: ["Paris","disc display","no hands","French design","contemporary"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 68,
+    name: "Tournemire",
+    brand: "",
+    location: "France",
+    country: "France",
+    region: "france",
+    founded: "c.2015",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "POA",
+    website: "",
+    instagram: "@tournemire_montres",
+    desc: "French independent watchmaker creating highly original pieces with in-house complications. Known for creative displays and complications that challenge conventional reading of time.",
+    tags: ["French","independent","complications","creative display"],
+    specialties: ["complications","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 69,
+    name: "Sylvain Pinaud",
+    brand: "",
+    location: "France",
+    country: "France",
+    region: "france",
+    founded: "c.2015",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "POA",
+    website: "",
+    instagram: "@sylvainpinaud",
+    desc: "French independent watchmaker creating exceptionally hand-crafted pieces. Trained in the finest French watchmaking tradition, Sylvain Pinaud produces watches of quiet beauty and obsessive quality.",
+    tags: ["French","hand-crafted","independent","quiet beauty"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 70,
+    name: "Pascal Coyon",
+    brand: "",
+    location: "France",
+    country: "France",
+    region: "france",
+    founded: "c.2010",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "POA",
+    website: "",
+    instagram: "@pascal.coyon",
+    desc: "French independent watchmaker working in the artisan tradition, creating highly original watches by hand in small numbers.",
+    tags: ["French","hand made","independent","artisan"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 71,
+    name: "Hentschel Hamburg",
+    brand: "",
+    location: "Hamburg, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "2009",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "€5,000–30,000",
+    website: "https://www.hentschel-hamburg.de",
+    instagram: "@hentschel.hamburg",
+    desc: "Hamburg-based independent producing watches with gold and bronze movements in the finest German tradition. Dial typography and case design are elegant and restrained. Unusual for a German independent in using warm bronze and gold tones for movement components.",
+    tags: ["Hamburg","German","gold movement","bronze","restrained"],
+    specialties: ["guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 72,
+    name: "DeWitt",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2003",
+    volume: "~500/yr",
+    volumeNum: 500,
+    price: "CHF 10,000–200,000",
+    website: "https://www.dewitt.ch",
+    instagram: "@dewitt_watches",
+    desc: "Founded by Jérôme de Witt (descendant of Napoleon Bonaparte) and his wife, DeWitt combines neo-classical aesthetics with complex complications. The Academia series features tourbillons and automatic movements with elaborate case-work and movement architecture. Grand Geneva style with historical ambition.",
+    tags: ["Geneva","Napoleon descendant","tourbillon","academic","grand style"],
+    specialties: ["tourbillon","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 73,
+    name: "Petermann Bédat",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2017",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "CHF 30,000–150,000",
+    website: "https://www.petermannbedat.com",
+    instagram: "@petermannbedat",
+    desc: "Rémi Petermann and Christophe Bédat met at a watchmaking school and together create watches combining traditional finishing with modern complications. The 1967 model features a reversible case. A young Geneva atelier with an ambitious vision for Haute Horlogerie.",
+    tags: ["Geneva","young atelier","reversible case","traditional finishing","complications"],
+    specialties: ["complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 74,
+    name: "Cyrus",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2010",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "CHF 20,000–100,000",
+    website: "https://www.cyrus-watches.ch",
+    instagram: "@cyruswatches",
+    desc: "Known for their retrograde hour on the left, retrograde seconds on the right, and running seconds displayed on a vertically-oriented wheel in the middle of an arching bridge from 6 to 12. A dramatic dial architecture unique to Cyrus. Geneva-made with in-house movements.",
+    tags: ["retrograde","running seconds","bridge architecture","Geneva","in-house"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 75,
+    name: "Van der Gang Watches",
+    brand: "",
+    location: "Netherlands",
+    country: "Netherlands",
+    region: "netherlands",
+    founded: "c.2010",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "€10,000–50,000",
+    website: "https://www.vandergang.com",
+    instagram: "@vandergang_watches",
+    desc: "Dutch independent using Valjoux movements as a base, heavily modified and finished to an exceptional standard. Known for creative dial and case design with a Dutch design sensibility. Strong community presence.",
+    tags: ["Dutch","Valjoux","modified","creative design","Netherlands"],
+    specialties: ["guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 76,
+    name: "Louis Moinet",
+    brand: "",
+    location: "Saint-Blaise, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1806 (re-est. 2002)",
+    volume: "~500/yr",
+    volumeNum: 500,
+    price: "CHF 5,000–500,000+",
+    website: "https://www.louismoinet.com",
+    instagram: "@louismoinet",
+    desc: "Named for the 19th-century watchmaker who invented the modern chronograph, Louis Moinet is known for colorful, intricately engraved dials, skeletonization, and high complications. The Mecanograph features visible gears through open dials. Meteorite and other exotic materials are frequently used.",
+    tags: ["colorful","engraved","skeletonization","meteorite","1806","complications"],
+    specialties: ["skeleton","guilloché","complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 77,
+    name: "Angelus",
+    brand: "",
+    location: "Le Locle, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1891 (re-est. 2015)",
+    volume: "Limited",
+    volumeNum: 200,
+    price: "CHF 10,000–80,000",
+    website: "https://www.angelus-watch.com",
+    instagram: "@angeluswatchco",
+    desc: "Re-established Angelus has made a strong return with desk clocks and skeleton tourbillons. The U10 Tourbillon Lumière features a 60-second flying tourbillon visible through a dramatically skeletonized dial and titanium case. A bold resurrection of a historic Swiss brand.",
+    tags: ["1891","re-established","skeleton tourbillon","flying tourbillon","Le Locle"],
+    specialties: ["tourbillon","skeleton"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 78,
+    name: "MB&F (Legacy Machine)",
+    brand: "MB&F LM",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2011 (LM series)",
+    volume: "Very limited (LM series)",
+    volumeNum: 50,
+    price: "CHF 80,000–500,000",
+    website: "https://www.mbandf.com",
+    instagram: "@mbandf",
+    desc: "The Legacy Machine series from MB&F takes a more traditional approach than the HM series — suspended balance wheels over domed dials, classical complications, and exceptional finishing. The LM Perpetual was designed with Stephen McDonnell and won the GPHG. The LM101 features a giant suspended balance.",
+    tags: ["suspended balance","perpectual calendar","GPHG","classical","Geneva"],
+    specialties: ["complications","gphg"],
+    gphg: true,
+    image: ""
+  },
+  {
+    id: 79,
+    name: "Voutilainen × Urban Jürgensen",
+    brand: "Collaboration",
+    location: "Switzerland / Denmark",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "Historic collaboration",
+    volume: "Historic",
+    volumeNum: 0,
+    price: "POA",
+    website: "https://www.urbanjurgensen.com",
+    instagram: "",
+    desc: "Kari Voutilainen worked at Urban Jürgensen before founding his own atelier, designing the signature Breguet-style hands and other dial elements that define UJ's contemporary identity. This collaboration shaped two of the most admired independent houses.",
+    tags: ["collaboration","Voutilainen","Urban Jürgensen","hands design"],
+    specialties: ["guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 80,
+    name: "MIH Watch",
+    brand: "Musée International d'Horlogerie",
+    location: "La Chaux-de-Fonds, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2004",
+    volume: "Very limited (museum exclusive)",
+    volumeNum: 50,
+    price: "CHF 5,571",
+    website: "https://www.mih.ch",
+    instagram: "",
+    desc: "A watch created by Ludwig Oechslin (former museum conservator), Paul Gerber (master watchmaker), and Christian Gafner (industrial designer). Features Oechslin's annual calendar with 9 parts, based on an ETA Valjoux 7750 movement, and a stopwatch with central minute counter. Available exclusively at the Musée International d'Horlogerie and Embassy stores in Lucerne and St. Moritz.",
+    tags: ["museum exclusive","annual calendar","9-part","Oechslin","Gerber","La Chaux-de-Fonds"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 81,
+    name: "Kikuchi Nakagawa",
+    brand: "",
+    location: "Tokyo, Japan",
+    country: "Japan",
+    region: "japan",
+    founded: "c.2015",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "$20,000",
+    website: "https://www.kikuchinakagawa.com",
+    instagram: "@kikuchinakagawa",
+    desc: "Tokyo-based independent producing watches with a 36.8×8.5mm stainless steel case, grained black matte dial, lacquered white Breguet-style numerals, small seconds subdial at 6 o'clock, space hour hand, and shapely minutes hand. 22mm between lugs, Vaucher movement. A refined Japanese take on classical Swiss watchmaking.",
+    tags: ["Japanese","Tokyo","Vaucher","Breguet numerals","small seconds","refined"],
+    specialties: ["guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 82,
+    name: "Shane Tulloch",
+    brand: "",
+    location: "Geneva, Switzerland (American maker)",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2019",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "CHF 100,000+",
+    website: "https://www.shanetulloch.com",
+    instagram: "@shanetulloch_watches",
+    desc: "A longtime protégé of Kari Voutilainen, Shane Tulloch launched his own brand in October 2019. In-house movements with hand-finished twin barrels (finished by Voutilainen himself). Among the most anticipated debut watchmakers of the 2010s decade.",
+    tags: ["Voutilainen protégé","twin barrels","in-house","debut","Geneva"],
+    specialties: ["guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 83,
+    name: "Steffen Cornehl",
+    brand: "",
+    location: "Stuttgart, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "c.2010",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "POA",
+    website: "https://www.steffencornehl.de",
+    instagram: "@steffencornehl",
+    desc: "Based in Stuttgart, Steffen Cornehl produces handmade watches of extraordinary quality in very small numbers. One of Germany's lesser-known but highly respected independent watchmakers.",
+    tags: ["Stuttgart","German","hand made","independent","small numbers"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 84,
+    name: "Thomas Prescher",
+    brand: "Thomas Prescher Haute Horlogerie",
+    location: "Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2002",
+    volume: "Extremely limited",
+    volumeNum: 10,
+    price: "CHF 200,000+",
+    website: "https://www.thomasprescher.com",
+    instagram: "@thomas.prescher",
+    desc: "Hand-made and bespoke with high complications including triple-axis tourbillons — among the most extreme anti-gravity mechanisms ever made. Dials with applied plaques for name, model, and number. Prescher is one of the world's greatest tourbillon specialists.",
+    tags: ["triple-axis tourbillon","hand made","bespoke","anti-gravity","Swiss"],
+    specialties: ["tourbillon","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 85,
+    name: "Favre-Leuba",
+    brand: "",
+    location: "Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1737",
+    volume: "Limited",
+    volumeNum: 500,
+    price: "CHF 5,000–30,000",
+    website: "https://www.favre-leuba.com",
+    instagram: "@favreleuba",
+    desc: "The second-oldest watch brand in the world, founded in 1737. Re-established with a focus on tool and dive watches with vintage-inspired aesthetics. The Raider Sea Sky featured a mechanical altimeter and depth gauge. A genuine historic name with renewed purpose.",
+    tags: ["1737","second oldest","historic","tool watch","dive watch","altimeter"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 86,
+    name: "Julien Coudray 1518",
+    brand: "",
+    location: "France",
+    country: "France",
+    region: "france",
+    founded: "c.2014",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "POA",
+    website: "https://www.juliencoudray.com",
+    instagram: "@juliencoudray1518",
+    desc: "French watchmaker notable for a unique service indicator, personal symbol or watch number at 8 o'clock, knurling around the bezel and caseback, and a distinctive cupcake crown. Each watch carries a personal signature through these design details.",
+    tags: ["French","service indicator","knurling","unique details","cupcake crown"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 87,
+    name: "Dubey & Schaldenbrand",
+    brand: "",
+    location: "La Chaux-de-Fonds, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1946",
+    volume: "Limited",
+    volumeNum: 200,
+    price: "CHF 5,000–30,000",
+    website: "https://www.dubeyschaldenbrand.com",
+    instagram: "@dubeyschaldenbrand",
+    desc: "Known for distinctive cushion cases and the Diplomatique model. The Jugendstil-inspired Arabic numerals are a recognizable house signature. A mid-century Swiss independent with a distinctive aesthetic that has survived multiple ownership changes with its character intact.",
+    tags: ["cushion case","Diplomatique","Jugendstil","Art Nouveau","La Chaux-de-Fonds"],
+    specialties: ["guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 88,
+    name: "Van Bricht",
+    brand: "",
+    location: "Belgium",
+    country: "Belgium",
+    region: "other",
+    founded: "c.2010",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "POA",
+    website: "",
+    instagram: "@vanbricht",
+    desc: "Two Belgian makers creating watches with hand guilloché dials, thin or no bezel, and tourbillon movements. An unusual Belgian voice in the guilloché and tourbillon world.",
+    tags: ["Belgian","guilloché","tourbillon","thin bezel","hand guilloché"],
+    specialties: ["tourbillon","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 89,
+    name: "Jaeger & Benzinger",
+    brand: "",
+    location: "Eisingen (Baden-Württemberg), Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "c.2000",
+    volume: "Very limited (bespoke)",
+    volumeNum: 20,
+    price: "POA",
+    website: "https://www.jaeger-benzinger.de",
+    instagram: "@jaegerbenzinger",
+    desc: "Master engraver Jochen Benzinger takes existing movements from brands like Lange, IWC, Rolex, and Patek and transforms them through extraordinary hand engraving, skeletonization, and guilloché. The result is a fully bespoke transformation. Also ennobles D.Dornblüth movements.",
+    tags: ["German","engraving","skeletonization","bespoke transformation","movement finishing"],
+    specialties: ["skeleton","guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 90,
+    name: "Rebellion Timepieces",
+    brand: "",
+    location: "Le Locle, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2008",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "CHF 20,000–200,000",
+    website: "https://www.rebellion-timepieces.com",
+    instagram: "@rebelliontimepieces",
+    desc: "With motorsport DNA, Rebellion Timepieces creates bold, large-cased watches with unique power reserve systems and unconventional display methods. Their T-1000 holds a 1000-hour power reserve. Dramatic, uncompromising aesthetics.",
+    tags: ["motorsport","1000-hour power reserve","bold","Le Locle","Swiss"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 91,
+    name: "Hautelence",
+    brand: "",
+    location: "Le Locle, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2008",
+    volume: "Very limited",
+    volumeNum: 50,
+    price: "CHF 20,000–100,000",
+    website: "https://www.hautlence.com",
+    instagram: "@hautlence",
+    desc: "Sister company to H. Moser and Precision Engineering, all owned by the Meylan family (MEL). Hautlence creates mechanical watches with jumping hours and retrograde minutes — a ballet of precision and creativity. Their HL collection reimagines time display through dramatic choreographed movement.",
+    tags: ["Meylan family","jumping hours","retrograde","Moser sister brand","Le Locle"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 92,
+    name: "Genus",
+    brand: "",
+    location: "Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "c.2015",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "POA",
+    website: "https://www.genus.watch",
+    instagram: "@genus.watch",
+    desc: "Swiss independent making watches that blend classical horological traditions with contemporary design. Focused on architectural purity and movement finishing in the best Swiss tradition.",
+    tags: ["Swiss","classical","contemporary","architectural","movement finishing"],
+    specialties: ["complications","guilloché"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 93,
+    name: "Alchemists",
+    brand: "",
+    location: "Unknown",
+    country: "Unknown",
+    region: "other",
+    founded: "Unknown",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "POA",
+    website: "",
+    instagram: "",
+    desc: "Independent watchmaking atelier producing highly original, hand-made watches. Further details being researched.",
+    tags: ["independent","hand made"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 94,
+    name: "Benjamin Chee (BCHH)",
+    brand: "BC Haut Horlogerie",
+    location: "Singapore",
+    country: "Singapore",
+    region: "other",
+    founded: "c.2012",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "POA",
+    website: "",
+    instagram: "@bchh_official",
+    desc: "Singapore-based Benjamin Chee creates custom watches with Swiss movements from Vaucher and exotic dial options. An Asian voice in high watchmaking, creating bespoke pieces for a clientele that expects both Swiss quality and personalization.",
+    tags: ["Singapore","Vaucher","bespoke","exotic dials","Asian market"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 95,
+    name: "Ochs und Junior / Paul Gerber",
+    brand: "",
+    location: "Zurich, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1975",
+    volume: "Very limited",
+    volumeNum: 20,
+    price: "CHF 20,000–150,000",
+    website: "https://www.paul-gerber.ch",
+    instagram: "@paulgerber.watches",
+    desc: "Paul Gerber is Zurich's master restorer and a brilliant independent watchmaker in his own right. He worked with Ludwig Oechslin on the MIH watch and creates exceptional in-house complications. His Model 33 double retrograde and astronomical watches are masterworks.",
+    tags: ["Zurich","restorer","complications","in-house","Oechslin collaborator"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 96,
+    name: "Tutima",
+    brand: "",
+    location: "Glashütte, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "1927",
+    volume: "~1,500/yr",
+    volumeNum: 1500,
+    price: "€2,500–15,000",
+    website: "https://www.tutima.com",
+    instagram: "@tutima",
+    desc: "Glashütte's classic military watchmaker, founded in 1927. Known for precision chronographs built to military specifications. In-house calibres in the finest Glashütte tradition. The Grand Flieger series continues a tradition of instrument watches with exceptional clarity.",
+    tags: ["Glashütte","military","chronograph","1927","in-house","instrument watch"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 97,
+    name: "Chronoswiss",
+    brand: "",
+    location: "Luzern, Switzerland (originally Munich)",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1983",
+    volume: "Limited",
+    volumeNum: 500,
+    price: "CHF 3,000–30,000",
+    website: "https://www.chronoswiss.com",
+    instagram: "@chronoswisswatches",
+    desc: "Founded by Gerd-R. Lang in Munich, Chronoswiss pioneered the use of the Tricompax layout and Regulator display for modern watches. Their Opus and Flying Regulator models remain iconic. Now based in Luzern, they continue producing Swiss-made watches with classical complications.",
+    tags: ["regulator","Munich origin","Tricompax","classical","Swiss"],
+    specialties: ["complications"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 98,
+    name: "Marco Lang",
+    brand: "Lang & Heyne",
+    location: "Dresden, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "2001",
+    volume: "Very limited",
+    volumeNum: 30,
+    price: "€15,000–80,000",
+    website: "https://www.lang-heyne.de",
+    instagram: "@langandheyne",
+    desc: "Marco Lang co-founded Lang & Heyne in Dresden. See the Lang & Heyne entry for full details. The brand continues the great Saxon watchmaking tradition with gold movements, three lugs per side, and exceptional engraving.",
+    tags: ["Dresden","Saxon","gold movement","co-founder","Lang & Heyne"],
+    specialties: ["guilloché","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 99,
+    name: "Andersen Genève (Svend Andersen)",
+    brand: "",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1980",
+    volume: "Very limited (bespoke)",
+    volumeNum: 15,
+    price: "CHF 30,000–200,000+",
+    website: "https://www.andersen-geneve.ch",
+    instagram: "@andersengeneve",
+    desc: "Svend Andersen is a Danish-Swiss watchmaker who has spent over 40 years in Geneva. Pioneer of miniature art watches and bespoke complications. His secular perpetual calendar and worldtime watches are genuine horological achievements. Known for meticulous execution of unusual ideas.",
+    tags: ["bespoke","secular perpetual","Geneva","Danish-Swiss","artisan"],
+    specialties: ["complications","bespoke"],
+    gphg: false,
+    image: ""
+  },
+  {
+    id: 100,
+    name: "Sinn",
+    brand: "",
+    location: "Frankfurt, Germany",
+    country: "Germany",
+    region: "germany",
+    founded: "1961",
+    volume: "~5,000/yr",
+    volumeNum: 5000,
+    price: "€1,000–5,000",
+    website: "https://www.sinn.de",
+    instagram: "@sinn_spezialuhren",
+    desc: "Frankfurt's great instrument watchmaker, Sinn uses proprietary technologies — Ar-Dehumidification, Tegiment surface hardening, oils that work at extreme temperatures — in tool watches built to professional standards. The U1 is one of the toughest dive watches ever made; the 142 is a classic pilot's chronograph. Exceptional value.",
+    tags: ["Frankfurt","instrument watch","tool watch","Tegiment","Ar-dehumidification","value"],
+    specialties: [],
+    gphg: false,
+    image: ""
+  }
+];
+
+let activeFilter = 'all';
+let activeRegion = 'all';
+let currentSort = 'name';
+let searchTerm = '';
+
+function renderCards(data) {
+  const grid = document.getElementById('grid');
+  document.getElementById('result-count').textContent = data.length;
+  document.getElementById('header-count').textContent = makers.length;
+
+  if (data.length === 0) {
+    grid.innerHTML = '<div class="no-results"><h3>No watchmakers found</h3><p>Try broadening your search or filters.</p></div>';
+    return;
+  }
+
+  grid.innerHTML = data.map(m => {
+    const gphgBadge = m.gphg ? '<span class="gphg">GPHG Winner</span>' : '';
+    const volBadge = m.volumeNum > 0 && m.volume ? `<span class="volume-badge">${m.volume}</span>` : '';
+    const tags = m.tags.slice(0,3).map(t => `<span class="tag">${t}</span>`).join('');
+    const regionTag = `<span class="tag region">${m.region === 'switzerland' ? 'Switzerland' : m.region === 'germany' ? 'Germany' : m.region === 'france' ? 'France' : m.region === 'uk' ? 'United Kingdom' : m.region === 'japan' ? 'Japan' : m.region === 'usa' ? 'USA' : m.region === 'netherlands' ? 'Netherlands' : m.country}</span>`;
+
+    const websiteLink = m.website ? `<a href="${m.website}" target="_blank" rel="noopener">↗ Website</a>` : '';
+    const igLink = m.instagram ? `<a href="https://instagram.com/${m.instagram.replace('@','')}" target="_blank" rel="noopener">⌂ ${m.instagram}</a>` : '';
+
+    const imgHtml = m.image
+      ? `<img class="card-img" src="${m.image}" alt="Watch by ${m.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        + `<div class="card-img-placeholder" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg><span>No image available</span></div>`
+      : `<div class="card-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg><span>Image coming soon</span></div>`;
+
+    return `<div class="card" onclick="openModal(${m.id})">
+      ${imgHtml}
+      <div class="card-body">
+        <div class="card-header">
+          <div>
+            <div class="card-name">${m.name}</div>
+            ${m.brand && m.brand !== m.name ? `<div class="card-brand">${m.brand}</div>` : ''}
+          </div>
+        </div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          ${m.location}
+        </div>
+        <p class="card-desc">${m.desc}</p>
+        <div class="card-tags">${regionTag}${tags}</div>
+        <div class="card-meta">
+          ${gphgBadge}${volBadge}
+          ${websiteLink}${igLink}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filter() {
+  let data = makers.filter(m => {
+    const search = searchTerm.toLowerCase();
+    const matchSearch = !search ||
+      m.name.toLowerCase().includes(search) ||
+      m.brand.toLowerCase().includes(search) ||
+      m.location.toLowerCase().includes(search) ||
+      m.country.toLowerCase().includes(search) ||
+      m.desc.toLowerCase().includes(search) ||
+      m.tags.some(t => t.toLowerCase().includes(search));
+
+    const matchFilter = activeFilter === 'all' ||
+      (activeFilter === 'gphg' && m.gphg) ||
+      m.specialties.includes(activeFilter);
+
+    const matchRegion = activeRegion === 'all' ||
+      (activeRegion === 'other' && !['switzerland','germany','france','uk','japan','usa','netherlands'].includes(m.region)) ||
+      m.region === activeRegion;
+
+    return matchSearch && matchFilter && matchRegion;
+  });
+
+  if (currentSort === 'name') data.sort((a,b) => a.name.localeCompare(b.name));
+  else if (currentSort === 'name-desc') data.sort((a,b) => b.name.localeCompare(a.name));
+  else if (currentSort === 'country') data.sort((a,b) => a.country.localeCompare(b.country) || a.name.localeCompare(b.name));
+  else if (currentSort === 'volume') data.sort((a,b) => b.volumeNum - a.volumeNum);
+
+  renderCards(data);
+}
+
+document.getElementById('search').addEventListener('input', e => {
+  searchTerm = e.target.value;
+  filter();
+});
+
+document.getElementById('specialty-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('#specialty-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.filter;
+  filter();
+});
+
+document.querySelector('.region-filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn || !btn.dataset.region) return;
+  document.querySelectorAll('.region-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeRegion = btn.dataset.region;
+  filter();
+});
+
+document.getElementById('sort-select').addEventListener('change', e => {
+  currentSort = e.target.value;
+  filter();
+});
+
+function openModal(id) {
+  const m = makers.find(x => x.id === id);
+  if (!m) return;
+
+  document.getElementById('m-eyebrow').textContent = m.country + (m.founded ? ' · Est. ' + m.founded : '');
+  document.getElementById('m-name').textContent = m.name;
+  document.getElementById('m-brand').textContent = m.brand && m.brand !== m.name ? m.brand : '';
+
+  const imgContainer = document.getElementById('m-img-container');
+  if (m.image) {
+    imgContainer.innerHTML = `<img class="modal-img" src="${m.image}" alt="Watch by ${m.name}" onerror="this.parentElement.innerHTML='<div class=modal-img-placeholder><svg width=32 height=32 viewBox=\\'0 0 24 24\\' fill=none stroke=currentColor stroke-width=1><circle cx=12 cy=12 r=10/><circle cx=12 cy=12 r=3/></svg><span>Image unavailable</span></div>'">`;
+  } else {
+    imgContainer.innerHTML = `<div class="modal-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg><span>Image coming soon — paste a URL in the <code>image</code> field for ${m.name}</span></div>`;
+  }
+  document.getElementById('m-desc').textContent = m.desc;
+  document.getElementById('m-location').textContent = m.location || '—';
+  document.getElementById('m-founded').textContent = m.founded || '—';
+  document.getElementById('m-volume').textContent = m.volume || '—';
+  document.getElementById('m-price').textContent = m.price || '—';
+
+  const websiteEl = document.getElementById('m-website');
+  websiteEl.innerHTML = m.website ? `<a href="${m.website}" target="_blank" rel="noopener">${m.website.replace('https://','')}</a>` : '—';
+
+  const igEl = document.getElementById('m-instagram');
+  igEl.innerHTML = m.instagram ? `<a href="https://instagram.com/${m.instagram.replace('@','')}" target="_blank" rel="noopener">${m.instagram}</a>` : '—';
+
+  const tagsEl = document.getElementById('m-tags');
+  tagsEl.innerHTML = m.tags.map(t => `<span class="tag">${t}</span>`).join('') +
+    (m.gphg ? '<span class="gphg">GPHG Winner</span>' : '');
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+filter();
+</script>
+</body>
+</html>
