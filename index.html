@@ -254,12 +254,29 @@
   }
 
   /* CARD IMAGE */
+  .card-img-wrap {
+    position: relative;
+  }
+
   .card-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
     border-bottom: 1px solid rgba(184,152,74,0.1);
+  }
+
+  .card-img-credit {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size: 9px;
+    color: rgba(255,255,255,0.55);
+    background: rgba(0,0,0,0.35);
+    padding: 1px 5px;
+    border-radius: 2px;
+    letter-spacing: 0.03em;
+    pointer-events: none;
   }
 
   .card-img-placeholder {
@@ -699,7 +716,8 @@ const makers = [
     tags: ["fumé dials","minimalist","in-house movements","gphg"],
     specialties: ["guilloché","complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 2,
@@ -718,7 +736,8 @@ const makers = [
     tags: ["GPHG 2012","GPHG 2013","GPHG 2015","GPHG 2018","chronograph","jumping seconds"],
     specialties: ["complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 3,
@@ -737,7 +756,8 @@ const makers = [
     tags: ["GPHG 2018","Patek trained","in-house","time-only","architecture"],
     specialties: ["guilloché","gphg"],
     gphg: true,
-    image: "https://cdn.prod.website-files.com/671a12559287990b37b903bc/69ce701925cd526ff559812c_Lifestyle_RRCHF_Front_Platine_.avif"
+    image: "https://cdn.prod.website-files.com/671a12559287990b37b903bc/69ce701925cd526ff559812c_Lifestyle_RRCHF_Front_Platine_.avif",
+    imageCredit: ""
   },
   {
     id: 4,
@@ -756,7 +776,8 @@ const makers = [
     tags: ["GPHG 2013","GPHG 2014","GPHG 2015","GPHG 2017","GPHG 2019","dial artistry","enamel","guilloché"],
     specialties: ["guilloché","gphg","bespoke"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 5,
@@ -775,7 +796,8 @@ const makers = [
     tags: ["GPHG 2014","cowhorn lugs","guilloché","Breguet hands","historic"],
     specialties: ["guilloché","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 6,
@@ -794,7 +816,8 @@ const makers = [
     tags: ["GPHG 2014","GPHG 2016","tourbillon","remontoire","Dutch"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 7,
@@ -813,7 +836,8 @@ const makers = [
     tags: ["GPHG 2013","constant force","Logical One","micro-rotor","in-house"],
     specialties: ["complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 8,
@@ -832,7 +856,8 @@ const makers = [
     tags: ["resonance","tourbillon","brass movements","complications","icon"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: ""
+    image: "https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/RQ_PT_HD_1.png?itok=WqwmrUXv",
+    imageCredit: "© F.P. Journe"
   },
   {
     id: 9,
@@ -851,7 +876,8 @@ const makers = [
     tags: ["Glashütte","three-quarter plate","in-house","hand-finished","German"],
     specialties: ["complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 10,
@@ -870,7 +896,8 @@ const makers = [
     tags: ["bespoke","unique pieces","Omega movement","Barcelona"],
     specialties: ["bespoke","guilloché"],
     gphg: false,
-    image: ""
+    image: "https://atelier-b4f9.kxcdn.com/wp-content/uploads/2026/04/ADC28_atelierdechronometrie_subhome-1400x963.webp",
+    imageCredit: ""
   },
   {
     id: 11,
@@ -889,7 +916,8 @@ const makers = [
     tags: ["Japanese","time-only","Breguet numerals","manual wind","limited"],
     specialties: ["bespoke","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 12,
@@ -908,7 +936,8 @@ const makers = [
     tags: ["California","infinity weave","engine-turned","guilloché","UWD movement"],
     specialties: ["guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 13,
@@ -927,7 +956,8 @@ const makers = [
     tags: ["Paris","tourbillon","regulator","hand made","young maker","subscription"],
     specialties: ["tourbillon","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 14,
@@ -946,7 +976,8 @@ const makers = [
     tags: ["bespoke","3D printed","enamel dials","affordable","Dutch"],
     specialties: ["bespoke","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 15,
@@ -965,7 +996,8 @@ const makers = [
     tags: ["Japanese","accessible","automatic","Myota","Bunkyō","Reiwa"],
     specialties: [],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 16,
@@ -984,7 +1016,8 @@ const makers = [
     tags: ["Japanese","in-house","tourbillon","hand made","master"],
     specialties: ["tourbillon","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 17,
@@ -1003,7 +1036,8 @@ const makers = [
     tags: ["Finnish","in-house dials","guilloché","affordable","skeleton hands"],
     specialties: ["guilloché","skeleton","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 18,
@@ -1022,7 +1056,8 @@ const makers = [
     tags: ["Glashütte","in-house","skeleton","engraving","gold movement","affordable"],
     specialties: ["skeleton","guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 19,
@@ -1041,7 +1076,8 @@ const makers = [
     tags: ["Malaysian design","Swiss made","composite dials","ETA","affordable","sellout"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 20,
@@ -1060,7 +1096,8 @@ const makers = [
     tags: ["legend","grande sonnerie","simplicity","hand-finished","icon","ultra-premium"],
     specialties: ["complications","guilloché","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 21,
@@ -1079,7 +1116,8 @@ const makers = [
     tags: ["co-axial","George Daniels legacy","Isle of Man","hand made","English tradition","ultra-premium"],
     specialties: ["tourbillon","complications","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 22,
@@ -1098,7 +1136,8 @@ const makers = [
     tags: ["co-axial escapement","legend","London","historical","ultra-premium"],
     specialties: ["complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 23,
@@ -1117,7 +1156,8 @@ const makers = [
     tags: ["dual balance","Harmonious Oscillator","Swiss Jura","complications","unique mechanism"],
     specialties: ["complications","skeleton"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 24,
@@ -1136,7 +1176,8 @@ const makers = [
     tags: ["French","independent","small quantity","professor","artisan"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 25,
@@ -1155,7 +1196,8 @@ const makers = [
     tags: ["perpetual calendar","moon phase","simplified","Ludwig Oechslin","affordable"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 26,
@@ -1174,7 +1216,8 @@ const makers = [
     tags: ["GPHG 2015","GPHG 2018","enamel dials","micro-rotor","annual calendar","Geneva"],
     specialties: ["complications","guilloché","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 27,
@@ -1193,7 +1236,8 @@ const makers = [
     tags: ["Dutch","flying regulator","day/night","ETA 6498","affordable"],
     specialties: ["complications","skeleton"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 28,
@@ -1212,7 +1256,8 @@ const makers = [
     tags: ["moon phase","silicon","titanium","innovative","GPHG winner"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: ""
+    image: "https://www.debethune.ch/wp-content/uploads/2025/09/DB_Starry_Varius_SDT_Rose_Gold-scaled-e1756817890277.png",
+    imageCredit: "© De Bethune"
   },
   {
     id: 29,
@@ -1231,7 +1276,8 @@ const makers = [
     tags: ["Belgian","orbital display","oil-filled","no hands","innovative","ROCS"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 30,
@@ -1250,7 +1296,8 @@ const makers = [
     tags: ["fluid display","innovative","mechanical bellows","unique","Swiss"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 31,
@@ -1269,7 +1316,8 @@ const makers = [
     tags: ["horological machines","collaborative","sculptural","complications","GPHG winner"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 32,
@@ -1288,7 +1336,8 @@ const makers = [
     tags: ["satellite hours","wandering hours","sculptural","Swiss","avant-garde"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 33,
@@ -1307,7 +1356,8 @@ const makers = [
     tags: ["visible lugs","engraved movements","London case","British-Swiss","tourbillon"],
     specialties: ["tourbillon","guilloché","skeleton"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 34,
@@ -1326,7 +1376,8 @@ const makers = [
     tags: ["multi-axis tourbillon","GPHG winner","hand made","ultra-premium","complications"],
     specialties: ["tourbillon","complications","guilloché","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 35,
@@ -1345,7 +1396,8 @@ const makers = [
     tags: ["tourbillon","shock-proof","daily wear","hand made","5-year warranty"],
     specialties: ["tourbillon","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 36,
@@ -1364,7 +1416,8 @@ const makers = [
     tags: ["GPHG 2016 Aiguille d'Or","fusée chain","tourbillon","marine chronometer","Chopard"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: ""
+    image: "https://res.cloudinary.com/ferdinandberthoud/image/upload/v1756793923/Collection/chronometre-fb-4btc/chronometre-fb-4btc.1/Product-Images/Slider-FB4BTC-Front-01.jpg",
+    imageCredit: "© Ferdinand Berthoud"
   },
   {
     id: 37,
@@ -1377,13 +1430,14 @@ const makers = [
     volume: "~12/yr",
     volumeNum: 12,
     price: "From CHF 250,000",
-    website: "https://www.dcandaux.com",
+    website: "https://go.davidcandaux.com/",
     instagram: "@dcandaux",
     desc: "David Candaux worked as concepteur horloger at MB&F and JLC (on HM6 Space Pirate and Hybris Mechanica Sonnerie). His own watches feature a remarkable asymmetric design: symmetrical 9–3 o'clock, asymmetric 12–6 o'clock with a crown that pops up from the dial at 6. Tonneau/oval titanium and white gold cases, 43mm. Tourbillon, guilloché, and all movements engineered in-house and hand made. 10-year warranty. ~$250k+.",
     tags: ["tourbillon","asymmetric","titanium","crown on dial","MB&F alumni","10-year warranty"],
     specialties: ["tourbillon","complications","guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/msgsndr/sd8vnjCQnuOAjP20ervG/media/68d47ca9a1dad72fbc66352d.webp",
+    imageCredit: "© D. Candaux"
   },
   {
     id: 38,
@@ -1402,7 +1456,8 @@ const makers = [
     tags: ["Gothic","engraving","from scratch","Hungarian","3rd generation"],
     specialties: ["skeleton","guilloché","bespoke"],
     gphg: false,
-    image: "https://revolutionwatch.com/wp-content/uploads/2026/04/11-Aaron-Becsei-Pameus.jpg"
+    image: "https://revolutionwatch.com/wp-content/uploads/2026/04/11-Aaron-Becsei-Pameus.jpg",
+    imageCredit: ""
   },
   {
     id: 39,
@@ -1421,7 +1476,8 @@ const makers = [
     tags: ["American","Pennsylvania","tourbillon","enamel","engine-turned","in-house"],
     specialties: ["tourbillon","guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 40,
@@ -1440,7 +1496,8 @@ const makers = [
     tags: ["London","English tradition","200 years","gold","historical","double impulse"],
     specialties: ["complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "https://frodsham.com/images/content-images/wristwatch/wristwatch.jpg",
+    imageCredit: ""
   },
   {
     id: 41,
@@ -1459,7 +1516,8 @@ const makers = [
     tags: ["eccentric","upside down","Half Time","F.P. Journe alumnus","Geneva","playful"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 42,
@@ -1478,7 +1536,8 @@ const makers = [
     tags: ["GPHG Innovation","steampunk","hand made","3x GPHG","rare","avant-garde"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 43,
@@ -1497,7 +1556,8 @@ const makers = [
     tags: ["moon phase 2M years","hand made","tourbillon","skeletonization","ultra-accurate"],
     specialties: ["tourbillon","skeleton","complications"],
     gphg: false,
-    image: "https://astrehler.ch/wp-content/uploads/2022/05/Nouveau-projet-560x606.png"
+    image: "https://astrehler.ch/wp-content/uploads/2022/05/Nouveau-projet-560x606.png",
+    imageCredit: ""
   },
   {
     id: 44,
@@ -1516,7 +1576,8 @@ const makers = [
     tags: ["Patek co-founder","Geneva","in-house","crowdfunded","openwork","historic"],
     specialties: ["skeleton","complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "https://www.czapek.com/web/image/34982-7e1c4b0d/Beauty-2.webp",
+    imageCredit: "© Czapek & Cie"
   },
   {
     id: 45,
@@ -1535,7 +1596,8 @@ const makers = [
     tags: ["bespoke","German","guilloché","Benzinger engraving","rose gold movement","affordable"],
     specialties: ["guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "https://www.dornblueth.com/images/moon/Web-996M-cer-ST.png",
+    imageCredit: "© D. Dornblüth & Sohn"
   },
   {
     id: 46,
@@ -1554,7 +1616,8 @@ const makers = [
     tags: ["complications","skeletonization","colorful","customizable","Geneva","in-house"],
     specialties: ["tourbillon","complications","skeleton"],
     gphg: false,
-    image: ""
+    image: "https://cdn.prod.website-files.com/679909974fd640b3d9964718/6892074260489b788bf65fc6_Contrast%20new_7.avif",
+    imageCredit: "© Emmanuel Bouchet"
   },
   {
     id: 47,
@@ -1573,7 +1636,8 @@ const makers = [
     tags: ["Dresden","Saxony","gold movement","three lugs","engraving","German"],
     specialties: ["guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 48,
@@ -1592,7 +1656,8 @@ const makers = [
     tags: ["Russian","Joker","eccentric","single hand","astronomical","humorous"],
     specialties: ["complications","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 49,
@@ -1611,7 +1676,8 @@ const makers = [
     tags: ["English","Norfolk","guilloché","hand-made","revival"],
     specialties: ["guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 50,
@@ -1630,7 +1696,8 @@ const makers = [
     tags: ["Finnish","moon phase","ultra-accurate","in-house movement","dark aesthetic"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 51,
@@ -1649,7 +1716,8 @@ const makers = [
     tags: ["central tourbillon","double tourbillon","resonance","lifetime warranty","flying"],
     specialties: ["tourbillon","complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
 
   {
@@ -1669,7 +1737,8 @@ const makers = [
     tags: ["collaborative","Voutilainen","Strehler","Christophe Claret","Chapter series"],
     specialties: ["tourbillon","complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 54,
@@ -1688,7 +1757,8 @@ const makers = [
     tags: ["GPHG 2015 Public Prize","triple tourbillon","tourbillon of tourbillons","Geneva","avant-garde"],
     specialties: ["tourbillon","complications","gphg"],
     gphg: true,
-    image: "https://antoine-preziuso.com/site2018/wp-content/uploads/2026/01/AP_TTR3_Chronometer_unique_piece_1N-936x1024.webp"
+    image: "https://antoine-preziuso.com/site2018/wp-content/uploads/2026/01/AP_TTR3_Chronometer_unique_piece_1N-936x1024.webp",
+    imageCredit: ""
   },
   {
     id: 55,
@@ -1707,7 +1777,8 @@ const makers = [
     tags: ["GPHG chronograph","Singer Vehicle","LA design","Geneva made","chronograph","flyback"],
     specialties: ["complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 56,
@@ -1726,7 +1797,8 @@ const makers = [
     tags: ["Irish","hand-finished","rare location","independent"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 57,
@@ -1745,7 +1817,8 @@ const makers = [
     tags: ["French design","Art Deco","linear display","retrograde","customizable","Swiss made"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 58,
@@ -1764,7 +1837,8 @@ const makers = [
     tags: ["resonance","skeleton","in-house","Mirrored Force","Swiss"],
     specialties: ["skeleton","complications"],
     gphg: false,
-    image: ""
+    image: "https://arminstrom.com/wp-content/uploads/armin-strom-minute-repeater-resonance-12-59-shop1-768x864.webp",
+    imageCredit: ""
   },
   {
     id: 59,
@@ -1777,13 +1851,14 @@ const makers = [
     volume: "Very limited",
     volumeNum: 50,
     price: "CHF 100,000–1,000,000+",
-    website: "https://www.christopheclaret.com",
-    instagram: "@christopheclaret",
+    website: "",
+    instagram: "@christopheclaretofficial",
     desc: "Among the world's great complications specialists, Christophe Claret designed movements for Dior, Franck Muller, MB&F, and Maîtres du Temps before establishing his eponymous label. Known for extraordinary striking mechanisms, ultra-complex chronographs, and theatrical complications including a blackjack-playing watch.",
     tags: ["complications","striking","chronograph","Le Locle","complications specialist"],
     specialties: ["tourbillon","complications"],
     gphg: false,
-    image: ""
+    image: "https://d2j6dbq0eux0bg.cloudfront.net/images/16115183/1418916960.jpg",
+    imageCredit: "© Exquisite Timepieces"
   },
   {
     id: 60,
@@ -1802,7 +1877,8 @@ const makers = [
     tags: ["American","rotating seconds","USA made","steel","titanium","unique display"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 61,
@@ -1821,7 +1897,8 @@ const makers = [
     tags: ["Oregon","hand made","6497","one-person","American studio"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 62,
@@ -1834,13 +1911,14 @@ const makers = [
     volume: "Very limited",
     volumeNum: 50,
     price: "€15,000–100,000",
-    website: "https://www.cvdk.com",
+    website: "https://www.klaauw.com/eng/",
     instagram: "@cvdk_astronomical_watches",
     desc: "Christiaan van der Klaauw is the Netherlands' master of astronomical complications, creating mechanisms that display the solar system's movements — orreries, planispheres, lunar calendars, and sunrise/sunset indicators. Over 50 years of experience. His Real Moon uses a miniature depiction of the actual moon's surface accurate to 122 years.",
     tags: ["Dutch","astronomical","orrery","moon phase","planisphere","50+ years"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "https://www.klaauw.com/images/fe/model/masterpiece_klaauw_cvdk_grand_planetarium_eccentric_manufacture_front_rose_gold.png",
+    imageCredit: ""
   },
   {
     id: 63,
@@ -1859,7 +1937,8 @@ const makers = [
     tags: ["Swiss","in-house","1902","Roma","micro-rotor","movement maker"],
     specialties: ["complications","skeleton"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 64,
@@ -1878,7 +1957,8 @@ const makers = [
     tags: ["Israeli","day/night","conceptual","unique layout","moon","sun"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 65,
@@ -1897,7 +1977,8 @@ const makers = [
     tags: ["Dutch","100% hand made","bespoke","every component","unique"],
     specialties: ["bespoke","skeleton"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 66,
@@ -1916,7 +1997,8 @@ const makers = [
     tags: ["astronomical","sunrise/sunset","latitude","in-house","Swiss"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 67,
@@ -1935,7 +2017,8 @@ const makers = [
     tags: ["Paris","disc display","no hands","French design","contemporary"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 68,
@@ -1954,7 +2037,8 @@ const makers = [
     tags: ["French","independent","complications","creative display"],
     specialties: ["complications","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 69,
@@ -1973,7 +2057,8 @@ const makers = [
     tags: ["French","hand-crafted","independent","quiet beauty"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 70,
@@ -1992,7 +2077,8 @@ const makers = [
     tags: ["French","hand made","independent","artisan"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 71,
@@ -2011,7 +2097,8 @@ const makers = [
     tags: ["Hamburg","German","gold movement","bronze","restrained"],
     specialties: ["guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 72,
@@ -2024,13 +2111,14 @@ const makers = [
     volume: "~500/yr",
     volumeNum: 500,
     price: "CHF 10,000–200,000",
-    website: "https://www.dewitt.ch",
+    website: "https://dewitt.ch/",
     instagram: "@dewitt_watches",
     desc: "Founded by Jérôme de Witt (descendant of Napoleon Bonaparte) and his wife, DeWitt combines neo-classical aesthetics with complex complications. The Academia series features tourbillons and automatic movements with elaborate case-work and movement architecture. Grand Geneva style with historical ambition.",
     tags: ["Geneva","Napoleon descendant","tourbillon","academic","grand style"],
     specialties: ["tourbillon","complications"],
     gphg: false,
-    image: ""
+    image: "https://dewitt.ch/wp-content/uploads/2022/08/twenty-8-eight-grand-skeleton.png",
+    imageCredit: "© DeWitt"
   },
   {
     id: 73,
@@ -2049,7 +2137,8 @@ const makers = [
     tags: ["Geneva","young atelier","reversible case","traditional finishing","complications"],
     specialties: ["complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 74,
@@ -2068,7 +2157,8 @@ const makers = [
     tags: ["retrograde","running seconds","bridge architecture","Geneva","in-house"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "https://cyrus-watches.ch/storage/watch/Vertical_Jasper_Tourbillon-600x5502026-04-10-04-03-19-600x550.jpg",
+    imageCredit: "© Cyrus Watches"
   },
   {
     id: 75,
@@ -2087,7 +2177,8 @@ const makers = [
     tags: ["Dutch","Valjoux","modified","creative design","Netherlands"],
     specialties: ["guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 76,
@@ -2106,7 +2197,8 @@ const makers = [
     tags: ["colorful","engraved","skeletonization","meteorite","1806","complications"],
     specialties: ["skeleton","guilloché","complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 77,
@@ -2125,7 +2217,8 @@ const makers = [
     tags: ["1891","re-established","skeleton tourbillon","flying tourbillon","Le Locle"],
     specialties: ["tourbillon","skeleton"],
     gphg: false,
-    image: "https://angelus.b-cdn.net/content/uploads/2025/10/14192505/0CHCSP01AV010S-Chronographe-Telemetre-Steel-Grey-face-up.png?quality=60&width=884"
+    image: "https://angelus.b-cdn.net/content/uploads/2025/10/14192505/0CHCSP01AV010S-Chronographe-Telemetre-Steel-Grey-face-up.png?quality=60&width=884",
+    imageCredit: ""
   },
   {
     id: 78,
@@ -2144,7 +2237,8 @@ const makers = [
     tags: ["suspended balance","perpectual calendar","GPHG","classical","Geneva"],
     specialties: ["complications","gphg"],
     gphg: true,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 79,
@@ -2163,7 +2257,8 @@ const makers = [
     tags: ["collaboration","Voutilainen","Urban Jürgensen","hands design"],
     specialties: ["guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 80,
@@ -2182,7 +2277,8 @@ const makers = [
     tags: ["museum exclusive","annual calendar","9-part","Oechslin","Gerber","La Chaux-de-Fonds"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 81,
@@ -2201,7 +2297,8 @@ const makers = [
     tags: ["Japanese","Tokyo","Vaucher","Breguet numerals","small seconds","refined"],
     specialties: ["guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 82,
@@ -2220,7 +2317,8 @@ const makers = [
     tags: ["Voutilainen protégé","twin barrels","in-house","debut","Geneva"],
     specialties: ["guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 83,
@@ -2239,7 +2337,8 @@ const makers = [
     tags: ["Stuttgart","German","hand made","independent","small numbers"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 84,
@@ -2258,7 +2357,8 @@ const makers = [
     tags: ["triple-axis tourbillon","hand made","bespoke","anti-gravity","Swiss"],
     specialties: ["tourbillon","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 85,
@@ -2271,13 +2371,14 @@ const makers = [
     volume: "Limited",
     volumeNum: 500,
     price: "CHF 5,000–30,000",
-    website: "https://www.favre-leuba.com",
+    website: "https://www.favreleuba.com/",
     instagram: "@favreleuba",
     desc: "The second-oldest watch brand in the world, founded in 1737. Re-established with a focus on tool and dive watches with vintage-inspired aesthetics. The Raider Sea Sky featured a mechanical altimeter and depth gauge. A genuine historic name with renewed purpose.",
     tags: ["1737","second oldest","historic","tool watch","dive watch","altimeter"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "https://static.favreleuba.com/media/catalog/product/cache/b45a4be2d3a70f769c6482a2d9bede01/f/a/favre-leuba-chief-00.20103.150.01.200.png",
+    imageCredit: "© Favre-Leuba"
   },
   {
     id: 86,
@@ -2296,7 +2397,8 @@ const makers = [
     tags: ["French","service indicator","knurling","unique details","cupcake crown"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 87,
@@ -2309,13 +2411,14 @@ const makers = [
     volume: "Limited",
     volumeNum: 200,
     price: "CHF 5,000–30,000",
-    website: "https://www.dubeyschaldenbrand.com",
+    website: "https://www.facebook.com/Dubeywatch/",
     instagram: "@dubeyschaldenbrand",
     desc: "Known for distinctive cushion cases and the Diplomatique model. The Jugendstil-inspired Arabic numerals are a recognizable house signature. A mid-century Swiss independent with a distinctive aesthetic that has survived multiple ownership changes with its character intact.",
     tags: ["cushion case","Diplomatique","Jugendstil","Art Nouveau","La Chaux-de-Fonds"],
     specialties: ["guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 88,
@@ -2334,11 +2437,8 @@ const makers = [
     tags: ["Belgian","guilloché","tourbillon","thin bezel","hand guilloché"],
     specialties: ["tourbillon","guilloché"],
     gphg: false,
-    image: ""
-  },
-  {
-    id: 89,
-    name: "Jaeger & Benzinger",
+    image: "https://cdn11.bigcommerce.com/s-bpf02c8y86/images/stencil/4000x4000/products/4558/27136/DSC_7522__56814.1635966618.JPG?c=2&_gl=1*1tzafcx*_gcl_au*MjEwMTk5OTQ5NS4xNzgwNzU4Nzg1*_ga*MTA3ODE0ODY5Ny4xNzgwNzU4Nzg1*_ga_S5LTLGL1B4*czE3ODA3NTg3ODUkbzEkZzEkdDE3ODA3NTg4MTEkajM0JGwwJGgxOTE3NDY5NzQ5",
+    imageCredit: "© Delraywatch.com"
     brand: "",
     location: "Eisingen (Baden-Württemberg), Germany",
     country: "Germany",
@@ -2353,7 +2453,8 @@ const makers = [
     tags: ["German","engraving","skeletonization","bespoke transformation","movement finishing"],
     specialties: ["skeleton","guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 90,
@@ -2372,7 +2473,8 @@ const makers = [
     tags: ["motorsport","1000-hour power reserve","bold","Le Locle","Swiss"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 91,
@@ -2391,7 +2493,8 @@ const makers = [
     tags: ["Meylan family","jumping hours","retrograde","Moser sister brand","Le Locle"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 92,
@@ -2410,7 +2513,8 @@ const makers = [
     tags: ["Swiss","classical","contemporary","architectural","movement finishing"],
     specialties: ["complications","guilloché"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 93,
@@ -2429,7 +2533,8 @@ const makers = [
     tags: ["independent","hand made"],
     specialties: ["bespoke"],
     gphg: false,
-    image: "https://monochrome-watches.com/app/uploads/2021/04/Introducing-The-Alchemists-Cu29-Creative-Act-II-2.jpg"
+    image: "https://monochrome-watches.com/app/uploads/2021/04/Introducing-The-Alchemists-Cu29-Creative-Act-II-2.jpg",
+    imageCredit: ""
   },
   {
     id: 94,
@@ -2442,13 +2547,12 @@ const makers = [
     volume: "Very limited",
     volumeNum: 20,
     price: "POA",
-    website: "",
-    instagram: "@bchh_official",
-    desc: "Singapore-based Benjamin Chee creates custom watches with Swiss movements from Vaucher and exotic dial options. An Asian voice in high watchmaking, creating bespoke pieces for a clientele that expects both Swiss quality and personalization.",
+    website: "https://bchh.ch/", creates custom watches with Swiss movements from Vaucher and exotic dial options. An Asian voice in high watchmaking, creating bespoke pieces for a clientele that expects both Swiss quality and personalization.",
     tags: ["Singapore","Vaucher","bespoke","exotic dials","Asian market"],
     specialties: ["bespoke"],
     gphg: false,
-    image: ""
+    image: "https://bchh.ch/cdn/shop/products/guillochecr6_4472x.jpg?v=1592100023",
+    imageCredit: ""
   },
   {
     id: 95,
@@ -2467,7 +2571,8 @@ const makers = [
     tags: ["Zurich","restorer","complications","in-house","Oechslin collaborator"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 96,
@@ -2486,7 +2591,8 @@ const makers = [
     tags: ["Glashütte","military","chronograph","1927","in-house","instrument watch"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 97,
@@ -2505,7 +2611,8 @@ const makers = [
     tags: ["regulator","Munich origin","Tricompax","classical","Swiss"],
     specialties: ["complications"],
     gphg: false,
-    image: ""
+    image: "https://escapementmagazine.com/wp-content/uploads/2024/02/Chronoswiss-Delphis-Sapphire-02.webp",
+    imageCredit: ""
   },
   {
     id: 98,
@@ -2524,7 +2631,8 @@ const makers = [
     tags: ["Dresden","Saxon","gold movement","co-founder","Lang & Heyne"],
     specialties: ["guilloché","bespoke"],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   },
   {
     id: 99,
@@ -2543,7 +2651,8 @@ const makers = [
     tags: ["bespoke","secular perpetual","Geneva","Danish-Swiss","artisan","hand made","historic"],
     specialties: ["complications","bespoke"],
     gphg: false,
-    image: "https://www.andersen-geneve.ch/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fzpq82ry5%2Fproduction%2Fa20910995b85535289edb7ad98de9adcc3dceb17-1360x1520.png%3Fauto%3Dformat&w=1920&q=75"
+    image: "https://www.andersen-geneve.ch/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fzpq82ry5%2Fproduction%2Fa20910995b85535289edb7ad98de9adcc3dceb17-1360x1520.png%3Fauto%3Dformat&w=1920&q=75",
+    imageCredit: ""
   },
   {
     id: 100,
@@ -2562,7 +2671,8 @@ const makers = [
     tags: ["Frankfurt","instrument watch","tool watch","Tegiment","Ar-dehumidification","value"],
     specialties: [],
     gphg: false,
-    image: ""
+    image: "",
+    imageCredit: ""
   }
 ];
 
@@ -2591,8 +2701,7 @@ function renderCards(data) {
     const igLink = m.instagram ? `<a href="https://instagram.com/${m.instagram.replace('@','')}" target="_blank" rel="noopener">⌂ ${m.instagram}</a>` : '';
 
     const imgHtml = m.image
-      ? `<img class="card-img" src="${m.image}" alt="Watch by ${m.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-        + `<div class="card-img-placeholder" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg><span>No image available</span></div>`
+      ? `<div class="card-img-wrap"><img class="card-img" src="${m.image}" alt="Watch by ${m.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=card-img-placeholder><svg width=32 height=32 viewBox=\\'0 0 24 24\\' fill=none stroke=currentColor stroke-width=1><circle cx=12 cy=12 r=10/><circle cx=12 cy=12 r=3/></svg><span>No image available</span></div>'">${m.imageCredit ? `<span class="card-img-credit">${m.imageCredit}</span>` : ''}</div>`
       : `<div class="card-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg><span>Image coming soon</span></div>`;
 
     return `<div class="card" onclick="openModal(${m.id})">
