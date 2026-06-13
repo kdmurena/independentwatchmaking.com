@@ -83,7 +83,7 @@
   /* HERO */
   .hero {
     background: var(--dark-2);
-    padding: 5rem 2rem 4rem;
+    padding: 2rem 2rem 1.75rem;
     text-align: center;
     border-bottom: 1px solid rgba(184,152,74,0.15);
     position: relative;
@@ -98,22 +98,17 @@
     pointer-events: none;
   }
 
-  .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-
   .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(1.6rem, 3.4vw, 2.75rem);
     font-weight: 300;
     color: var(--white);
-    letter-spacing: 0.04em;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero h1 em {
@@ -126,8 +121,8 @@
     color: var(--muted);
     font-weight: 300;
     max-width: 600px;
-    margin: 0 auto 3rem;
-    line-height: 1.7;
+    margin: 0 auto;
+    line-height: 1.6;
   }
 
   /* SEARCH & FILTERS */
@@ -617,7 +612,7 @@
     .grid { grid-template-columns: 1fr; }
     .modal { padding: 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; }
-    .hero { padding: 3rem 1rem 2.5rem; }
+    .hero { padding: 1.75rem 1rem 1.5rem; }
   }
 </style>
 </head>
@@ -629,8 +624,7 @@
 </header>
 
 <section class="hero">
-  <p class="hero-eyebrow">Horology's Independent Masters</p>
-  <h1>The Art of<br><em>Independent</em> Watchmaking</h1>
+  <h1>Horology's <em>Independent</em> Masters, Makers, Manufactures, and Micro-Brands</h1>
   <p class="hero-sub">A living catalogue of independent watchmakers worldwide — those who work outside the major conglomerates, making timepieces with uncompromising craft, vision, and soul.</p>
 </section>
 
