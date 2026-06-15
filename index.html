@@ -261,6 +261,28 @@
   .filter-btn:hover { border-color: var(--gold); color: var(--gold-light); }
   .filter-btn.active { background: rgba(184,152,74,0.15); border-color: var(--gold); color: var(--gold-light); }
 
+  /* Mobile-only "Filters" toggle to collapse the specialty/region rows */
+  .filter-toggle-btn {
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 1px solid rgba(184,152,74,0.25);
+    border-radius: 100px;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 6px 14px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .filter-toggle-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .filter-toggle-icon { transition: transform 0.2s; }
+  .filter-toggle-btn[aria-expanded="true"] .filter-toggle-icon { transform: rotate(180deg); }
+  .filter-toggle-btn[aria-expanded="true"] { border-color: var(--gold); color: var(--gold-light); }
+
   /* REGION FILTERS */
   .region-filters {
     width: 100%;
@@ -683,6 +705,19 @@
     .modal { padding: 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; }
     .hero { padding: 1.75rem 1rem 1.5rem; }
+
+    /* Collapse the specialty/region filter rows behind a toggle so the
+       sticky controls bar stays short and the listings remain reachable */
+    .filter-toggle-btn { display: flex; }
+    .filter-group, .region-filters {
+      display: none;
+      max-height: 40vh;
+      overflow-y: auto;
+    }
+    .controls.filters-open .filter-group,
+    .controls.filters-open .region-filters {
+      display: flex;
+    }
   }
 </style>
 </head>
@@ -944,6 +979,10 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input type="text" id="search" placeholder="Search by name, location, specialty…" autocomplete="off">
   </div>
+  <button class="filter-toggle-btn" id="filter-toggle" type="button" aria-expanded="false">
+    <span>Filters</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-toggle-icon"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
   <div class="filter-group" id="specialty-filters">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="tourbillon">Tourbillon</button>
@@ -4618,6 +4657,13 @@ function filter() {
 document.getElementById('search').addEventListener('input', e => {
   searchTerm = e.target.value;
   filter();
+});
+
+document.getElementById('filter-toggle').addEventListener('click', () => {
+  const controls = document.querySelector('.controls');
+  const btn = document.getElementById('filter-toggle');
+  const isOpen = controls.classList.toggle('filters-open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 document.getElementById('specialty-filters').addEventListener('click', e => {
