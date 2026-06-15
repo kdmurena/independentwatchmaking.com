@@ -263,7 +263,7 @@
 
   /* Mobile-only "Filters" toggle to collapse the specialty/region rows */
   .filter-toggle-btn {
-    display: none;
+    display: flex;
     align-items: center;
     gap: 0.4rem;
     background: transparent;
@@ -282,6 +282,19 @@
   .filter-toggle-icon { transition: transform 0.2s; }
   .filter-toggle-btn[aria-expanded="true"] .filter-toggle-icon { transform: rotate(180deg); }
   .filter-toggle-btn[aria-expanded="true"] { border-color: var(--gold); color: var(--gold-light); }
+
+  /* Filter panel (Details + Countries) is collapsed by default on all
+     screen sizes, behind the "Filters" toggle button. */
+  .filter-panel { display: none; width: 100%; }
+  .controls.filters-open .filter-panel {
+    display: block;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filter-group, .region-filters {
+    display: flex;
+  }
 
   /* REGION FILTERS */
   .region-filters {
@@ -705,19 +718,6 @@
     .modal { padding: 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; }
     .hero { padding: 1.75rem 1rem 1.5rem; }
-
-    /* Collapse the specialty/region filter rows behind a toggle so the
-       sticky controls bar stays short and the listings remain reachable */
-    .filter-toggle-btn { display: flex; }
-    .filter-group, .region-filters {
-      display: none;
-      max-height: 40vh;
-      overflow-y: auto;
-    }
-    .controls.filters-open .filter-group,
-    .controls.filters-open .region-filters {
-      display: flex;
-    }
   }
 </style>
 </head>
@@ -983,56 +983,59 @@
     <span>Filters</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-toggle-icon"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
+  <div class="filter-panel">
   <div class="filter-group" id="specialty-filters">
+    <span class="region-label">Details:</span>
     <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="tourbillon">Tourbillon</button>
-    <button class="filter-btn" data-filter="chronograph">Chronograph</button>
-    <button class="filter-btn" data-filter="rattrapante">Rattrapante / Split-Seconds</button>
-    <button class="filter-btn" data-filter="minute repeater">Minute Repeater</button>
-    <button class="filter-btn" data-filter="perpetual calendar">Perpetual Calendar</button>
-    <button class="filter-btn" data-filter="moon phase">Moon Phase</button>
     <button class="filter-btn" data-filter="astronomical">Astronomical</button>
-    <button class="filter-btn" data-filter="retrograde">Retrograde</button>
-    <button class="filter-btn" data-filter="constant force">Constant Force</button>
-    <button class="filter-btn" data-filter="resonance">Resonance</button>
-    <button class="filter-btn" data-filter="deadbeat seconds">Deadbeat Seconds</button>
-    <button class="filter-btn" data-filter="foudroyante">Foudroyante</button>
-    <button class="filter-btn" data-filter="jumping hour">Jumping Hour</button>
-    <button class="filter-btn" data-filter="world time">World Time</button>
-    <button class="filter-btn" data-filter="enamel">Enamel</button>
-    <button class="filter-btn" data-filter="skeleton">Skeleton</button>
-    <button class="filter-btn" data-filter="guilloché">Guilloché</button>
-    <button class="filter-btn" data-filter="complications">Complications</button>
-    <button class="filter-btn" data-filter="gphg">GPHG Winner</button>
     <button class="filter-btn" data-filter="bespoke">Bespoke</button>
+    <button class="filter-btn" data-filter="chronograph">Chronograph</button>
+    <button class="filter-btn" data-filter="complications">Complications</button>
+    <button class="filter-btn" data-filter="constant force">Constant Force</button>
+    <button class="filter-btn" data-filter="deadbeat seconds">Deadbeat Seconds</button>
+    <button class="filter-btn" data-filter="enamel">Enamel</button>
+    <button class="filter-btn" data-filter="foudroyante">Foudroyante</button>
+    <button class="filter-btn" data-filter="gphg">GPHG Winner</button>
+    <button class="filter-btn" data-filter="guilloché">Guilloché</button>
+    <button class="filter-btn" data-filter="jumping hour">Jumping Hour</button>
+    <button class="filter-btn" data-filter="minute repeater">Minute Repeater</button>
+    <button class="filter-btn" data-filter="moon phase">Moon Phase</button>
+    <button class="filter-btn" data-filter="perpetual calendar">Perpetual Calendar</button>
+    <button class="filter-btn" data-filter="rattrapante">Rattrapante / Split-Seconds</button>
+    <button class="filter-btn" data-filter="resonance">Resonance</button>
+    <button class="filter-btn" data-filter="retrograde">Retrograde</button>
+    <button class="filter-btn" data-filter="skeleton">Skeleton</button>
+    <button class="filter-btn" data-filter="tourbillon">Tourbillon</button>
+    <button class="filter-btn" data-filter="world time">World Time</button>
   </div>
   <div class="region-filters">
-    <span class="region-label">Region:</span>
+    <span class="region-label">Countries:</span>
     <button class="filter-btn active" data-region="all">All</button>
-    <button class="filter-btn" data-region="switzerland">Switzerland</button>
-    <button class="filter-btn" data-region="germany">Germany</button>
-    <button class="filter-btn" data-region="france">France</button>
-    <button class="filter-btn" data-region="uk">United Kingdom</button>
-    <button class="filter-btn" data-region="ireland">Ireland</button>
-    <button class="filter-btn" data-region="japan">Japan</button>
-    <button class="filter-btn" data-region="usa">USA</button>
-    <button class="filter-btn" data-region="netherlands">Netherlands</button>
+    <button class="filter-btn" data-region="austria">Austria</button>
+    <button class="filter-btn" data-region="belgium">Belgium</button>
+    <button class="filter-btn" data-region="canada">Canada</button>
+    <button class="filter-btn" data-region="china">China</button>
     <button class="filter-btn" data-region="denmark">Denmark</button>
     <button class="filter-btn" data-region="finland">Finland</button>
-    <button class="filter-btn" data-region="sweden">Sweden</button>
-    <button class="filter-btn" data-region="china">China</button>
-    <button class="filter-btn" data-region="belgium">Belgium</button>
-    <button class="filter-btn" data-region="austria">Austria</button>
+    <button class="filter-btn" data-region="france">France</button>
+    <button class="filter-btn" data-region="germany">Germany</button>
+    <button class="filter-btn" data-region="hungary">Hungary</button>
+    <button class="filter-btn" data-region="ireland">Ireland</button>
+    <button class="filter-btn" data-region="israel">Israel</button>
+    <button class="filter-btn" data-region="italy">Italy</button>
+    <button class="filter-btn" data-region="japan">Japan</button>
+    <button class="filter-btn" data-region="luxembourg">Luxembourg</button>
+    <button class="filter-btn" data-region="malaysia">Malaysia</button>
+    <button class="filter-btn" data-region="netherlands">Netherlands</button>
+    <button class="filter-btn" data-region="new_zealand">New Zealand</button>
     <button class="filter-btn" data-region="russia">Russia</button>
     <button class="filter-btn" data-region="singapore">Singapore</button>
     <button class="filter-btn" data-region="spain">Spain</button>
-    <button class="filter-btn" data-region="israel">Israel</button>
-    <button class="filter-btn" data-region="canada">Canada</button>
-    <button class="filter-btn" data-region="hungary">Hungary</button>
-    <button class="filter-btn" data-region="italy">Italy</button>
-    <button class="filter-btn" data-region="malaysia">Malaysia</button>
-    <button class="filter-btn" data-region="new_zealand">New Zealand</button>
-    <button class="filter-btn" data-region="luxembourg">Luxembourg</button>
+    <button class="filter-btn" data-region="sweden">Sweden</button>
+    <button class="filter-btn" data-region="switzerland">Switzerland</button>
+    <button class="filter-btn" data-region="uk">United Kingdom</button>
+    <button class="filter-btn" data-region="usa">USA</button>
+  </div>
   </div>
 </div>
 
