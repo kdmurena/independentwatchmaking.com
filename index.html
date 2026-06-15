@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231a1a2e' stroke='%23b8984a' stroke-width='3'/><circle cx='32' cy='32' r='24' fill='none' stroke='%23b8984a' stroke-width='1' opacity='0.4'/><circle cx='32' cy='32' r='2.5' fill='%23ffffff'/><line x1='32' y1='32' x2='23' y2='18' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/><line x1='32' y1='32' x2='47' y2='15' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round'/><line x1='32' y1='8' x2='32' y2='13' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><line x1='32' y1='51' x2='32' y2='56' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><line x1='8' y1='32' x2='13' y2='32' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><line x1='51' y1='32' x2='56' y2='32' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Italianno&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@1,700;1,800&family=DM+Sans:wght@300;400;500&family=Italianno&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -51,7 +51,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    min-height: 64px;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
   }
 
   .site-title {
@@ -117,7 +119,6 @@
     text-align: center;
     border-bottom: 1px solid rgba(184,152,74,0.15);
     position: relative;
-    overflow: hidden;
   }
 
   .hero-inner {
@@ -157,7 +158,7 @@
 
   @media (max-width: 800px) {
     .hero-inner { flex-direction: column; flex-wrap: wrap; gap: 1.25rem; }
-    .hero-clock-wrap { width: 140px; max-width: 140px; }
+    .hero-clock-wrap { width: 140px; max-width: 140px; padding: 2px 0; }
     .hero-clock-wrap svg { width: 140px; height: 140px; }
   }
 
@@ -674,8 +675,10 @@
   .hidden { display: none !important; }
 
   @media (max-width: 640px) {
-    header { padding: 0 1rem; }
-    .controls { padding: 1rem; }
+    header { padding: 0.5rem 1rem; }
+    .site-title { font-size: 1.1rem; }
+    .header-count { font-size: 11px; }
+    .controls { padding: 1rem; top: 67px; }
     .grid { grid-template-columns: 1fr; }
     .modal { padding: 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; }
@@ -693,7 +696,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-clock-wrap">
-      <svg id="hero-clock" width="165" height="165" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg id="hero-clock" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <!-- Metallic gold gradient for rim, hands, numerals, apertures -->
           <linearGradient id="metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
@@ -712,6 +715,13 @@
             <stop offset="70%" stop-color="#D4B87A"/>
             <stop offset="100%" stop-color="#A4842F"/>
           </linearGradient>
+          <!-- Radial gold for numerals: uniform bright metallic tone regardless of angular position -->
+          <radialGradient id="numeral-gold" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="92">
+            <stop offset="55%" stop-color="#FFF6DC"/>
+            <stop offset="78%" stop-color="#F0DBA8"/>
+            <stop offset="92%" stop-color="#D9BC78"/>
+            <stop offset="100%" stop-color="#C9A659"/>
+          </radialGradient>
           <!-- Radial metallic gold for the moon disk: domed, polished gleam -->
           <radialGradient id="moon-gold" cx="38%" cy="32%" r="75%">
             <stop offset="0%" stop-color="#FFFBF0"/>
@@ -739,10 +749,10 @@
         <g id="minute-track" stroke="url(#metallic-gold-soft)"></g>
 
         <!-- Hour numerals (Breguet-style italic, upright) -->
-        <g id="hour-numerals" fill="url(#metallic-gold-soft)" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+        <g id="hour-numerals" fill="url(#numeral-gold)" stroke="#7A5A22" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
 
         <!-- LOCAL TIME label, Breguet-style cursive -->
-        <text x="100" y="56" text-anchor="middle" font-family="'Italianno', cursive" font-size="17" fill="url(#metallic-gold-soft)">Local Time</text>
+        <text x="100" y="56" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="url(#metallic-gold-soft)">Local</text>
 
         <!-- Day / Date / Month apertures, centered between 12 numeral and center pinion -->
         <g id="day-date-month-apertures">
@@ -750,7 +760,7 @@
           <text id="day-text" x="63" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">MON</text>
 
           <rect x="85" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
-          <text id="date-text" x="100" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">1</text>
+          <text id="date-text" x="100" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#0E0D0B" font-weight="600">1</text>
 
           <rect x="122" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
           <text id="month-text" x="137" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">JAN</text>
@@ -813,7 +823,7 @@
     </div>
     <div class="hero-clock-wrap">
       <!-- ===== SECOND CLOCK: Geneva time, white dial, blue numerals/hands, gold rim ===== -->
-      <svg id="hero-clock-geneva" width="165" height="165" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg id="hero-clock-geneva" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <!-- Heat-blued steel gradient for hour/minute hands -->
           <linearGradient id="blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="100">
@@ -858,10 +868,10 @@
         <g id="g-minute-track" stroke="#1E4D8C"></g>
 
         <!-- Genève label, Breguet-style cursive -->
-        <text x="100" y="56" text-anchor="middle" font-family="'Italianno', cursive" font-size="17" fill="#1E4D8C">Genève</text>
+        <text x="100" y="56" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Genève</text>
 
         <!-- Hour numerals (Breguet-style italic, upright, blue) -->
-        <g id="g-hour-numerals" fill="#1E4D8C" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+        <g id="g-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
 
         <!-- Day / Date / Month apertures, centered between 12 numeral and center pinion -->
         <g id="g-day-date-month-apertures">
@@ -869,7 +879,7 @@
           <text id="g-day-text" x="63" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
 
           <rect x="85" y="65" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
-          <text id="g-date-text" x="100" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">1</text>
+          <text id="g-date-text" x="100" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
 
           <rect x="122" y="65" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
           <text id="g-month-text" x="137" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
@@ -1108,7 +1118,7 @@ const makers = [
     price: "CHF 50,000–500,000+",
     website: "https://www.voutilainen.ch",
     instagram: "@karivo",
-    desc: "Finnish master Kari Voutilainen trained at the Watchmaking School of Le Sentier and worked at Urban Jürgensen before establishing his atelier in Môtiers. Renowned for extraordinary dial artistry — hand-engraved, enameled, and guilloché — combined with exceptional movement finishing. Multiple GPHG winner. He also designed the dial hands for Urban Jürgensen and mentors Shane Tulloch. Among the most coveted names in independent watchmaking.",
+    desc: "Born in Finland in 1962, Kari Voutilainen trained at the renowned watchmaking school in Tapiola before moving to Switzerland, where he completed a WOSTEP complicated-watchmaking course in 1989 and spent a decade at Parmigiani Mesure et Art du Temps restoring some of history's rarest timepieces — including, by his own account, a Breguet tourbillon pocket watch with a natural escapement that would later inspire his own movement designs. He subsequently led WOSTEP's complicated-watchmaking department before establishing his own atelier in Môtiers in 2002.\n\nHis early Observatoire model won the Men's Watch Prize at the 2007 GPHG — his first major award — and demand quickly outgrew its planned small production run; roughly 50 examples were made before it was succeeded in 2011 by the Vingt-8, built around his first in-house movement, the Caliber 28. The 28 is distinguished by a 'direct impulse' natural escapement using two large escapement wheels (13.6mm), German silver plates and bridges, an 18k rose gold wheel train, and a free-sprung balance with Breguet overcoil and Grossmann internal curve — all finished entirely by hand. The Vingt-8 family has since expanded into GMT, World Timer, retrograde, and sports executions, along with experimental variants such as the reversed-architecture Vingt-8 ISO and Vingt-8 Inverse.\n\nVoutilainen's dial work — hand-engraved, enameled, and guilloché, often produced through his Comblémine dial manufacture and Brodbeck Guillochage — has earned him more GPHG Artistic Crafts and Men's Watch prizes than almost any other independent: Hisui (2014), GMR (2015), 28ti and Starry Night Vine (2019), 28SC (2020), JI-KU (2022), World Timer (2023), KV20i Reversed (2024), and the lacquered 28 GML SOUYOU — created with Japanese lacquer artist Tatsuo Kitamura — which won Artistic Crafts in 2025. Beyond his own line, he supplies dials and hands for Urban Jürgensen, mentors AHCI candidate Shane Tulloch, runs the Voutilainen & Cattin case-making subsidiary, and has collaborated with Louis Vuitton and Phillips (notably on the revival of the historic Zenith Calibre 135-O). Despite this growing ecosystem, output remains famously scarce — fewer than 60 watches a year — and the workshop has at times paused new orders entirely to bring decade-long waiting lists back under control.",
     tags: ["GPHG 2013","GPHG 2014","GPHG 2015","GPHG 2017","GPHG 2019","dial artistry","enamel","guilloché"],
     specialties: ["guilloché", "gphg", "bespoke"],
     gphg: true,
@@ -1444,10 +1454,10 @@ const makers = [
     price: "CHF 2,000–8,000",
     website: "https://www.ming.watch",
     instagram: "@ming.watch",
-    desc: "Designed by Ming Thein in Kuala Lumpur and manufactured in Switzerland, MING watches are celebrated for their innovative multi-layer composite dials, thoughtful proportions, and excellent ETA/SchwartzEtienne movements. The 17.06 (Slate and Copper) features a 38mm case and fully lumed hands; the 27.01 a 6.9mm-thin profile. Strong community, instant sellouts, and exceptional design at accessible prices.",
-    tags: ["Malaysian design","Swiss made","composite dials","ETA","affordable","sellout"],
-    specialties: ["complications"],
-    gphg: false,
+    desc: "Founded in 2017 by commercial and watch photographer Ming Thein with a group of fellow enthusiasts, MING set out to prove that thoughtful design, careful engineering, and excellent finishing didn't require a five-figure price tag. The debut 17.01 — a 38mm titanium piece with a Swiss hand-wound movement, sapphire crystal, and 100m water resistance — launched at under USD 900 and sold out almost immediately, setting the tone for nearly every release since: small batches, instant sellouts, and a devoted online community that tracks each drop.\n\nThe 17 Series established MING's signature multi-layer composite dial construction, with the 17.06 'Monolith' (in Slate and Copper finishes) winning the GPHG Horological Revelation Prize in 2019 and becoming one of the brand's most sought-after references; its ETA 2824-2 base was reworked and assembled by Manufacture Schwarz-Etienne, adjusted to five positions with the dead-beat date click removed for a smoother crown action. The 19 Series pushed further upmarket: the 19.01 introduced a radically skeletonized case-and-dial architecture, while the 19.02 World Timer — MING's most expensive model at launch — used an exclusive movement co-developed with Schwarz-Etienne in a limited run. The 27.01, released in 2020 as a spiritual successor to the 17.01, repackaged MING's evolving design language around a heavily reworked ETA Peseux 7001 (remade almost entirely by Schwarz-Etienne, retaining only the gear train and escapement, finished in black chrome) and was a GPHG finalist in the Petite Aiguille category.\n\nThe 20 Series brought MING into chronographs and tourbillons: the 20.01 used a modified Agenhor AgenGraphe movement with skeletonized, anthracite-DLC-coated bridges and was a GPHG finalist in 2021, while the 20.11 'Mosaic' paired a Schwarz-Etienne ASE200-based caliber with an intricate dial assembly process documented in detail by Ming Thein himself. The 37 Series, MING's current core platform, has expanded rapidly: the 37.05 Moonphase combines a titanium case with a hand-wound Sellita-based movement and moon-phase complication; the 37.09 'Bluefin' (2024) and follow-up 'Uni' (2025, limited to 150 pieces) brought a 600m-rated dual-crown dive watch into the lineup as a successor to the earlier 18.01 H41 Abyss diver; the 37.11 'Odyssey' (2025) is offered as an open, non-limited annual production piece from CHF 4,950. The 37.04 Rose Gold Monopusher chronograph uses the La Joux-Perret LJP5000.M1 — a modern descendant of a movement originally designed by Techniques Horlogères Appliquées (THA), the storied collaboration between Vianney Halter, François-Paul Journe, and Denis Flageollet, previously famous for powering Cartier's Tortue Monopoussoir from the Collection Privée Cartier Paris.\n\nCollaborations have become an increasingly important part of MING's output: the brand is a founding member of the Alternative Horological Alliance (formed 2024 alongside other independent makers), and its first joint timepiece under that banner, the MING x J.N. Shapiro 37.06 'Lightning', pairs a rose-engine guilloché titanium dial — hand-engraved by Shapiro in Los Angeles, then heat-colored piece-by-piece by Ming Thein in Kuala Lumpur for a unique purple-to-gold gradient — with a Sellita-based SW210.M1 manual-wind movement featuring skeletonized, anthracite-coated bridges. Limited series such as the 2024 29.01 (25 pieces) and special projects like the 29.06 'Peep Show', which uses polarizing filters as hands for a dial that shifts appearance with viewing angle, illustrate the brand's continued appetite for technical experimentation. In 2024 MING opened its own production facility in La Chaux-de-Fonds, debuting with the 37.02 'Minimalist' — the first watch designed, engineered, and managed entirely in-house — and introducing MING Polar White, a proprietary broad-spectrum luminous material that glows true white rather than the typical green or blue tint.",
+    tags: ["Malaysian design","Swiss made","composite dials","Schwarz-Etienne","Agenhor","La Joux-Perret","limited editions","collaborations","sellout","GPHG"],
+    specialties: ["complications","chronograph","moon phase","world time","gphg"],
+    gphg: true,
     image: "https://www.ming.watch/cdn-cgi/image/fit=contain,quality=90,format=auto,width=800/https://cdn.prod.website-files.com/62cd089edd0c372e58a75932/690ac50941cee13fc55b96e2_907X_B0007785.jpg",
     imageCredit: "© MING",
     facebook: ""
@@ -1792,16 +1802,16 @@ const makers = [
     id: 37,
     name: "D. Candaux",
     brand: "",
-    location: "Sainte-Croix, Switzerland",
+    location: "Le Solliat, Switzerland",
     country: "Switzerland",
     region: "switzerland",
-    founded: "2012",
+    founded: "2017",
     volume: "~12/yr",
     volumeNum: 12,
     price: "From CHF 250,000",
     website: "https://go.davidcandaux.com/",
     instagram: "@dcandaux",
-    desc: "David Candaux worked as concepteur horloger at MB&F and JLC (on HM6 Space Pirate and Hybris Mechanica Sonnerie). His own watches feature a remarkable asymmetric design: symmetrical 9–3 o'clock, asymmetric 12–6 o'clock with a crown that pops up from the dial at 6. Tonneau/oval titanium and white gold cases, 43mm. Tourbillon, guilloché, and all movements engineered in-house and hand made. 10-year warranty. ~$250k+.",
+    desc: "David Candaux is a third-generation watchmaker from the Vallée de Joux, a student of the École Technique de la Vallée de Joux who credits mentors Gabriel Locatelli and Philippe Dufour for shaping his approach to the craft. After 17 years at Jaeger-LeCoultre working on complicated pieces, he launched his eponymous atelier in Le Solliat in 2017 with 'The First 8' — a limited run of eight watches built around his in-house Calibre 1740, named for the year a watchmaker is first documented as working in the Vallée de Joux.\n\nThe Calibre 1740 is a manually wound, hand-finished movement made almost entirely in titanium, comprising 287 parts and running at 3Hz with twin mainspring barrels for a 55-hour power reserve. Its signature feature is a flying tourbillon inclined at 30 degrees and mounted on ceramic ball bearings — designed, like Greubel Forsey's inclined tourbillons, to average out positional errors more effectively on the wrist — with the balance itself further inclined at 3 degrees relative to the case. A patented 'Magic Crown,' built from 31 components, retracts into the case at 6 o'clock. The asymmetric dial layout places hours and minutes off-center, often on a hand-grained or enamel sub-dial with motifs such as a wind rose, while a power-reserve indicator and the tourbillon itself sit in counterpoint across the face — finished with the workshop's own 'Côtes du Solliat' striping and a guilloché pattern called 'Pointe du Risoux,' inspired by the silhouette of the region's fir trees.\n\nSuccessive references — including the DC1, DC6, and the 1740 Half Hunter — share the Calibre 1740 architecture while varying the seconds display (a central hand on the DC1 versus an indicator integrated into the tourbillon cage on the DC6) and case treatment, with the Half Hunter borrowing the partially-shielded dial openings of antique captain's watches and marine instruments. Every movement and case is designed and made in-house in extremely small numbers, with each piece protected by several patents covering the tourbillon mounting and crown mechanism.",
     tags: ["tourbillon","asymmetric","titanium","crown on dial","MB&F alumni","10-year warranty"],
     specialties: ["tourbillon", "complications", "guilloché", "bespoke"],
     gphg: false,
@@ -1942,16 +1952,16 @@ const makers = [
     location: "Geneva, Switzerland",
     country: "Switzerland",
     region: "switzerland",
-    founded: "1839 (re-est. 2012)",
+    founded: "1845 (re-est. 2012)",
     volume: "Limited",
     volumeNum: 200,
     price: "CHF 10,000–100,000",
     website: "https://www.czapek.com",
     instagram: "@czapekgeneve",
-    desc: "François Czapek was Patek Philippe's original co-founder before their split. The re-established Czapek uses in-house calibres, crowdfunded by enthusiasts and made in collaboration with SchwartzEtienne. The Antarctique and Faubourg de Cracovie collections balance historic elegance with modern openwork dials. The Antarctique Rattrapante (2021, Calibre SXH5) places the split-seconds mechanism dial-side for full visibility — two column wheels at 12 and 6 o'clock, with the rattrapante clamps in clear view. The R.U.R. Tribute to Karel Čapek (2024, SXH6) continues the rattrapante line with a robot-themed dial. A rare brand with genuine 1839 heritage.",
-    tags: ["Patek co-founder","Geneva","in-house","crowdfunded","openwork","historic","rattrapante","Antarctique"],
-    specialties: ["skeleton", "complications", "guilloché", "chronograph", "rattrapante"],
-    gphg: false,
+    desc: "François Czapek, born in what is now Czechia, settled in Geneva in 1832 and partnered briefly with a young Antoine Patek before founding Czapek & Cie in 1845 with Juliusz Gruzewski — supplying watches to clients including French emperor Napoleon III. The original house traded until the late 1860s before fading from history. It was revived on December 12, 2012, by Xavier de Roquemaurel (now CEO), art expert Harry Guhl, and watchmaker Sébastien Follonier, who funded the relaunch through an equity crowdfunding campaign — one of the first in haute horlogerie — that drew over 200 shareholders. The first model, the 33 bis Quai des Bergues, referenced a 19th-century Czapek pocket watch and won the GPHG Public Prize in 2016.\n\nCzapek's four core collections are each built around their own dedicated, in-house-developed calibre. The Quai des Bergues offers a seven-day power reserve with day-of-the-week and power-reserve indicators; the Place Vendôme Tourbillon Suspendu combines a suspended tourbillon with a second time zone; the Faubourg de Cracovie, launched in 2018 and named after Czapek's historic Warsaw boutique, houses an integrated chronograph; and the Antarctique, launched in 2020, is the sports-luxury line built around the SXH5 — Czapek's first fully in-house movement, with a 60-hour power reserve and an open-worked architecture, paired with dials made by long-time partner Metalem using their signature 'lamé' striated technique.\n\nThe Antarctique Rattrapante (2021, also SXH5-based) moved the split-seconds chronograph mechanism to the dial side, with two column wheels visible at 12 and 6 o'clock, and the R.U.R. Tribute to Karel Čapek (2024, Calibre SXH6) continued that line with a robot-themed dial referencing the word's coining origin. Movement development has involved partners including Chronode (Jean-François Mojon), Altokalpa, and Micro Precision Systems. In 2022 Czapek opened its own manufacturing facility in Geneva — described by de Roquemaurel as as much a matter of survival as strategy — and is developing a new Calibre 10 architecture. 2025 marked the brand's 180th anniversary, celebrated with the Antarctique Révélation Spectrum, a collaboration with Revolution built on the fully skeletonized Antarctique Révélation.",
+    tags: ["Geneva","in-house movements","crowdfunded","openwork","historic","rattrapante","Antarctique","Metalem","Chronode"],
+    specialties: ["skeleton", "complications", "guilloché", "chronograph", "rattrapante", "gphg"],
+    gphg: true,
     image: "https://www.czapek.com/web/image/34982-7e1c4b0d/Beauty-2.webp",
     imageCredit: "© Czapek & Cie",
     facebook: ""
@@ -3378,7 +3388,7 @@ const makers = [
     price: "HKD 285,000+",
     website: "https://www.marcdarno.com/",
     instagram: "@marc.e.darno",
-    desc: "Marco Guarino was born in Chieri (Piedmont, Italy) in 1973, trained at the watchmaking school in Turin, and specializes in astronomical complications. An AHCI candidate since 2024, his Marc & Darnò atelier creates watches that indicate the relationship between terrestrial time and celestial mechanics. The Equation of Time features a meridian equation for true solar time, annual calendar, and a moon phase accurate to one day of error every 122 years — in a 39mm tantalum case with aventurine dial. Each watch offers bespoke customization. Described as 'a precise sundial on the wrist.'",
+    desc: "Marco Guarino was born in Chieri, near Turin, in 1973, and traces his path into watchmaking to a childhood fascination with astronomy. After training at the watchmaking school in Turin, he founded the Marc & Darnò atelier to pursue what he describes as the relationship between terrestrial time and the workings of the wider universe — and became an AHCI candidate in 2024 on the strength of that work.\n\nEarly models built this reputation around the moon: the Lunar Day combines a lunar-day indication with a precise moon-phase display on an open-worked dial, while the Lunar Equation went further, becoming — by the atelier's account — the first watch in the world to indicate the lunar equation, with the lunar-equation mechanism on the dial side and a separate lunar-phase display on the caseback. Both are built on a heavily reworked ETA base calibre (2824-2 for the Lunar Day, 2892-A2 for the Lunar Equation), redesigned and hand-finished in-house while retaining a 38-hour power reserve at 28,800 vph despite the added complexity.\n\nThe atelier's most ambitious project to date is the Equation of Time, a 39mm tantalum-cased watch with an aventurine dial and a solar motif in white and yellow gold, built around a newly developed in-house manually wound movement. It combines a meridian equation of time (showing the difference between mean and true solar time), an annual calendar, and a moon-phase display accurate to within one day every 122 years — described by the maker as 'a precise sundial on the wrist.' As with all Marc & Darnò pieces, every watch can be individually customized, with deliveries of the Equation of Time slated to begin in 2027.",
     tags: ["Italian","astronomical","equation of time","moon phase","AHCI candidate","Piedmont","bespoke"],
     specialties: ["complications", "minute repeater", "perpetual calendar", "world time", "astronomical"],
     gphg: false,
@@ -3609,7 +3619,7 @@ const makers = [
     price: "POA",
     website: "https://js-elliott.com/",
     instagram: "@j.s.elliottWatchmaking",
-    desc: "Jin-Seo Elliott Kim — who goes by Elliott — is one of independent watchmaking's most remarkable stories: he launched his debut watch, the Theory One, at just 17 years old, and sold all 40 pieces almost immediately. Of South Korean heritage and based in Illinois, he has been obsessed with intricate mechanisms since age 8. The Theory One and its successor Theory Two (39mm, Sellita SW261-1 automatic, openworked lugs, blue radiant grooved dial, hand-made nubuck strap) are designed from the ground up. One of the youngest independent watchmakers in the world and a significant talent to watch.",
+    desc: "Jin-Seo 'Elliott' Kim, of South Korean heritage and based in Illinois, has been fascinated by intricate mechanisms since around age 8 — and turned that fascination into one of independent watchmaking's most unusual debuts. In February 2024, at just 17 years old, he launched his first watch, the Theory One, designing the case, dial, and overall concept himself around a Sellita base movement; all 40 pieces sold out almost immediately, drawing attention well beyond the usual circle of teenage hobbies.\n\nLater that year he followed up with the Theory Two, a 39mm, 10.9mm-thick steel watch with distinctive open-worked lugs, a blue radiant grooved dial, and a hand-made grey nubuck strap with a steel pin buckle. It runs on a Sellita SW261-1 — the small-seconds version of the SW200 automatic, finished to a higher grade with blued screws, perlage, and rhodium plating, delivering a 41-hour power reserve at 4Hz with 50m water resistance. Unlike the Theory One, the Theory Two was offered as an ongoing model rather than a hard limited edition. Reviewers have repeatedly highlighted both the compact, wearable proportions — a 38mm case, 8mm thickness, and 43mm lug-to-lug on the debut piece — and Kim's apparent instinct for what collectors want, citing it as a rare case of a teenager out-designing watches costing many times more. Widely cited as one of the youngest independent watchmakers in the world, he continues to build and design under his own name from Illinois.",
     tags: ["American","Korean-American","Illinois","youngest","Theory One","Theory Two","sellout","17 years old"],
     specialties: ["bespoke"],
     gphg: false,
@@ -4092,7 +4102,7 @@ const makers = [
     price: "$500–2,500",
     website: "https://atowak.com/",
     instagram: "@atowakwatches",
-    desc: "The name ATOWAK originates from an implicit interpretation of 'UNIQUE' — shift each letter six positions forward using the ancient Caesar cipher, and a wholly new linguistic structure emerges. This is not merely a name but an attitude. ATOWAK's design unfolds along a timeline of past, present, and future — from revitalised legacy, to mechanised lifeforms, to transformed imagination — exploring the structural language of time across different dimensions. At the technological core is the brand's independently developed Original Star Wheel Display System: a three-dimensional star wheel structure with proprietary transmission logic that redefines how time is read, transforming mechanical movement into a visual dynamic language. Patent technologies include the Multi-segment Push-type Mechanism powered by a column wheel system, Single-Pinpoint Structure Orientation System, and Advanced Ruby Bearing System.\n\nCollections: Manta-X, Cosmofleet, Spaceship, Cobra, Cobra Venom, Tarantula, Ettore, and Windows Pro. International recognition: Cobra and Spaceship each earned the German iF Design Award; Cobra was named MUSE Design of the Year; Spaceship earned the MUSE Platinum Award. Over 10 million views from 100+ international watch media and creators. Available across 80+ countries. Select limited editions have entered the secondary market.",
+    desc: "Founded in Hong Kong around 2020, ATOWAK specializes in wandering-hour complications wrapped in deliberately sci-fi case designs — a combination that has made it one of the more visible names among the new wave of affordable Chinese independents. Its debut Ettore series introduced the brand's wandering-hour approach at an accessible price point; the 2022 Cobra followed with a screwless, tenon-and-mortise three-dimensional hour-wheel system built from a carbon-fiber lever and aluminum axis, its central tourbillon-like display framed as a 'gravitational field.' The brand's name is explained as a Caesar-cipher shift of the word 'unique.'\n\nThe 2023 Spaceship pushed the format further: a 42.5mm bullhead case (crown at 12 o'clock) with an irregularly shaped curved crystal, built around a modified Miyota 9039 automatic fitted with ATOWAK's own wandering-hours module — a 13-component mechanism with a miniature three-piece gear train driving a Starwheel-style rotating hour disc, complemented by a three-armed running-seconds wheel and a rippled matte dial, limited to 300 pieces. Both the Cobra and Spaceship won German iF Design Awards, with Cobra also named MUSE Design of the Year and Spaceship taking a MUSE Platinum Award. Later collections — Manta-X, Cosmofleet, Tarantula, Cobra Venom, and Windows Pro — continue the same playbook of modified Japanese base movements paired with elaborate proprietary display modules, sold direct-to-consumer across more than 80 countries with select limited editions now appearing on the secondary market.",
     tags: ["Chinese","Caesar cipher","star wheel","iF Design Award","MUSE Design of the Year","Spaceship","Cobra","Manta-X","unique display","avant-garde"],
     specialties: ["complications", "skeleton", "jumping hour", "world time", "astronomical"],
     gphg: false,
@@ -4254,13 +4264,13 @@ const makers = [
     location: "Grand Duchy of Luxembourg",
     country: "Luxembourg",
     region: "luxembourg",
-    founded: "c.2022",
+    founded: "2018",
     volume: "8 pieces per edition",
     volumeNum: 8,
     price: "POA",
     website: "https://dukehorlogerie.com/",
     instagram: "@dukehorlogerie",
-    desc: "Born from a passion for watchmaking and nourished by an intimate understanding of centuries-old traditions, DUKE Haute Horlogerie is an independent Haute Horlogerie brand with an in-house manufacture based in the Grand Duchy of Luxembourg — hence the name DUKE. Founded by Alessio Muller, the brand defies expectations by establishing a genuine watch manufacture outside the traditional Swiss heartland, combining innovation, tradition, and artisanal excellence. The goal: to inspire new emotions. 'With a DUKE watch on your wrist, you enter an intimate universe that is uniquely yours. Ordinary moments become extraordinary.' The technical and visual identity rests on three pillars: the Clarity Tourbillon — heart of every DUKE timepiece; the Invisible Rotor (automatic); and the characteristic Octagonal case.\n\nA watch by DUKE first catches the eye with its strong, instantly recognizable character, then captures the imagination with outer details and inner workings — sleek contemporary style, traditional hand finishing, and grand-ducal engineering. For launch, DUKE produced two pre-series models — each a LIMITED EDITION of 8 pieces. Notable collaboration: a special edition By Vianney Halter, developed with the celebrated master of avant-garde watchmaking. True creators draw on the forms of the past to translate them into their own language and pass them on to future generations.",
+    desc: "DUKE Haute Horlogerie was conceived in 2018 by Alessio Muller, who grew up commuting between Luxembourg and Switzerland from age 18 — Vianney Halter was among the independent watchmakers who agreed to mentor him, and Alessio spent six years, from 2016 to 2022, training as a polisher under Bekim Fifaj, who would go on to join Manufacture Grand-Ducale. Together with his father Denis, whose background is in haute couture, the pair built DUKE around the idea of a genuine watch manufacture based in Luxembourg — a country with almost no horological industry of its own despite being the birthplace of Jean-Claude Biver.\n\nThe brand's debut, the First Edition Clarity Tourbillon, is a 44mm octagonal watch whose case design draws on the angular language of Gérald Genta, forged in carbon fiber with titanium inserts and produced at the Luxembourg atelier. Inside is the in-house Calibre 9600, an automatic flying tourbillon beating at 21,600 vph (3Hz) with a 72-hour power reserve, 30 jewels, and a tourbillon cage suspended between double sapphire bridges for an apparently weightless float. Its self-winding rotor — the 'Invisible Rotor' — is cut from sapphire crystal and runs on ceramic ball bearings, designed to be almost imperceptible so the movement remains fully visible from the back. Finishing is entirely manual: beveling, mirror polishing, and alternating grained, sun-brushed, and shot-blasted surfaces, with the movement itself produced by Manufacture Grand-Ducale in the Swiss Jura.\n\nA second model, Duke by Vianney Halter, paired the same Clarity Tourbillon architecture with Halter's own design input as a formal collaboration between the two houses; both the First Edition and the Halter collaboration were produced as series of eight pieces and sold out quickly. By the end of 2024, Muller was already developing a third generation: a smaller 41mm, 10mm-thick case (down from 44mm and 14.5mm) in titanium throughout — including the dial, with only the mainspring and balance spring in steel — alongside a simpler three-hand automatic without a tourbillon aimed at a broader audience around €50,000–60,000. DUKE groups its output under the 'AART Collection,' with the Clarity Tourbillon as its first expression and the 'Reversity' name attached to ongoing technical development.",
     tags: ["Luxembourg","Clarity Tourbillon","Invisible Rotor","Octagonal case","Alessio Muller","Vianney Halter","in-house","haute horlogerie","8 pieces","grand-ducal"],
     specialties: ["tourbillon", "skeleton", "chronograph"],
     gphg: false,
@@ -4706,8 +4716,8 @@ function initClock(prefix, timeZone){
     const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     text.setAttribute('x', x.toFixed(2));
     text.setAttribute('y', y.toFixed(2));
-    text.setAttribute('font-size', hour === 12 ? '17' : '16');
-    text.setAttribute('font-weight', '500');
+    text.setAttribute('font-size', '17');
+    text.setAttribute('font-weight', '700');
     text.textContent = String(hour);
     numeralsEl.appendChild(text);
   }
@@ -4715,7 +4725,7 @@ function initClock(prefix, timeZone){
   // Railroad minute track: 60 ticks between the numerals and the inner rim.
   // Every 5th tick (minute marks) is darker and slightly thicker.
   const trackEl = document.getElementById(prefix + 'minute-track');
-  const minorColor = numeralColor;
+  const minorColor = (prefix === 'g-') ? '#1E4D8C' : '#D4B87A';
   const majorColor = (prefix === 'g-') ? '#0B1F4D' : '#8A6F2E';
   const rOuterTrack = 91, rInnerMinor = 88.5, rInnerMajor = 87.5;
   for (let i = 0; i < 60; i++) {
@@ -4733,7 +4743,7 @@ function initClock(prefix, timeZone){
     tick.setAttribute('y2', y2.toFixed(2));
     tick.setAttribute('stroke', isMajor ? majorColor : minorColor);
     tick.setAttribute('stroke-width', isMajor ? '1' : '0.4');
-    tick.setAttribute('opacity', isMajor ? '0.9' : '0.55');
+    tick.setAttribute('opacity', isMajor ? '0.95' : '0.7');
     trackEl.appendChild(tick);
   }
 
