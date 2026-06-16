@@ -837,9 +837,9 @@
 
         <!-- Minute hand: Breguet-style — curved leaf shaft, open "moon" circle just inside the numerals, thin tip skimming the minute markers -->
         <g id="hand-minute">
-          <path d="M 98.60 100 C 98.84 67.75, 99.40 51.62, 99.40 35.5 L 100.60 35.5 C 100.60 51.62, 103.00 67.75, 101.40 100 Z" fill="url(#metallic-gold)"/>
-          <circle cx="100" cy="33" r="2.5" fill="none" stroke="url(#metallic-gold)" stroke-width="0.9"/>
-          <line x1="100" y1="30.5" x2="100" y2="13" stroke="url(#metallic-gold)" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#metallic-gold)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#metallic-gold)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#metallic-gold)" stroke-width="0.9" stroke-linecap="round"/>
         </g>
 
         <!-- Seconds hand: heat-blued steel, reaching the outer tips of the indices, with larger counterbalance -->
@@ -877,6 +877,23 @@
             <stop offset="75%" stop-color="#8A6A2E"/>
             <stop offset="100%" stop-color="#E8CE8E"/>
           </linearGradient>
+          <!-- Darker gold for the seconds hand, for stronger contrast against the white/cream dial -->
+          <!-- Gleaming darker gold for the seconds hand: tight diagonal sheen like polished metal, deep enough to stay visible on the white dial -->
+          <linearGradient id="g-metallic-gold-dark" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
+            <stop offset="0%" stop-color="#4A3812"/>
+            <stop offset="30%" stop-color="#8A6F2E"/>
+            <stop offset="50%" stop-color="#E8C97A"/>
+            <stop offset="65%" stop-color="#7A5F22"/>
+            <stop offset="100%" stop-color="#4A3812"/>
+          </linearGradient>
+          <!-- Lighter gold gradient sized to the seconds-hand counterweight circle, so it gleams the same way as the hand itself -->
+          <linearGradient id="g-metallic-gold-dark-cw" gradientUnits="userSpaceOnUse" x1="96.8" y1="117.8" x2="103.2" y2="124.2">
+            <stop offset="0%" stop-color="#8A6F2E"/>
+            <stop offset="35%" stop-color="#E8C97A"/>
+            <stop offset="55%" stop-color="#FFF3CE"/>
+            <stop offset="75%" stop-color="#C9A659"/>
+            <stop offset="100%" stop-color="#8A6F2E"/>
+          </linearGradient>
           <linearGradient id="g-metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
             <stop offset="0%" stop-color="#9C7E3E"/>
             <stop offset="30%" stop-color="#EBD6A0"/>
@@ -903,22 +920,25 @@
         <g id="g-minute-track" stroke="#1E4D8C"></g>
 
         <!-- Genève label, Breguet-style cursive -->
-        <text x="100" y="56" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Genève</text>
+        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Genève</text>
 
         <!-- Hour numerals (Breguet-style italic, upright, blue) -->
         <g id="g-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
 
-        <!-- Day / Date / Month apertures, centered between 12 numeral and center pinion -->
+        <!-- Day / Date / Month apertures, raised to make room for the Glashütte inscription below -->
         <g id="g-day-date-month-apertures">
-          <rect x="48" y="65" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
-          <text id="g-day-text" x="63" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
+          <rect x="48" y="57" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
+          <text id="g-day-text" x="63" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
 
-          <rect x="85" y="65" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
-          <text id="g-date-text" x="100" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
+          <rect x="85" y="57" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
+          <text id="g-date-text" x="100" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
 
-          <rect x="122" y="65" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
-          <text id="g-month-text" x="137" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
+          <rect x="122" y="57" width="30" height="15" rx="1" fill="url(#g-metallic-gold)" stroke="url(#g-metallic-gold)" stroke-width="0.75"/>
+          <text id="g-month-text" x="137" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
         </g>
+
+        <!-- Glashütte inscription, beneath the day/date/month apertures -->
+        <text x="100" y="89" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Glashütte</text>
 
         <!-- Moonphase aperture at 6 — round, slightly reduced and raised to leave room for bottom inscription -->
         <g id="g-moonphase-group">
@@ -956,16 +976,16 @@
 
         <!-- Minute hand: Breguet-style, curved leaf shape, heat-blued steel, open "moon" circle just inside the numerals, thin tip skimming the minute markers -->
         <g id="g-hand-minute">
-          <path d="M 98.60 100 C 98.84 67.75, 99.40 51.62, 99.40 35.5 L 100.60 35.5 C 100.60 51.62, 103.00 67.75, 101.40 100 Z" fill="url(#blued-steel)"/>
-          <circle cx="100" cy="33" r="2.5" fill="none" stroke="url(#blued-steel)" stroke-width="0.9"/>
-          <line x1="100" y1="30.5" x2="100" y2="13" stroke="url(#blued-steel)" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#blued-steel)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#blued-steel)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#blued-steel)" stroke-width="0.9" stroke-linecap="round"/>
         </g>
 
-        <!-- Seconds hand: gleaming metallic gold -->
+        <!-- Seconds hand: darker metallic gold for visibility against the white dial -->
         <g id="g-hand-second">
-          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#g-metallic-gold)" stroke-width="1" stroke-linecap="round"/>
-          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#g-metallic-gold)" stroke-width="1" stroke-linecap="round"/>
-          <circle cx="100" cy="121" r="3.2" fill="url(#g-metallic-gold)"/>
+          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#g-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#g-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="100" cy="121" r="3.2" fill="url(#g-metallic-gold-dark-cw)"/>
         </g>
 
         <circle cx="100" cy="100" r="1.5" fill="url(#g-metallic-gold)"/>
