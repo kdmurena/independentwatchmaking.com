@@ -58,7 +58,7 @@
 
   .site-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -93,6 +93,10 @@
   @keyframes gold-gleam {
     0%, 100% { background-position: 0 0, -60% 0; }
     50% { background-position: 0 0, 160% 0; }
+  }
+
+  .site-title .brushed-gold {
+    font-size: 1.6rem;
   }
 
   .site-title span {
@@ -711,7 +715,9 @@
 
   @media (max-width: 640px) {
     header { padding: 0.5rem 1rem; }
-    .site-title { font-size: 1.1rem; }
+    .site-title { font-size: 1.25rem; }
+    .site-title .brushed-gold { font-size: 1.2rem; }
+    .site-title span { font-size: 0.85rem; }
     .header-count { font-size: 11px; }
     .controls { padding: 1rem; top: 67px; }
     .grid { grid-template-columns: 1fr; }
@@ -997,7 +1003,7 @@
 <div class="controls">
   <div class="search-wrap">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" id="search" placeholder="Search by name, location, specialty…" autocomplete="off">
+    <input type="text" id="search" placeholder="Search by name, country, specification…" autocomplete="off">
   </div>
   <button class="filter-toggle-btn" id="filter-toggle" type="button" aria-expanded="false">
     <span>Filters</span>
@@ -1005,7 +1011,7 @@
   </button>
   <div class="filter-panel">
   <div class="filter-group" id="specialty-filters">
-    <span class="region-label">Details:</span>
+    <span class="region-label">Specification:</span>
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="astronomical">Astronomical</button>
     <button class="filter-btn" data-filter="bespoke">Bespoke</button>
@@ -1029,7 +1035,7 @@
     <button class="filter-btn" data-filter="world time">World Time</button>
   </div>
   <div class="region-filters">
-    <span class="region-label">Countries:</span>
+    <span class="region-label">Country:</span>
     <button class="filter-btn active" data-region="all">All</button>
     <button class="filter-btn" data-region="austria">Austria</button>
     <button class="filter-btn" data-region="belgium">Belgium</button>
@@ -1831,7 +1837,7 @@ const makers = [
     price: "CHF 200,000–2,000,000+",
     website: "https://www.greubelforsey.com",
     instagram: "@greubelforsey",
-    desc: "Robert Greubel and Stephen Forsey created an atelier dedicated to advancing the tourbillon — and completely reimagined it. The double, triple, and quadruple tourbillons rotate on multiple axes simultaneously for unparalleled accuracy compensation. Their Hand Made 1 watch takes 6,000 hours to produce. The Art Piece series features miniature paintings inside the movement. The 2024 Nano Foudroyante EWT — their 10th Fundamental Invention — introduced their first chronograph, first flying tourbillon, and a breakthrough foudroyante mechanism measuring energy in nanojoules, with the foudroyante hand mounted on the spinning tourbillon yet always remaining upright.\n\nGPHG winners many times over.",
+    desc: "Robert Greubel grew up in Alsace, France, in his father's watchmaking business, Greubel Horlogerie, before joining IWC in Schaffhausen in 1987 to work on the Grande Complication project, then moving to Renaud & Papi — the high-complication atelier now part of Audemars Piguet — as co-Chief Operating Officer. There, in 1992, he interviewed and hired Stephen Forsey, an Englishman who had trained in restoration at Asprey of London and completed courses at WOSTEP in Neuchâtel. Working together through the 1990s on tourbillons, minute repeaters, and perpetual calendars for some of the industry's most prestigious houses, the two grew convinced there was still real invention left in watchmaking — chiefly in adapting the tourbillon, designed by Breguet in 1801 for stationary pocket watches, to the very different demands of a wrist in constant motion. They went independent together in 1999, founded the complications house CompliTime in 2001, and in 2004 unveiled their own brand at Baselworld with the Double Tourbillon 30° — an immediate sensation that established Greubel Forsey, based in La Chaux-de-Fonds, as one of the most technically ambitious names in independent watchmaking. Richemont acquired a minority stake in 2006, though the company remains under Greubel and Forsey's creative control.\n\nThe Double Tourbillon 30° set the template the brand would build on: an inner tourbillon cage inclined 30 degrees, completing one rotation per minute, mounted inside an outer cage rotating once every four minutes — a configuration that averages out gravity-induced positional errors far more effectively than a single tourbillon, particularly in the stable positions a wrist actually spends most of its time in. This became the first of what Greubel Forsey calls its 'Fundamental Inventions': the Quadruple Tourbillon followed in 2005, pairing two such inclined double-tourbillon systems and differentially coupling them; the Tourbillon 24 Secondes arrived in 2006, with a single cage inclined at 25 degrees and rotating once every 24 seconds for faster positional averaging; and the Double Balancier 35° of 2013 dispensed with a rotating cage altogether, inclining a fixed balance at 35 degrees instead. Each invention has since been reworked into dozens of references — Vision, Technique, Asymétrique, and Edition Historique variants among them — along with a GMT that wraps the Double Tourbillon 30° around a rotating globe showing a second and third time zone, and later a Quadruple Tourbillon GMT combining both ideas across 66 pieces.\n\nGreubel Forsey's hand-finishing is frequently cited as among the finest in the industry, following what specialists call the more exacting 'Neuchâtelois' tradition — sharply defined anglage, internal angles polished by hand even where invisible to the naked eye, black-polished steel, and three-dimensional movement architecture engineered as much for sculptural effect as function. That philosophy reached its logical extreme in the Hand Made 1, unveiled in 2019: a watch built using almost exclusively hand-operated tools, with 95% of its components — including the hairspring itself — made entirely by hand, the product of roughly 6,000 hours of work. It grew directly out of Le Garde Temps – Naissance d'une Montre, a six-year Time Æon Foundation project begun in 2007 in which Greubel, Forsey, and Philippe Dufour together trained watchmaking teacher Michel Boulanger to build an entire tourbillon wristwatch from raw materials using traditional hand tools, explicitly to keep ancestral techniques from disappearing as the industry mechanized. The Art Piece series took the opposite tack on craft — commissioning miniature paintings and engraving onto movement components, turning the inside of the watch into a canvas. The 2024 Nano Foudroyante EWT, the tenth Fundamental Invention, introduced the brand's first chronograph and first flying tourbillon, alongside a foudroyante hand mounted directly on the spinning tourbillon cage yet kept perpetually upright — a mechanism the brand says measures energy transfer in nanojoules. Greubel Forsey has won multiple Grand Prix d'Horlogerie de Genève awards across its history, including for the Hand Made 1.",
     tags: ["multi-axis tourbillon","GPHG winner","hand made","ultra-premium","complications","foudroyante","Nano Foudroyante","chronograph"],
     specialties: ["tourbillon", "complications", "guilloché", "gphg", "chronograph", "foudroyante"],
     gphg: true,
