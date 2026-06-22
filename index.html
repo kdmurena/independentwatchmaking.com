@@ -858,6 +858,103 @@
         <circle cx="100" cy="100" r="1.5" fill="url(#blued-steel)"/>
       </svg>
     </div>
+
+    <!-- ===== NEW YORK / MIAMI CLOCK: exact Geneva clone with ny- prefix ===== -->
+    <div class="hero-clock-wrap">
+      <svg id="hero-clock-ny" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <linearGradient id="ny-blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="100">
+            <stop offset="0%" stop-color="#0B1F4D"/>
+            <stop offset="35%" stop-color="#1E4D8C"/>
+            <stop offset="55%" stop-color="#6FB8F0"/>
+            <stop offset="75%" stop-color="#2C5FA0"/>
+            <stop offset="100%" stop-color="#0B1F4D"/>
+          </linearGradient>
+          <linearGradient id="ny-metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#7A5F22"/>
+            <stop offset="20%" stop-color="#D9B96A"/>
+            <stop offset="40%" stop-color="#FFF3CE"/>
+            <stop offset="55%" stop-color="#B8984A"/>
+            <stop offset="75%" stop-color="#8A6A2E"/>
+            <stop offset="100%" stop-color="#E8CE8E"/>
+          </linearGradient>
+          <linearGradient id="ny-metallic-gold-dark" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
+            <stop offset="0%" stop-color="#4A3812"/>
+            <stop offset="30%" stop-color="#8A6F2E"/>
+            <stop offset="50%" stop-color="#E8C97A"/>
+            <stop offset="65%" stop-color="#7A5F22"/>
+            <stop offset="100%" stop-color="#4A3812"/>
+          </linearGradient>
+          <linearGradient id="ny-metallic-gold-dark-cw" gradientUnits="userSpaceOnUse" x1="96.8" y1="117.8" x2="103.2" y2="124.2">
+            <stop offset="0%" stop-color="#8A6F2E"/>
+            <stop offset="35%" stop-color="#E8C97A"/>
+            <stop offset="55%" stop-color="#FFF3CE"/>
+            <stop offset="75%" stop-color="#C9A659"/>
+            <stop offset="100%" stop-color="#8A6F2E"/>
+          </linearGradient>
+          <linearGradient id="ny-metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#9C7E3E"/>
+            <stop offset="30%" stop-color="#EBD6A0"/>
+            <stop offset="50%" stop-color="#FFF8E1"/>
+            <stop offset="70%" stop-color="#D4B87A"/>
+            <stop offset="100%" stop-color="#A4842F"/>
+          </linearGradient>
+          <radialGradient id="ny-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFBF0"/>
+            <stop offset="18%" stop-color="#FFF0C2"/>
+            <stop offset="38%" stop-color="#E8C97A"/>
+            <stop offset="60%" stop-color="#B8924A"/>
+            <stop offset="82%" stop-color="#7A5A22"/>
+            <stop offset="100%" stop-color="#5C4318"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="98" fill="#FAF8F4" stroke="url(#ny-metallic-gold)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ny-metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
+        <g id="ny-minute-track" stroke="#1E4D8C"></g>
+        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">New York</text>
+        <g id="ny-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+        <g id="ny-day-date-month-apertures">
+          <rect x="48" y="57" width="30" height="15" rx="1" fill="url(#ny-metallic-gold)" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
+          <text id="ny-day-text" x="63" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
+          <rect x="85" y="57" width="30" height="15" rx="1" fill="url(#ny-metallic-gold)" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
+          <text id="ny-date-text" x="100" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
+          <rect x="122" y="57" width="30" height="15" rx="1" fill="url(#ny-metallic-gold)" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
+          <text id="ny-month-text" x="137" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
+        </g>
+        <text x="100" y="89" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Miami</text>
+        <g id="ny-moonphase-group">
+          <circle cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
+          <defs>
+            <clipPath id="ny-moon-clip">
+              <circle cx="100" cy="145" r="37"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#ny-moon-clip)">
+            <circle id="ny-moon-disk" cx="100" cy="145" r="19" fill="url(#ny-moon-gold)"/>
+            <circle id="ny-moon-shadow" cx="100" cy="145" r="19" fill="#0B1530"/>
+          </g>
+          <g id="ny-moon-stars"></g>
+        </g>
+        <circle cx="100" cy="100" r="2.5" fill="#1E4D8C"/>
+        <g id="ny-hand-hour">
+          <path d="M 98.20 100 C 98.53 77.50, 99.50 66.25, 99.50 55 L 100.50 55 C 100.50 66.25, 104.00 77.50, 101.80 100 Z" fill="url(#ny-blued-steel)"/>
+          <circle cx="100" cy="50" r="4" fill="none" stroke="url(#ny-blued-steel)" stroke-width="1"/>
+          <line x1="100" y1="46" x2="100" y2="37" stroke="url(#ny-blued-steel)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+        <g id="ny-hand-minute">
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#ny-blued-steel)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#ny-blued-steel)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#ny-blued-steel)" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+        <g id="ny-hand-second">
+          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#ny-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#ny-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="100" cy="121" r="3.2" fill="url(#ny-metallic-gold-dark-cw)"/>
+        </g>
+        <circle cx="100" cy="100" r="1.5" fill="url(#ny-metallic-gold)"/>
+      </svg>
+    </div>
+
     <div class="hero-text">
       <h1>Horology's <em class="brushed-gold">Independent</em> Masters, Makers, Manufactures, and Micro-Brands</h1>
       <p class="hero-sub">A living catalogue of independent watchmakers worldwide — those who work outside the major conglomerates, making timepieces with uncompromising craft, vision, and soul.</p>
@@ -997,6 +1094,102 @@
         <circle cx="100" cy="100" r="1.5" fill="url(#g-metallic-gold)"/>
       </svg>
     </div>
+
+    <!-- ===== TOKYO CLOCK: exact Geneva clone with t- prefix ===== -->
+    <div class="hero-clock-wrap">
+      <svg id="hero-clock-tokyo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <linearGradient id="t-blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="100">
+            <stop offset="0%" stop-color="#0B1F4D"/>
+            <stop offset="35%" stop-color="#1E4D8C"/>
+            <stop offset="55%" stop-color="#6FB8F0"/>
+            <stop offset="75%" stop-color="#2C5FA0"/>
+            <stop offset="100%" stop-color="#0B1F4D"/>
+          </linearGradient>
+          <linearGradient id="t-metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#7A5F22"/>
+            <stop offset="20%" stop-color="#D9B96A"/>
+            <stop offset="40%" stop-color="#FFF3CE"/>
+            <stop offset="55%" stop-color="#B8984A"/>
+            <stop offset="75%" stop-color="#8A6A2E"/>
+            <stop offset="100%" stop-color="#E8CE8E"/>
+          </linearGradient>
+          <linearGradient id="t-metallic-gold-dark" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
+            <stop offset="0%" stop-color="#4A3812"/>
+            <stop offset="30%" stop-color="#8A6F2E"/>
+            <stop offset="50%" stop-color="#E8C97A"/>
+            <stop offset="65%" stop-color="#7A5F22"/>
+            <stop offset="100%" stop-color="#4A3812"/>
+          </linearGradient>
+          <linearGradient id="t-metallic-gold-dark-cw" gradientUnits="userSpaceOnUse" x1="96.8" y1="117.8" x2="103.2" y2="124.2">
+            <stop offset="0%" stop-color="#8A6F2E"/>
+            <stop offset="35%" stop-color="#E8C97A"/>
+            <stop offset="55%" stop-color="#FFF3CE"/>
+            <stop offset="75%" stop-color="#C9A659"/>
+            <stop offset="100%" stop-color="#8A6F2E"/>
+          </linearGradient>
+          <linearGradient id="t-metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#9C7E3E"/>
+            <stop offset="30%" stop-color="#EBD6A0"/>
+            <stop offset="50%" stop-color="#FFF8E1"/>
+            <stop offset="70%" stop-color="#D4B87A"/>
+            <stop offset="100%" stop-color="#A4842F"/>
+          </linearGradient>
+          <radialGradient id="t-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFBF0"/>
+            <stop offset="18%" stop-color="#FFF0C2"/>
+            <stop offset="38%" stop-color="#E8C97A"/>
+            <stop offset="60%" stop-color="#B8924A"/>
+            <stop offset="82%" stop-color="#7A5A22"/>
+            <stop offset="100%" stop-color="#5C4318"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="98" fill="#FAF8F4" stroke="url(#t-metallic-gold)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#t-metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
+        <g id="t-minute-track" stroke="#1E4D8C"></g>
+        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Tokyo</text>
+        <g id="t-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+        <g id="t-day-date-month-apertures">
+          <rect x="48" y="57" width="30" height="15" rx="1" fill="url(#t-metallic-gold)" stroke="url(#t-metallic-gold)" stroke-width="0.75"/>
+          <text id="t-day-text" x="63" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
+          <rect x="85" y="57" width="30" height="15" rx="1" fill="url(#t-metallic-gold)" stroke="url(#t-metallic-gold)" stroke-width="0.75"/>
+          <text id="t-date-text" x="100" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
+          <rect x="122" y="57" width="30" height="15" rx="1" fill="url(#t-metallic-gold)" stroke="url(#t-metallic-gold)" stroke-width="0.75"/>
+          <text id="t-month-text" x="137" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
+        </g>
+        <g id="t-moonphase-group">
+          <circle cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#t-metallic-gold)" stroke-width="0.75"/>
+          <defs>
+            <clipPath id="t-moon-clip">
+              <circle cx="100" cy="145" r="37"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#t-moon-clip)">
+            <circle id="t-moon-disk" cx="100" cy="145" r="19" fill="url(#t-moon-gold)"/>
+            <circle id="t-moon-shadow" cx="100" cy="145" r="19" fill="#0B1530"/>
+          </g>
+          <g id="t-moon-stars"></g>
+        </g>
+        <circle cx="100" cy="100" r="2.5" fill="#1E4D8C"/>
+        <g id="t-hand-hour">
+          <path d="M 98.20 100 C 98.53 77.50, 99.50 66.25, 99.50 55 L 100.50 55 C 100.50 66.25, 104.00 77.50, 101.80 100 Z" fill="url(#t-blued-steel)"/>
+          <circle cx="100" cy="50" r="4" fill="none" stroke="url(#t-blued-steel)" stroke-width="1"/>
+          <line x1="100" y1="46" x2="100" y2="37" stroke="url(#t-blued-steel)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+        <g id="t-hand-minute">
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#t-blued-steel)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#t-blued-steel)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#t-blued-steel)" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+        <g id="t-hand-second">
+          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#t-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#t-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="100" cy="121" r="3.2" fill="url(#t-metallic-gold-dark-cw)"/>
+        </g>
+        <circle cx="100" cy="100" r="1.5" fill="url(#t-metallic-gold)"/>
+      </svg>
+    </div>
+
   </div>
 </section>
 
@@ -4777,6 +4970,288 @@ const makers = [
     gphg: true,
     image: "https://massenalab.com/cdn/shop/files/VIANNEY_VERTICAL.005.jpg?v=1770052817&width=1100",
     imageCredit: "© Massena LAB"
+  },
+  {
+    id: 179,
+    name: "Artur Akmaev",
+    brand: "Artur Akmaev",
+    location: "Santa Monica, California, USA",
+    country: "USA",
+    region: "usa",
+    founded: "c.2015",
+    volume: "Bespoke, one-of-a-kind",
+    volumeNum: 5,
+    price: "$15,000–80,000+",
+    website: "https://www.arturakmaev.com/",
+    instagram: "@arturakmaev_watches",
+    desc: "Artur Akmaev is a jeweler and watchmaker based in Santa Monica, California, whose work centers on a single, demanding craft most watch brands outsource or skip entirely: hand engraving and hand enameling, executed by Artur himself, start to finish, on every dial, movement, and caseback he touches. Rather than building a fixed catalogue, Akmaev treats each commission as a sculptural, wearable, mechanical piece of art — his stated mission is to give clients an uncommon opportunity to create something genuinely meaningful that expresses their own story, constantly experimenting with new metals, colors, and themes so that no two watches repeat the same idea. Every piece begins as a sketch, developed directly with the client before a single cut is made into metal.\n\nThe scope of his custom work ranges from deeply personal commissions to pop-culture and motorsport tributes. The Dragon/Phoenix pairs the two creatures from Feng Shui tradition across a hand-engraved, enameled, yellow-gold-plated dial with a separate black-rhodium-plated luminous minute ring. The Cotswolds watch, made for a Chicago watch collecting group, weaves the Gloucester rugby club crest into pastoral scenes of the English Cotswolds. Joan depicts Joan of Arc praying before a historically accurate coat-of-arms banner with the siege of Orléans behind her, and her martyrdom by fire engraved on the movement side. Medusa combines a fire-enameled dial with a hand-engraved figure and rose-gold-plated, snake-shaped hands. The Simpsons piece — inspired by The Simpsons Movie — builds a three-layer enameled scene dense with character detail, a single dial whose enameling alone took more than 40 hours of hand labor. A Chinese Zodiac commission replaces the hour markers with the twelve zodiac animals around a lotus-flower mandala, several of them reworked as private jokes for the client's own family. Lepidodendron Bark recreates the bark texture of the extinct prehistoric lepidodendron tree across a heat-blued automatic dial, and The Crown sets emeralds and diamonds by hand across both dial and movement.\n\nBeyond individual commissions, Akmaev also develops small thematic collections exploring particular worlds in depth: Epic Fan, built around fandom and pop culture; Ancient East Asia, drawing on historical Asian art and mythology; PRESS START Vol. 3, a video-game-themed series; and the Carbon Collection, exploring carbon-fiber and modern material treatments alongside his traditional engraving work. Across every piece — bespoke commission or collection release — the constant is the same hands-on process: design, hand engraving, and often hand enameling, all done personally by Artur Akmaev rather than delegated to a workshop, making every watch a literal one-of-one.",
+    tags: ["Santa Monica","hand engraving","enamel","bespoke","one-of-a-kind","sculptural","custom design","jeweler"],
+    specialties: ["enamel", "bespoke"],
+    gphg: false,
+    image: "https://images.squarespace-cdn.com/content/v1/5efe720aef1d5a12aa61334f/1686804290834-G6ISKGHN866S5X7MSJUJ/3.jpg?format=2500w",
+    imageCredit: "© Artur Akmaev"
+  },
+  {
+    id: 180,
+    name: "Henri Grandjean & Cie",
+    brand: "Henri Grandjean & Cie",
+    location: "Noiraigue, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1792 (as Henri Grandjean & Cie, 1854); revived 2020s",
+    volume: "Limited, nine references",
+    volumeNum: 50,
+    price: "CHF 100,000+",
+    website: "https://henri-grandjean.com/",
+    instagram: "@henrigrandjeanofficial",
+    desc: "The Grandjean name traces back to 1792, when David-Henri Grandjean established his first workshop in La Chaux-de-Fonds before relocating to Le Locle, then the heart of Swiss watchmaking. From the outset the family pursued mastery without division of labour, exploring automata and so-called 'magician' mechanisms prized not for trickery but for their precision — in 1842 a magician watch by David-Henri Grandjean was presented to King Frederick William IV of Prussia. His sons Henri and David-Henri turned the family's attention to marine chronometry, completing their first chronometer in 1832, sold in Lima, as the Grandjeans built a retail presence stretching to Rio de Janeiro and Lima and earned distinctions at the 1851 Great Exhibition in London; Henri Grandjean was also among the industrial backers of the Neuchâtel Cantonal Observatory, founded in 1858. In 1854 Henri Grandjean formally founded Henri Grandjean & Cie with partners including his nephew (also named Henri) and Auguste Rossel, and by 1858–60 the house's French and English catalogues listed more than sixty calibres, including chronometers and complicated chronographs. On Henri's death in 1878 the company passed to his niece Oline Rossel, was renamed Rossel & Fils in 1892, reorganized in 1912 as Société Anonyme de la Fabrique des Montres Henry Grandjean & Cie, and in 1926 was acquired by Paul Cattin, the founder of Oris. A family branch continued from 1973 as Grandjean & Cie, specializing in watch cases and engraving. Today's Henri Grandjean & Cie presents itself not as a revival but as a continuation of that two-century lineage, now based in Noiraigue in the canton of Neuchâtel.\n\nThe modern manufacture is built around a single watch family, The Magician — a deliberate echo of the historic magician mechanisms that first made the Grandjean name — offered in nine distinct expressions, each sharing one in-house calibre and 45mm case architecture but distinguished by material and finish. The Carved series pairs rose gold or white gold with black onyx or aventurine in deeply sculpted cases; the Geneva series spans rose gold, rose gold with black onyx, titanium with aventurine, and a gem-set white gold execution; Patiala is a hand-engraved, narrative dial inspired by the Indian princely state's watchmaking patronage; and the Atrivm pair are cased entirely in blue or white sapphire crystal, turning the case itself into an architectural study in transparency. Dial materials throughout include 5N 18K rose gold, black onyx, natural aventurine, and gem-setting, each requiring its own specialist finishing technique.\n\nEvery example is powered by the same hand-wound, entirely in-house Mysterious Triple-Axis Tourbillon calibre: 218 components, twin barrels driving a 21,600 vph (3Hz) escapement for an approximate 42-hour power reserve, with three concentric tourbillon cages rotating simultaneously at 10, 18, and 60 seconds to compensate for gravitational error from every angle, visible through sapphire crystals on both dial and caseback. The movement is conceived and developed from a blank sheet rather than adapted from an existing base, with plates and bridges finished by hand in traditional Geneva stripes and hand-polished bevels; assembling the triple-axis tourbillon alone demands tolerances invisible to the naked eye, with a single adjustment sometimes taking hours and full assembly spanning days. Each finished movement is hand-engraved with a signature bridge reading 'Henri Grandjean, Genève' before undergoing multi-position rate testing, power-reserve verification, and water-resistance and function checks. The collection is presented by appointment only at the brand's Geneva showroom.",
+    tags: ["Noiraigue","Neuchâtel","1792","marine chronometer heritage","triple-axis tourbillon","mysterious tourbillon","hand-engraved","Geneva stripes","in-house movement","Oris heritage","sapphire case","by appointment"],
+    specialties: ["tourbillon", "guilloché", "complications", "skeleton"],
+    gphg: false,
+    image: "https://henri-grandjean.com/images/collection/heroes/henri-grandjean-carved-rose-gold-product-hero.png?dpl=dpl_4Jyb5drSqonxs4jVUbVg8Z7gqMNm",
+    imageCredit: "© Henri Grandjean & Cie"
+  },
+  {
+    id: 181,
+    name: "Peter Elliot Glomb",
+    brand: "Peter Elliot Glomb",
+    location: "Florida, USA",
+    country: "USA",
+    region: "usa",
+    founded: "2017 (project restarted 2022)",
+    volume: "Prototype (Series 1, #00)",
+    volumeNum: 1,
+    price: "TBD",
+    website: "https://www.peterelliotglomb.com/",
+    instagram: "@peterelliotglomb",
+    desc: "Peter Elliot Glomb grew up in Florida with no real exposure to watches until, as a teenager drawing cars for a recurring customer's collection of Ferraris, he became curious what watch a man like that would wear. A mental snapshot of an Audemars Piguet Royal Oak Offshore 'Bumblebee' on his client's wrist sent him down a rabbit hole of researching how such watches were made — and the eye-watering price tag was enough to set the direction of the next decade of his life. He studied business at Florida Gulf Coast University, partly because the credential would later prove essential for the international visas independent watchmaking training would require, before enrolling in the Nicolas G. Hayek School of Watchmaking in Miami for its 2015/2016 WOSTEP 3000 course, where he discovered, among eight classmates, that he was not necessarily the most naturally gifted but was the most determined to learn. After graduating he reached out to watchmakers in Germany and was taken in by Dirk Dornblüth of D. Dornblüth und Sohn, apprenticing for a year in the small town of Kalbe before relocating to Cologne to work in restoration and complications at Atelier Suché — handling hundreds of movements spanning many eras of watchmaking and gradually forming the design vocabulary that would become his own watch.\n\nGlomb began designing that watch in 2017, backed by a collector willing to bet on him, but the project nearly collapsed: early CAD attempts failed, outsourced US-made parts proved unusable, and a meaningful share of the project budget was lost before he 'accepted defeat' — only to revisit everything in 2022 rather than let the dream die owing a debt he couldn't repay any other way. He rebuilt his bench discipline from roughly a 20% daily success rate upward through sheer repetition and patience, then doubled down rather than simplify: redesigning the case to eliminate all visible screws and add removable triple-stepped lugs, engineering what he describes as the world's first birdcage pinions, developing a proprietary square free-sprung inertia balance system, and expanding the dial to 15 individual components with a more elaborate hand design — his stated goal being to make, in his own estimation, the best three-handed watch he had ever seen, for someone who, before all this, had never even worn one.\n\nThe resulting Series 1 Prototype (#00) is roughly 70% complete as of his latest public updates, documented openly on Instagram alongside both successes and failures. The 39mm, 8.4mm-thick in-house case carries a triple-stepped bezel and detachable triple-stepped lugs with no visible screws anywhere on the case, plus a square crown. The in-house dial and hands feature Art Deco numerals, inclined indexes, Art Deco-style hands with a concave spoon profile on the seconds and hour hands, a 'gratté' (scraped/brushed) finish at the dial center, a logo inlay, and components individually heat-tempered for unique coloring. The 13-ligne (29.5mm) in-house movement runs at 18,000 vph (2.5 Hz) and, beyond the square inertia balance and birdcage pinions, includes a Breguet-overcoil hairspring, a 'moustache' anchor, proprietary shock absorbers, a Maltese-cross stop-work mechanism, a fine-adjustment regulator, a uniquely profiled crown and ratchet wheel, a removable pilot hole, a spring-bladed click, a mirror-polished plate beneath the balance wheel, a one-piece crown wheel with downward-facing gear teeth, and — in a detail that has drawn particular attention — a seconds-hacking lever spring made from human hair. Of the watch's 167 total parts, 55 are precision CNC-milled to 0.003mm tolerances (currently outsourced to a specialist machinist while Glomb works toward building his own in-house CNC capability), 85 are entirely handmade by Glomb himself — including hand-vibrated and manipulated raw hairsprings, hand-cut wheel teeth, pinions, arbors, screws, and the balance staff — and 27 are outsourced standard components such as jewels, crystal, mainspring, and strap.",
+    tags: ["Florida","WOSTEP 3000","Dirk Dornblüth apprentice","Atelier Suché","prototype","birdcage pinions","square balance","hand-finished","first watch","independent debut"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: "https://cdn.prod.website-files.com/692118ad09a192cc85cfda1c/6a07fe221e1ee69d8546f7ec_dial%20lighter%20shadow%20(1).png",
+    imageCredit: "© Peter Elliot Glomb"
+  },
+  {
+    id: 182,
+    name: "Hodinky Berkus",
+    brand: "Hodinky Berkus (Ondřej Berkus)",
+    location: "Italy (formerly Czech Republic)",
+    country: "Italy",
+    region: "italy",
+    founded: "c.2010",
+    volume: "Bespoke, one-of-a-kind",
+    volumeNum: 6,
+    price: "Mid-to-high five figures to six figures",
+    website: "",
+    instagram: "@hodinkyberkus",
+    desc: "Ondřej Berkus is a self-taught Czech watchmaker who came to horology sideways, through roughly six years spent making knives before, by his own account, a few drinks and his father's offhand challenge — 'why don't you make a watch? How hard can it be?' — set him on an entirely different path. It turned out to be very hard: he began with cases, then dials, then hands, teaching himself everything with no formal training and no local watchmaking community to lean on in the Czech Republic. An early misstep selling watches before he could reliably make them taught him a hard lesson about credibility, which he addressed head-on by setting himself a harder goal: building a tourbillon and a perpetual calendar entirely by hand to prove his ability. The perpetual calendar, in particular, started as a bet — a visiting client spotted a doodle on his desk, wagered he couldn't actually build it, and agreed to pay for it if he did. He won the bet, and both watches are considered the first tourbillon and perpetual calendar ever made in the Czech Republic. He operates with no formal website, taking commissions and sharing his process directly through Instagram, and has by his own admission a waiting list stretching past 2035.\n\nBerkus's earlier background making knives directly shaped his watchmaking: where a knife blade and handle offer limited room for material expression, a watch case does not, and he carried his knife-making material vocabulary — Damascus steel, tantalum, meteorite, mammoth ivory, and Mokume-gane (a Japanese metal-lamination technique that produces a wood-grain pattern) — directly into his cases and dials, including pieces with heat-blued meteorite dials and cases combining silver and copper Mokume-gane. He is fiercely particular about what counts as genuine independence in watchmaking, arguing that designing a watch and outsourcing its CAD, machining, and finishing to others doesn't constitute making it yourself; in his own work, he machines, finishes, and assembles essentially everything by hand, ordering in only items like sapphire crystals, Incabloc shock absorbers, jewels, gaskets, and rough-machined case blanks that he then substantially reworks on his own lathes. In 2025 he spent time training in traditional haute horlogerie finishing with decoration specialist Philippe Narbel, a turning point reflected in his more recent work, including selectively polished steel cocks and cleaner inner angles — applied deliberately rather than uniformly, since Berkus treats his own rougher, tool-marked surfaces as a stylistic signature rather than an oversight.\n\nEvery Hodinky Berkus watch is unique, designed in direct dialogue with the client rather than offered as a catalogue model; a typical commission starts from a 1:1 sketch held against his own wrist, with client and watchmaker working through every surface, material, and even individual screw color together as the piece comes together. Complications across his body of work include tourbillons (including an alien-inspired central tourbillon set in a meteorite-and-Mokume-gane case, its dial styled after the event horizon of a black hole), a sonnerie au passage, a remontoir d'égalité, retrograde date displays, chronographs, and power-reserve indications, alongside simpler time-only pieces — cases have ranged from a standard round profile to Daniel Roth-style curved cases to 1970s-influenced cushion shapes, generally sub-40mm with a minimalist bezel. His Deadbeat Seconds models showcase a Reuleaux-triangle-cammed jumping seconds display at 9 o'clock, with the DS 2.0 (2025) housed in a 36mm, 10mm-thick Damascus steel case and featuring a wolf's-tooth gear train of his own making — a profile invented by Lepine in the 18th century and prized today for its visual character rather than any functional advantage, here deployed unusually in the going train rather than the winding wheels alone. Berkus, who relocated from the Czech Republic to Italy in 2025, also makes knives, rings, and fountain pens (the latter now continued by his cousin under a separate name) on a zero-scrap-material basis, repurposing the same precious offcuts left over from his watch cases.",
+    tags: ["self-taught","Czech watchmaker","Damascus steel","meteorite","Mokume-gane","tourbillon","sonnerie au passage","remontoir","unique pieces","Instagram-only","wolf's tooth gearing","Philippe Narbel"],
+    specialties: ["tourbillon", "complications", "deadbeat seconds", "chronograph", "retrograde", "constant force", "bespoke"],
+    gphg: false,
+    image: "https://watchesbysjx.com/wp-content/uploads/2025/09/Ondrej-Berkus-Deadbeat-seconds-2-header.jpg",
+    imageCredit: "© Watches by SJX"
+  },
+  {
+    id: 183,
+    name: "Dewey Vicknair",
+    brand: "Dewey Vicknair",
+    location: "Pennsylvania, USA",
+    country: "USA",
+    region: "usa",
+    founded: "2023",
+    volume: "Made to order, a few pieces a year",
+    volumeNum: 3,
+    price: "From US$28,000, varies by specification",
+    website: "https://vicknairwatchrestoration.blogspot.com",
+    instagram: "",
+    desc: "Dewey Vicknair is a master gunsmith based in Pennsylvania who built a decades-long reputation restoring rifles and shotguns — searching his name online turns up dozens of approving mentions across firearms forums — before turning, self-taught and already in his mid-fifties, to watchmaking. He had been servicing watches on the side for years when, by his own account, encountering coverage of Atelier de Chronométrie's work reviving vintage Omega movements inspired him to make the leap from repairing watches to building one. His debut wristwatch, completed in 2024, started from a 1950s Omega cal. 266 but ended up substantially remade: he skeletonized the base plate, built the going-train and balance bridges from raw brass entirely from scratch, and fabricated the case, dial, and hands from steel stock — leaving only the balance wheel and hairspring from the original movement untouched. To get there he had to build much of his own tooling, including a custom cutter for the crown's silicone gasket and a dedicated screw holder for black polishing, and the silver plating of the movement's bridges and plate was done by Vicknair himself. The watch's manufacture is documented in an exhaustive photo essay on his blog, almost every step shot in close-up, made with old-school, hand-operated machines rather than CNC equipment.\n\nHis second watch, completed in 2025, pushed further: a regulator-style display with a jumping hour, again built around a heavily reworked Omega cal. 266 base plate and going train, this time with a hand-shaped three-quarter bridge decorated in classical perlage and wide Geneva stripes, gold-plated entirely at his own bench. The jump-hour mechanism uses a star-wheel system advanced by a finger on the center pinion, and Vicknair built two separate free-sprung balance wheels with a pantograph — a mechanical engraving technique famously used by Breguet for his secret-signature dials — before scrapping the first, a Gyromax-style design, for feeling out of place against the movement's more classical lines. He hand-bent the Breguet overcoil hairspring using custom tweezers of his own making, hand-engine-turned the barrel cover, and used the same pantograph to skeletonize the barrel click wheel, cut the balance wheel, and sign the steel Calatrava-style case he machined from a solid ingot.\n\nHis third watch, a bespoke retrograde-hours wristwatch delivered in mid-2026 after roughly a year on commission for an unnamed collector, is loosely based on the same Omega-derived going train but otherwise built from raw brass and steel sheet, including a 30mm mainplate milled entirely by hand. Its retrograde mechanism — sweeping a 240-degree arc and snapping back via a spring-tensioned rack — draws on a rare design from George Daniels' 'Edward Hornby' tourbillon pocket watch, reworked with wolf's-tooth gearing partway between Daniels' original solution and the more elaborate version later used by Daniel Roth in the C127 Retrograde. The 39mm Calatrava-style steel case, also entirely self-made, carries an open-worked dial with green-toned retrograde hands, an emerald cabochon set into the crown, hand-formed Breguet overcoil, hand-grained English-style frosting on the plate, black-polished steel keyless works, and a pink-gold-plated finish achieved in his own small plating bath. Across all three watches, Vicknair operates without external suppliers for cases, dials, hands, or movement architecture — outsourcing only items like the raw hairspring and jewels — making him one of a small handful of working American artisan horologists building watches essentially from raw material with manually operated machines, in the company of names like David E. Walter and Jacob Curtis.",
+    tags: ["Pennsylvania","gunsmith","self-taught","hand-made","Omega caliber 266","pantograph","wolf's tooth gearing","retrograde","jump hour","regulator","Breguet overcoil","American artisan"],
+    specialties: ["retrograde", "jumping hour", "bespoke"],
+    gphg: false,
+    image: "https://watchesbysjx.com/wp-content/uploads/2025/05/dewey-vicknair-second-wristwatch-front.jpg",
+    imageCredit: "© Watches by SJX"
+  },
+  {
+    id: 184,
+    name: "Maksim Sushkov",
+    brand: "Maxim Sushkov",
+    location: "Saint Petersburg, Russia",
+    country: "Russia",
+    region: "russia",
+    founded: "2019",
+    volume: "Bespoke, 40 delivered to date",
+    volumeNum: 40,
+    price: "Upon request",
+    website: "https://sushkovmaksim.com/",
+    instagram: "@sushkov_ms",
+    desc: "Maxim Sushkov is a self-taught Russian watchmaker whose fascination with horology began at 25, when he came across a vintage gold-plated Ruhla watch from East Germany — by his own account, love at first sight, and the turning point that set the direction of his life. With no engineering degree, he taught himself the craft from the ground up: buying watches, taking them apart, studying every component, setting up a small workshop at home, reading everything he could find, and seeking out other enthusiasts. As he puts it, 'the most important thing for a watchmaker is a deep and genuine interest in the craft.'\n\nThat self-directed study turned into a professional career in 2012, when he became lead specialist for high-end watch repair at the top service center in Chișinău, Moldova. In 2015 he was invited to take on a similar role in Saint Petersburg, eventually rising to head of the service center while continuing to personally handle the most complex work that came through — perpetual calendars, minute repeaters, and tourbillons from brands including A. Lange & Söhne, Chopard, and Ulysse Nardin. Alongside that work he began experimenting with his own projects, starting with a skeletonized movement built on a Soviet-era base caliber; the experience set him on a clear path toward opening an independent workshop of his own. As demand grew for his handmade dials, hands, and movement components, balancing that work with his service-center responsibilities became unsustainable, and in 2019 he founded the Maxim Sushkov brand to focus on his own watchmaking full time.\n\nEvery Maxim Sushkov watch is bespoke and made by hand, with components — dials, hands, bridges, even individual screws — fabricated, finished, and assembled entirely in his workshop, decorated with black polishing, anglage, perlage, and hand engraving, flame-blued steel, grand feu enamel, and galvanic plating, with CNC guilloché engraving available on dials. To date he has delivered 40 unique watches, each built around reworked ETA or Peseux base calibers with custom-designed and handmade bridges, plates, and wheels specific to that piece, while an in-house movement of his own design — with time and power-reserve indication — is currently in development. His named models illustrate the range of his dial and case work: the Classic Green, with a brass dial in dual-pattern guilloché under gold and silver galvanic plating, a malachite-green center, and applied numerals with three-dimensional, black-polished hands; the Rainbow, with a mother-of-pearl dial and a titanium, fine-guilloché small-seconds disc; and the Classic Burgundy, with a gold-and-silver electroplated brass dial in burgundy, Eastern Arabic numerals, and a movement finished with mirror black polishing and heat-blued accents. Across all three, cases are 39–41mm stainless steel with sapphire crystals and 30m water resistance, with manually wound movements running at 18,000 vph and 40–46 hours of power reserve.",
+    tags: ["Saint Petersburg","self-taught","bespoke","unique pieces","black polishing","anglage","grand feu enamel","guilloché","ETA caliber","Peseux caliber","skeletonized","former service center watchmaker"],
+    specialties: ["guilloché", "enamel", "skeleton", "bespoke"],
+    gphg: false,
+    image: "https://watchesbysjx.com/wp-content/uploads/2022/01/Maxim-Sushkov-Mother-of-Pearl-4.jpg",
+    imageCredit: "© Maxim Sushkov"
+  },
+  {
+    id: 185,
+    name: "Edouard Koehn",
+    brand: "Edouard Koehn Master Watchmaker SÀRL",
+    location: "La Chaux-de-Fonds, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1891 (revived)",
+    volume: "Limited series, some references limited to 88 pieces",
+    volumeNum: 88,
+    price: "CHF 5,000–30,000",
+    website: "https://www.edouardkoehn.com/",
+    instagram: "@edouardkoehn",
+    desc: "Edouard Koehn (1839–1908) began his career as clockmaker to the court of the Grand Duchy of Saxe-Weimar-Eisenach, growing up immersed in the highest horological standards of the period. In 1859 he moved to Geneva to study at the school of horology before joining a prestigious watchmaking manufacture, where his ability and rapid progress earned him a partnership in the company. He traveled widely, notably to North America, building a network of agents for the manufacture's watches and earning a reputation for both technical knowledge and personal integrity. In 1891, wanting greater latitude to produce watches to his own standards, he bought the Geneva establishment of the noted Danish watchmaker H.R. Ekegren and remodeled it around his own haute horlogerie principles, competing successfully with Geneva's best manufacturers while diversifying into chronometers, extra-thin watches, and master complications. On his death in 1908 the house passed to his son, Edouard Koehn Jr, who continued the tradition of precision timepieces into the 1930s.\n\nThe modern Edouard Koehn Master Watchmaker SÀRL presents itself explicitly as a rebirth of that 19th-century heritage rather than a new brand borrowing a historic name. Today the house is family-owned, led by two complementary generations under CEO Bernard Fleury, and has chosen to base its manufacture in La Chaux-de-Fonds — a UNESCO World Heritage-listed watchmaking town set 1,000 metres above sea level, long considered one of the cradles of Swiss horology. The brand's stated philosophy rests on five pillars: the Rebirth of Koehn's original heritage; Independence, as a family-run operation outside the major watch groups; High Standards, in keeping with the founder's own obsession with quality; Exclusivity, with current models produced in small series true to Koehn's historical preference for unique pieces and limited runs; and an Identity built on innovation, elegance, and classicism across both the aesthetic and mechanical character of every watch.\n\nThe modern collection is organized around several lines, many explicitly reviving complications associated with the historic house. The Tempus series traces the brand's chronograph lineage: Tempus I introduced Edouard Koehn's first automatic chronograph, a 245-component movement developed with an independent La Chaux-de-Fonds manufacture; Tempus II Open Heart added a mono-pusher chronograph with an inverted escapement visible through an open-worked dial; and Tempus III, in Grade 5 titanium with a ceramic bezel, runs the in-house Tri-Compax EK-CHR-MVT01 self-winding movement developed with Concepto, available in Skeleton and Guilloché executions. The Legacy Moonphase integrates a moon-phase and date display into a chronograph in the classic Legacy case language, while the Legacy Rattrapante revives the split-seconds chronograph — among the most complex chronograph types — developed in close collaboration with 10Ten Labs, the brand's exclusive distributor for Bahrain and Saudi Arabia. The World Heritage I and II models, each limited to 88 pieces in Grade 5 titanium, combine a world-time display with an alarm function via the double-barrel EK-MVTWTA01 calibre — a genuinely rare combination of complications — with World Heritage II adding a guilloché dial and rotating 24-hour city disc to the format.",
+    tags: ["La Chaux-de-Fonds","1891","family-owned","chronograph","rattrapante","moon phase","world time","alarm complication","guilloché","UNESCO heritage","historic revival"],
+    specialties: ["chronograph", "rattrapante", "moon phase", "world time", "guilloché", "complications"],
+    gphg: false,
+    image: "https://static.wixstatic.com/media/f7dba8_819af96ac08748a3b40d42bb07ef49aa~mv2.jpg/v1/fill/w_1496,h_2098,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/f7dba8_819af96ac08748a3b40d42bb07ef49aa~mv2.jpg",
+    imageCredit: "© Edouard Koehn",
+    facebook: "https://www.facebook.com/edouardkoehnwatches/"
+  },
+  {
+    id: 186,
+    name: "1776 Atelier",
+    brand: "1776 Atelier",
+    location: "Texas, USA",
+    country: "USA",
+    region: "usa",
+    founded: "2024",
+    volume: "Limited series and bespoke",
+    volumeNum: 100,
+    price: "$3,000–15,000+, bespoke and case engraving upcharges to $3,000+",
+    website: "https://1776atelier.com/",
+    instagram: "@1776atelier",
+    desc: "1776 Atelier was founded in Texas by Jason Lu, a former senior technology executive who oversaw some of the world's largest precision manufacturing operations before turning that expertise toward fine watchmaking. Lu's path into the craft began as a collector, but collecting alone wasn't enough — he taught himself to disassemble, regulate, and rebuild vintage and modern movements, expanding into pocket-watch restoration and even marriage-watch conversions. That self-directed apprenticeship eventually took him to Glashütte, Germany, where he trained alongside and befriended some of the industry's most respected — and notoriously private — master artisans, relationships that continue to inform his design and finishing decisions today. Lu founded 1776 Atelier on a direct challenge to industry convention: that genuine hand-finishing should not be reserved exclusively for watches costing hundreds of thousands of dollars. The brand's name deliberately echoes America's declaration of independence, framed as a parallel declaration of excellence in horology — built on American soil, but explicitly not confined by geography in its claim to high-horology standards.\n\n1776 Atelier designs its movements from the ground up rather than modifying existing calibres, with proprietary bridge architecture across two in-house movements, Caliber 621.1788 and Caliber 430.1803, each built from more than 70% American-made parts. Every gear is cut in-house, and every component — from setting levers and mainspring barrels to jewel sinks — is individually finished, with some parts snailed and others given a circular satiné finish depending on the design; no off-the-shelf parts are used anywhere in the movement, which is entirely finished and regulated at the Texas atelier. Hand-executed finishing techniques include anglage (hand beveling), hand skeletonization using saws and files, black polishing, solarization grinding on 75-year-old machines, hand engraving, perlage, circular satin finishing, and thermal bluing — the full repertoire of traditional haute horlogerie decoration, applied by hand rather than machine wherever the technique allows.\n\nThe collection includes the Montpelier, the Mount Vernon (also offered in Meteorite and Aventurine dial executions), The Monticello, the Sagamore Hill Collection, and New Glory, a collaboration with artist Scott LoBaido. Customization runs from semi-bespoke options selectable at order — on the Mount Vernon, a tiered hand-engraving program spanning the no-charge Modern Scroll, the $300 Teutonic Scroll, and the $600 American Gun Scroll, plus a $3,000 fully hand-engraved American Gun Scroll case cut directly into solid steel with no CNC or laser involvement, requiring nearly a full week of an engraver's time per case — to crown and ratchet-wheel options (a signature logo-and-13-star motif, a skeletonized ratchet wheel, or double or triple snailing on an 80-year-old lathe) and a choice of yellow gold, rose gold, white rhodium, or black rhodium galvanic plating. Beyond these semi-bespoke options, 1776 Atelier offers fully bespoke commissions — including custom bridge configurations and, for the right project, an entirely unique movement design — for collectors seeking a piece that exists nowhere else.",
+    tags: ["Texas","American watchmaker","Jason Lu","in-house movement","anglage","hand engraving","black polishing","skeletonization","solarization","snailing","bespoke","American Gun Scroll"],
+    specialties: ["guilloché", "skeleton", "bespoke", "complications"],
+    gphg: false,
+    image: "https://1776atelier.com/wp-content/uploads/2025/12/IMG_0001.jpeg",
+    imageCredit: "© 1776 Atelier"
+  },
+  {
+    id: 187,
+    name: "Bradley Taylor",
+    brand: "Bradley Taylor",
+    location: "North Vancouver, Canada",
+    country: "Canada",
+    region: "canada",
+    founded: "2020 (under own name)",
+    volume: "Small series, hand-built",
+    volumeNum: 30,
+    price: "CHF 15,000–60,000+",
+    website: "https://www.bradleytaylor.ca/",
+    instagram: "@bradleytaylor.ca",
+    desc: "Bradley Taylor trained in the historic Swiss watchmaking town of Le Locle, enrolling at the Korpela & Hofs Watchmaking Competence Centre under the mentorship of Henrik Korpela after passing his bench test. He completed his watchmaking diploma in 2015 through the program's 4,500-hour curriculum, developing what would become a defining interest in micromachining and traditional watchmaking, and designed and built his own prototype movement for his graduation watch before returning to Canada. After graduating he worked in after-sales service, completing manufacturer certifications including Patek Philippe's Level II training in Geneva — grounding him thoroughly in the servicing and restoration of high-end and vintage timepieces. In 2017, together with a former watchmaking-school classmate, he co-founded Birchall & Taylor, introducing the Reference 1 and 1R models and forging relationships with established names including Donzé Cadrans for enamel dials and movement manufacturer Vaucher SA. In 2020 he moved west to Vancouver and opened his own workshop under his own name, before relocating again in 2023 to a new workshop in North Vancouver, where he spent months restoring his own rose engine lathe so he could undertake guilloché work himself in-house.\n\nBradley Taylor's work is organized around three model lines. The Paragon, introduced in 2020 in collaboration with the world-class dial-maker Comblémine, is an elegant three-handed time-only watch distinguished by hand-polished purple hands. The Lutria followed in 2022, a two-handed watch carrying guilloché patterns inspired by the coastal character of his adopted West Coast home. The newest line, ARDEA, debuted in 2026 as Taylor's first watch built around a fully in-house movement and dial: Calibre 475RS, featuring a retrograde seconds complication of his own design, a solid gold gear train, and a depletion-gilded silver guilloché dial, with applied numerals machined from solid platinum — a detail believed to be a first in watchmaking. In early 2026 Taylor was also awarded the Horological Society of New York's Independent Watchmaker Grant.\n\nTaylor describes his approach to watchmaking as treating watches as emotional objects first: while deeply committed to function and technical performance, he prioritizes beauty and design above all else, drawn specifically to the kind of creative problem that has no single correct answer — only the response it provokes in the person wearing it.",
+    tags: ["North Vancouver","Canada","Le Locle trained","Korpela & Hofs","Patek Philippe Level II","Birchall & Taylor","Comblémine","retrograde seconds","guilloché","rose engine","HSNY grant","in-house movement"],
+    specialties: ["guilloché", "retrograde", "complications"],
+    gphg: false,
+    image: "https://cdn.prod.website-files.com/5ff28a6dffc655e20ef37292/69ea6862b8a493337fa8ed5c_Bradley_Taylor_Ardea_00_LC2-p-2600.jpg",
+    imageCredit: "© Bradley Taylor",
+    facebook: "https://www.facebook.com/bradleytaylor.ca"
+  },
+  {
+    id: 188,
+    name: "Lundis Bleus",
+    brand: "Lundis Bleus, Vuilliomenet",
+    location: "Neuchâtel, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2004 (idea); 2016 (first watch)",
+    volume: "Under 100/yr",
+    volumeNum: 100,
+    price: "CHF 3,500–15,800, unique pieces upon request",
+    website: "https://lundis-bleus.com/en/",
+    instagram: "@lundisbleus",
+    desc: "Lundis Bleus began as dinner conversation. Johan Storni and Bastien Vuilliomenet met in 1994 as students at the watchmaking school of La Chaux-de-Fonds, the cradle of Swiss horology, then took different paths — Storni into the International Museum of Watchmaking and a watchmaking-construction-technician qualification, Vuilliomenet into an industrial design degree at La Chaux-de-Fonds' University of Applied Arts. On the evening of December 30, 2004, the two friends made a pact over dinner to eventually join forces and build something of their own in watchmaking. It took a decade of building experience first — stints at Richard Mille, Renaud & Papi, La Joux-Perret, and Corum among them — before they were ready, and two more years of development before their first model, the Ref.1100, launched in November 2016: 22 years, in total, from idea to first watch. On August 1, 2021, after five years working together, Bastien Vuilliomenet became the sole owner of Lundis Bleus and has run it as a one-man operation ever since, personally overseeing design, 3D engineering, technical drawings, supplier selection, project management, inspection, assembly, quality control, sales, and the brand's signature kiln-fired enamel work.\n\nThe name — French for 'Blue Mondays' — refers to a centuries-old tradition dating to the 16th century, in which the most highly skilled, best-paid tradesmen would simply choose not to work on Mondays, a custom that ended with the Industrial Revolution as independent craftsmen became factory employees. For Vuilliomenet, the name is a statement about independence: a willingness to trade comfort for the freedom to create entirely on his own terms. The brand's logo is, fittingly, a graphical rendering of an alcohol molecule, a wink at the conviviality the old Blue Mondays tradition implied. Lundis Bleus is explicit that it is not a manufacture in the traditional sense, with the exception of its kiln-fired enamel dials, which are made entirely in-house in a 1692 building at Rue des Moulins in Neuchâtel; component manufacturing is outsourced to long-trusted partners, including some of Switzerland's finest specialist artisans for hand engraving and miniature painting, while the enameling, final assembly, adjustment, and quality control all happen on Vuilliomenet's own bench. Yearly production stays under 100 pieces.\n\nThe modern catalogue centers on the Ref.1120, fitted with a Swiss automatic Sellita SW300-1 Premium movement in a 316L stainless steel, box-sapphire-crystal case, priced from CHF 3,500 up to CHF 12,000 for the most complex cloisonné enamel executions — with dials built using traditional kiln-fired vitreous enamel, hand engraving, miniature hand painting, or ornamental stonework, fired in the workshop's own kiln an average of six times and sometimes as many as fifteen before a dial is finished. In September 2024 Vuilliomenet introduced the Ref.1125, a higher-end evolution of the 1120 built around the hand-wound LTM5000 calibre from Le Temps Manufacture (19 jewels, 60-hour reserve, 4Hz, perlage and rhodium-plated bridges with straight Côtes de Genève) in a 40mm steel case with a solid white-gold, hand-guilloché grand feu enamel dial. Its launch took the form of two absinthe-themed limited editions of five pieces each — the Ref.1125 'La Fée Verte' and Ref.1125 'La Bleue,' named for two famous absinthe liquors historically distilled near Lundis Bleus' Neuchâtel home, each dial hand-guillochéd by a master guillocheur on antique rose-engine lathes in patterns meant to evoke the visual distortion of drinking a little too much green or blue absinthe. Beyond its named references, Lundis Bleus also produces genuinely unique pieces, built to a client's own specification with no two dials ever quite the same.",
+    tags: ["Neuchâtel","kiln-fired enamel","grand feu enamel","one-man operation","hand engraving","guilloché","unique pieces","Ref.1120","Ref.1125","absinthe themed","rose engine"],
+    specialties: ["enamel", "guilloché", "bespoke"],
+    gphg: false,
+    image: "https://lundis-bleus.com/wp-content/uploads/2024/09/1125_fee_verte_1.jpg",
+    imageCredit: "© Lundis Bleus"
+  },
+  {
+    id: 189,
+    name: "O & HoraPictor",
+    brand: "O&HoraPictor",
+    location: "Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2017 (enamel atelier); 2024 (O&HoraPictor)",
+    volume: "Limited series",
+    volumeNum: 50,
+    price: "Upon request",
+    website: "https://www.horapictor.com/",
+    instagram: "@o_horapictor",
+    desc: "O&HoraPictor grew out of decades of founder Eriks's focused exploration of vitreous enamel and his parallel love of horology. That long study led him, in 2017, to establish his own dedicated enamel atelier — a space built purely for studying and practicing an ancient, fire-formed craft on its own terms, well before any watch brand existed around it. O&HoraPictor itself was born only in 2024, growing naturally out of years spent simply observing how enamel behaves under heat, and the atelier's stated mission since has been to translate that hard-won material understanding into a contemporary language of watchmaking — giving an ancient craft a new, wearable form that can travel with its owner for years. The brand describes its approach as standing at the meeting point of traditional craftsmanship and contemporary aesthetics, continually exploring how an ancient material might speak in a different voice without abandoning the reverence the craft demands.\n\nEvery O&HoraPictor dial begins with raw enamel ground by hand in an agate mortar and pestle into a fine, uniform powder — a process taking three to four hours on its own — then repeatedly washed to remove impurities and ensure clarity once fired. The powder is applied to the dial base in at least eight separate layers, each one fired in a kiln at roughly 800°C, with uniform thickness essential at every stage since even small variations can produce bubbles or other firing defects. Because different enamel colors react to heat differently, and because factors like temperature shift, enamel thickness, metal expansion, and the behavior of color oxides can all alter or ruin a result in progress, no two finished dials are ever quite identical — mastery here comes from hands-on understanding built over years rather than any fixed formula. Beyond straightforward color work, the atelier extends the language of enamel through silver leaf application, hand engraving beneath transparent enamel, and structural silver wire and ring inlays that divide a dial into distinct color fields — cloisonné technique at its most demanding can mean a single dial built from over 100 individually wired and enameled cells, finished afterward by hand-polishing under running water. Hands, too, are made in-house and heat-blued the traditional way, rested on a bed of copper shavings for even heat distribution as the steel shifts color.\n\nThe current collection includes Totem Cipher, a cloisonné enamel dial with numerals inspired by the Rosetta Stone as a nod to ancient civilization; Volcano Grey, a silver leaf enamel dial inspired by submarine volcanic eruptions, blending ocean and molten lava into a single grey field; Yellow Track, an opaque, dry-sifted enamel dial pairing a matte surface and track-style layout for a retro-meets-dynamic look; and Galaxy, a mineral-mixed black enamel dial whose fired surface carries a quiet, shimmering radiance evoking deep space. Each model channels a different facet of the atelier's enameling vocabulary, but all share the same underlying commitment: that the difficulty of the craft is not an obstacle to be minimized, but the very thing that defines serious, uncompromising watchmaking.",
+    tags: ["Switzerland","enamel","cloisonné","silver leaf enamel","hand engraving","grand feu","heat-blued hands","limited edition","fire-formed craft"],
+    specialties: ["enamel", "guilloché"],
+    gphg: false,
+    image: "https://www.horapictor.com/wp-content/uploads/2026/04/Volcano-Grey-01_02-2048x1446.jpg",
+    imageCredit: "© O&HoraPictor"
+  },
+  {
+    id: 190,
+    name: "Havid Nagan",
+    brand: "Havid Nagan",
+    location: "Los Angeles, USA",
+    country: "USA",
+    region: "usa",
+    founded: "2022",
+    volume: "Limited series",
+    volumeNum: 50,
+    price: "Upon request",
+    website: "https://www.havidnagan.com/",
+    instagram: "@havidnagan",
+    desc: "Havid Nagan was founded in 2022 by Aren Bazerkanian as an independent watchmaking project rooted in traditional design and mechanical discipline, summarized on its own site as 'independent watchmaking designed in Los Angeles, crafted in Switzerland.' The studio's approach draws on 18th- and 19th-century watchmaking principles — proportion, legibility, balance — executed through contemporary horological methods rather than offered as direct homage or nostalgia. Bazerkanian has been explicit that the brand is shaped by personal conviction rather than committee: each reference begins with an internal logic that stands on its own, developed without dilution for popularity or external consensus, with design decisions driven first by how a watch feels, reads, and wears on the wrist. Every Havid Nagan watch is realized in close collaboration with established Swiss manufacturing partners chosen specifically for technical precision and reliability, with cases, dials, movements, and finishing produced and assembled to strict internal standards rather than convenience — resulting in a deliberately small number of references, each treated as a distinct expression of the founder's pursuit of what he considers the ideal watch.\n\nThe collection is organized into several lines, each with its own stated identity. HN is described as the brand's vehicle for 'exploratory boldness,' encompassing its more technically and aesthetically adventurous references — including the HN02, finished in 3N-galvanized, Mitraillé-decorated plates with rhodium-treated, skeletonized bridges, built to chronometer-certified standards, and offered in executions spanning enamel dials, Grade 5 titanium, brass, and sapphire, including the 'Azure' and 'Ember' colorways. Notably, the HN02 is intended to be the brand's last purely time-only reference for the foreseeable future, with Havid Nagan stating it will focus exclusively on complicated watches going forward. Classic represents 'restrained modernity,' a more understated counterpoint to the HN line; Origins is described as a 'non-parameter abiding diffusion line,' a more experimental, boundary-testing offshoot of the brand's main design language; and Amanor, billed for 'contemporary wear,' is a planned line not expected until 2028. The brand's archive also includes the original HN01 'Lucine,' the reference that launched Havid Nagan.\n\nHavid Nagan operates on a deliberately small scale, showing new references through private appointments — including private showings at Watches & Wonders — and direct inquiry rather than a conventional retail rollout, with the founder personally involved in every stage of design and development.",
+    tags: ["Los Angeles","Aren Bazerkanian","Swiss made","enamel","skeletonized","chronometer certified","exploratory design","small batch","by appointment"],
+    specialties: ["enamel", "skeleton", "bespoke"],
+    gphg: false,
+    image: "https://images.squarespace-cdn.com/content/v1/5dd7178367a14529efb2eb24/5b758512-ac95-4958-a75e-e963a98adc89/HN00+Trio.jpg?format=2500w",
+    imageCredit: "© Havid Nagan"
+  },
+  {
+    id: 191,
+    name: "Ophion",
+    brand: "Ophion",
+    location: "Spain",
+    country: "Spain",
+    region: "spain",
+    founded: "c.2013",
+    volume: "Small batches, reservation-based",
+    volumeNum: 50,
+    price: "€1,890–3,620",
+    website: "https://www.ophion-watches.com/",
+    instagram: "@ophionwatches",
+    desc: "Ophion was created with a simple goal: to offer the look and feel of haute horlogerie — proper guilloché, hand-finished movements, domed dials and crystals — at a genuinely accessible price, rather than the five- and six-figure sums that kind of finishing usually demands. The name comes from Greek mythology: in some tellings, Ophion was the first Titan, who together with his wife created the universe and fathered all the gods, including Cronos, god of time — a lineage the brand liked as a namesake for a watchmaker. Rather than work from a single fixed design DNA, each Ophion model sets out to revive a specific historical period or forgotten complication, reinterpreted for the present. Production is intentionally small, run in limited batches so the brand can control quality at every stage of manufacture, with reservations reopened for new batches once a series sells out. Components are sourced from specialists across several countries — cases, dials, and assembly from Germany, hands and movements from Switzerland, and straps and packaging from Spain — chosen specifically for their ability to execute complex, mostly curved and domed geometry that breaks from flat, easy-to-machine industry norms.\n\nThe collection currently spans four references. The OPH 960 looks back to 1960s watch design — domed dial, domed crystal, domed hands — translated into a 42mm 316L steel case with a hand-wound, 13¼-line double-barrel movement delivering a five-day power reserve from 26 jewels, finished with perlage, beveled and angled edges, blued heat-treated screws, and straight Colimaçon striping on the main and balance bridges. The OPH 786 takes its cues from pocket watches of the 1780s, built around a real CNC-engraved guilloché dial — chosen specifically to avoid the shallow, less reflective look of cheaper stamped guilloché — layered with a hollow-cut hour-and-minute ring sandwiched over the guilloché base, and powered by a Technotime/Soprod-based movement redesigned with symmetrical bridges and a hand-hammered finish evoking the mercury-gilding texture of 18th-century movements. The OPH 786 Vélos is a substantially reworked evolution of the 786 in an Art Deco idiom, with new teardrop lugs individually welded onto the case, a bold concave 'Vélos' (Greek for 'arrow') hour hand, double-sided anti-reflective sapphire crystals, and dials offered in CNC guilloché (blue, salmon, or silver) or radial brushed (blue or anthracite) finishes — produced in collaboration with Voutilainen-Cattin S.A. for the case and Estima AG for the hands, both in Switzerland, and CADOR GmbH in Germany for the dial. The OPH 411 Vesper departs furthest from the pocket-watch lineage, drawing instead on the neoclassical architectural fantasies of Étienne-Louis Boullée — particularly his unbuilt 1784 cenotaph for Isaac Newton, a 150-metre sphere meant to evoke day and night through light — translated into a multilayered, almost entirely curved dial of repeating 3D micro-indices and raised hour markers meant to evoke a night sky; the watch takes its name from the Latin for 'evening star.'",
+    tags: ["Spain","Germany","Switzerland","guilloché","CNC guilloché","domed dial","Art Deco","neoclassical","pocket watch inspired","Voutilainen-Cattin","accessible haute horlogerie","small batch"],
+    specialties: ["guilloché", "complications"],
+    gphg: false,
+    image: "https://images.squarespace-cdn.com/content/v1/56fac14cd210b8578bc01f2b/95f52b40-e712-41fa-8560-edbd31980797/PORtada+azul.jpg?format=1500w",
+    imageCredit: "© Ophion"
+  },
+  {
+    id: 192,
+    name: "VicenTerra",
+    brand: "Vicenterra SA",
+    location: "Boncourt, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2003 (as Realis); 2010 (Vicenterra SA)",
+    volume: "Numbered limited editions, 99 pieces per reference",
+    volumeNum: 99,
+    price: "CHF 13,000–75,000+",
+    website: "https://www.vicenterra.ch/",
+    instagram: "@vicenterra",
+    desc: "Vicenterra is the work of Vincent Plomb, a trained micro-mechanical designer who entered watchmaking through the 2D and 3D design of external watch components — case and dial architecture — before the company he worked for went bankrupt. He responded by sharpening his expertise across a string of contracts with different watch brands, and on December 1, 2003 founded Realis, the parent company that would eventually become Vicenterra. Around eighteen months later, now self-employed, a chance encounter gave him the push to design his first module combining three complications; it took three years to turn that idea into working prototypes. A promising production partnership collapsed amid the 2008 financial crisis, stalling the project until June 2009, when the concept that would become the GMT-3 first took shape in Plomb's mind, inheriting the architecture of those earlier prototypes. By February 2010 the design was finalized and the Vicenterra trademark officially registered; unveiled to enthusiastic press coverage, the GMT-3 drew roughly twenty pre-orders within weeks based on renderings and a 3D animation alone, and pre-orders kept arriving from Chicago to Beijing, Sydney to Geneva, until the brand's minimum viability threshold of 70 orders was reached that October — at which point Vicenterra SA was formally incorporated and the watches went into production.\n\nThe Earth holds a central, recurring place across every Vicenterra reference — Plomb has described the brand's mission as offering models that let the wearer 'escape' at a glance, behind an apparent simplicity that conceals genuinely intricate mechanical systems. Rather than adapt a single shared complication module across the range, Vicenterra develops a dedicated movement module for each model specifically to preserve the graphic clarity Plomb wants on the dial, fitting these modules to robust Swiss automatic base movements (commonly a premium-grade ETA 2892) rather than building movements entirely from scratch. The brand is designed in Boncourt and made and assembled between La Chaux-de-Fonds and Porrentruy in the Swiss Jura, with more than 95% of each watch manufactured by craftsmen and specialist companies across that same regional network — a transparency about its production chain that Plomb treats as part of the brand's identity, not an afterthought.\n\nThe collection comprises three lines. The GMT-3, the brand's founding model and the architectural root of everything that followed, is housed in a distinctive steel tonneau case beneath a large cylindrical glass, its multidimensional dial built around a rotating 3D Earth globe sharing the stage with a sun disc and moon to indicate day and night, alongside a retrograde date and an independent second time zone — five functions in total, with the globe set via a pusher at 4 o'clock across 24 independent positions. The Tycho Brahe, introduced in 2017 and named for the 16th-century Danish astronomer renowned for the most accurate naked-eye observations of his era, is the brand's more dress-oriented 'technical-dress' line: an off-centered dial in a 42.8mm Grade 5 titanium case, with the numeral five replaced by an oversized 'V' that doubles as a pointer marking the sun's zenith over the rotating, hand-painted globe, visually tracking daylight as it crosses the planet — limited to 99 numbered pieces per execution. AstroLUNA completes the collection with a different astronomical pairing: a three-dimensional Earth and Moon together on the dial, built around a perpetual moon-phase display, offered in aventurine 'Cosmos' executions and other numbered limited runs.",
+    tags: ["Boncourt","Jura","Vincent Plomb","GMT-3","Tycho Brahe","AstroLUNA","3D globe","retrograde date","second time zone","moon phase","limited edition","Swiss made"],
+    specialties: ["world time", "moon phase", "retrograde", "astronomical", "complications"],
+    gphg: false,
+    image: "https://www.vicenterra.ch/wp-content/uploads/2026/04/modele_jour-930x1024.png",
+    imageCredit: "© Vicenterra"
   }
 ];
 
@@ -4959,7 +5434,7 @@ function initClock(prefix, timeZone){
   const starColor = (prefix === 'g-') ? '#B8984A' : '#D4B87A';
 
   // Draw 12 hour numerals (Breguet-style italic, upright — not radially rotated)
-  // "6" is omitted since the moonphase aperture occupies that position
+  // "6" is omitted on all clocks since the moonphase aperture occupies that position
   const cx = 100, cy = 100;
   const numeralRadii = {1:78, 2:78, 3:78, 4:78, 5:78, 6:null, 7:78, 8:78, 9:78, 10:78, 11:78, 12:78};
   for (let hour = 1; hour <= 12; hour++) {
@@ -4980,8 +5455,8 @@ function initClock(prefix, timeZone){
   // Railroad minute track: 60 ticks between the numerals and the inner rim.
   // Every 5th tick (minute marks) is darker and slightly thicker.
   const trackEl = document.getElementById(prefix + 'minute-track');
-  const minorColor = (prefix === 'g-') ? '#1E4D8C' : '#D4B87A';
-  const majorColor = (prefix === 'g-') ? '#0B1F4D' : '#8A6F2E';
+  const minorColor = (prefix === '') ? '#D4B87A' : '#1E4D8C';
+  const majorColor = (prefix === '') ? '#8A6F2E' : '#0B1F4D';
   const rOuterTrack = 91, rInnerMinor = 88.5, rInnerMajor = 87.5;
   for (let i = 0; i < 60; i++) {
     const isMajor = (i % 5 === 0);
@@ -5119,9 +5594,12 @@ function initClock(prefix, timeZone){
     setHandRotation(prefix + 'hand-hour', hourAngle);
     setHandRotation(prefix + 'hand-minute', minuteAngle);
 
-    document.getElementById(prefix + 'day-text').textContent = dayNames[dayOfWeek];
-    document.getElementById(prefix + 'date-text').textContent = dateOfMonth;
-    document.getElementById(prefix + 'month-text').textContent = monthNames[month];
+    const dayEl = document.getElementById(prefix + 'day-text');
+    const dateEl = document.getElementById(prefix + 'date-text');
+    const monthEl = document.getElementById(prefix + 'month-text');
+    if (dayEl) dayEl.textContent = dayNames[dayOfWeek];
+    if (dateEl) dateEl.textContent = dateOfMonth;
+    if (monthEl) monthEl.textContent = monthNames[month];
 
     // Moon phase calculation (approximate synodic month = 29.53059 days)
     // Reference new moon: Jan 6, 2000 18:14 UTC — global, same for both clocks
@@ -5167,6 +5645,8 @@ function initClock(prefix, timeZone){
 
 initClock('', undefined);          // Primary clock: visitor's local time
 initClock('g-', 'Europe/Zurich');  // Second clock: Geneva (Switzerland) time
+initClock('ny-', 'America/New_York'); // New York / Miami time
+initClock('t-', 'Asia/Tokyo');        // Tokyo time
 </script>
 </body>
 </html>
