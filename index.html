@@ -859,6 +859,123 @@
       </svg>
     </div>
 
+    <!-- ===== LOS ANGELES CLOCK: Geneva clone with la- prefix + day/night sky ===== -->
+    <div class="hero-clock-wrap">
+      <svg id="hero-clock-la" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <linearGradient id="la-blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="100">
+            <stop offset="0%" stop-color="#0B1F4D"/>
+            <stop offset="35%" stop-color="#1E4D8C"/>
+            <stop offset="55%" stop-color="#6FB8F0"/>
+            <stop offset="75%" stop-color="#2C5FA0"/>
+            <stop offset="100%" stop-color="#0B1F4D"/>
+          </linearGradient>
+          <linearGradient id="la-metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#7A5F22"/>
+            <stop offset="20%" stop-color="#D9B96A"/>
+            <stop offset="40%" stop-color="#FFF3CE"/>
+            <stop offset="55%" stop-color="#B8984A"/>
+            <stop offset="75%" stop-color="#8A6A2E"/>
+            <stop offset="100%" stop-color="#E8CE8E"/>
+          </linearGradient>
+          <linearGradient id="la-metallic-gold-dark" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
+            <stop offset="0%" stop-color="#4A3812"/>
+            <stop offset="30%" stop-color="#8A6F2E"/>
+            <stop offset="50%" stop-color="#E8C97A"/>
+            <stop offset="65%" stop-color="#7A5F22"/>
+            <stop offset="100%" stop-color="#4A3812"/>
+          </linearGradient>
+          <linearGradient id="la-metallic-gold-dark-cw" gradientUnits="userSpaceOnUse" x1="96.8" y1="117.8" x2="103.2" y2="124.2">
+            <stop offset="0%" stop-color="#8A6F2E"/>
+            <stop offset="35%" stop-color="#E8C97A"/>
+            <stop offset="55%" stop-color="#FFF3CE"/>
+            <stop offset="75%" stop-color="#C9A659"/>
+            <stop offset="100%" stop-color="#8A6F2E"/>
+          </linearGradient>
+          <linearGradient id="la-metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#9C7E3E"/>
+            <stop offset="30%" stop-color="#EBD6A0"/>
+            <stop offset="50%" stop-color="#FFF8E1"/>
+            <stop offset="70%" stop-color="#D4B87A"/>
+            <stop offset="100%" stop-color="#A4842F"/>
+          </linearGradient>
+          <radialGradient id="la-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFBF0"/>
+            <stop offset="18%" stop-color="#FFF0C2"/>
+            <stop offset="38%" stop-color="#E8C97A"/>
+            <stop offset="60%" stop-color="#B8924A"/>
+            <stop offset="82%" stop-color="#7A5A22"/>
+            <stop offset="100%" stop-color="#5C4318"/>
+          </radialGradient>
+          <!-- Sun disk gradient: warm yellow-orange -->
+          <radialGradient id="la-sun-grad" cx="40%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#FFFDE0"/>
+            <stop offset="30%" stop-color="#FFE566"/>
+            <stop offset="65%" stop-color="#FFA500"/>
+            <stop offset="100%" stop-color="#E07000"/>
+          </radialGradient>
+          <clipPath id="la-moon-clip">
+            <circle cx="100" cy="145" r="37"/>
+          </clipPath>
+        </defs>
+
+        <!-- Just a style for the group opacity transition -->
+        <style>
+          #la-clouds { opacity: 0; transition: opacity 1.5s; }
+          #la-clouds.visible { opacity: 1; }
+        </style>
+        <!-- White dial -->
+        <circle cx="100" cy="100" r="98" fill="#FAF8F4" stroke="url(#la-metallic-gold)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#la-metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
+        <g id="la-minute-track" stroke="#1E4D8C"></g>
+        <!-- City label -->
+        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Los Angeles</text>
+        <g id="la-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+        <!-- Day / Date / Month apertures -->
+        <g id="la-day-date-month-apertures">
+          <rect x="48" y="57" width="30" height="15" rx="1" fill="url(#la-metallic-gold)" stroke="url(#la-metallic-gold)" stroke-width="0.75"/>
+          <text id="la-day-text" x="63" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
+          <rect x="85" y="57" width="30" height="15" rx="1" fill="url(#la-metallic-gold)" stroke="url(#la-metallic-gold)" stroke-width="0.75"/>
+          <text id="la-date-text" x="100" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
+          <rect x="122" y="57" width="30" height="15" rx="1" fill="url(#la-metallic-gold)" stroke="url(#la-metallic-gold)" stroke-width="0.75"/>
+          <text id="la-month-text" x="137" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
+        </g>
+        <!-- Moonphase aperture -->
+        <g id="la-moonphase-group">
+          <circle id="la-sky-bg" cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#la-metallic-gold)" stroke-width="0.75"/>
+          <g clip-path="url(#la-moon-clip)">
+            <circle id="la-moon-disk" cx="100" cy="145" r="14" fill="url(#la-moon-gold)"/>
+            <circle id="la-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
+            <circle id="la-sun-disk" cx="100" cy="108" r="9" fill="url(#la-sun-grad)" opacity="0"/>
+            <!-- JS-generated random clouds inserted here -->
+            <g id="la-clouds"></g>
+          </g>
+          <g id="la-moon-stars"></g>
+        </g>
+        <!-- Center hub -->
+        <circle cx="100" cy="100" r="2.5" fill="#1E4D8C"/>
+        <!-- Hour hand -->
+        <g id="la-hand-hour">
+          <path d="M 98.20 100 C 98.53 77.50, 99.50 66.25, 99.50 55 L 100.50 55 C 100.50 66.25, 104.00 77.50, 101.80 100 Z" fill="url(#la-blued-steel)"/>
+          <circle cx="100" cy="50" r="4" fill="none" stroke="url(#la-blued-steel)" stroke-width="1"/>
+          <line x1="100" y1="46" x2="100" y2="37" stroke="url(#la-blued-steel)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+        <!-- Minute hand -->
+        <g id="la-hand-minute">
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#la-blued-steel)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#la-blued-steel)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#la-blued-steel)" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+        <!-- Seconds hand -->
+        <g id="la-hand-second">
+          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#la-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#la-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="100" cy="121" r="3.2" fill="url(#la-metallic-gold-dark-cw)"/>
+        </g>
+        <circle cx="100" cy="100" r="1.5" fill="url(#la-metallic-gold)"/>
+      </svg>
+    </div>
+
     <!-- ===== NEW YORK / MIAMI CLOCK: exact Geneva clone with ny- prefix ===== -->
     <div class="hero-clock-wrap">
       <svg id="hero-clock-ny" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -911,7 +1028,7 @@
         <circle cx="100" cy="100" r="98" fill="#FAF8F4" stroke="url(#ny-metallic-gold)" stroke-width="3"/>
         <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ny-metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
         <g id="ny-minute-track" stroke="#1E4D8C"></g>
-        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">New York</text>
+        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Miami</text>
         <g id="ny-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
         <g id="ny-day-date-month-apertures">
           <rect x="48" y="57" width="30" height="15" rx="1" fill="url(#ny-metallic-gold)" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
@@ -921,7 +1038,7 @@
           <rect x="122" y="57" width="30" height="15" rx="1" fill="url(#ny-metallic-gold)" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
           <text id="ny-month-text" x="137" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
         </g>
-        <text x="100" y="89" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Miami</text>
+        <text x="100" y="89" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">New York</text>
         <g id="ny-moonphase-group">
           <circle cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#ny-metallic-gold)" stroke-width="0.75"/>
           <defs>
@@ -5610,7 +5727,8 @@ function initClock(prefix, timeZone){
     if (phase < 0) phase += 1;
 
     // phase: 0 = new moon (fully dark), 0.5 = full moon (fully lit gold)
-    const moonR = 19;
+    // LA clock uses a smaller moon disk (r=14) vs all others (r=19)
+    const moonR = (prefix === 'la-') ? 14 : 19;
     const moonCx = 100, cyMoon = 145;
     if (phase <= 0.5) {
       const offset = moonR * 2 * (0.5 - phase) / 0.5;
@@ -5647,6 +5765,384 @@ initClock('', undefined);          // Primary clock: visitor's local time
 initClock('g-', 'Europe/Zurich');  // Second clock: Geneva (Switzerland) time
 initClock('ny-', 'America/New_York'); // New York / Miami time
 initClock('t-', 'Asia/Tokyo');        // Tokyo time
+initClock('la-', 'America/Los_Angeles'); // Los Angeles time
+
+/* ===== LA CLOCK: day/night sky with real sunrise/sunset and sun arc ===== */
+(function initLAClock() {
+  const LAT = 34.0522, LON = -118.2437; // Los Angeles
+
+  // NOAA solar position algorithm (simplified): returns sunrise/sunset as
+  // fractional hours in LOCAL time for the given Date.
+  function getSunTimes(date) {
+    const JD = date.getTime() / 86400000 + 2440587.5;
+    const n = JD - 2451545.0;
+    const L = (280.460 + 0.9856474 * n) % 360;
+    const g = ((357.528 + 0.9856003 * n) % 360) * Math.PI / 180;
+    const lam = (L + 1.915 * Math.sin(g) + 0.020 * Math.sin(2 * g)) * Math.PI / 180;
+    const eps = 23.439 * Math.PI / 180;
+    const sinDec = Math.sin(eps) * Math.sin(lam);
+    const dec = Math.asin(sinDec);
+    const latR = LAT * Math.PI / 180;
+    // Hour angle at sunrise/sunset (solar zenith = 90.833°)
+    const cosH = (Math.cos(90.833 * Math.PI / 180) - Math.sin(latR) * sinDec)
+                  / (Math.cos(latR) * Math.cos(dec));
+    if (cosH < -1) return { sunrise: 0, sunset: 24 }; // polar day
+    if (cosH > 1)  return { sunrise: 12, sunset: 12 }; // polar night
+    const H = Math.acos(cosH) * 180 / Math.PI; // degrees
+    // Right ascension
+    const RA = Math.atan2(Math.cos(eps) * Math.sin(lam), Math.cos(lam)) * 180 / Math.PI / 15;
+    // Equation of time (minutes)
+    const EoT = (L / 15 - ((RA + 360) % 24));
+    // UTC noon
+    const lngHour = LON / 15;
+    const riseUTC = 6 - lngHour - EoT;
+    const setUTC  = 18 - lngHour - EoT;
+    // Convert to LA local time (use Intl to get UTC offset)
+    const offsetMin = -new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      timeZoneName: 'shortOffset'
+    }).formatToParts(date).find(p => p.type === 'timeZoneName').value
+      .replace('GMT', '').split(':').reduce((acc, v, i) => acc + (i ? parseInt(v)/60 : parseInt(v)) * 60, 0);
+    const offsetH = -offsetMin / 60;
+    return {
+      sunrise: ((riseUTC + offsetH) + 24) % 24,
+      sunset:  ((setUTC  + offsetH) + 24) % 24
+    };
+  }
+
+  // Get fractional hour in LA time (0-24)
+  function getLAHour(now) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false
+    }).formatToParts(now);
+    const map = {};
+    parts.forEach(p => map[p.type] = p.value);
+    let h = parseInt(map.hour, 10);
+    if (h === 24) h = 0;
+    return h + parseInt(map.minute, 10) / 60 + parseInt(map.second, 10) / 3600;
+  }
+
+  const skyBg     = document.getElementById('la-sky-bg');
+  const moonShadow = document.getElementById('la-moon-shadow');
+  const sunDisk   = document.getElementById('la-sun-disk');
+  const moonStars = document.getElementById('la-moon-stars');
+  const clouds    = document.getElementById('la-clouds');
+
+  // SVG namespace
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  // Aperture: circle center (100, 145), radius 37
+  // Cloud travel lane: y values from 127 to 178 (inside aperture)
+  // Cloud x: enters from right edge (x≈137), exits left edge (x≈63)
+  // But in SVG coords the clipping circle handles overflow, so we can
+  // spawn clouds well to the right and let them drift left freely.
+
+  function rand(min, max) { return min + Math.random() * (max - min); }
+
+  // Build one randomised cloud group as an SVG <g>, positioned at
+  // absolute SVG coords (cx, cy) with a given scale.
+  function makeCloud(cx, cy, scale) {
+    const g = document.createElementNS(SVG_NS, 'g');
+    const puffs = Math.floor(rand(3, 6));
+
+    // Build puff layout: each puff has a position, width, height
+    const layout = [];
+    let xCursor = 0;
+    for (let i = 0; i < puffs; i++) {
+      const rx = rand(5, 13) * scale;
+      const ry = rand(4, 8) * scale;
+      // Vary vertical position: central puffs slightly higher (taller cloud in the middle)
+      const midFrac = 1 - Math.abs((i - (puffs - 1) / 2) / ((puffs - 1) / 2 + 0.5));
+      const puffY = cy - midFrac * rand(1.5, 4) * scale;
+      layout.push({ x: cx + xCursor, y: puffY, rx, ry });
+      xCursor += rand(rx * 1.0, rx * 1.7);
+    }
+
+    // Layer 1 — flat shadow base (dark grey-blue, slightly below puffs, squashed oval)
+    // covers the whole cloud width as a flat underbelly
+    const totalW = (layout[layout.length - 1].x + layout[layout.length - 1].rx) - (layout[0].x - layout[0].rx);
+    const baseX = layout[0].x - layout[0].rx + totalW / 2;
+    const baseY = cy + rand(2, 4.5) * scale;
+    const baseRx = totalW / 2 * rand(0.85, 0.98);
+    const baseRy = rand(2, 4) * scale;
+    const base = document.createElementNS(SVG_NS, 'ellipse');
+    base.setAttribute('cx', baseX.toFixed(1));
+    base.setAttribute('cy', baseY.toFixed(1));
+    base.setAttribute('rx', baseRx.toFixed(1));
+    base.setAttribute('ry', baseRy.toFixed(1));
+    base.setAttribute('fill', '#9BB8CC');
+    base.setAttribute('opacity', rand(0.30, 0.50).toFixed(2));
+    g.appendChild(base);
+
+    // Layer 2 — puff undersides (grey-blue, slightly below centre, for depth/shadow)
+    layout.forEach(({ x, y, rx, ry }) => {
+      const shadow = document.createElementNS(SVG_NS, 'ellipse');
+      shadow.setAttribute('cx', x.toFixed(1));
+      shadow.setAttribute('cy', (y + ry * 0.45).toFixed(1));
+      shadow.setAttribute('rx', (rx * 0.88).toFixed(1));
+      shadow.setAttribute('ry', (ry * 0.55).toFixed(1));
+      shadow.setAttribute('fill', '#AFC8D8');
+      shadow.setAttribute('opacity', rand(0.35, 0.55).toFixed(2));
+      g.appendChild(shadow);
+    });
+
+    // Layer 3 — main white puff bodies
+    layout.forEach(({ x, y, rx, ry }) => {
+      const puff = document.createElementNS(SVG_NS, 'ellipse');
+      puff.setAttribute('cx', x.toFixed(1));
+      puff.setAttribute('cy', y.toFixed(1));
+      puff.setAttribute('rx', rx.toFixed(1));
+      puff.setAttribute('ry', ry.toFixed(1));
+      puff.setAttribute('fill', 'white');
+      puff.setAttribute('opacity', rand(0.88, 0.97).toFixed(2));
+      g.appendChild(puff);
+    });
+
+    // Layer 4 — bright highlight on top of each puff (smaller, shifted up and slightly left)
+    layout.forEach(({ x, y, rx, ry }) => {
+      const hl = document.createElementNS(SVG_NS, 'ellipse');
+      hl.setAttribute('cx', (x - rx * 0.12).toFixed(1));
+      hl.setAttribute('cy', (y - ry * 0.28).toFixed(1));
+      hl.setAttribute('rx', (rx * 0.62).toFixed(1));
+      hl.setAttribute('ry', (ry * 0.42).toFixed(1));
+      hl.setAttribute('fill', 'white');
+      hl.setAttribute('opacity', rand(0.55, 0.78).toFixed(2));
+      g.appendChild(hl);
+    });
+
+    return g;
+  }
+
+  // Active cloud list: {el, x, y, speed (px/s), width}
+  const activeCloud = [];
+
+  function spawnCloud(startX) {
+    const scale = rand(0.55, 1.15);
+    const belt = Math.random() < 0.55 ? 'upper' : 'lower';
+    const cy = belt === 'upper' ? rand(116, 132) : rand(158, 172);
+    const speed = rand(1.5, 4); // px per second
+    const cloudWidth = rand(20, 55) * scale;
+    const el = makeCloud(startX, cy, scale);
+    clouds.appendChild(el);
+    activeCloud.push({ el, startX, speed, width: cloudWidth, _dx: 0 });
+  }
+
+  // Seed initial clouds spread across the sky so it doesn't start empty
+  function seedClouds() {
+    const count = Math.floor(rand(3, 7));
+    for (let i = 0; i < count; i++) {
+      // Seed with clouds already spread across the aperture (x 70-145),
+      // pre-displaced so they appear in mid-journey rather than all entering at once
+      const startX = rand(80, 150);
+      const scale = rand(0.55, 1.15);
+      const belt = Math.random() < 0.55 ? 'upper' : 'lower';
+      const cy = belt === 'upper' ? rand(116, 132) : rand(158, 172);
+      const speed = rand(1.5, 4);
+      const cloudWidth = rand(20, 55) * scale;
+      const el = makeCloud(startX, cy, scale);
+      clouds.appendChild(el);
+      // _dx starts at 0 — they're already at their seeded position visually
+      activeCloud.push({ el, startX, speed, width: cloudWidth, _dx: 0 });
+    }
+  }
+
+  // Animation loop: move each cloud left, remove only when fully off the left edge.
+  let lastTs = null;
+  function animateClouds(ts) {
+    if (!lastTs) lastTs = ts;
+    const dt = (ts - lastTs) / 1000; // seconds
+    lastTs = ts;
+
+    for (let i = activeCloud.length - 1; i >= 0; i--) {
+      const c = activeCloud[i];
+      c._dx += c.speed * dt;
+      c.el.setAttribute('transform', `translate(${(-c._dx).toFixed(2)} 0)`);
+
+      // Remove only when the cloud's rightmost puff has fully crossed the left aperture edge (x≈63).
+      // rightmost extent ≈ startX + halfWidth; fully gone when that's drifted past 63.
+      if (c._dx > (c.startX + c.width * 0.5 - 63)) {
+        c.el.remove();
+        activeCloud.splice(i, 1);
+        // Spawn a replacement entering from the right
+        setTimeout(() => spawnCloud(rand(140, 165)), rand(500, 6000));
+      }
+    }
+    cloudAnimId = requestAnimationFrame(animateClouds);
+  }
+
+  let cloudAnimId = null;
+  let cloudsSeeded = false;
+
+  // Twilight window in fractional hours (45 min each side)
+  const TWILIGHT = 0.75;
+
+  // Interpolate between two hex colors by fraction t (0→1)
+  function lerpColor(c1, c2, t) {
+    const h = s => parseInt(s, 16);
+    const r1 = h(c1.slice(1,3)), g1 = h(c1.slice(3,5)), b1 = h(c1.slice(5,7));
+    const r2 = h(c2.slice(1,3)), g2 = h(c2.slice(3,5)), b2 = h(c2.slice(5,7));
+    const r = Math.round(r1 + (r2 - r1) * t);
+    const g = Math.round(g1 + (g2 - g1) * t);
+    const b = Math.round(b1 + (b2 - b1) * t);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  const SKY_NIGHT   = '#0B1530'; // deep navy
+  const SKY_PREDAWN = '#2D1A3E'; // deep purple, just before dawn
+  const SKY_DAWN    = '#C45830'; // warm burnt-orange at first light
+  const SKY_GOLDEN  = '#E8924A'; // golden-orange glow
+  const SKY_DAY     = '#4A9FD4'; // full daytime blue
+  const SKY_SUNSET  = '#C04428'; // deep sunset red-orange
+  const SKY_DUSK    = '#1E1035'; // deep indigo at dusk
+
+  // Aperture geometry
+  const SUN_R = 16;    // arc radius — keeps sun inside aperture at all positions
+  const APX = 100, APY = 145, APR = 37; // aperture center and radius
+  const SUN_DISK_R = 9; // sun disk radius (larger)
+  // Sun arc center raised so sun stays above the moon and fully inside the aperture.
+  // Arc center (APX, SUN_ARC_CY=139), radius 16:
+  //   noon peak:  (100, 123) — sun top y=114, aperture top y=108 ✓ inside
+  //   east/west:  (116/84, 139) — dist from aperture center ≈17 << 28 ✓ inside
+  const SUN_ARC_CY = 139;
+
+  function updateSky() {
+    const now = new Date();
+    const laHour = getLAHour(now);
+    const { sunrise, sunset } = getSunTimes(now);
+
+    // Time relative to sunrise/sunset in fractional hours (negative = before)
+    const sinceRise = laHour - sunrise;
+    const tillSet   = sunset - laHour;
+    const isDay     = sinceRise >= 0 && tillSet > 0;
+
+    // ── Sky color ──────────────────────────────────────────────────────────
+    let skyColor, starOpacity = '0', cloudsVisible = true;
+
+    if (sinceRise >= TWILIGHT && tillSet >= TWILIGHT) {
+      // Full daytime
+      skyColor = SKY_DAY;
+    } else if (sinceRise < -TWILIGHT && !(tillSet < TWILIGHT)) {
+      // Full night (before pre-dawn)
+      skyColor = SKY_NIGHT;
+      starOpacity = '1';
+      cloudsVisible = false;
+    } else if (tillSet >= 0 && tillSet < -TWILIGHT) {
+      // Full night (after dusk)
+      skyColor = SKY_NIGHT;
+      starOpacity = '1';
+      cloudsVisible = false;
+    } else if (sinceRise >= -TWILIGHT && sinceRise < 0) {
+      // Pre-dawn twilight: night → pre-dawn → dawn
+      const t = (sinceRise + TWILIGHT) / TWILIGHT; // 0→1
+      if (t < 0.4) {
+        skyColor = lerpColor(SKY_NIGHT, SKY_PREDAWN, t / 0.4);
+        starOpacity = (1 - t / 0.4 * 0.5).toFixed(2);
+        cloudsVisible = false;
+      } else {
+        skyColor = lerpColor(SKY_PREDAWN, SKY_DAWN, (t - 0.4) / 0.6);
+        starOpacity = ((1 - (t - 0.4) / 0.6) * 0.5).toFixed(2);
+        cloudsVisible = t > 0.7;
+      }
+    } else if (sinceRise >= 0 && sinceRise < TWILIGHT) {
+      // Sunrise golden hour: dawn → golden → day
+      const t = sinceRise / TWILIGHT; // 0→1
+      if (t < 0.5) {
+        skyColor = lerpColor(SKY_DAWN, SKY_GOLDEN, t / 0.5);
+      } else {
+        skyColor = lerpColor(SKY_GOLDEN, SKY_DAY, (t - 0.5) / 0.5);
+      }
+      starOpacity = '0';
+      cloudsVisible = true;
+    } else if (tillSet >= 0 && tillSet < TWILIGHT) {
+      // Pre-sunset golden hour: day → golden → sunset
+      const t = 1 - tillSet / TWILIGHT; // 0→1
+      if (t < 0.5) {
+        skyColor = lerpColor(SKY_DAY, SKY_GOLDEN, t / 0.5);
+      } else {
+        skyColor = lerpColor(SKY_GOLDEN, SKY_SUNSET, (t - 0.5) / 0.5);
+      }
+      starOpacity = '0';
+      cloudsVisible = true;
+    } else if (tillSet < 0 && tillSet >= -TWILIGHT) {
+      // Post-sunset dusk: sunset → dusk → night
+      const t = -tillSet / TWILIGHT; // 0→1
+      if (t < 0.5) {
+        skyColor = lerpColor(SKY_SUNSET, SKY_DUSK, t / 0.5);
+        starOpacity = (t / 0.5 * 0.6).toFixed(2);
+        cloudsVisible = t < 0.3;
+      } else {
+        skyColor = lerpColor(SKY_DUSK, SKY_NIGHT, (t - 0.5) / 0.5);
+        starOpacity = (0.6 + (t - 0.5) / 0.5 * 0.4).toFixed(2);
+        cloudsVisible = false;
+      }
+    } else {
+      skyColor = SKY_NIGHT;
+      starOpacity = '1';
+      cloudsVisible = false;
+    }
+
+    skyBg.setAttribute('fill', skyColor);
+    moonShadow.setAttribute('fill', skyColor);
+    moonStars.setAttribute('opacity', starOpacity);
+
+    if (cloudsVisible) {
+      clouds.classList.add('visible');
+      if (!cloudsSeeded) { seedClouds(); cloudsSeeded = true; }
+      if (!cloudAnimId) { lastTs = null; cloudAnimId = requestAnimationFrame(animateClouds); }
+    } else {
+      clouds.classList.remove('visible');
+      if (cloudAnimId) { cancelAnimationFrame(cloudAnimId); cloudAnimId = null; }
+    }
+
+    // ── Sun position: arc in the UPPER portion of aperture, above the moon disk ──
+    // Moon disk center (100,145) r=19 → moon top at y=126.
+    // Sun arc: center (APX, SUN_ARC_CY=129), radius SUN_R=20
+    //   → peaks at y=109 (noon), sides at y=129 (sunrise/sunset) — all above moon.
+
+    // Fraction across the full day (0=sunrise, 1=sunset), clamped
+    const dayFrac = Math.max(0, Math.min(1, (laHour - sunrise) / (sunset - sunrise)));
+    const arcAngleDeg = 90 - dayFrac * 180; // +90°(east/right) → 0°(noon) → -90°(west/left)
+    const arcAngleRad = arcAngleDeg * Math.PI / 180;
+
+    // Fully-risen sun center on the arc
+    const fullSunX = APX + SUN_R * Math.sin(arcAngleRad);
+    const fullSunY = SUN_ARC_CY - SUN_R * Math.cos(arcAngleRad);
+
+    // Horizon: sun rises/sets from just below the arc's side level (SUN_ARC_CY)
+    // At sunrise (east, arcAngle=+90°): x = APX+SUN_R = 120, y rises from ~SUN_ARC_CY+offset
+    // At sunset  (west, arcAngle=-90°): x = APX-SUN_R = 80,  y sinks into SUN_ARC_CY+offset
+    const riseFromX = fullSunX;
+    const riseFromY = SUN_ARC_CY + SUN_DISK_R * 2.0; // start below arc horizon level
+
+    const RISE_WINDOW = TWILIGHT * 0.5;
+    let sunCx = fullSunX, sunCy = fullSunY, sunOpacity = 1;
+
+    if (!isDay && sinceRise >= -TWILIGHT && sinceRise < 0) {
+      sunCx = riseFromX; sunCy = riseFromY;
+      sunOpacity = 0;
+    } else if (isDay && sinceRise < RISE_WINDOW) {
+      const t = sinceRise / RISE_WINDOW;
+      sunCx = riseFromX + (fullSunX - riseFromX) * t;
+      sunCy = riseFromY + (fullSunY - riseFromY) * t;
+      sunOpacity = Math.min(1, t * 2);
+    } else if (isDay && tillSet < RISE_WINDOW && tillSet >= 0) {
+      const t = 1 - tillSet / RISE_WINDOW;
+      sunCx = fullSunX + (riseFromX - fullSunX) * t;
+      sunCy = fullSunY + (riseFromY - fullSunY) * t;
+      sunOpacity = Math.max(0, 1 - t * 2);
+    } else if (!isDay) {
+      sunOpacity = 0;
+    }
+
+    sunDisk.setAttribute('cx', sunCx.toFixed(2));
+    sunDisk.setAttribute('cy', sunCy.toFixed(2));
+    sunDisk.setAttribute('opacity', sunOpacity.toFixed(2));
+  }
+
+  setInterval(updateSky, 1000);
+  updateSky();
+})();
 </script>
 </body>
 </html>
