@@ -181,12 +181,12 @@
   }
 
   /* Cloud groups on all clocks: hidden by default, fade in when visible class added */
-  #la-clouds, #ny-clouds, #g-clouds, #db-clouds, #t-clouds {
+  #la-clouds, #ny-clouds, #g-clouds, #db-clouds, #t-clouds, #clouds {
     opacity: 0;
     transition: opacity 1.5s;
   }
   #la-clouds.visible, #ny-clouds.visible, #g-clouds.visible,
-  #db-clouds.visible, #t-clouds.visible { opacity: 1; }
+  #db-clouds.visible, #t-clouds.visible, #clouds.visible { opacity: 1; }
 
   .hero::before {
     content: '';
@@ -795,6 +795,18 @@
             <stop offset="82%" stop-color="#7A5A22"/>
             <stop offset="100%" stop-color="#5C4318"/>
           </radialGradient>
+          <radialGradient id="sun-grad" cx="40%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#FFFDE0"/>
+            <stop offset="30%" stop-color="#FFE566"/>
+            <stop offset="65%" stop-color="#FFA500"/>
+            <stop offset="100%" stop-color="#E07000"/>
+          </radialGradient>
+          <radialGradient id="sun-glow-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#FFFDE0" stop-opacity="0.55"/>
+            <stop offset="35%"  stop-color="#FFE566" stop-opacity="0.28"/>
+            <stop offset="65%"  stop-color="#FFA500" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+          </radialGradient>
           <!-- Heat-blued steel gradient for the seconds hand -->
           <linearGradient id="blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
             <stop offset="0%" stop-color="#0B1F4D"/>
@@ -832,15 +844,18 @@
 
         <!-- Moonphase aperture at 6 — round, slightly reduced and raised to leave room for bottom inscription -->
         <g id="moonphase-group">
-          <circle cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#metallic-gold)" stroke-width="0.75"/>
+          <circle id="sky-bg" cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#metallic-gold)" stroke-width="0.75"/>
           <defs>
             <clipPath id="moon-clip">
               <circle cx="100" cy="145" r="37"/>
             </clipPath>
           </defs>
           <g clip-path="url(#moon-clip)">
-            <circle id="moon-disk" cx="100" cy="145" r="19" fill="url(#moon-gold)"/>
-            <circle id="moon-shadow" cx="100" cy="145" r="19" fill="#0B1530"/>
+            <circle id="moon-disk" cx="100" cy="145" r="14" fill="url(#moon-gold)"/>
+            <circle id="moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
+            <circle id="sun-glow" cx="100" cy="119.5" r="20" fill="url(#sun-glow-grad)" opacity="0"/>
+            <g id="clouds"></g>
+            <circle id="sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#sun-grad)" opacity="0"/>
           </g>
           <g id="moon-stars"></g>
         </g>
@@ -6534,23 +6549,37 @@ function initSky(prefix, timezone, lat, lon) {
     const arcAngleRad = arcAngleDeg * Math.PI / 180;
     const fullSunX = APX + SUN_R * Math.sin(arcAngleRad);
     const fullSunY = SUN_ARC_CY - SUN_R * Math.cos(arcAngleRad);
-    const riseFromX = fullSunX;
-    const riseFromY = SUN_ARC_CY + SUN_DISK_R_val * 2.5;
+
+    // Rise/set: sun moves in from / out to the aperture edge at the 3 o'clock (east) and
+    // 9 o'clock (west) positions. The aperture clip does all the revealing — no opacity fade.
+    // "Submerged" positions are just outside the aperture circle edge (r=37 from APX,APY).
+    // East horizon (sunrise): x = APX + APR + SUN_DISK_R, y = APY (right edge)
+    // West horizon (sunset):  x = APX - APR - SUN_DISK_R, y = APY (left edge)
+    const APR = 37;
+    const riseHorizonX = APX + APR + SUN_DISK_R_val; // fully hidden beyond right edge
+    const riseHorizonY = APY;
+    const setHorizonX  = APX - APR - SUN_DISK_R_val; // fully hidden beyond left edge
+    const setHorizonY  = APY;
+
     const RISE_WINDOW = TWILIGHT * 0.5;
     let sunCx = fullSunX, sunCy = fullSunY, sunOpacity = 1;
-    if (!isDay && sinceRise >= -TWILIGHT && sinceRise < 0) {
-      sunCx = riseFromX; sunCy = riseFromY; sunOpacity = 0;
+
+    if (!isDay) {
+      // Night: hide sun (move far outside aperture so clip hides it entirely)
+      sunCx = riseHorizonX; sunCy = riseHorizonY; sunOpacity = 0;
     } else if (isDay && sinceRise < RISE_WINDOW) {
-      const t = sinceRise / RISE_WINDOW;
-      sunCx = riseFromX + (fullSunX - riseFromX) * t;
-      sunCy = riseFromY + (fullSunY - riseFromY) * t;
-      sunOpacity = Math.min(1, t * 2);
+      // Rising: slide from beyond east aperture edge in to its arc position
+      const t = sinceRise / RISE_WINDOW; // 0 (at horizon) → 1 (fully risen)
+      sunCx = riseHorizonX + (fullSunX - riseHorizonX) * t;
+      sunCy = riseHorizonY + (fullSunY - riseHorizonY) * t;
+      sunOpacity = 1; // always full brightness — clip does the revealing
     } else if (isDay && tillSet < RISE_WINDOW && tillSet >= 0) {
-      const t = 1 - tillSet / RISE_WINDOW;
-      sunCx = fullSunX + (riseFromX - fullSunX) * t;
-      sunCy = fullSunY + (riseFromY - fullSunY) * t;
-      sunOpacity = Math.max(0, 1 - t * 2);
-    } else if (!isDay) { sunOpacity = 0; }
+      // Setting: slide from arc position out to beyond west aperture edge
+      const t = 1 - tillSet / RISE_WINDOW; // 0 (fully risen) → 1 (fully set)
+      sunCx = fullSunX + (setHorizonX - fullSunX) * t;
+      sunCy = fullSunY + (setHorizonY - fullSunY) * t;
+      sunOpacity = 1; // always full brightness — clip does the concealing
+    }
 
     sunDisk.setAttribute('cx', sunCx.toFixed(2));
     sunDisk.setAttribute('cy', sunCy.toFixed(2));
@@ -6571,6 +6600,25 @@ initSky('ny-', 'America/New_York',     40.7128,   -74.0060); // New York / Miami
 initSky('g-',  'Europe/Zurich',        46.2044,     6.1432); // Geneva / Glashütte
 initSky('db-', 'Asia/Dubai',           25.2048,    55.2708); // Dubai / Baku
 initSky('t-',  'Asia/Tokyo',           35.6762,   139.6503); // Tokyo / Seoul
+
+// Local clock: use visitor's timezone and attempt geolocation for accurate sunrise/sunset
+(function() {
+  const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // Default to a midpoint lat/lon; try to get real position via geolocation
+  let lat = 40.0, lon = -75.0; // fallback (east US)
+  function startLocal(la, lo) {
+    initSky('', localTZ, la, lo);
+  }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      pos => startLocal(pos.coords.latitude, pos.coords.longitude),
+      ()  => startLocal(lat, lon),
+      { timeout: 4000 }
+    );
+  } else {
+    startLocal(lat, lon);
+  }
+})();
 </script>
 </body>
 </html>
