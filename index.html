@@ -151,14 +151,14 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    width: 150px;
-    max-width: 150px;
+    width: 130px;
+    max-width: 130px;
   }
 
   .hero-clock-wrap svg {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     max-width: 100%;
     flex-shrink: 0;
   }
@@ -181,12 +181,12 @@
   }
 
   /* Cloud groups on all clocks: hidden by default, fade in when visible class added */
-  #la-clouds, #ny-clouds, #g-clouds, #db-clouds, #t-clouds, #clouds {
+  #la-clouds, #ny-clouds, #g-clouds, #db-clouds, #t-clouds, #clouds, #sy-clouds {
     opacity: 0;
     transition: opacity 1.5s;
   }
   #la-clouds.visible, #ny-clouds.visible, #g-clouds.visible,
-  #db-clouds.visible, #t-clouds.visible, #clouds.visible { opacity: 1; }
+  #db-clouds.visible, #t-clouds.visible, #clouds.visible, #sy-clouds.visible { opacity: 1; }
 
   .hero::before {
     content: '';
@@ -1543,6 +1543,126 @@
           <circle cx="100" cy="121" r="3.2" fill="url(#t-metallic-gold-dark-cw)"/>
         </g>
         <circle cx="100" cy="100" r="1.5" fill="url(#t-metallic-gold)"/>
+      </svg>
+    </div>
+
+    <!-- ===== SYDNEY / MELBOURNE CLOCK: sy- prefix, UTC+10/11 ===== -->
+    <div class="hero-clock-wrap">
+      <svg id="hero-clock-sydney" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <linearGradient id="sy-blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="100">
+            <stop offset="0%" stop-color="#0B1F4D"/>
+            <stop offset="35%" stop-color="#1E4D8C"/>
+            <stop offset="55%" stop-color="#6FB8F0"/>
+            <stop offset="75%" stop-color="#2C5FA0"/>
+            <stop offset="100%" stop-color="#0B1F4D"/>
+          </linearGradient>
+          <linearGradient id="sy-metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#7A5F22"/>
+            <stop offset="20%" stop-color="#D9B96A"/>
+            <stop offset="40%" stop-color="#FFF3CE"/>
+            <stop offset="55%" stop-color="#B8984A"/>
+            <stop offset="75%" stop-color="#8A6A2E"/>
+            <stop offset="100%" stop-color="#E8CE8E"/>
+          </linearGradient>
+          <linearGradient id="sy-metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#9C7E3E"/>
+            <stop offset="30%" stop-color="#EBD6A0"/>
+            <stop offset="50%" stop-color="#FFF8E1"/>
+            <stop offset="70%" stop-color="#D4B87A"/>
+            <stop offset="100%" stop-color="#A4842F"/>
+          </linearGradient>
+          <linearGradient id="sy-metallic-gold-dark" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
+            <stop offset="0%" stop-color="#4A3812"/>
+            <stop offset="30%" stop-color="#8A6F2E"/>
+            <stop offset="50%" stop-color="#E8C97A"/>
+            <stop offset="65%" stop-color="#7A5F22"/>
+            <stop offset="100%" stop-color="#4A3812"/>
+          </linearGradient>
+          <linearGradient id="sy-metallic-gold-dark-cw" gradientUnits="userSpaceOnUse" x1="96.8" y1="117.8" x2="103.2" y2="124.2">
+            <stop offset="0%" stop-color="#8A6F2E"/>
+            <stop offset="35%" stop-color="#E8C97A"/>
+            <stop offset="55%" stop-color="#FFF3CE"/>
+            <stop offset="75%" stop-color="#C9A659"/>
+            <stop offset="100%" stop-color="#8A6F2E"/>
+          </linearGradient>
+          <radialGradient id="sy-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFBF0"/>
+            <stop offset="18%" stop-color="#FFF0C2"/>
+            <stop offset="38%" stop-color="#E8C97A"/>
+            <stop offset="60%" stop-color="#B8924A"/>
+            <stop offset="82%" stop-color="#7A5A22"/>
+            <stop offset="100%" stop-color="#5C4318"/>
+          </radialGradient>
+          <radialGradient id="sy-sun-grad" cx="40%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#FFFDE0"/>
+            <stop offset="30%" stop-color="#FFE566"/>
+            <stop offset="65%" stop-color="#FFA500"/>
+            <stop offset="100%" stop-color="#E07000"/>
+          </radialGradient>
+          <radialGradient id="sy-sun-glow-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#FFFDE0" stop-opacity="0.55"/>
+            <stop offset="35%"  stop-color="#FFE566" stop-opacity="0.28"/>
+            <stop offset="65%"  stop-color="#FFA500" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="98" fill="#FAF8F4" stroke="url(#sy-metallic-gold)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sy-metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
+        <g id="sy-minute-track" stroke="#1E4D8C"></g>
+        <text x="100" y="48" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Sydney</text>
+        <g id="sy-hour-numerals" fill="#1E4D8C" stroke="#0B2E5C" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+        <g id="sy-day-date-month-apertures">
+          <rect x="48" y="57" width="30" height="15" rx="1" fill="url(#sy-metallic-gold)" stroke="url(#sy-metallic-gold)" stroke-width="0.75"/>
+          <text id="sy-day-text" x="63" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">MON</text>
+          <rect x="85" y="57" width="30" height="15" rx="1" fill="url(#sy-metallic-gold)" stroke="url(#sy-metallic-gold)" stroke-width="0.75"/>
+          <text id="sy-date-text" x="100" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1E4D8C" font-weight="600">1</text>
+          <rect x="122" y="57" width="30" height="15" rx="1" fill="url(#sy-metallic-gold)" stroke="url(#sy-metallic-gold)" stroke-width="0.75"/>
+          <text id="sy-month-text" x="137" y="67.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#1E4D8C" font-weight="600">JAN</text>
+        </g>
+        <text x="100" y="89" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="#1E4D8C">Melbourne</text>
+        <g id="sy-moonphase-group">
+          <circle id="sy-sky-bg" cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#sy-metallic-gold)" stroke-width="0.75"/>
+          <defs>
+            <clipPath id="sy-moon-clip">
+              <circle cx="100" cy="145" r="37"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#sy-moon-clip)">
+            <circle id="sy-moon-disk" cx="100" cy="145" r="14" fill="url(#sy-moon-gold)"/>
+            <circle id="sy-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
+            <circle id="sy-sun-glow" cx="100" cy="119.5" r="20" fill="url(#sy-sun-glow-grad)" opacity="0"/>
+            <g id="sy-clouds"></g>
+            <circle id="sy-sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#sy-sun-grad)" opacity="0"/>
+          </g>
+          <g id="sy-moon-stars"></g>
+        </g>
+
+        <!-- MADE IN MIAMI inscription -->
+        <defs>
+          <path id="sy-miami-arc" d="M 75 182.81 A 86.5 86.5 0 0 0 125 182.81" fill="none"/>
+        </defs>
+        <text font-family="'DM Sans', system-ui, sans-serif" font-size="4" letter-spacing="0.4" fill="#1E4D8C">
+          <textPath href="#sy-miami-arc" xlink:href="#sy-miami-arc" startOffset="50%" text-anchor="middle">MADE IN MIAMI</textPath>
+        </text>
+
+        <circle cx="100" cy="100" r="2.5" fill="#1E4D8C"/>
+        <g id="sy-hand-hour">
+          <path d="M 98.20 100 C 98.53 77.50, 99.50 66.25, 99.50 55 L 100.50 55 C 100.50 66.25, 104.00 77.50, 101.80 100 Z" fill="url(#sy-blued-steel)"/>
+          <circle cx="100" cy="50" r="4" fill="none" stroke="url(#sy-blued-steel)" stroke-width="1"/>
+          <line x1="100" y1="46" x2="100" y2="37" stroke="url(#sy-blued-steel)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+        <g id="sy-hand-minute">
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#sy-blued-steel)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#sy-blued-steel)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#sy-blued-steel)" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+        <g id="sy-hand-second">
+          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#sy-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#sy-metallic-gold-dark)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="100" cy="121" r="3.2" fill="url(#sy-metallic-gold-dark-cw)"/>
+        </g>
+        <circle cx="100" cy="100" r="1.5" fill="url(#sy-metallic-gold)"/>
       </svg>
     </div>
     </div><!-- /.hero-clocks -->
@@ -5858,6 +5978,132 @@ const makers = [
     gphg: true,
     image: "https://www.christopherward.com/on/demandware.static/-/Library-Sites-cw-library/default/dwa77b5d33/images/pdp-long-description/c1-bel-canto/classics/silver/4.png",
     imageCredit: "© Christopher Ward"
+  },
+  {
+    id: 206,
+    name: "Monta",
+    brand: "Monta Watch",
+    location: "St. Louis, Missouri, USA",
+    country: "USA",
+    region: "usa",
+    founded: "2016",
+    volume: "Small to medium series",
+    volumeNum: 1000,
+    price: "$1,850–$2,900",
+    website: "https://montawatch.com/",
+    instagram: "@montawatch",
+    facebook: "https://www.facebook.com/montawatch/",
+    desc: "Monta is an American independent watch brand founded in 2016 in St. Louis, Missouri, by Michael DiMartini and David Barnes — the same duo behind Everest Horology, a company that had already earned the respect of the serious watch community by making premium rubber and leather strap alternatives for Rolex owners, often before Rolex itself produced equivalents. Justin Kraudel joined as co-owner and president in early 2017. The name Monta is a tribute to the Montagnes du Jura — the Swiss mountain range whose valleys gave rise to the watchmaking villages of the Vallée de Joux, Le Locle, and La Chaux-de-Fonds — reflecting the founders' deep engagement with Swiss watchmaking tradition and their conviction that the tools and techniques born there deserve to be celebrated in contemporary design.\n\nMonta's founding philosophy, captured in the phrase 'Recast Your Timeline,' is an homage to the tool, military, and dive watches of the 1950s and 1960s — an era when professional instruments were designed around extreme utility, maximum legibility, and uncompromising durability. The brand describes its mission as taking that historic, classic beauty and pairing it with accelerated technology to go beyond what is currently produced. In practice this means Swiss manufacturing throughout: every Monta is designed in-house by a team with Swiss and French backgrounds, assembled in Switzerland by trained watchmakers, regulated to strict accuracy standards, and delivered with a two-year international warranty. Swiss movements are used across the entire collection, including the Sellita SW330-2 GMT (designated internally as the Monta M-23) in the Skyquest, Sellita automatics in the Noble and Atlas, and Sellita base calibres in the Triumph and Oceanking. The final quality control check is performed by the in-house Monta watchmaking team before any watch reaches a customer.\n\nTwo signature engineering achievements define Monta's technical identity. The first is the fully articulating bracelet: each link in Monta's 316L stainless steel bracelet is individually bevelled and polished to match the profile of the case, and the links are engineered to fully articulate so the bracelet wraps naturally around any wrist size without sacrificing durability — a feature that regular wearers consistently cite as the most comfortable bracelet they have worn. The flip-lock clasp includes a tool-free micro-adjustment mechanism that allows the wearer to resize the bracelet without tools, a seemingly simple improvement that required significant engineering work to execute correctly. The second achievement is the bezel assembly on the Oceanking and Skyquest, which carries two registered patents: a construction that ensures the arrow pip and the indices on the bezel are always perfectly aligned, and each click of the unidirectional rotation is solid with no play — eliminating the slight slop or misalignment that can affect less rigorously engineered bezel systems. As the brand puts it: feeling is believing.\n\nThe current collection spans six lines, each drawn from a different chapter of tool watch history. The Atlas is the brand's GMT field watch — a clean, travel-oriented three-hander available in blue, silver, and charcoal dials with an independently settable GMT hand, designed for the modern traveller who wants clarity and function in equal measure. The Noble is the dressy sport model, the most elegant and versatile in the range, available in 40mm (Noble) and a slimmer 40mm variant (Noble 40) for those who prefer a more refined proportion; the Noble Voyager adds a GMT complication to the Noble's silhouette. The Oceanking is Monta's flagship dive watch — the model that launched the brand in 2016 — a serious 300-metre rated instrument with a patented rotating bezel, bold dial layout, and the distinctive Monta arrow pip; it is available in black dial with ceramic bezel and in blue dial with aluminium bezel configurations. The Skyquest is the pilot/travel GMT with a 24-hour rotating bezel, designed as a two-timezone instrument with a retrograde-inspired reading system; it is available in gilt, black, and other dial variants with bi-colour and mono-colour aluminium bezels at $2,435. The Triumph is the brand's field watch, the most pared-back model in the range — a clean time-and-date in a 38.5mm case at $1,850, focused on legibility, comfort, and everyday wearability above all else. The Piece Unique offers one-of-a-kind special configurations. All models feature date displays, sapphire crystals, and are sold directly through the brand's own channels.",
+    tags: ["St. Louis","Missouri","USA","American brand","Swiss made","Everest Horology","Michael DiMartini","David Barnes","Justin Kraudel","Oceanking","Skyquest","Noble","Atlas","Triumph","GMT","dive watch","tool watch","patented bezel","articulating bracelet","Sellita"],
+    specialties: ["world time"],
+    gphg: false,
+    image: "https://montawatch.com/cdn/shop/products/product-feat-monta-atlas-blue_530x.png?v=1597335640",
+    imageCredit: "© Monta Watch"
+  },
+  {
+    id: 207,
+    name: "Formex",
+    brand: "Formex Watch SA",
+    location: "Biel/Bienne, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1999",
+    volume: "Small to medium series",
+    volumeNum: 2000,
+    price: "CHF 800–2,500+",
+    website: "https://formexwatch.com/",
+    instagram: "@formexwatch",
+    facebook: "https://www.facebook.com/formexwatch/",
+    desc: "Formex Watch SA is an independent family-owned watch manufacturer founded in 1999 and based in Biel/Bienne — known as the cradle of Swiss watchmaking — where the brand designs, develops, and assembles every watch at its own headquarters. The company was created by two Swiss brothers, both watchmakers and enthusiasts, who wanted to combine their passion for watches with their love for motorsports. The very name Formex derives from the French 'forme extrême' — extreme shape — reflecting the engineering ambition that has defined the brand from its first day. Inspired by the mechanics and engineering of high-performance racing cars and motorcycles, the brothers developed what would become Formex's signature innovation: the patented Case Suspension System. This cushion-like internal mechanism decouples the movement from the outer case, protecting it from shocks and vibrations in much the way a racing car's suspension isolates its cockpit from the track surface — while also distributing the watch's weight more evenly across the wrist, making it noticeably more comfortable to wear than a conventionally constructed case of the same size.\n\nOver the following fifteen years, Formex launched more than forty collections of modern timepieces, all built around the Case Suspension System, earning a devoted following among aficionados of extraordinarily engineered sports watches. In 2016, the brand made a pivotal strategic decision: to exit traditional brick-and-mortar retail entirely and move to a direct-to-consumer model, bypassing the distributor and retailer markups that inflate the price of most Swiss watches without adding value to the product itself. Instead, Formex invests the margin savings directly into product development, engineering, materials, and craftsmanship — forgoing expensive marketing campaigns and celebrity endorsements. The result is a range of watches that deliver genuine Swiss manufacture quality, COSC-certified movements, and proprietary engineering at a price point that would be impossible through conventional distribution channels. Today the brand is led by CEO Raphael Granito — son of its founder, who spent his school holidays working in his father's watch component company and learned movement development from engineers working with some of the most renowned brands in the Swiss industry. Raphael is himself an extreme sports enthusiast: downhill skater, car racer, snowboarder, freediver, surfer, skydiver, and paraglider, embodying the adventurous spirit that the Case Suspension System was engineered to serve. All watches meet the current strict Swiss Made requirements (as revised January 2017) and carry a three-year international warranty.\n\nThe current collection spans eight lines. The Aria is Formex's most refined expression, a 40mm manufacture chronometer (COSC-certified) in an elegantly proportioned case available in multiple dial executions including the striking Denso Blue; the Aria represents the technical and aesthetic apex of the range. The Essence is the core collection, available in three case sizes — ThirtyNine (39mm, classic proportions for a refined, understated fit), FortyOne (41mm, versatile from suit to weekend), and FortyThree (43mm, bold presence and maximum legibility) — all powered by COSC-certified automatic movements with 55+ hours of power reserve, all featuring the Case Suspension System. The Essence Leggera is the lightweight variant of the Essence, constructed from ultra-light carbon fibre and scratch-resistant high-tech ceramics; available in FortyOne and FortyThree sizes, it is engineered for those with an active lifestyle who want to forget they are wearing a watch. The Essence Ceramica is a skeletonised expression in ceramic, available in FortyOne. The Reef is the brand's dive watch family, offered in three configurations: the Reef 39.5mm (a more compact hand-finished stainless steel case), the Reef 42mm (the original and bestselling format, 300-metre water resistant, COSC-certified movement with 56 hours power reserve), and the Reef GMT (which adds GMT functionality to the Reef 42mm platform, with bezels interchangeable between the dive and GMT configurations — a practical modularity unique to the line). The Stratos UTC is a bold sport-aviation watch with world time functionality. The Field Automatic is the rugged tool watch entry in the range. Special Editions complete the current offer, produced in limited configurations for specific markets and occasions. All Formex watches come with free worldwide express delivery (two business days within Europe, three for overseas) and free 30-day returns.",
+    tags: ["Biel-Bienne","Switzerland","family-owned","Case Suspension System","patented","direct-to-consumer","COSC","Aria","Essence","Essence Leggera","Essence Ceramica","Reef","Stratos UTC","Field Automatic","carbon fibre","ceramics","dive watch","GMT","motorsport"],
+    specialties: ["chronograph", "world time", "skeleton"],
+    gphg: false,
+    image: "https://cdn11.bigcommerce.com/s-uok04hg6nb/images/stencil/960w/products/1154/5535/Formex_Aria_Manufacture_Chronometer_40_mm_-_Denso_Blue_Dial_Styled_1__46832.1779946402.jpg?c=1",
+    imageCredit: "© Formex Watch SA"
+  },
+  {
+    id: 208,
+    name: "MD Watches Studio",
+    brand: "MD Watches Studio",
+    location: "Cork, Ireland",
+    country: "Ireland",
+    region: "ireland",
+    founded: "2017",
+    volume: "Small series, limited editions",
+    volumeNum: 300,
+    price: "€459–€800+",
+    website: "https://www.martindesignwatches.com/",
+    instagram: "@martindwatches",
+    facebook: "https://www.facebook.com/martindwatches/",
+    desc: "MD Watches Studio is the one-man independent watch design practice of Martin Iglody — originally from Košice, Slovakia, now based in Cork, Ireland — who founded the studio in 2017 from a simple ambition: to create watches he genuinely loved. Martin's background is graphic design rather than traditional watchmaking, and his approach reflects that origin: every MD Watch begins as a sketch, evolves through a refined concept, and eventually becomes a finished watch in which every visual decision is deliberate. Working as an independent designer, Martin collaborates with skilled watchmakers and trusted manufacturing partners across Europe and Asia, staying closely involved at every stage from design to production to ensure each piece meets his standards for both quality and value. He handles customer service personally, a relationship his buyers consistently highlight as one of the brand's most distinctive qualities.\n\nWhat unifies the MD Watches Studio identity — across every collection, every dial, every named variant — is the creative thread of Irish and Celtic mythology and landscape woven through each design. Ireland's wealth of mythical heritage, its coastlines, its cultural symbols, and its ancient stories have become an integral part of the brand's uniquely creative identity. The aim is not pastiche but integration: contemporary modernist designs that hint at Ireland's cultural legacy through subtle echoes and understated elements, producing watches that feel balanced and uncluttered while carrying a quiet resonance for those who know the references.\n\nThe current collection spans four active lines. The Supernatural is the core and bestselling series — a regulator-style display watch in which hours, minutes, and seconds are read from separate dials, creating the clean, uncluttered aesthetic of a classical precision instrument in a contemporary case. The Supernatural's multiple named variants draw from Celtic and Gaulish mythology: Caturix (god of battle), Triskel (the triple spiral symbol), Tonaros, Caletos, Belenos (the solar deity), Taranis (god of thunder), Thetra, and others — each distinguished by its own dial colour, hand treatment, and strap combination, priced from €459. A special limited edition within the Supernatural line, the Ghasaq (meaning 'dusk' in Arabic, غسق), was created as a tribute to the UAE, its imagery drawn from the moment the sun melts between desert dunes and sea — capturing the serene stillness of twilight for a market where the Supernatural has found a devoted following. The Emerald Isle is a newer collection embodying timeless modernism with contemporary precision, presenting a new original design with beautifully balanced proportions, a commitment to the highest level of detailing, a stunning choice of colours, and a respected movement for long-lasting precision. The Connemara takes its name from the wild Atlantic region of County Galway and introduces twin balance wheels moving in a soft vertical rhythm, with an asymmetrical dial that adds bold individuality — a watch that the brand describes as speaking to 'the quiet harmony we seek each day.' The Nuada, the newest model, reinvents the jump hour concept — an hour display that advances in a single discrete jump rather than sweeping or ticking — named after Nuada Airgeadlámh, the mythological first king of the Tuatha Dé Danann, the supernatural race of ancient Irish tradition. The archived collections include the Celtic Legacy (the brand's award-winning debut), the SS Navigator, and the Windstar.",
+    tags: ["Cork","Ireland","Slovakia","Martin Iglody","graphic design","regulator","jump hour","Supernatural","Emerald Isle","Connemara","Nuada","Celtic legacy","Irish mythology","Gaulish mythology","Miyota","affordable","microbrand"],
+    specialties: ["complications"],
+    gphg: false,
+    image: "https://www.martindesignwatches.com/cdn/shop/files/EA8A2464_2000x.jpg?v=1779275966",
+    imageCredit: "© MD Watches Studio"
+  },
+  {
+    id: 209,
+    name: "Farer",
+    brand: "Farer",
+    location: "London, England",
+    country: "United Kingdom",
+    region: "united kingdom",
+    founded: "2015",
+    volume: "Small to medium series",
+    volumeNum: 2000,
+    price: "£795–£1,550+",
+    website: "https://farer.com/",
+    instagram: "@FarerUniversal",
+    facebook: "https://www.facebook.com/FarerUniversal",
+    desc: "Farer is an independent British watch company founded in 2015 and driven by what it describes as a passion for detail, design, and most importantly, difference — a philosophy that runs through every decision the brand makes, from the palette of colours it uses on its dials to the movement supplier it chooses to work with. The brand is rooted in the conviction that it is not enough to simply make high-quality luxury watches: what the world needs is watches that bring something genuinely new to horology while remaining accessible. Every Farer is designed meticulously in London and then handmade, without compromise, in Switzerland, the combination that the brand summarises as 'British Design × Swiss Made.' To back this up, Farer offers a 60-month movement guarantee — five years, a commitment that is rare in any price category — alongside free worldwide shipping, free 30-day returns, complimentary engraving, and a direct-to-consumer distribution model that allows Farer to state, without exaggeration, that it has zero room to discount: the price on the website is always the best possible price.\n\nThe movement question is one that Farer has addressed with more transparency than most brands at its price level. After touring the La Joux-Perret factory in La Chaux-de-Fonds and speaking directly with the LJP technical team, Farer published a detailed account of what distinguishes the G100 calibre from the Miyota 9015 on which its development was based. The G100 features a completely re-engineered gear train, barrel, and balance, yielding a 68-hour power reserve — nearly three full days — versus 42 hours in the Miyota equivalent; a single-piece tungsten rotor for superior automatic winding compared to the Miyota's two-piece construction; a KIF anti-shock system (a trusted Swiss supplier that predates Rolex's in-house Paraflex) rather than the Miyota's Parashock; an ETACHRON-style fine adjustment regulator with a regulation screw; vertical rather than horizontal dial foot fixing; and a monobloc crown stem. Finishing options include Côtes de Genève, blued screws, and polished chamfers. The G100 is manufactured entirely in Switzerland, with La Joux-Perret producing its own mainplates, bridges, and rotors from raw metal — the same supplier that makes movements for Arnold & Son, Frédérique Constant, and Angelus. Farer uses the Soigné grade of the G101 (a variation of the G100 family), regulated to ±7 seconds per day, which it introduced in its Three Hand Series and has since expanded across more of the range.\n\nThe collection spans more than a dozen distinct styles across over 40 models, making Farer one of the most prolific independent British watch brands in terms of range breadth. The Lander is the brand's signature GMT, its flagship icon, currently in its fourth generation (Lander IV, 39.5mm, £1,375); it anchors the GMT and GMT Bezel collections. The Endeavour is Farer's Aqua Compressor dive watch, offered in a Titanium Series III variant at £1,250 — a tool watch built for performance under pressure. The Venture is the Three Hand Series III entry (£1,095), representing the accessible heart of the collection. The Roché II is Farer's World Timer, currently sold out, at £1,550. Beyond these signature models, the full collection encompasses: Racing Chronographs (a new addition); Pilot Series II watches; 35mm Cushion Case models for smaller wrists; regular GMT variants; Moonphase watches; the Integra collection; Lissom watches; Three Hand Series II; World Timers; Tonneau-case models; and the Aquamatic. The breadth of colour combinations across the dial and strap offerings is a particularly distinctive Farer characteristic, the brand committing to vivid, unconventional palettes in a market that often defaults to black, white, and navy.",
+    tags: ["London","England","British design","Swiss made","La Joux-Perret","G101","GMT","Lander","Endeavour","Roché","World Timer","Aqua Compressor","Pilot","chronograph","moonphase","tonneau","direct-to-consumer","5-year guarantee","KIF","ETACHRON"],
+    specialties: ["chronograph", "world time", "moon phase", "complications"],
+    gphg: false,
+    image: "https://farer.com/cdn/shop/files/BROWN_slide_1296x.jpg?v=1779953515",
+    imageCredit: "© Farer"
+  },
+  {
+    id: 210,
+    name: "Agelocer",
+    brand: "Agelocer",
+    location: "China",
+    country: "China",
+    region: "china",
+    founded: "c.2019",
+    volume: "Small to medium series, limited editions",
+    volumeNum: 2000,
+    price: "$400–$6,500",
+    website: "https://www.agelocershop.com/",
+    instagram: "@agelocer_official",
+    facebook: "https://www.facebook.com/profile.php?id=100087511814961",
+    desc: "Agelocer is a Chinese independent watch brand specialising in mechanical complications — most notably flying tourbillons, skeleton movements, moon phase watches, and world timers — at prices that make these traditionally elite complications accessible to enthusiasts who cannot justify Swiss alternatives. The brand is registered in the United Kingdom as KENSE COMPANY LIMITED and sells exclusively online and direct-to-consumer via its own website, without retail markup. Every mechanical watch is assembled and manufactured in China, with in-house calibres used across the tourbillon and complication models. The brand offers a three-year warranty and worldwide shipping.\n\nAgelocer's signature achievement is the flying tourbillon at a genuinely accessible price point — a complication that, even in Swiss form, typically begins at £12,000 or more. The Agelocer tourbillon cage is visible through both the dial side and the sapphire caseback, rotating continuously at six o'clock. The movement is assembled with the tourbillon upside-down and then flipped into position, requiring precise polishing of bridges on both faces and countersunk screws on both sides — a labour-intensive process that the brand presents as the justification for the modest premium its tourbillon models carry over its base automatics. The latest flagship is the 3D-Manta Tourbillon, featuring a free-sprung balance, a three-dimensional manta ray-inspired architecture visible through an open-worked dial, and is priced at $1,499. A limited edition with a full sapphire crystal case — one of the most visually striking executions of the concept — represents the top of the range at $6,500. Agelocer has also developed an in-house petite seconde model (on pre-order), signalling a continued push toward greater movement originality.\n\nThe current collection spans ten named series. The Tourbillon Series is the flagship, offering multiple flying tourbillon configurations from skeleton dials to dual-sided open-worked designs. The Astronomer Series is the brand's moon phase and celestial complication line — its most romantically named and visually distinctive collection, depicting celestial spheres, starfields, and astronomical imagery across the dial surface. The Universal Time Series covers world time and GMT complications, allowing the wearer to read multiple time zones simultaneously. The Volcano Series takes its visual language from geological and volcanic imagery — bold, dramatic dials suggesting heat and eruption. The Schwarzwald Series references the Black Forest region of Germany, using deep greens, forest textures, and Germanic aesthetic codes. The Racing Series draws from motorsport — chronograph-style registers, tachymeter scales, and a bold sporty character. The Baikal Series references Lake Baikal in Siberia — deep blue dials and cool, austere colour palettes suggesting the world's deepest freshwater body. The Budapest Series channels the architectural grandeur of the Hungarian capital, with ornate details and classical references. The Codex Series takes its name from the medieval manuscript form — intricate, layered, text- and symbol-inspired dials that read as visual documents. The Space Station Series rounds out the collection with futuristic, orbital, and space exploration imagery. Across all ten series, Agelocer offers a striking range of visual languages for a brand at this price point, making it one of the most visually ambitious microbrand operations to emerge from China's independent watch scene.",
+    tags: ["China","microbrand","flying tourbillon","skeleton","moon phase","world timer","Astronomer","Baikal","Schwarzwald","Volcano","Codex","Space Station","Budapest","Racing","affordable tourbillon","in-house movement"],
+    specialties: ["tourbillon", "moon phase", "world time", "skeleton", "complications"],
+    gphg: false,
+    image: "https://img.staticdj.com/b50ac4ec483a729f545f6a67c44ee2c8_1080x.jpg",
+    imageCredit: "© Agelocer"
+  },
+  {
+    id: 211,
+    name: "Vulcain",
+    brand: "Vulcain",
+    location: "Le Locle, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1858",
+    volume: "Small to medium series, limited editions",
+    volumeNum: 1000,
+    price: "CHF 1,500–12,000+",
+    website: "https://vulcain.ch/",
+    instagram: "@vulcain_watches",
+    facebook: "https://web.facebook.com/vulcainwatches",
+    desc: "Vulcain is one of Switzerland's oldest and most historically significant independent watch manufacturers, with a heritage stretching back to 1858 — predating even the establishment of many of the Swiss industry's most famous names. The company was founded in La Chaux-de-Fonds that year as the Manufacture Ditisheim, and the transition to the Fabrique Vulcain name came in 1898. From its earliest decades, the manufacture established itself as a serious competitor in international horological excellence: at the Paris World Fair of 1889, Vulcain won an award for a grande complication piece, La Vallée de l'Arve; at the Chicago World Fair of 1893, a further prize for high-class work in complicated watches; and at the Barcelona World Fair of 1929, the Grand Prix for its watchmaking manufacture. In 1934 the brand established a partnership with Real Madrid at the Spanish Championship, demonstrating its early reach beyond watchmaking circles. In 1940 Vulcain launched the first wristwatch chronograph in its production history.\n\nThe moment that defined Vulcain's identity for all time came in 1947, when the manufacture presented the Cricket — the world's first mechanical alarm wristwatch to produce a genuinely loud, strident, cricket-like sound audible across a room. The innovation was technically demanding: a hammer strikes a pin inside the watch, and the exterior caseback acts as a resonance chamber, amplifying the sound in a way that no earlier alarm watch had achieved. This breakthrough was paired with another Vulcain innovation patented in 1946: the Exactomatic, a device that equalises the friction on the balance wheel axis across all positions by modifying the Incabloc endstones. The Exactomatic provides more regular amplitude, greater accuracy, and better regularity across all positions — a meaningful horological improvement that made Vulcain's calibres technically as well as acoustically exceptional.\n\nThe Cricket became famous not merely as a watch but as the watch of American heads of state — a distinction that began in 1951 when President Harry S. Truman received one and extends across seven presidents: Truman, Eisenhower, Johnson, Nixon, Ford, Clinton, and Obama, who received a bespoke Anniversary Cricket in 2009 to mark his election as the 44th president. This unbroken association with the White House earned Vulcain its enduring nickname 'The Watch for Presidents' — one of the most specific and well-documented brand identities in the history of watchmaking. In 1961 Vulcain extended the Cricket's reach into professional diving with the Cricket Nautical — a driver's watch unique in its kind, water-resistant and worn in 1966 by diver Hannes Keller to nearly 250 metres depth in Toulon, France. The manufacture launched the V11 calibre in 2004, adding a date display to the Cricket movement, and in 2005 produced the Imperial Gong — the world's first tourbillon alarm watch, a grande complication of the highest order combining the Cricket alarm mechanism with a flying tourbillon.\n\nAfter a period of restructuring, Vulcain underwent a rebirth in 2002 and relocated to Le Locle, the town in the Jura mountains that shares with La Chaux-de-Fonds the title of cradle of Swiss watchmaking, now a UNESCO World Heritage site. The manufacture is established in a mansion there, producing in-house mechanical movements for its entire collection. Today the collection spans seven families. The Cricket is the historic heart: four sub-lines — the Cricket President (the prestige alarm watch), Cricket Tradition, Cricket Classique, and Cricket Titane (titanium case) — all carrying the iconic alarm complication. The Nautical Cricket continues the aquatic legacy as the Cricket Nautical Heritage. The Skindiver is the modern dive watch family, offered in three versions: the Skindiver Nautique, Skindiver Nautique GMT, and Skindiver Chrono. The Grand Prix is an elegant sport watch line. The Monopusher is a single-pusher chronograph, one of the purest expressions of the complication's traditional form. The Chrono 70's is a vintage-inspired chronograph drawing from the brand's archives. The Table Clock rounds out the range with a mechanical alarm piece for the desk or nightstand. Vulcain offers a two-year warranty and free shipping worldwide on orders above $100.",
+    tags: ["Le Locle","La Chaux-de-Fonds","Switzerland","alarm watch","Cricket","presidents","Truman","Eisenhower","Johnson","Nixon","Ford","Clinton","Obama","Exactomatic","Nautical","Skindiver","Grand Prix","Monopusher","tourbillon","Imperial Gong","1858","manufacture"],
+    specialties: ["complications", "chronograph", "tourbillon"],
+    gphg: false,
+    image: "https://vulcain.ch/cdn/shop/files/pic_1_1100x.jpg?v=1781783903",
+    imageCredit: "© Vulcain"
   }
 ];
 
@@ -6262,6 +6508,7 @@ initClock('ny-', 'America/New_York'); // New York / Miami time
 initClock('t-', 'Asia/Tokyo');        // Tokyo / Seoul time (same timezone UTC+9)
 initClock('la-', 'America/Los_Angeles'); // Los Angeles time
 initClock('db-', 'Asia/Dubai');       // Dubai / Baku time (UTC+4)
+initClock('sy-', 'Australia/Sydney'); // Sydney / Melbourne time (UTC+10/11)
 
 /* ===== LA CLOCK: day/night sky with real sunrise/sunset and sun arc ===== */
 /* ===== Day/Night sky system for all white clocks ===== */
@@ -6600,6 +6847,7 @@ initSky('ny-', 'America/New_York',     40.7128,   -74.0060); // New York / Miami
 initSky('g-',  'Europe/Zurich',        46.2044,     6.1432); // Geneva / Glashütte
 initSky('db-', 'Asia/Dubai',           25.2048,    55.2708); // Dubai / Baku
 initSky('t-',  'Asia/Tokyo',           35.6762,   139.6503); // Tokyo / Seoul
+initSky('sy-', 'Australia/Sydney',    -33.8688,   151.2093); // Sydney / Melbourne
 
 // Local clock: use visitor's timezone and attempt geolocation for accurate sunrise/sunset
 (function() {
