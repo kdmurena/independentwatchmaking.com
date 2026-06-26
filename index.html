@@ -56,6 +56,30 @@
     gap: 0.25rem 1rem;
   }
 
+  .header-curator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: rgba(184,152,74,0.55);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .header-curator a {
+    color: rgba(184,152,74,0.55);
+    text-decoration: none;
+    pointer-events: all;
+    transition: color 0.2s;
+  }
+
+  .header-curator a:hover {
+    color: rgba(184,152,74,0.9);
+  }
+
   .site-title {
     font-family: var(--font-display);
     font-size: 1.75rem;
@@ -753,6 +777,7 @@
 
 <header>
   <div class="site-title"><a href="/" style="color:inherit;text-decoration:none;"><span class="brushed-gold">Independent Watchmaking</span> <span>A Global Catalogue</span></a></div>
+  <div class="header-curator">Curated by Kennet Dante Murena &nbsp;<a href="https://instagram.com/dante.miami" target="_blank" rel="noopener">@Dante.Miami</a></div>
   <div class="header-count"><span id="header-count">—</span> makers listed</div>
 </header>
 
@@ -1718,6 +1743,7 @@
     <button class="filter-btn" data-region="finland">Finland</button>
     <button class="filter-btn" data-region="france">France</button>
     <button class="filter-btn" data-region="germany">Germany</button>
+    <button class="filter-btn" data-region="hong kong">Hong Kong</button>
     <button class="filter-btn" data-region="hungary">Hungary</button>
     <button class="filter-btn" data-region="ireland">Ireland</button>
     <button class="filter-btn" data-region="israel">Israel</button>
@@ -6104,6 +6130,111 @@ const makers = [
     gphg: false,
     image: "https://vulcain.ch/cdn/shop/files/pic_1_1100x.jpg?v=1781783903",
     imageCredit: "© Vulcain"
+  },
+  {
+    id: 212,
+    name: "Gagà Laboratorio",
+    brand: "Manufacture Gagà SA",
+    location: "Lugano, Switzerland / London, England",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "2020",
+    volume: "Small series, limited editions",
+    volumeNum: 500,
+    price: "CHF 1,500–4,500+",
+    website: "https://gagalaboratorio.com/",
+    instagram: "@gagalaboratorio",
+    facebook: "https://www.facebook.com/gagalaboratorio",
+    desc: "Gagà Laboratorio is a luxury watch brand founded in 2020 by Ruben Tomella — the entrepreneur who had spent twenty years building Gagà Milano into one of Italy's most internationally recognised watch brands — as a deliberate departure from everything he had done before. Having led Gagà Milano since its inception, Tomella felt the time had come to make a leap into a new world: one in which watches would be created not for brand recognition or volume, but purely from a passion for beauty and design. The legal and manufacturing entity behind Gagà Laboratorio is Manufacture Gagà SA, the Swiss company registered in Ticino that has been designing and producing high-end watches for Gagà Milano since 2012 and which Tomella now redirected toward this new, more artistically ambitious project.\n\nThe creative partnership that defines Gagà Laboratorio is between Tomella and Mo Coppoletta — an internationally renowned artist, tattooist, illustrator, and designer based in London, who serves as the brand's Art Director. Coppoletta's background spans fine art, graphic design, and a celebrated career in tattooing and illustration with deep roots in Japanese and traditional Western visual traditions; he brings to the brand a sensibility rooted in the idea that a watch's perceived value should be substantially higher than its commercial positioning. Every design at Gagà Laboratorio begins in London, where Coppoletta transforms the initial concept into paper sketches and refined 2D renderings. The watch then crosses to Lugano, where the Manufacture Gagà SA team develops the 3D model, engineers the prototype, and oversees all phases of production in close collaboration with Swiss partners in Ticino — adhering fully to Swiss Made certification. The brand has been featured in Forbes, Hypebeast, Monochrome, Revolution, The Rake, Time and Tide, WatchPro, and Worn & Wound. All watches are covered by a lifetime International Warranty Programme, activated through the brand's 'The Clab' online platform.\n\nThe collection currently comprises three lines. The Labormatic is the core series — the brand's founding expression of Italian design meeting Swiss precision, covering a range of elegantly proportioned automatic watches distinguished by their bold, sculptural dials and distinctive use of colour and texture. The Labormatic Cinquanta is a special model within this family, conceived in partnership with Alessandro Ristori, Italy's internationally celebrated jazz and swing musician — a partnership conceived as a shared ambassadorship for 'La Dolce Vita' worldwide. The Cinquanta (Italian for 'fifty') draws its inspiration from the post-war zest for life of the 1950s, the decade that defined Italy's economic boom and gave the world its most enduring images of elegance, pleasure, and style — precisely the era that also shaped the musical tradition Ristori embodies and carries forward. The collaboration produced not only the watch but a short film, 'Le Scelte Giuste' (The Right Choices), written by Mo Coppoletta and Alessandro Ristori, exploring the philosophical choices that define an artist's creative life. The Labormatic Cinquanta is priced at CHF 3,900 + VAT. The Aqualab is the brand's diving and water-sports line — bold, technical, and built for aquatic adventure while retaining the visual signature of the Coppoletta-designed aesthetic. The Luce ('light' in Italian) is the ladies' collection, exploring the interplay of light across gem-set dials and refined feminine proportions.",
+    tags: ["Lugano","Switzerland","London","Italian design","Swiss Made","Ruben Tomella","Mo Coppoletta","Gagà Milano","Alessandro Ristori","La Dolce Vita","Labormatic","Cinquanta","Aqualab","Luce","lifetime warranty","The Clab"],
+    specialties: ["bespoke"],
+    gphg: false,
+    image: "https://gagalaboratorio.com/wp-content/uploads/2025/09/revo-090-copy-scaled.jpg",
+    imageCredit: "© Gagà Laboratorio"
+  },
+  {
+    id: 213,
+    name: "MeisterSinger",
+    brand: "MeisterSinger",
+    location: "Münster, Germany / Switzerland",
+    country: "Germany",
+    region: "germany",
+    founded: "2001",
+    volume: "Small to medium series, limited editions",
+    volumeNum: 3000,
+    price: "€1,000–3,500+",
+    website: "https://meistersinger.com/en/",
+    instagram: "@meistersinger_watches",
+    facebook: "https://www.facebook.com/MeisterSingerUhren",
+    desc: "MeisterSinger is a German independent watch brand founded in 2001 by Manfred Brassler in Münster, the bicycle-oriented university city in Westphalia, and built entirely around one radical, historically grounded proposition: the single-hand watch. Brassler — a self-taught designer who came to watchmaking from outside the industry — set out to create a brand that returned to the very beginnings of the art of timekeeping, before the pressures of industrialisation added minute and second hands and transformed clocks from instruments of daily orientation into instruments of anxiety. Up to the 18th century, all clocks and watches — church towers, townhouses, table clocks, wall clocks, the first portable timepieces — were fitted with just one hand. Historical single-hand tower clocks survive to this day at Westminster Abbey in London, Toledo Cathedral, Delft City Hall, and the Freiburg Minster. MeisterSinger's founding insight was that this original way of experiencing time is not a limitation but a liberation: a relaxed, intuitive approach to reading the moment itself rather than the relentless minute-by-minute countdown of modern life.\n\nTelling the time on a MeisterSinger takes only a little practice before becoming instinctive. A single hierarchically designed scale of 144 five-minute lines runs around the edge of the dial; the hour hand's tapered needle tip points to this scale, allowing the time to be read to within five minutes in a single glance — or, with attention to the shorter quarter-hour and half-hour markers between each pair of numerals, to the nearest minute. The scale uses double-digit hour numerals with preceding zeros for single-digit hours (01, 02, 03 and so on), referencing the aesthetics of early measuring instruments. All MeisterSinger dials carry the fermata — the musical pause symbol — as a distinctive hallmark on both dial and crown, embodying the brand's core philosophy: that a glance at the watch should prompt a moment of stillness rather than urgency. The case design, originated with the N° 01 of 2001 and still recognisable across every model in the range, uses a classic body with a one-sided domed front glass that visually pulls the dial beneath the crystal. These individual details combine to form an amazing visual experience; as Chronos magazine wrote at the brand's launch, one senses that if any one of those details were missing, the overall impression would no longer be quite the same.\n\nThe brand's administrative and design headquarters remain in Münster; all watches are individually manufactured in Switzerland to strict Swiss Made standards, powered exclusively by high-quality Swiss movements including Sellita calibres. Brassler has also fulfilled a deeper ambition by developing MeisterSinger's own in-house movements: the MSH01 (hand-wound, twin mainspring barrels, 120 hours power reserve), MSH02, and MSA01 (automatic equivalent), whose bridge architecture is designed to resemble the silhouette of an old German oak tree and whose rotor merges the technical and aesthetic ideals of the brand. The MSH01, when launched, became the first hand-wound movement ever to win the German Design Award. MeisterSinger has also developed proprietary technical modules including the large central moon phase of the Lunascope and Stratoscope models, and the 'sonnerie au passage' chiming complication of the Bell Hora — a gentle chime that sounds as time passes from one hour to the next, a nearly forgotten complication given contemporary form.\n\nSince its founding in 2001, MeisterSinger has received 36 awards from the most prestigious design bodies — an extraordinary record for a specialist independent brand. These include multiple Red Dot Design Awards (N°01/1Z 2004, Singular 2009, Perigraph 2009, Singulator 2010, Pangaea Day Date 2013, Adhaesio 2016, MSH01 2015, Salthora Meta X 2018, Lunascope 2019, Unomat 2021, Bell Hora 2021, Edition Singularis Enamel 2023), iF Design Awards, German Design Awards, and Good Design Awards across more than two decades of consistent recognition. Key awarded models include the Astroscope (German Design Award, Red Dot, and iF 2020–21), the Lunascope (Red Dot, iF, German Design Award), the Circularis (iF 2015, German Design Award 2016), the Kaenos (iF Design Award 2025), and the Perigraph which also won Watch of the Year 2012. The current collection spans a wide range of case sizes, dial executions, and complication levels: the foundational N° 01 and N° 03 ranges; the Circularis and Circularis Power Reserve; the Pangaea Day Date; the Lunascope and Stratoscope (moonphase); the Bell Hora (sonnerie au passage); the Primatic; the Unomat; the Astroscope; the Neo and Neo Plus with pointer date; the Vintago; the Singularis (housing the in-house MSH01 and MSA01 calibres); the Kaenos; and the Souscription series. A collaboration with the celebrated French watch designer Alain Silberstein produced the Kaenos Editions — two limited runs of 225 pieces each (Grand Date and Open Date), combining Silberstein's Bauhaus-influenced bold colours and geometric shapes with MeisterSinger's disciplined single-hand design language, on a jet-black dial with a golden second hand, in the new 40mm Kaenos case with integrated bracelet.",
+    tags: ["Münster","Germany","Swiss Made","single-hand watch","Manfred Brassler","N°01","fermata","Lunascope","Bell Hora","sonnerie au passage","MSH01","MSH02","MSA01","Alain Silberstein","Kaenos","Singularis","Red Dot","German Design Award","iF Design Award","moon phase","chiming"],
+    specialties: ["moon phase", "complications"],
+    gphg: false,
+    image: "https://meistersinger.com/wp-content/uploads/2026/04/MeisterSinger_Souscription-Panthero_SOUS-PTJHG927B_Still02_Portrait_high-res-1024x1024.jpg",
+    imageCredit: "© MeisterSinger"
+  },
+  {
+    id: 214,
+    name: "Akhor Genève",
+    brand: "AKHOR Watch",
+    location: "Geneva (Meyrin), Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "c.2024",
+    volume: "Very limited series, 14 references",
+    volumeNum: 50,
+    price: "CHF 28,800–60,000+",
+    website: "https://akhor.ch/",
+    instagram: "@akhor_geneve",
+    facebook: "https://www.facebook.com/people/AKHOR-Gen%C3%A8ve/61578223315733/",
+    desc: "Akhor Genève is a Geneva-based Maison of Haute Horlogerie founded by Anissa Bader, whose founding philosophy — expressed in the brand's tagline 'Le Temps en Équilibre' — frames time not as a simple measure but as a state of balance: invisible, yet structuring everything around it. The name itself is richly considered. Derived from ancient Egyptian, 'Akh' refers to the immortal force of the soul, the luminous and enduring spirit that survives the body; the suffix 'or' simultaneously evokes the nobility of precious materials and resonates with the horological imagination. Together they form a name that signals clearly what the Maison aspires to: timepieces crafted with precision and guided by purpose, in which watchmaking is understood not merely as the measurement of time but as an art. Anissa Bader has articulated this in her own words: 'What interests me is not measuring time but understanding how it exists within a system of balances. Watchmaking is a language that makes the invisible visible.' The Maison is designed, assembled, and controlled entirely within the canton of Geneva, at its workshops in Meyrin — working beside master micromechanicians to craft pieces that are conceived with purpose, refined by hand, and built to endure.\n\nThe technical foundation of the collection is the AK10 — an in-house, hand-wound chronometer developed exclusively for AKHOR and manufactured in Geneva. The calibre beats at 4Hz (28,800 vph) with a power reserve of more than 60 hours, measures 31.30mm × 3.90mm in profile, and comprises 117 components and 12 jewels. It features a variable inertia balance spring and a stop-seconds mechanism for precise setting. All components are Swiss Made, produced via advanced precision machining, then galvanically treated and finished by hand to Haute Horlogerie standards — mirror-polished bevels, refined brushing, sunray Côtes de Genève, and a hand-finished gear train. The AK10 carries both the Poinçon de Genève hallmark (the highest distinction in Swiss watchmaking, requiring design, assembly, and control within the canton of Geneva) and COSC chronometric certification — a dual standard that Akhor holds across its entire collection, making it one of a very small number of Houses to achieve this combination at launch. The movement has been designed from the outset as a foundation for future complications: its architecture is conceived to accommodate moon phases, large date, tourbillon, and a day/night indicator in future references.\n\nThe collection's defining visual innovation is a patented dual-disc dial architecture that creates the optical illusion of a floating dial. The upper disc is suspended and anchored to the movement rather than the case, creating a precisely controlled space between the two plates — so that the dial appears to hover above the case interior, detached from its surroundings. The hands revolve around a central axis while the dial floats beneath them. Rhodium or gold-toned hands with luminescent tips ensure legibility across all conditions; the seconds hand carries a logo-shaped counterweight as a discreet signature. The AK10's case is a 39mm cushion shape, offered in stainless steel and in 4N/5N yellow gold. The collection is structured around two material families and two dial architectures. By material: Steel (polished cushion case, rhodium-plated hands, mechanical clarity), Gold (4N/5N gold case and buckle, sculpted volumes, heirloom presence), and Diamond (gem-set bezels and clasps, with light channeled, fragmented, and mastered, set by hand). By dial finish: Sunburst (a radial brushed surface that concentrates and scatters light from a central point) and Honeycomb (a geometric lattice structure that fragments the dial into faceted cells). The full collection of 14 references encompasses White Sunburst, Black Sunburst, Bleu Azur des Sommets Sunburst, Vert Émeraude des Cimes Sunburst, Brown Sunburst (in gold), White Honeycomb, Black Honeycomb, Blue Honeycomb (in gold and diamond), and Vert Émeraude des Cimes Sunburst Diamond variants, among others. Signature pieces include the AK-10 Steel White Sunburst (CHF 28,800), the AK-10 Gold Brown Sunburst, the AK-10 Steel Diamond Vert Émeraude des Cimes with 120 brilliant-cut diamonds on the bezel, and the AK-10 Gold Diamond Blue. Private consultations and appointments are arranged through the brand's Conciergerie service in Geneva.",
+    tags: ["Geneva","Meyrin","Switzerland","Anissa Bader","AK10","in-house","Poinçon de Genève","COSC","floating dial","patented dual-disc","sunburst","honeycomb","cushion case","gold","diamond","Haute Horlogerie","Le Temps en Équilibre","Egyptian","Akh"],
+    specialties: ["skeleton", "bespoke"],
+    gphg: false,
+    image: "https://akhor.ch/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fske2w7um%2Fproduction%2Ff26280c7de092b18f7a4ef68122d67090e075a74-1600x2000.webp&w=3840&q=75",
+    imageCredit: "© Akhor Genève"
+  },
+  {
+    id: 215,
+    name: "Zentier",
+    brand: "Zentier",
+    location: "Hong Kong",
+    country: "Hong Kong",
+    region: "hong kong",
+    founded: "2020",
+    volume: "Small series, limited editions",
+    volumeNum: 300,
+    price: "$229–$1,200+",
+    website: "https://zentier.com/",
+    instagram: "@zentierofficial",
+    facebook: "http://www.facebook.com/zentierofficial",
+    desc: "Zentier is an independent microbrand founded in late 2020 by Morten Loewe, a former World, European, and British Open Latin American Dance-Sport Champion whose transition from professional dancer to watch designer is one of the more unusual origin stories in contemporary independent watchmaking. Loewe draws direct lines between his two disciplines: striving for perfection, understanding and materialising the concept of time, and creating perfect harmony are the principles he describes as having governed his dancing life from youth, and they are the same forces that drive his approach to watches. He launched Zentier with the deliberate intent to start at the very beginning and work his way upward — a journey brand philosophy he invites his customers to share — and the brand's commercial tagline, 'stylish watches and luxury accessories for the modern gentleman,' captures the accessible, considered aesthetic he brings to each model. The brand is operated from Hong Kong, sells internationally through its website with made-to-order crocodile and Epsom leather strap options, and maintains a small, engaged community of followers across social platforms.\n\nThe Zentier Chronograph was the debut model, launched in December 2021, establishing the brand's foundations in a series of dial executions including 1903 (a racing green homage), Vintage White, 5.01 (black), Cosmic Latte, and Chocolate — all at $349. The Z2 followed as the brand's core everyday automatic three-hander: a versatile, clean-dialled watch available in multiple colourways including Carbon, Black, Blue, Lagoon, and Khaki ($499) as well as special editions including the Z2 Khaki (with a textured dial, $549), the JZ Edition 2 in Orange, and sold-out Limited Editions in Khaki Green, Purple, and the Qatar Edition. The Reverence is a more refined dress-sport line featuring higher-specification materials including aventurine stone dials — the Reverence Aventurine Bleu ($649) is the standout current offering, alongside the Indigo, Salmon, and Spectre variants (several sold out). The Z5 Ultra Thin is the brand's most elegant model: an ultra-slim dress watch in Burgundy, Grey, and White executions at $849. The Time Traveller is a separately marketed entry-level line at $229, available in Black/Grey and Green.\n\nThe Sauté is Zentier's signature and most technically ambitious line — its name taken directly from the French dance term for a jump or leap, a nod to Morten Loewe's career as a champion dancer, and perfectly describing the complication at the watch's heart. The Sauté executes the jumping hour in the traditional guichets fashion — just like the emblematic Cartier Tank à Guichets — with a rectangular jumping hour aperture at 12 o'clock and a dragging minutes display on a rotating disc below it, all within a compact 36mm × 10.7mm cushion-shaped polished stainless steel case with a 44mm lug-to-lug distance. The movement is the Seagull ST-1721, an automatic with an additional jumping hour mechanism, beating at 21,600 vph with a 40-hour power reserve and 20 jewels; an additional see-through caseback is included alongside the standard solid steel back. What makes the Sauté line exceptional is Loewe's commitment to natural stone dials: each watch uses a piece of genuine semi-precious stone, meaning no two are identical. The original Sauté launched with Malachite dials — the vivid green stone in a limited run; this was followed by the Mosaic Black Opal edition (limited to 37 pieces), the Meteorite edition (limited to 25 pieces), and the Purple Jade ($1,080). A collaboration with Watch Ho & Co. — a Hong Kong-based watch-collecting community — produced the Lapis Sauté Mt. Fuji Edition: inspired by Jackie Ho's first encounter with the beauty of Mt. Fuji during the launch of the Malachite Sauté, its natural lapis lazuli stone dial evokes the vastness of the night sky, limited to 88 pieces and priced at $1,088. A made-to-order service and international shipping complete the offering.",
+    tags: ["Hong Kong","Morten Loewe","dance sport champion","jump hour","Sauté","guichets","malachite","lapis lazuli","opal","meteorite","stone dial","Z2","Z5","Reverence","Chronograph","Time Traveller","Seagull ST-1721","Watch Ho & Co","microbrand"],
+    specialties: ["complications", "bespoke"],
+    gphg: false,
+    image: "https://zentier.com/cdn/shop/files/Product1-1000H.jpg?v=1781695291",
+    imageCredit: "© Zentier"
+  },
+  {
+    id: 216,
+    name: "Arsène Lippens Genève",
+    brand: "Arsène Lippens Sàrl",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "c.2023",
+    volume: "Small series, community editions",
+    volumeNum: 200,
+    price: "€600–€2,000+",
+    website: "https://www.arsenelippens.com/",
+    instagram: "@arsenelippens",
+    facebook: "https://www.facebook.com/arsenelippens",
+    desc: "Arsène Lippens Genève is a young independent watch brand founded in Geneva by co-founders Dries Lippens (CEO) and Alberto Boccaletti (Head of Marketing), with chief watchmaker Martial Cuendet breathing life into every piece produced at their atelier at Rue Adrien-Lachenal 26, in the heart of Geneva. The brand takes its name — and its founding spirit — from the co-founder's grandfather, Arsène Lippens, whose personal tradition of exchanging engraved watches with his best friend as a symbol of their bond became the philosophical seed from which the entire project grew. That gesture — a watch given not as a status object but as a token of friendship, identity, and shared history — defines everything Arsène Lippens the brand does: Swiss-made timepieces offered with personalised engravings, built around and for specific communities, and designed to unite people through shared values and lasting craft.\n\nThe brand's design DNA draws on a specific historical reference: the front grille of the Pontiac Streamliner 1941 — an American automobile of the immediate pre-war era distinguished by its horizontal chrome bars, streamlined geometry, and a sense of quiet mechanical grandeur. This influence is visible in the dial layouts and case architectures of the Scheletrato, Numerico, and Visionario models, which mark the hours with the restrained elegance of that aesthetic translated into Swiss watchmaking. Chief watchmaker Martial Cuendet brings the professional horological expertise; the founders bring design vision and a community-first commercial philosophy. The brand's stated commitment goes beyond craft: Arsène Lippens sees itself as a platform for serving communities, understanding their deep-rooted connections, and creating a sense of belonging and exclusivity for each group it works with — eventually drawing all of them into a single, larger Arsène Lippens community.\n\nThe collection is structured around four permanent lines and a growing portfolio of community editions. The Classico is the brand's classic three-hand automatic — a modern dress watch for everyday wear, recently launched and positioned as the accessible entry into the collection. The Artigiano is the textile dial line: watches featuring woven fabric dials made by artisans, each with a handcrafted character that gives them a warmth and texture unique to the form. The Visionario Flyback is the Swiss Made chronograph line, offering flyback functionality in a design that references the brand's vintage-American-meets-Geneva aesthetic. The Scheletrato Opaco is the skeletonised chronograph — the most technically and visually ambitious line in the range, with open-worked dials revealing the movement's architecture through a matte or opaque aesthetic treatment that gives the skeletonisation a distinctive, less conventional appearance. Community editions are a structural pillar of the brand rather than an occasional add-on: specifically produced watches for named groups including AP Training, Tokei Ronin, Charing, Courmayeur Golf Club, FAM, the Hong Kong Collectors Guide Club, Marina di Bogliaco, and Serafico di Assisi — each edition carrying the identity and values of its community in the watch's design and personalisation options.",
+    tags: ["Geneva","Switzerland","Dries Lippens","Alberto Boccaletti","Martial Cuendet","Scheletrato","Artigiano","Visionario","Classico","flyback chronograph","textile dial","skeleton","community","personalised engraving","Pontiac Streamliner","Swiss Made"],
+    specialties: ["chronograph", "skeleton", "bespoke"],
+    gphg: false,
+    image: "https://www.arsenelippens.com/cdn/shop/files/AL_SOLDIER_SCHELEOPACO_BLU_LEATHER.webp?v=1771405584&width=5000",
+    imageCredit: "© Arsène Lippens Genève"
   }
 ];
 
