@@ -1042,145 +1042,6 @@
   <div class="hero-inner">
     <div class="hero-clocks">
     <div class="hero-clock-wrap">
-      <svg id="hero-clock" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-          <!-- Metallic gold gradient for rim, hands, numerals, apertures -->
-          <linearGradient id="metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
-            <stop offset="0%" stop-color="#7A5F22"/>
-            <stop offset="20%" stop-color="#D9B96A"/>
-            <stop offset="40%" stop-color="#FFF3CE"/>
-            <stop offset="55%" stop-color="#B8984A"/>
-            <stop offset="75%" stop-color="#8A6A2E"/>
-            <stop offset="100%" stop-color="#E8CE8E"/>
-          </linearGradient>
-          <!-- Slightly softer metallic gold for fine details (numerals, ticks) -->
-          <linearGradient id="metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
-            <stop offset="0%" stop-color="#9C7E3E"/>
-            <stop offset="30%" stop-color="#EBD6A0"/>
-            <stop offset="50%" stop-color="#FFF8E1"/>
-            <stop offset="70%" stop-color="#D4B87A"/>
-            <stop offset="100%" stop-color="#A4842F"/>
-          </linearGradient>
-          <!-- Radial gold for numerals: uniform bright metallic tone regardless of angular position -->
-          <radialGradient id="numeral-gold" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="92">
-            <stop offset="55%" stop-color="#FFF6DC"/>
-            <stop offset="78%" stop-color="#F0DBA8"/>
-            <stop offset="92%" stop-color="#D9BC78"/>
-            <stop offset="100%" stop-color="#C9A659"/>
-          </radialGradient>
-          <!-- Radial metallic gold for the moon disk: domed, polished gleam -->
-          <radialGradient id="moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
-          </radialGradient>
-          <radialGradient id="sun-grad" cx="40%" cy="35%" r="65%">
-            <stop offset="0%" stop-color="#FFFDE0"/>
-            <stop offset="30%" stop-color="#FFE566"/>
-            <stop offset="65%" stop-color="#FFA500"/>
-            <stop offset="100%" stop-color="#E07000"/>
-          </radialGradient>
-          <radialGradient id="sun-glow-grad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stop-color="#FFFDE0" stop-opacity="0.55"/>
-            <stop offset="35%"  stop-color="#FFE566" stop-opacity="0.28"/>
-            <stop offset="65%"  stop-color="#FFA500" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
-          </radialGradient>
-          <!-- Heat-blued steel gradient for the seconds hand -->
-          <linearGradient id="blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
-            <stop offset="0%" stop-color="#0B1F4D"/>
-            <stop offset="35%" stop-color="#1E4D8C"/>
-            <stop offset="55%" stop-color="#6FB8F0"/>
-            <stop offset="75%" stop-color="#2C5FA0"/>
-            <stop offset="100%" stop-color="#0B1F4D"/>
-          </linearGradient>
-        </defs>
-
-        <!-- Outer gold rim -->
-        <circle cx="100" cy="100" r="98" fill="#0E0D0B" stroke="url(#metallic-gold)" stroke-width="3"/>
-        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
-
-        <!-- Railroad minute track -->
-        <g id="minute-track" stroke="url(#metallic-gold-soft)"></g>
-
-        <!-- Hour numerals (Breguet-style italic, upright) -->
-        <g id="hour-numerals" fill="url(#numeral-gold)" stroke="#7A5A22" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
-
-        <!-- LOCAL TIME label, Breguet-style cursive -->
-        <text x="100" y="56" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="url(#metallic-gold-soft)">Local</text>
-
-        <!-- Day / Date / Month apertures, centered between 12 numeral and center pinion -->
-        <g id="day-date-month-apertures">
-          <rect x="48" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
-          <text id="day-text" x="63" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">MON</text>
-
-          <rect x="85" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
-          <text id="date-text" x="100" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#0E0D0B" font-weight="600">1</text>
-
-          <rect x="122" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
-          <text id="month-text" x="137" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">JAN</text>
-        </g>
-
-        <!-- Moonphase aperture at 6 — round, slightly reduced and raised to leave room for bottom inscription -->
-        <g id="moonphase-group">
-          <circle id="sky-bg" cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#metallic-gold)" stroke-width="0.75"/>
-          <defs>
-            <clipPath id="moon-clip">
-              <circle cx="100" cy="145" r="37"/>
-            </clipPath>
-          </defs>
-          <g clip-path="url(#moon-clip)">
-            <circle id="moon-disk" cx="100" cy="145" r="14" fill="url(#moon-gold)"/>
-            <circle id="moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="sun-glow" cx="100" cy="119.5" r="20" fill="url(#sun-glow-grad)" opacity="0"/>
-            <g id="clouds"></g>
-            <circle id="sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#sun-grad)" opacity="0"/>
-          </g>
-          <g id="moon-stars"></g>
-        </g>
-
-        <!-- MADE IN MIAMI inscription -->
-        <defs>
-          <path id="miami-arc" d="M 75 182.81 A 86.5 86.5 0 0 0 125 182.81" fill="none"/>
-        </defs>
-        <text font-family="'DM Sans', system-ui, sans-serif" font-size="4" letter-spacing="0.4" fill="url(#metallic-gold-soft)">
-          <textPath href="#miami-arc" xlink:href="#miami-arc" startOffset="50%" text-anchor="middle">MADE IN MIAMI</textPath>
-        </text>
-
-        <!-- Center hub -->
-        <circle cx="100" cy="100" r="2.5" fill="url(#metallic-gold)"/>
-
-        <!-- Hands (rotated via JS using transform="rotate(angle 100 100)") -->
-        <!-- Hour hand: Breguet-style — curved leaf shaft, open "moon" circle, thin pointed tip. Noticeably shorter than minute hand -->
-        <g id="hand-hour">
-          <path d="M 98.20 100 C 98.53 77.50, 99.50 66.25, 99.50 55 L 100.50 55 C 100.50 66.25, 104.00 77.50, 101.80 100 Z" fill="url(#metallic-gold)"/>
-          <circle cx="100" cy="50" r="4" fill="none" stroke="url(#metallic-gold)" stroke-width="1"/>
-          <line x1="100" y1="46" x2="100" y2="37" stroke="url(#metallic-gold)" stroke-width="1" stroke-linecap="round"/>
-        </g>
-
-        <!-- Minute hand: Breguet-style — curved leaf shaft, open "moon" circle just inside the numerals, thin tip skimming the minute markers -->
-        <g id="hand-minute">
-          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#metallic-gold)"/>
-          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#metallic-gold)" stroke-width="0.9"/>
-          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#metallic-gold)" stroke-width="0.9" stroke-linecap="round"/>
-        </g>
-
-        <!-- Seconds hand: heat-blued steel, reaching the outer tips of the indices, with larger counterbalance -->
-        <g id="hand-second">
-          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#blued-steel)" stroke-width="1" stroke-linecap="round"/>
-          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#blued-steel)" stroke-width="1" stroke-linecap="round"/>
-          <circle cx="100" cy="121" r="3.2" fill="url(#blued-steel)"/>
-        </g>
-
-        <circle cx="100" cy="100" r="1.5" fill="url(#blued-steel)"/>
-      </svg>
-    </div>
-
-    <!-- ===== LOS ANGELES CLOCK: Geneva clone with la- prefix + day/night sky ===== -->
-    <div class="hero-clock-wrap">
       <svg id="hero-clock-la" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <linearGradient id="la-blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="100">
@@ -1947,6 +1808,145 @@
         <circle cx="100" cy="100" r="1.5" fill="url(#sy-metallic-gold)"/>
       </svg>
     </div>
+    <div class="hero-clock-wrap">
+      <svg id="hero-clock" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <!-- Metallic gold gradient for rim, hands, numerals, apertures -->
+          <linearGradient id="metallic-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#7A5F22"/>
+            <stop offset="20%" stop-color="#D9B96A"/>
+            <stop offset="40%" stop-color="#FFF3CE"/>
+            <stop offset="55%" stop-color="#B8984A"/>
+            <stop offset="75%" stop-color="#8A6A2E"/>
+            <stop offset="100%" stop-color="#E8CE8E"/>
+          </linearGradient>
+          <!-- Slightly softer metallic gold for fine details (numerals, ticks) -->
+          <linearGradient id="metallic-gold-soft" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#9C7E3E"/>
+            <stop offset="30%" stop-color="#EBD6A0"/>
+            <stop offset="50%" stop-color="#FFF8E1"/>
+            <stop offset="70%" stop-color="#D4B87A"/>
+            <stop offset="100%" stop-color="#A4842F"/>
+          </linearGradient>
+          <!-- Radial gold for numerals: uniform bright metallic tone regardless of angular position -->
+          <radialGradient id="numeral-gold" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="92">
+            <stop offset="55%" stop-color="#FFF6DC"/>
+            <stop offset="78%" stop-color="#F0DBA8"/>
+            <stop offset="92%" stop-color="#D9BC78"/>
+            <stop offset="100%" stop-color="#C9A659"/>
+          </radialGradient>
+          <!-- Radial metallic gold for the moon disk: domed, polished gleam -->
+          <radialGradient id="moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFBF0"/>
+            <stop offset="18%" stop-color="#FFF0C2"/>
+            <stop offset="38%" stop-color="#E8C97A"/>
+            <stop offset="60%" stop-color="#B8924A"/>
+            <stop offset="82%" stop-color="#7A5A22"/>
+            <stop offset="100%" stop-color="#5C4318"/>
+          </radialGradient>
+          <radialGradient id="sun-grad" cx="40%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#FFFDE0"/>
+            <stop offset="30%" stop-color="#FFE566"/>
+            <stop offset="65%" stop-color="#FFA500"/>
+            <stop offset="100%" stop-color="#E07000"/>
+          </radialGradient>
+          <radialGradient id="sun-glow-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#FFFDE0" stop-opacity="0.55"/>
+            <stop offset="35%"  stop-color="#FFE566" stop-opacity="0.28"/>
+            <stop offset="65%"  stop-color="#FFA500" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Heat-blued steel gradient for the seconds hand -->
+          <linearGradient id="blued-steel" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="120" y2="124">
+            <stop offset="0%" stop-color="#0B1F4D"/>
+            <stop offset="35%" stop-color="#1E4D8C"/>
+            <stop offset="55%" stop-color="#6FB8F0"/>
+            <stop offset="75%" stop-color="#2C5FA0"/>
+            <stop offset="100%" stop-color="#0B1F4D"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Outer gold rim -->
+        <circle cx="100" cy="100" r="98" fill="#0E0D0B" stroke="url(#metallic-gold)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#metallic-gold-soft)" stroke-width="0.75" opacity="0.6"/>
+
+        <!-- Railroad minute track -->
+        <g id="minute-track" stroke="url(#metallic-gold-soft)"></g>
+
+        <!-- Hour numerals (Breguet-style italic, upright) -->
+        <g id="hour-numerals" fill="url(#numeral-gold)" stroke="#7A5A22" stroke-width="0.3" font-family="'Playfair Display', Georgia, serif" font-style="italic" text-anchor="middle" dominant-baseline="central"></g>
+
+        <!-- LOCAL TIME label, Breguet-style cursive -->
+        <text x="100" y="56" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" letter-spacing="0.06em" font-size="15" fill="url(#metallic-gold-soft)">Local</text>
+
+        <!-- Day / Date / Month apertures, centered between 12 numeral and center pinion -->
+        <g id="day-date-month-apertures">
+          <rect x="48" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
+          <text id="day-text" x="63" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">MON</text>
+
+          <rect x="85" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
+          <text id="date-text" x="100" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#0E0D0B" font-weight="600">1</text>
+
+          <rect x="122" y="65" width="30" height="15" rx="1" fill="url(#metallic-gold)" stroke="url(#metallic-gold)" stroke-width="0.75"/>
+          <text id="month-text" x="137" y="75.5" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#0E0D0B" font-weight="600">JAN</text>
+        </g>
+
+        <!-- Moonphase aperture at 6 — round, slightly reduced and raised to leave room for bottom inscription -->
+        <g id="moonphase-group">
+          <circle id="sky-bg" cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#metallic-gold)" stroke-width="0.75"/>
+          <defs>
+            <clipPath id="moon-clip">
+              <circle cx="100" cy="145" r="37"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#moon-clip)">
+            <circle id="moon-disk" cx="100" cy="145" r="14" fill="url(#moon-gold)"/>
+            <circle id="moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
+            <circle id="sun-glow" cx="100" cy="119.5" r="20" fill="url(#sun-glow-grad)" opacity="0"/>
+            <g id="clouds"></g>
+            <circle id="sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#sun-grad)" opacity="0"/>
+          </g>
+          <g id="moon-stars"></g>
+        </g>
+
+        <!-- MADE IN MIAMI inscription -->
+        <defs>
+          <path id="miami-arc" d="M 75 182.81 A 86.5 86.5 0 0 0 125 182.81" fill="none"/>
+        </defs>
+        <text font-family="'DM Sans', system-ui, sans-serif" font-size="4" letter-spacing="0.4" fill="url(#metallic-gold-soft)">
+          <textPath href="#miami-arc" xlink:href="#miami-arc" startOffset="50%" text-anchor="middle">MADE IN MIAMI</textPath>
+        </text>
+
+        <!-- Center hub -->
+        <circle cx="100" cy="100" r="2.5" fill="url(#metallic-gold)"/>
+
+        <!-- Hands (rotated via JS using transform="rotate(angle 100 100)") -->
+        <!-- Hour hand: Breguet-style — curved leaf shaft, open "moon" circle, thin pointed tip. Noticeably shorter than minute hand -->
+        <g id="hand-hour">
+          <path d="M 98.20 100 C 98.53 77.50, 99.50 66.25, 99.50 55 L 100.50 55 C 100.50 66.25, 104.00 77.50, 101.80 100 Z" fill="url(#metallic-gold)"/>
+          <circle cx="100" cy="50" r="4" fill="none" stroke="url(#metallic-gold)" stroke-width="1"/>
+          <line x1="100" y1="46" x2="100" y2="37" stroke="url(#metallic-gold)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+
+        <!-- Minute hand: Breguet-style — curved leaf shaft, open "moon" circle just inside the numerals, thin tip skimming the minute markers -->
+        <g id="hand-minute">
+          <path d="M 98.60 100 C 98.84 68.10, 99.40 52.15, 99.40 36.2 L 100.60 36.2 C 100.60 52.15, 103.00 68.10, 101.40 100 Z" fill="url(#metallic-gold)"/>
+          <circle cx="100" cy="33" r="3.2" fill="none" stroke="url(#metallic-gold)" stroke-width="0.9"/>
+          <line x1="100" y1="29.8" x2="100" y2="13" stroke="url(#metallic-gold)" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+
+        <!-- Seconds hand: heat-blued steel, reaching the outer tips of the indices, with larger counterbalance -->
+        <g id="hand-second">
+          <line x1="100" y1="100" x2="100" y2="10" stroke="url(#blued-steel)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="100" y1="100" x2="100" y2="124" stroke="url(#blued-steel)" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="100" cy="121" r="3.2" fill="url(#blued-steel)"/>
+        </g>
+
+        <circle cx="100" cy="100" r="1.5" fill="url(#blued-steel)"/>
+      </svg>
+    </div>
+
+    <!-- ===== LOS ANGELES CLOCK: Geneva clone with la- prefix + day/night sky ===== -->
     </div><!-- /.hero-clocks -->
     <div class="hero-text">
       <h1>Horology's <em class="brushed-gold">Independent</em> Masters, Makers, Manufactures, and Micro-Brands</h1>
@@ -7050,6 +7050,26 @@ const makers = [
     gphg: false,
     image: "https://www.zeitwinkel.ch/files/bis%20Zeitwinkel%2010450/Zeitwinkel%2010415.jpg",
     imageCredit: "© Zeitwinkel"
+  },
+  {
+    id: 245,
+    name: "Niton",
+    brand: "Niton — Art+Precision",
+    location: "Geneva, Switzerland",
+    country: "Switzerland",
+    region: "switzerland",
+    founded: "1919 (revived 2025)",
+    volume: "38 pieces (PRIMA debut edition)",
+    volumeNum: 38,
+    price: "POA",
+    website: "https://niton.swiss/",
+    instagram: "@niton.swiss",
+    desc: "Niton is a Genevan watch brand whose origins predate most Swiss luxury institutions and whose story involves glacial erratics, Vacheron Constantin alumni, a pioneering watchmaking feminist, the precursor to ETA, and a 1928 jump-hour patent that remained dormant for nearly a century. The name comes from the Pierres du Niton — two massive glacial erratics formed approximately 300 million years ago in the Alps and carried to the harbour of Lake Geneva by retreating ice sheets. These two stones, rising from the lake's surface like silent witnesses, became the foundational reference point for Switzerland's national topographic height-measuring system — making them both the oldest and the most precisely anchored reference points in Swiss cartography. In 1919, three gentlemen in their early thirties — Jeannet, Morel, and Bourquin — registered the brand 'Niton' and founded what would become Manufacture des Montres Niton SA. Morel and Bourquin were both watchmakers who had worked at Vacheron Constantin; Jeannet was a watchmaker. From their workshops on Rue du Stand in Geneva they quickly established themselves at the very highest level: 72% of their known production carried the Geneva Seal (Poinçon de Genève), and from 1921 to 1929 Niton ranked first or second in all of Geneva for the number of movements officially controlled and hallmarked by the state. They supplied movements to the most prestigious manufactures — among the documented highlights is a triple calendar with moon phase produced for Patek Philippe. They also specialised in 'rocket stick' (baguette) movements, pushing the creative envelope with pieces including a brooch movement now on permanent view at the Musée d'Art et d'Histoire de Genève.\n\nThe 1928 registration of the Totem jump-hour display was the moment Niton transformed from movement supplier into a brand with its own singular identity. The Totem display — whose design was patented — presents a decomposition of time that mixes digital and analogue indications simultaneously: a jumping digital hour display combined with an analogue minutes mechanism, creating a reading of time that is described by the current team as 'both artistic and precise.' Fewer than 30 examples of the original Totem display watches were produced, making them among the rarest pre-war Swiss watches in existence. Among the employees during Niton's golden era was Louisa Vuille — a figure considered a pioneer for women's rights in the Swiss watch industry, who had previously worked for Rolex and recalled the Niton manufacture with unmistakable conviction: 'I worked for a few years at Niton. It was on Rue du Stand. It was fine work. These were Montres de Genève, Geneva Seal watches. Very expensive watches. We put them in high jewelry cases. Whereas Rolex, no, it didn't have the Geneva Seal. Now they say it's high-end. To me, it's not high-end. High-end is Patek and Vacheron. Only those two brands, and Niton.' In 1938 the production rights were sold to ébauches SA — the organisation that would eventually become ETA — and the Niton commercial name disappeared from the market.\n\nOver a century after its founding, a new team revived Niton in 2025 under the positioning 'Art+Precision, Genève 1919,' with the explicit mission of pushing the ideas of the original founders to new levels while preserving their philosophy: rare objects of desire, not for everybody, designed with a distinct language where 'more is often less.' The PRIMA is the debut watch of the revived brand — its name a Latin word meaning 'first' but also the Italian and musical term for the leading voice or primary instrument. Limited to exactly 38 pieces — 19 in platinum and 19 in rose gold — the number is a deliberate typographical nod to 1919, the founding year: the digits 1 and 9, reversed and combined. The PRIMA houses the in-house Calibre NHS01, developed to the standards of the Geneva Seal and certified by the same institution in February 2026 (Geneva Seal file number 004) — placing Niton in the extraordinarily small group of watchmakers whose in-house movements carry this hallmark. The Totem display reappears at the heart of the PRIMA, its 1928 jump-hour patent reinterpreted and elevated for a contemporary watch. The brand's manifesto, published without apology on their website, states its positions plainly: they believe in creative vision regardless of trends; they reject 'stacking up crafts for the sake of showing off — to us, that is just pornography'; they do not believe in independence as an end in itself but in building an ecosystem of like-minded collaborators; and they only do business with people they know, trust, and like. Enquiries by appointment only.",
+    tags: ["Geneva","Switzerland","Genève 1919","Pierres du Niton","glacial erratic","Vacheron Constantin alumni","Geneva Seal","Poinçon de Genève","Jeannet","Morel","Bourquin","Louisa Vuille","Patek Philippe","ETA","ébauches SA","PRIMA","Totem display","jump hour","NHS01","Art+Precision","38 pieces","platinum","rose gold","Rue du Stand","baguette movement","Musée Art Histoire Genève","revival 2025","1919","triple calendar moon phase","rare","by appointment"],
+    specialties: ["jumping hour", "complications"],
+    gphg: false,
+    image: "https://niton.swiss/wp-content/uploads/2026/02/NITON_76280_FRONT_PT_45.jpg",
+    imageCredit: "© Niton"
   }
 ];
 
