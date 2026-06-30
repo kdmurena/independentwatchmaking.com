@@ -1081,12 +1081,12 @@
             <stop offset="100%" stop-color="#A4842F"/>
           </linearGradient>
           <radialGradient id="la-moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <!-- Sun disk gradient: warm yellow-orange -->
           <radialGradient id="la-sun-grad" cx="40%" cy="35%" r="65%">
@@ -1133,17 +1133,56 @@
         <g id="la-moonphase-group">
           <circle id="la-sky-bg" cx="100" cy="145" r="37" fill="#0B1530" stroke="url(#la-metallic-gold)" stroke-width="0.75"/>
           <g clip-path="url(#la-moon-clip)">
-            <!-- Moon disk and shadow -->
-            <circle id="la-moon-disk" cx="100" cy="145" r="14" fill="url(#la-moon-gold)"/>
-            <circle id="la-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <!-- Sun glow BELOW clouds — illuminates them from behind like real sunlight -->
-            <circle id="la-sun-glow" cx="100" cy="108" r="20" fill="url(#la-sun-glow-grad)" opacity="0"/>
-            <!-- Clouds pass IN FRONT of both glow and disk -->
+            <!-- Sun glow BEHIND moon — illuminates sky from behind -->
+            <circle id="la-sun-glow" cx="100" cy="131" r="24" fill="url(#la-sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="la-clouds"></g>
-            <!-- Sun hard disk ABOVE clouds — always fully visible -->
-            <circle id="la-sun-disk" cx="100" cy="108" r="11.5" fill="url(#la-sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="la-sun-disk" cx="100" cy="131" r="15" fill="url(#la-sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="la-moon-stars"></g>
+            <!-- Moon disk and shadow ON TOP of clouds -->
+            <circle id="la-moon-disk" cx="100" cy="162" r="14" fill="url(#la-moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#la-moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="la-moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="la-moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -1218,13 +1257,13 @@
             <stop offset="70%" stop-color="#D4B87A"/>
             <stop offset="100%" stop-color="#A4842F"/>
           </linearGradient>
-          <radialGradient id="ny-moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+                    <radialGradient id="ny-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <radialGradient id="ny-sun-grad" cx="40%" cy="35%" r="65%">
             <stop offset="0%" stop-color="#FFFDE0"/>
@@ -1261,13 +1300,56 @@
             </clipPath>
           </defs>
           <g clip-path="url(#ny-moon-clip)">
-            <circle id="ny-moon-disk" cx="100" cy="145" r="14" fill="url(#ny-moon-gold)"/>
-            <circle id="ny-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="ny-sun-glow" cx="100" cy="119.5" r="20" fill="url(#ny-sun-glow-grad)" opacity="0"/>
+            <!-- Sun glow BEHIND moon -->
+            <circle id="ny-sun-glow" cx="100" cy="131" r="24" fill="url(#ny-sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="ny-clouds"></g>
-            <circle id="ny-sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#ny-sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="ny-sun-disk" cx="100" cy="131" r="15" fill="url(#ny-sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="ny-moon-stars"></g>
+            <!-- Moon disk ON TOP of clouds -->
+            <circle id="ny-moon-disk" cx="100" cy="162" r="14" fill="url(#ny-moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#ny-moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="ny-moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="ny-moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -1345,13 +1427,13 @@
             <stop offset="100%" stop-color="#A4842F"/>
           </linearGradient>
           <!-- Radial metallic gold for the moon disk: domed, polished gleam -->
-          <radialGradient id="g-moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+                    <radialGradient id="g-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <radialGradient id="g-sun-grad" cx="40%" cy="35%" r="65%">
             <stop offset="0%" stop-color="#FFFDE0"/>
@@ -1404,13 +1486,56 @@
             </clipPath>
           </defs>
           <g clip-path="url(#g-moon-clip)">
-            <circle id="g-moon-disk" cx="100" cy="145" r="14" fill="url(#g-moon-gold)"/>
-            <circle id="g-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="g-sun-glow" cx="100" cy="119.5" r="20" fill="url(#g-sun-glow-grad)" opacity="0"/>
+            <!-- Sun glow BEHIND moon -->
+            <circle id="g-sun-glow" cx="100" cy="131" r="24" fill="url(#g-sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="g-clouds"></g>
-            <circle id="g-sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#g-sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="g-sun-disk" cx="100" cy="131" r="15" fill="url(#g-sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="g-moon-stars"></g>
+            <!-- Moon disk ON TOP of clouds -->
+            <circle id="g-moon-disk" cx="100" cy="162" r="14" fill="url(#g-moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#g-moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="g-moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="g-moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -1489,13 +1614,13 @@
             <stop offset="70%" stop-color="#D4B87A"/>
             <stop offset="100%" stop-color="#A4842F"/>
           </linearGradient>
-          <radialGradient id="db-moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+                    <radialGradient id="db-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <radialGradient id="db-sun-grad" cx="40%" cy="35%" r="65%">
             <stop offset="0%" stop-color="#FFFDE0"/>
@@ -1532,13 +1657,56 @@
             </clipPath>
           </defs>
           <g clip-path="url(#db-moon-clip)">
-            <circle id="db-moon-disk" cx="100" cy="145" r="14" fill="url(#db-moon-gold)"/>
-            <circle id="db-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="db-sun-glow" cx="100" cy="119.5" r="20" fill="url(#db-sun-glow-grad)" opacity="0"/>
+            <!-- Sun glow BEHIND moon -->
+            <circle id="db-sun-glow" cx="100" cy="131" r="24" fill="url(#db-sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="db-clouds"></g>
-            <circle id="db-sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#db-sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="db-sun-disk" cx="100" cy="131" r="15" fill="url(#db-sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="db-moon-stars"></g>
+            <!-- Moon disk ON TOP of clouds -->
+            <circle id="db-moon-disk" cx="100" cy="162" r="14" fill="url(#db-moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#db-moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="db-moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="db-moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -1609,13 +1777,13 @@
             <stop offset="70%" stop-color="#D4B87A"/>
             <stop offset="100%" stop-color="#A4842F"/>
           </linearGradient>
-          <radialGradient id="t-moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+                    <radialGradient id="t-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <radialGradient id="t-sun-grad" cx="40%" cy="35%" r="65%">
             <stop offset="0%" stop-color="#FFFDE0"/>
@@ -1652,13 +1820,56 @@
             </clipPath>
           </defs>
           <g clip-path="url(#t-moon-clip)">
-            <circle id="t-moon-disk" cx="100" cy="145" r="14" fill="url(#t-moon-gold)"/>
-            <circle id="t-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="t-sun-glow" cx="100" cy="119.5" r="20" fill="url(#t-sun-glow-grad)" opacity="0"/>
+            <!-- Sun glow BEHIND moon -->
+            <circle id="t-sun-glow" cx="100" cy="131" r="24" fill="url(#t-sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="t-clouds"></g>
-            <circle id="t-sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#t-sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="t-sun-disk" cx="100" cy="131" r="15" fill="url(#t-sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="t-moon-stars"></g>
+            <!-- Moon disk ON TOP of clouds -->
+            <circle id="t-moon-disk" cx="100" cy="162" r="14" fill="url(#t-moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#t-moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="t-moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="t-moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -1729,13 +1940,13 @@
             <stop offset="75%" stop-color="#C9A659"/>
             <stop offset="100%" stop-color="#8A6F2E"/>
           </linearGradient>
-          <radialGradient id="sy-moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+                    <radialGradient id="sy-moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <radialGradient id="sy-sun-grad" cx="40%" cy="35%" r="65%">
             <stop offset="0%" stop-color="#FFFDE0"/>
@@ -1772,13 +1983,56 @@
             </clipPath>
           </defs>
           <g clip-path="url(#sy-moon-clip)">
-            <circle id="sy-moon-disk" cx="100" cy="145" r="14" fill="url(#sy-moon-gold)"/>
-            <circle id="sy-moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="sy-sun-glow" cx="100" cy="119.5" r="20" fill="url(#sy-sun-glow-grad)" opacity="0"/>
+            <!-- Sun glow BEHIND moon -->
+            <circle id="sy-sun-glow" cx="100" cy="131" r="24" fill="url(#sy-sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="sy-clouds"></g>
-            <circle id="sy-sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#sy-sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="sy-sun-disk" cx="100" cy="131" r="15" fill="url(#sy-sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="sy-moon-stars"></g>
+            <!-- Moon disk ON TOP of clouds -->
+            <circle id="sy-moon-disk" cx="100" cy="162" r="14" fill="url(#sy-moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#sy-moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="sy-moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="sy-moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -1836,13 +2090,13 @@
             <stop offset="100%" stop-color="#C9A659"/>
           </radialGradient>
           <!-- Radial metallic gold for the moon disk: domed, polished gleam -->
-          <radialGradient id="moon-gold" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#FFFBF0"/>
-            <stop offset="18%" stop-color="#FFF0C2"/>
-            <stop offset="38%" stop-color="#E8C97A"/>
-            <stop offset="60%" stop-color="#B8924A"/>
-            <stop offset="82%" stop-color="#7A5A22"/>
-            <stop offset="100%" stop-color="#5C4318"/>
+                    <radialGradient id="moon-gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="18%" stop-color="#E8EEF5"/>
+            <stop offset="38%" stop-color="#C2CEDC"/>
+            <stop offset="60%" stop-color="#8A9AB0"/>
+            <stop offset="82%" stop-color="#5A6878"/>
+            <stop offset="100%" stop-color="#3A4858"/>
           </radialGradient>
           <radialGradient id="sun-grad" cx="40%" cy="35%" r="65%">
             <stop offset="0%" stop-color="#FFFDE0"/>
@@ -1900,13 +2154,56 @@
             </clipPath>
           </defs>
           <g clip-path="url(#moon-clip)">
-            <circle id="moon-disk" cx="100" cy="145" r="14" fill="url(#moon-gold)"/>
-            <circle id="moon-shadow" cx="100" cy="145" r="14" fill="#0B1530"/>
-            <circle id="sun-glow" cx="100" cy="119.5" r="20" fill="url(#sun-glow-grad)" opacity="0"/>
+            <!-- Sun glow BEHIND moon -->
+            <circle id="sun-glow" cx="100" cy="131" r="24" fill="url(#sun-glow-grad)" opacity="0"/>
+            <!-- Clouds pass BEHIND moon — moon always fully visible -->
             <g id="clouds"></g>
-            <circle id="sun-disk" cx="100" cy="119.5" r="11.5" fill="url(#sun-grad)" opacity="0"/>
+            <!-- Sun hard disk BEHIND moon -->
+            <circle id="sun-disk" cx="100" cy="131" r="15" fill="url(#sun-grad)" opacity="0"/>
+            <!-- 4-pointed stars — above sun glow, behind moon disk -->
+            <g id="moon-stars"></g>
+            <!-- Moon disk ON TOP of clouds -->
+            <circle id="moon-disk" cx="100" cy="162" r="14" fill="url(#moon-gold)"/>
+            <!-- Lunar surface detail -->
+            <g clip-path="url(#moon-clip)" opacity="1">
+              <!-- Mare Imbrium — upper eye (face looks right, eyes stacked vertically) -->
+              <ellipse cx="96.50" cy="157.80" rx="4.48" ry="3.92" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Serenitatis — brow/upper-right fill -->
+              <ellipse cx="102.10" cy="158.08" rx="3.08" ry="2.80" fill="#6A7888" opacity="0.38"/>
+              <!-- Mare Humorum — lower eye -->
+              <ellipse cx="96.08" cy="164.10" rx="2.80" ry="2.38" fill="#5A6878" opacity="0.52"/>
+              <!-- Mare Tranquillitatis — cheek between eyes -->
+              <ellipse cx="101.68" cy="161.72" rx="2.80" ry="2.10" fill="#6A7888" opacity="0.32"/>
+              <!-- Oceanus Procellarum — broad left wash unifying the face -->
+              <ellipse cx="96.50" cy="160.88" rx="3.50" ry="6.30" fill="#6A7888" opacity="0.20"/>
+              <!-- Mare Nubium — mouth, lower centre -->
+              <ellipse cx="99.30" cy="166.48" rx="4.20" ry="2.10" fill="#5A6878" opacity="0.48"/>
+              <!-- Mare Crisium — isolated oval far right -->
+              <ellipse cx="108.12" cy="158.08" rx="1.96" ry="1.54" fill="#4A5868" opacity="0.55"/>
+              <!-- Apennine mountain ridge — nose, diagonal line upper-centre to lower-right -->
+              <line x1="100.70" y1="159.48" x2="103.08" y2="162.70" stroke="#8A9AB0" stroke-width="0.5" opacity="0.55"/>
+              <line x1="100.30" y1="159.60" x2="102.68" y2="162.82" stroke="#8A9AB0" stroke-width="0.3" opacity="0.35"/>
+              <!-- Grimaldi — dark left limb -->
+              <ellipse cx="91.13" cy="163.87" rx="0.93" ry="0.82" fill="#5A6878" opacity="0.45"/>
+              <!-- Tycho crater with rays -->
+              <circle cx="97.90" cy="170.17" r="0.93" fill="#6A7A8A" opacity="0.45"/>
+              <circle cx="97.90" cy="170.17" r="0.93" fill="none" stroke="#D0DCEA" stroke-width="0.6" opacity="0.65"/>
+              <line x1="97.90" y1="169.23" x2="97.90" y2="165.73" stroke="#D0DCEA" stroke-width="0.3" opacity="0.50"/>
+              <line x1="98.83" y1="169.47" x2="101.87" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="96.97" y1="169.47" x2="93.93" y2="166.67" stroke="#D0DCEA" stroke-width="0.3" opacity="0.45"/>
+              <line x1="97.43" y1="171.10" x2="96.03" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <line x1="98.37" y1="171.10" x2="100.00" y2="174.13" stroke="#D0DCEA" stroke-width="0.3" opacity="0.40"/>
+              <!-- Copernicus -->
+              <circle cx="96.27" cy="163.87" r="0.93" fill="none" stroke="#C0D0E0" stroke-width="0.5" opacity="0.60"/>
+              <!-- Aristarchus — brightest spot -->
+              <circle cx="92.53" cy="159.20" r="0.70" fill="#DDEEFF" opacity="0.75"/>
+              <!-- Plato — dark flat crater -->
+              <circle cx="97.20" cy="153.60" r="0.82" fill="#4A5868" opacity="0.50"/>
+              <!-- Clavius -->
+              <circle cx="97.20" cy="173.20" r="1.28" fill="none" stroke="#9AAABB" stroke-width="0.5" opacity="0.50"/>
+            </g>
+            <circle id="moon-shadow" cx="100" cy="162" r="14" fill="#0B1530"/>
           </g>
-          <g id="moon-stars"></g>
         </g>
 
         <!-- MADE IN MIAMI inscription -->
@@ -7537,14 +7834,30 @@ function initClock(prefix, timeZone){
   // for depth variety. All margins verified to keep star points clear of both the moon disk edge
   // and the aperture's clip boundary. Each entry: [x, y, outerRadius]
   const starPositions = [
-    [123.2, 145.0, 1.6], [126.08, 154.49, 2.4], [124.74, 165.76, 3.2],
-    [111.6, 165.09, 1.6], [104.82, 172.33, 2.4], [94.39, 176.81, 3.2],
-    [88.4, 165.09, 1.6], [78.74, 162.84, 2.4], [69.65, 156.05, 3.2],
-    [76.8, 145.0, 1.6], [73.92, 135.51, 2.4], [75.26, 124.24, 3.2],
-    [88.4, 124.91, 1.6], [95.18, 117.67, 2.4], [105.61, 113.19, 3.2],
-    [111.6, 124.91, 1.6], [121.26, 127.16, 2.4], [130.35, 133.95, 3.2],
-    [77.45, 153.21, 1.3], [70.46, 150.21, 3.0],
-    [68.12, 136.46, 2.6]
+    [105.17, 134.46, 1.2],
+    [112.62, 141.17, 3.0],
+    [89.05, 140.99, 3.0],
+    [75.03, 127.96, 3.0],
+    [115.14, 124.10, 1.2],
+    [119.75, 134.10, 1.2],
+    [102.98, 119.51, 2.6],
+    [101.23, 126.56, 1.2],
+    [128.82, 140.34, 1.2],
+    [84.36, 133.90, 1.2],
+    [71.05, 139.00, 2.6],
+    [84.47, 120.96, 1.2],
+    [70.49, 150.68, 1.6],
+    [76.78, 162.59, 1.2],
+    [84.22, 151.12, 1.6],
+    [77.40, 170.07, 1.2],
+    [116.00, 149.00, 2.6],
+    [125.00, 153.00, 1.2],
+    [120.00, 163.00, 3.0],
+    [130.00, 158.00, 1.2],
+    [117.00, 173.00, 1.6],
+    [127.00, 165.00, 2.0],
+    [119.00, 156.00, 1.6],
+    [130.00, 148.00, 1.2]
   ];
 
   // Build a 4-pointed sparkle/star path centered at origin, with given outer/inner radii
@@ -7668,7 +7981,7 @@ function initClock(prefix, timeZone){
     // 0 at new moon (fully covering disk) up to 2*r at full moon (fully clear of disk),
     // then back down to 0 at the next new moon.
     const moonR = 14;
-    const moonCx = 100, cyMoon = 145;
+    const moonCx = 100, cyMoon = 162;
     let offset;
     if (phase <= 0.5) {
       offset = moonR * 2 * (phase / 0.5);       // waxing: 0 -> 2r as phase goes 0 -> 0.5
@@ -7737,9 +8050,9 @@ function initSky(prefix, timezone, lat, lon) {
   // d + sunR = APR(37), d - sunR = moonR(14) → d=25.5, sunR=11.5
   const isLA = (prefix === 'la-');
   const moonR_val = 14;
-  const SUN_R = 25.5;           // arc radius (same for all clocks)
-  const SUN_ARC_CY = 145;       // arc centered on aperture center
-  const SUN_DISK_R_val = 11.5;  // sun disk radius (same for all clocks)
+  const SUN_R = 7;               // arc radius — sun travels in upper aperture band
+  const SUN_ARC_CY = 131;        // arc centre: sun never clips top, never touches moon
+  const SUN_DISK_R_val = 15; // sun slightly larger than moon (r=14), same for all clocks
 
   function getSunTimes(date) {
     const JD = date.getTime() / 86400000 + 2440587.5;
@@ -7888,7 +8201,7 @@ function initSky(prefix, timezone, lat, lon) {
     cloudAnimId = requestAnimationFrame(animateClouds);
   }
 
-  const APX = 100, APY = 145;
+  const APX = 100, APY = 131;
 
   function updateSky() {
     const now = new Date();
