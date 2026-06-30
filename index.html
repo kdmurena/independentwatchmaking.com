@@ -7276,6 +7276,26 @@ const makers = [
     gphg: false,
     image: "https://www.amida-watches.com/cdn/shop/files/5_d464884f-ad12-4ab8-be97-da0bc4a56469.jpg?v=1757071274&width=1300",
     imageCredit: "© AMIDA"
+  },
+  {
+    id: 256,
+    name: "Rémi Planchette",
+    brand: "Rémi Planchette",
+    location: "France",
+    country: "France",
+    region: "france",
+    founded: "2026 (student watch)",
+    volume: "Unique piece",
+    volumeNum: 1,
+    price: "Not for sale (school project)",
+    website: "",
+    instagram: "@remi.planchette",
+    desc: "Rémi Planchette is a young French watchmaker-in-training whose graduation piece — presented in 2026 after a full year of development as part of his DNMADe Horlogerie (Diplôme National des Métiers d'Art et du Design, specialising in horology) — is a remarkable demonstration of what a single dedicated student can achieve when given the freedom to design without compromise. The watch was developed with the sponsorship of YEMA Watches, the historic French watch manufacturer, whose backing gave Planchette access to the kind of mentorship and material support that elevates a school project into something genuinely close to an independent watchmaker's debut. Rather than choose a single, contained complication as many student projects do, Planchette set himself an unusually ambitious goal from the outset: a fully reversible watch case offering two completely distinct readings of time on its two faces — effectively designing, engineering, and building two separate complications in a single object, doubling both the technical challenge and the design discipline required.\n\nThe first face displays a jumping hour (heure sautante) paired with retrograde minutes — a combination in which the hour advances instantaneously from one digit to the next rather than creeping forward continuously, while the minute hand sweeps across a fixed arc before snapping back to its starting position at the top of each hour, rather than completing a full 360-degree rotation. This pairing demands careful mechanical choreography: the jumping hour mechanism must release at the precise moment the retrograde minute hand completes its arc and resets, a synchronisation problem that is one of the more demanding exercises in complication design even for professional movement constructors. The second face, accessed by flipping the case, is dedicated to an instantaneous worldtimer — a complication that allows the wearer to read the time in multiple timezones simultaneously, with the display advancing in clean, instantaneous jumps rather than continuous creep, mirroring the jumping hour aesthetic of the opposite face and giving the two complications a unified mechanical character despite their very different functions.\n\nWhat distinguishes this project most is the sheer completeness of the undertaking, which Planchette has described directly: he conceived the design and mechanical architecture of every complication himself, including the reversible case construction; machined and manufactured all the components; finished every surface; and assembled the entire watch from raw materials to the completed piece, entirely on his own. This is the full scope of what professional watch construction entails, undertaken as a single-year academic project rather than across a multi-year independent career — a genuinely unusual achievement for a student piece, and one that places Planchette's graduation watch in the same conversation as debut pieces from watchmakers who later went on to establish their own independent ateliers. Planchette has expressed thanks to YEMA and to his instructors and mentors throughout the DNMADe programme for their support across the year of development. The watch is a unique piece and is not for sale; it represents the culmination of his formal watchmaking education and a clear signal of the direction his career may take as an independent watchmaker.\n\nAlongside the reversible YEMA-sponsored piece, Planchette has also shared a separate technical study: a reversed balance, or 'dévoyage,' project, in which he turned a custom balance staff specifically to relocate the balance wheel so that it sits visible on the dial side of the watch rather than in its conventional position beneath the caseback. Repositioning the regulating organ in this way is a demanding exercise in movement architecture — moving the balance from the back of the movement to the front requires rethinking the gear train, the pivots, and the depth of every component around it, all while preserving accurate timekeeping. To accommodate the relocated balance, Planchette also offset the hours-minutes display away from the dial centre, a further compositional and mechanical adjustment that this kind of dévoyage construction demands. Smaller studies of this kind — distinct from the full reversible watch but addressing the same fundamental questions of movement architecture and component-level mastery — form a visible thread in his ongoing development as a watchmaker, each one tackling a different traditional construction technique in isolation before being synthesised into more complete pieces.\n\nA further project demonstrates Planchette's engagement with vintage American movement restoration: the complete habillage — case, dial, and hands — built around a Gruen calibre 462SS bumper movement fitted with a Breguet overcoil. Gruen, the historic American watch manufacturer, produced the 462SS as a bumper automatic — an early form of self-winding mechanism in which the oscillating weight swings through a limited arc and rebounds off mechanical buffers (or 'bumpers') at each end of its travel, rather than rotating freely through a full 360 degrees as in later automatic designs. Fitting this vintage movement with a Breguet overcoil — the raised, terminal curve added to the outer coil of a balance spring, designed to make the spring breathe more concentrically and improve isochronism (rate consistency across different amplitudes) — required Planchette to integrate a refinement associated with high-end chronometry into a movement that did not originally carry one, then design and construct an entirely new case, dial, and hand set to present it. This casing exercise reflects a different but complementary skill set from his original-complication work: the restoration, integration, and presentation of historic movements, a discipline central to independent watchmaking and one in which several established independents, including Cédric Johner and Jean-Baptiste Viot, also built their early reputations.",
+    tags: ["France","Rémi Planchette","DNMADe Horlogerie","student watchmaker","YEMA Watches","graduation piece","école montre","reversible case","jumping hour","heure sautante","retrograde minutes","instantaneous worldtimer","complications","in-house","young maker","one year development","unique piece","dévoyage","reversed balance","offset display","balance staff","movement architecture","technical study","Gruen 462SS","bumper movement","Breguet overcoil","habillage","vintage restoration","recasing"],
+    specialties: ["jumping hour", "world time", "complications"],
+    gphg: false,
+    image: "https://media.licdn.com/dms/image/v2/D4E22AQHOV7lozV99qA/feedshare-image-high-res/B4EZ75ZRo8KMAU-/0/1782300614091?e=1784160000&v=beta&t=tl9llN3qU_MerT_gcGjznnl39VC-JkIrQfx7SP1COqg",
+    imageCredit: "© Rémi Planchette"
   }
 ];
 
@@ -7644,16 +7664,18 @@ function initClock(prefix, timeZone){
     if (phase < 0) phase += 1;
 
     // phase: 0 = new moon (fully dark), 0.5 = full moon (fully lit gold)
-    // All clocks now use moon r=14
+    // Correct geometry: shadow circle (same radius as moon disk) must be offset
+    // 0 at new moon (fully covering disk) up to 2*r at full moon (fully clear of disk),
+    // then back down to 0 at the next new moon.
     const moonR = 14;
     const moonCx = 100, cyMoon = 145;
+    let offset;
     if (phase <= 0.5) {
-      const offset = moonR * 2 * (0.5 - phase) / 0.5;
-      moonShadow.setAttribute('cx', (moonCx + moonR - offset).toFixed(2));
+      offset = moonR * 2 * (phase / 0.5);       // waxing: 0 -> 2r as phase goes 0 -> 0.5
     } else {
-      const offset = moonR * 2 * (phase - 0.5) / 0.5;
-      moonShadow.setAttribute('cx', (moonCx - moonR + offset).toFixed(2));
+      offset = moonR * 2 * (1 - (phase - 0.5) / 0.5); // waning: 2r -> 0 as phase goes 0.5 -> 1
     }
+    moonShadow.setAttribute('cx', (moonCx + offset).toFixed(2));
     moonShadow.setAttribute('cy', cyMoon);
   }
 
