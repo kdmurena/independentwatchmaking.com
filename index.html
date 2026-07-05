@@ -623,6 +623,7 @@
     position: sticky;
     top: var(--header-h, 64px);
     z-index: 90;
+    box-shadow: 0 -2px 0 0 var(--dark-2);
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
@@ -9827,7 +9828,9 @@ initSky('sy-', 'Australia/Sydney',    -33.8688,   151.2093); // Sydney / Melbour
   const headerEl = document.querySelector('header');
   if (!headerEl) return;
   const setHeaderH = () => {
-    document.documentElement.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
+    // Use exact fractional height, rounded UP so the bar can never tuck under the header
+    const h = Math.ceil(headerEl.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--header-h', h + 'px');
   };
   setHeaderH();
   if (window.ResizeObserver) {
@@ -9836,6 +9839,14 @@ initSky('sy-', 'Australia/Sydney',    -33.8688,   151.2093); // Sydney / Melbour
   window.addEventListener('resize', setHeaderH);
   window.addEventListener('orientationchange', setHeaderH);
   window.addEventListener('load', setHeaderH);
+  window.addEventListener('pageshow', setHeaderH);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', setHeaderH);
+  }
+  // Re-measure once web fonts finish loading (they change the header's height)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setHeaderH);
+  }
 })();
 </script>
 </body>
