@@ -1,0 +1,23 @@
+# Independent Watchmaking
+
+> A living catalogue of 318 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
+
+Independent Watchmaking (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
+
+## What this site covers
+
+- Independent watchmakers and one-person ateliers
+- Independent watch brands and haute horlogerie houses
+- Watch manufactures producing in-house movements
+- Microbrands and accessible independents
+- Enamel, guilloché, engraving, and métiers d'art specialists
+- Tourbillon, constant-force, and complication innovators
+- For each maker: founding year, city/country, estimated annual production, price range, official website, Instagram, and a multi-paragraph curated history
+
+## Primary resource
+
+- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 318 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
+
+## Usage
+
+Content may be cited with attribution to independentwatchmaking.com. The catalogue is updated regularly as new independent makers are added.
