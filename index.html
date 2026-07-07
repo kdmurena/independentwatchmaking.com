@@ -592,7 +592,7 @@
   .hero-sub {
     font-family: var(--font-display);
     font-size: 18px;
-    color: var(--muted);
+    color: #C9C3B8;
     font-weight: 300;
     max-width: 600px;
     margin: 0 auto;
@@ -9079,8 +9079,8 @@ const makers = [
     desc: "La Vallée is a three-generation Italian family manufacture in the Lake Como region devoted to an art the wider world almost never sees: unique, museum-grade mechanical timepieces — extraordinary clocks rather than wristwatches — created over the past four decades for just a handful of ultra-selected clients. The story begins in 1913, when Antonio Quintavalle, born on the Venetian island of Burano, finished his watchmaking apprenticeship with a letter of praise and opened a clock-repair workshop at the Rialto. By 1938 his Venice workshop served clients across northern Italy; in 1954 he moved to Lake Como, and by 1964 — his collecting passion feeding his creativity — he was making his first original artistic clocks, joined by his son Leopoldo. The specialized 'La Clessidra' workshop followed in 1967, earning the Italian Ministry of Industry's gold medal for excellence at Florence in 1970 and exhibiting in Paris by 1972. In 1974 the brand took its French name — a nod to watchmaking's Franco-Swiss cradle, inspired by the Quintavalle surname — and debuted its first 'officier' clock at the Basel fair. A pivotal 1984 commission for a fully customized clock over two meters tall set the course: from 1986, under Leopoldo as CEO, La Vallée chose uniqueness — exclusive pieces in solid silver, lapis lazuli, mother-of-pearl, and malachite — and from 1987 the collaboration with complications specialist Ricardo Sasso opened the door to serious mechanical invention. Massimiliano Quintavalle, third generation and a Politecnico di Milano graduate, joined in 2001; at Baselworld 2005 the house unveiled a 30-day movement and a skeletonized, hand-engraved tourbillon with central seconds, double power reserve, second time zone, and alarm.\n\nThe commissions grew legendary — none more so than the 2014 work for H.M. Sultan Qaboos bin Said Al Said of Oman: a precious-material scale model of the Royal Opera House of Muscat that opens and closes automatically, transforming between concert and opera configurations complete with the staging of Turandot and hand-painted musicians at 1:150 scale. In 2015 came a table clock inspired by Breguet's fabled Sympathique, able to wind and synchronize not one but two watches simultaneously — developed by Luciano Sasso, Ricardo's son, a fourth-generation clockmaker-engineer who now heads R&D and whose gift for achieving multiple functions with the fewest possible components defines the modern La Vallée. His 2019 'Timeless' project produced the M30TP: a 1.5-meter, 37kg, 1,280-component sculpture with a patented perpetual calendar of just seven moving elements, a cage-less and bridge-less 5-minute flying tourbillon with a magnetically suspended 72mm balance, a remontoire that gearlessly drives the minute hand, magnetically stabilized indicator discs, a 30-day reserve, dual-side readability, and — the house signature — a balance frequency customisable to beat at the owner's resting heart rate (56 bpm standard). The Attimo Golf (2021) and Attimo Polo followed with dedicated movements, and the M30TP Aero extended the platform.\n\nThe newest creation, COSMO (2026), may be the family's masterpiece: an astronomical timepiece beneath a dome of hand-blown Murano glass whose entire 16kg movement rotates once every sidereal day (23h 56m 4s) and runs 406 days on a single wind — enabled by a patent-pending transmission of just two eccentric gears. Its 70mm, 60-gram balance is magnetically suspended between shielded opposing magnets, regulated by a trilobe Delta-T invar system that self-compensates for temperature, spring elasticity, and oil viscosity, and fed by a flexure-based one-minute remontoire; three planet-like power reserve indicators drift along a 406-day arc, turning red when 50 days remain, while a multi-function knob can lock the escapement for transport or magnetically raise it to touch the glass dome, amplifying its tick tenfold — so the owner can literally hear a mechanism beating at their own resting heart rate. COSMO displays sunrise, sunset, dawn and dusk durations, solar time, zodiac, and the stars passing over a city of the owner's choosing, with a night mode revealing only time and the celestial vault. Alongside made-to-measure and fully bespoke programs, La Vallée remains what it has always been: Italian mechanical art of the highest order, made strictly by hand, one client at a time.",
     tags: ["Lake Como","Italy","Quintavalle","Luciano Sasso","COSMO","M30TP","406-day power reserve","Murano glass","magnetic suspension","remontoire","perpetual calendar","heartbeat frequency","Sultan of Oman","Sympathique","bespoke clocks","astronomical","table clock"],
     gphg: false,
-    image: "https://cosmo.lavallee.eu/wp-content/uploads/2026/06/La-Vallee_COSMO_2-mobile.png",
-    imageCredit: "© La Vallée"
+    image: "https://revolutionwatch.com/wp-content/uploads/2025/11/05-La-Vallee-COSMO.jpg",
+    imageCredit: "© Revolution"
   },
   {
     id: 324,
@@ -9296,8 +9296,12 @@ function renderCards(data) {
   grid.innerHTML = data.map(m => {
     const gphgBadge = m.gphg ? '<span class="gphg">GPHG Winner</span>' : '';
     const volBadge = m.volumeNum > 0 && m.volume ? `<span class="volume-badge">${m.volume}</span>` : '';
-    const tags = m.tags.slice(0,3).map(t => `<span class="tag">${t}</span>`).join('');
-    const regionTag = `<span class="tag region">${m.region === 'switzerland' ? 'Switzerland' : m.region === 'germany' ? 'Germany' : m.region === 'france' ? 'France' : m.region === 'uk' ? 'United Kingdom' : m.region === 'japan' ? 'Japan' : m.region === 'usa' ? 'USA' : m.region === 'netherlands' ? 'Netherlands' : m.country}</span>`;
+    const regionLabel = m.region === 'switzerland' ? 'Switzerland' : m.region === 'germany' ? 'Germany' : m.region === 'france' ? 'France' : m.region === 'uk' ? 'United Kingdom' : m.region === 'japan' ? 'Japan' : m.region === 'usa' ? 'USA' : m.region === 'netherlands' ? 'Netherlands' : m.country;
+    const tags = m.tags.filter(t => {
+      const tl = t.trim().toLowerCase();
+      return tl !== regionLabel.toLowerCase() && tl !== (m.country || '').toLowerCase();
+    }).slice(0,3).map(t => `<span class="tag">${t}</span>`).join('');
+    const regionTag = `<span class="tag region">${regionLabel}</span>`;
 
     const websiteLink = m.website ? `<a href="${m.website}" target="_blank" rel="noopener">↗ Website</a>` : '';
     const igHandles = m.instagram ? m.instagram.split('|').map(h => h.trim()) : [];
