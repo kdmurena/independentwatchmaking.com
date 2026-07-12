@@ -1130,6 +1130,7 @@
   .curation-note {
     border-top: 1px solid rgba(184,152,74,0.15);
     padding: 3.5rem 2rem;
+    scroll-margin-top: var(--sticky-total-h, 220px);
   }
 
   .curation-inner {
@@ -10539,10 +10540,16 @@ initSky('sy-', 'Australia/Sydney',    -33.8688,   151.2093); // Sydney / Melbour
     document.documentElement.style.setProperty('--header-h', h + 'px');
     // Also set directly on the element so no stylesheet rule can override it
     if (controlsEl) controlsEl.style.top = h + 'px';
+    // Combined height of header + sticky controls bar (search + filters, which can
+    // wrap to several rows), so anchor jumps like #curation-note can offset past both
+    // and land with their heading actually visible instead of tucked underneath.
+    const controlsH = controlsEl ? Math.ceil(controlsEl.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty('--sticky-total-h', (h + controlsH + 16) + 'px');
   };
   setHeaderH();
   if (window.ResizeObserver) {
     new ResizeObserver(setHeaderH).observe(headerEl);
+    if (controlsEl) new ResizeObserver(setHeaderH).observe(controlsEl);
   }
   window.addEventListener('resize', setHeaderH);
   window.addEventListener('orientationchange', setHeaderH);
