@@ -1,6 +1,6 @@
 # Independent Watchmaking
 
-> A living catalogue of 342 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
+> A living catalogue of 343 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
 
 Independent Watchmaking (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
 
@@ -16,7 +16,7 @@ Independent Watchmaking (https://independentwatchmaking.com/) is a free, regular
 
 ## Primary resource
 
-- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 342 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
+- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 343 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
 
 ## What this site does NOT cover
 
@@ -32,7 +32,7 @@ This catalogue is limited to genuinely independent watchmaking. A brand is exclu
 - **Citychamp Watch & Jewellery Group**: Eterna, Rotary, Rossini, Ebohr, Codex, Dreyfuss & Co., J&T Windmills
 - **Timex Group**: Timex, TX
 - **Mondaine Group**: Mondaine, Luminox
-- **Independently owned but too large in scale**: Rolex, Tudor, Breitling, Patek Philippe, Audemars Piguet, Richard Mille, Seiko, Grand Seiko, Credor, Chopard (though Chopard-owned Ferdinand Berthoud is included), Chanel, Hermès, Citizen (though Citizen-owned Arnold & Son and Angelus are included), incl. Frédérique Constant, Alpina, Casio, Yema, Invicta, Spinnaker (owned by Dartmouth Brands)
+- **Independently owned but too large in scale**: Rolex, Tudor, Breitling, Patek Philippe, Audemars Piguet, Richard Mille, Seiko, Grand Seiko, Credor, Chopard (though Chopard-owned Ferdinand Berthoud is included), Chanel, Hermès, Citizen (though Citizen-owned Arnold & Son and Angelus are included), incl. Frédérique Constant, Alpina, Casio, Invicta, Spinnaker (owned by Dartmouth Brands)
 
 **Exceptions — included despite group ownership**: Arnold & Son and Angelus (Citizen Group, via La Joux-Perret) and Ferdinand Berthoud (Chopard) are included because each operates as a genuinely autonomous manufacture — its own premises, its own team, full creative and technical control over its own movements and designs — functioning in practice like an independent house rather than a division of a larger commercial group.
 
