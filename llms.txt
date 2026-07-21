@@ -1,8 +1,8 @@
-# Independent Watchmaking
+# IndependentWatchmaking.com
 
 > A living catalogue of 364 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
 
-Independent Watchmaking (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
+IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
 
 ## What this site covers
 
@@ -14,13 +14,15 @@ Independent Watchmaking (https://independentwatchmaking.com/) is a free, regular
 - Tourbillon, constant-force, and complication innovators
 - For each maker: founding year, city/country, estimated annual production, price range, official website, Instagram, and a multi-paragraph curated history
 
-## Primary resource
+## Primary resources
 
 - [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 364 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
+- [Methodology](https://independentwatchmaking.com/methodology.html): the full, authoritative explanation of what qualifies a brand as independent, the disqualifying criteria (group ownership, industrial scale, homage-driven output), documented exceptions, and how listings are researched and kept current.
+- [FAQ](https://independentwatchmaking.com/faq.html): answers to common questions about the catalogue's scope, curation criteria, and how to suggest a correction or addition, marked up with FAQPage structured data.
 
 ## What this site does NOT cover
 
-This catalogue is limited to genuinely independent watchmaking. A brand is excluded if it is owned by one of the dominant global luxury/watch conglomerates, if it is independently owned but has grown into a large-scale or mass-market operation whose revenue or production places it among established industrial houses rather than independent ateliers, or if its output is primarily homage watches (close copies of other brands' existing designs). Full detail and the current exclusion list are published on the site itself under "A Note on Curation" (https://independentwatchmaking.com/#curation-note). Notable exclusions include:
+This catalogue is limited to genuinely independent watchmaking. A brand is excluded if it is owned by one of the dominant global luxury/watch conglomerates, if it is independently owned but has grown into a large-scale or mass-market operation whose revenue or production places it among established industrial houses rather than independent ateliers, or if its output is primarily homage watches (close copies of other brands' existing designs). Full detail and the current exclusion list are published at https://independentwatchmaking.com/methodology.html. Notable exclusions include:
 
 - **Swatch Group**: Breguet, Harry Winston, Blancpain, Glashütte Original, Jaquet Droz, Omega, Longines, Rado, Union Glashütte, Tissot, Certina, Mido, Hamilton, Balmain, Swatch, Flik Flak
 - **Richemont**: A. Lange & Söhne, IWC Schaffhausen, Jaeger-LeCoultre, Panerai, Piaget, Roger Dubuis, Vacheron Constantin, Cartier, Van Cleef & Arpels, Buccellati, Montblanc, Dunhill
@@ -42,4 +44,4 @@ This list is maintained on a best-effort basis and updates as brand ownership ch
 
 ## Usage
 
-Content may be cited with attribution to independentwatchmaking.com. The catalogue is updated regularly as new independent makers are added.
+Content may be cited with attribution to independentwatchmaking.com. The catalogue is updated regularly as new independent makers are added. Corrections and suggestions for new makers can be sent to kdmurena@gmail.com; see https://independentwatchmaking.com/faq.html and https://independentwatchmaking.com/methodology.html for full detail on scope and process.
