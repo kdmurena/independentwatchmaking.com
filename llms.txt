@@ -1,6 +1,6 @@
 # IndependentWatchmaking.com
 
-> A living catalogue of 364 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
+> A living catalogue of 365 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
 
 IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
 
@@ -16,7 +16,7 @@ IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regu
 
 ## Primary resources
 
-- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 364 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
+- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 365 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
 - [Methodology](https://independentwatchmaking.com/methodology.html): the full, authoritative explanation of what qualifies a brand as independent, the disqualifying criteria (group ownership, industrial scale, homage-driven output), documented exceptions, and how listings are researched and kept current.
 - [FAQ](https://independentwatchmaking.com/faq.html): answers to common questions about the catalogue's scope, curation criteria, and how to suggest a correction or addition, marked up with FAQPage structured data.
 
