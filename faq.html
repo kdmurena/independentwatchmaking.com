@@ -96,7 +96,7 @@
 "name": "I noticed an error, or I'd like to suggest a watchmaker for inclusion — how do I do that?",
 "acceptedAnswer": {
 "@type": "Answer",
-"text": "Email kdmurena@gmail.com with the brand name and, if possible, a link to their official site — or, for a correction, a note on what needs fixing and a source if you have one."
+"text": "Email indiewatchmaking@gmail.com with the brand name and, if possible, a link to their official site — or, for a correction, a note on what needs fixing and a source if you have one."
 }
 },
 {
@@ -161,7 +161,9 @@ header {
   font-size: 1.75rem;
   font-weight: 400;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+}
+.site-title .brushed-gold {
+  font-style: italic;
 }
 .brushed-gold {
   background-image: repeating-linear-gradient(90deg,#8A6A2E 0%,#D9B96A 4%,#FFF3CE 8%,#B8984A 13%,#8A6A2E 18%,#E8CE8E 24%,#A4842F 30%), linear-gradient(100deg,rgba(255,255,255,0) 30%,rgba(255,255,255,0.55) 48%,rgba(255,255,255,0) 65%);
@@ -172,6 +174,20 @@ header {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  animation: gold-gleam 6s ease-in-out infinite;
+}
+@keyframes gold-gleam {
+  0%, 100% { background-position: 0 0, -60% 0; }
+  50% { background-position: 0 0, 160% 0; }
+}
+.header-curator {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--gold-light);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  text-align: right;
 }
 main {
   max-width: 760px;
@@ -217,12 +233,20 @@ footer {
   line-height: 1.8;
 }
 footer a { margin: 0 0.4rem; }
+@media (max-width: 640px) {
+  header { padding: 0.5rem 1rem; }
+  .site-title { font-size: 1.25rem; }
+  .site-title .brushed-gold { font-size: 1.2rem; }
+  .site-title span { font-size: 0.85rem; }
+  .header-curator { font-size: 14px; }
+}
 </style>
 </head>
 <body>
 
 <header>
   <div class="site-title"><a href="/" style="color:inherit;text-decoration:none;"><span class="brushed-gold">Independent Watchmaking</span> <span style="margin-left:0.15rem;">A Global Catalogue</span></a></div>
+  <div class="header-curator">Curated by <a href="https://instagram.com/dante.miami" target="_blank" rel="noopener">@Dante.Miami</a></div>
 </header>
 
 <main>
@@ -262,7 +286,7 @@ footer a { margin: 0 0.4rem; }
 
   <div class="faq-item">
     <p class="faq-q">I noticed an error, or I'd like to suggest a watchmaker for inclusion — how do I do that?</p>
-    <p class="faq-a">Email <a href="mailto:kdmurena@gmail.com">kdmurena@gmail.com</a> with the brand name and, if possible, a link to their official site — or, for a correction, a note on what needs fixing and a source if you have one.</p>
+    <p class="faq-a">Email <a href="mailto:indiewatchmaking@gmail.com">indiewatchmaking@gmail.com</a> with the brand name and, if possible, a link to their official site — or, for a correction, a note on what needs fixing and a source if you have one.</p>
   </div>
 
   <div class="faq-item">
