@@ -374,7 +374,6 @@
     max-height: calc(100dvh - 180px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 120px;
   }
   .filter-group, .region-filters {
     display: flex;
@@ -832,6 +831,7 @@
     .header-count { font-size: 14px; }
     .header-curator { font-size: 14px; }
     .controls { padding: 1rem; top: var(--header-h, 67px); }
+    .controls.filters-open .filter-panel { max-height: none; overflow-y: visible; -webkit-overflow-scrolling: auto; padding-bottom: 2rem; }
     .grid { grid-template-columns: 1fr; }
     .modal { padding: 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; }
