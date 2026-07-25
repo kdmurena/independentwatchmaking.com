@@ -490,6 +490,11 @@
     gap: 0;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card:hover {
+    text-decoration: none;
   }
 
   .card-body {
@@ -592,6 +597,16 @@
   .card-meta a:hover { color: var(--gold-light); }
 
   .volume-badge {
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(184,152,74,0.06);
+    border: 1px solid rgba(184,152,74,0.12);
+    border-radius: 2px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .info-pill {
     font-size: 11px;
     color: var(--muted);
     background: rgba(184,152,74,0.06);
@@ -816,6 +831,7 @@
     .header-count { font-size: 14px; }
     .header-curator { font-size: 14px; }
     .controls { padding: 1rem; top: var(--header-h, 67px); }
+    .controls.filters-open .filter-panel { max-height: calc(100dvh - 280px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
     .grid { grid-template-columns: 1fr; }
     .modal { padding: 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; }
@@ -10203,6 +10219,11 @@ function renderCards(data) {
     }).slice(0,3).map(t => `<span class="tag">${t}</span>`).join('');
     const regionTag = `<span class="tag region">${regionLabel}</span>`;
 
+    const websiteInfo = m.website ? `<span class="info-pill">&#8599; ${m.website.replace('https://','').replace('http://','').replace(/\/$/,'')}</span>` : '';
+    const igHandles = m.instagram ? m.instagram.split('|').map(h => h.trim()) : [];
+    const igInfo = igHandles.length ? `<span class="info-pill">${igHandles[0]}</span>` : '';
+    const fbInfo = m.facebook ? `<span class="info-pill">Facebook</span>` : '';
+
     const imgHtml = m.image
       ? `<div class="card-img-wrap"><img class="card-img" src="${m.image}" alt="Watch by ${m.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=card-img-placeholder><svg width=32 height=32 viewBox=\\'0 0 24 24\\' fill=none stroke=currentColor stroke-width=1><circle cx=12 cy=12 r=10/><circle cx=12 cy=12 r=3/></svg><span>No image available</span></div>'">${m.imageCredit ? `<span class="card-img-credit">${m.imageCredit}</span>` : ''}</div>`
       : `<div class="card-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg><span>Image coming soon</span></div>`;
@@ -10223,7 +10244,7 @@ function renderCards(data) {
         <p class="card-desc">${m.desc}</p>
         <div class="card-tags">${regionTag}${tags}</div>
         <div class="card-meta">
-          ${gphgBadge}${volBadge}
+          ${gphgBadge}${volBadge}${websiteInfo}${igInfo}${fbInfo}
         </div>
       </div>
     </a>`;
