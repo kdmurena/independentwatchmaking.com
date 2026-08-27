@@ -2231,7 +2231,7 @@ const makers = [
     founded: "1999",
     volume: "~1,000/yr mechanical + ~500/yr quartz (Élégante)",
     volumeNum: 1500,
-    price: "CHF 30,000–1,000,000+",
+    price: "CHF 16,500–1,000,000+",
     website: "https://www.fpjourne.com",
     instagram: "@fp.journe",
     facebook: "https://www.facebook.com/fpjourne",
@@ -10852,7 +10852,7 @@ function renderCards(data) {
 }
 
 function norm(str) {
-  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\./g, '');
 }
 
 function filter() {
