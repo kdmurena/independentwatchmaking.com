@@ -517,8 +517,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://independentwatchmaking.com/makers/claude-meylan/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://independentwatchmaking.com/makers/cleguer-horology/</loc>
     <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://independentwatchmaking.com/makers/clockwheels/</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -621,6 +633,12 @@
   <url>
     <loc>https://independentwatchmaking.com/makers/de-tournemire/</loc>
     <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://independentwatchmaking.com/makers/deep-x-watch-insanity/</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1603,6 +1621,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://independentwatchmaking.com/makers/mount-west-watch-co/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://independentwatchmaking.com/makers/muhle-glashutte/</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -1695,6 +1719,12 @@
   <url>
     <loc>https://independentwatchmaking.com/makers/ochs-und-junior/</loc>
     <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://independentwatchmaking.com/makers/oligo/</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
