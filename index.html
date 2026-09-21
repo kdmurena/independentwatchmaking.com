@@ -222,6 +222,108 @@
     max-width: 780px;
   }
 
+  /* ===== Watchmaker Spotlight / One to Watch — flanking the hero text ===== */
+  .hero-flank-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 780px) 220px;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .hero-flank-layout .hero-text {
+    max-width: none;
+  }
+
+  .hero-flank-layout .hero-sub {
+    text-align: justify;
+    text-align-last: center;
+    max-width: none;
+  }
+
+  .feature-card {
+    background: var(--dark-3, #242320);
+    border: 1px solid rgba(184,152,74,0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(184,152,74,0.6);
+  }
+
+  .feature-card .fc-eyebrow {
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    padding: 0.6rem 0.85rem 0;
+  }
+
+  .feature-card .fc-img {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 90px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0.5rem;
+  }
+
+  .feature-card .fc-body {
+    padding: 0.75rem 0.85rem 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .feature-card .fc-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .feature-card .fc-country {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    margin: 0.1rem 0 0.4rem;
+  }
+
+  .feature-card .fc-blurb {
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    color: var(--light);
+    line-height: 1.5;
+  }
+
+  .feature-card .fc-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 1180px) {
+    .hero-flank-layout { grid-template-columns: 190px minmax(0, 1fr) 190px; gap: 1.25rem; }
+  }
+
+  @media (max-width: 980px) {
+    .hero-flank-layout { grid-template-columns: 1fr; }
+    .hero-flank-layout .feature-card { max-width: 360px; margin: 0 auto; }
+    .hero-flank-layout .hero-sub { text-align: center; text-align-last: auto; }
+  }
+
   @media (max-width: 1000px) {
     .hero-clocks { flex-wrap: wrap; gap: 1rem; }
     .hero-clock-wrap { width: 120px; max-width: 120px; }
@@ -1954,10 +2056,36 @@
 
     <!-- ===== LOS ANGELES CLOCK: Geneva clone with la- prefix + day/night sky ===== -->
     </div><!-- /.hero-clocks -->
-    <div class="hero-text">
-      <h1>Horology's <a href="/methodology.html" class="independent-link" title="How we define &#8220;independent&#8221; &#8212; read our methodology"><em class="brushed-gold">Independent</em><span class="curation-mark">*</span></a> Masters, Makers, Manufactures, and Micro-Brands</h1>
-      <p class="hero-sub">A living catalogue of independent watchmakers worldwide — those who operate outside the major brands and groups; who bring to their craft a pioneering spirit, an uncompromising vision, and a healthy dose of irreverence; who test the boundaries of the industry and push this art form forward with groundbreaking designs and technical advancements; who create timepieces with soul.</p>
-    </div>
+    <div class="hero-flank-layout">
+
+      <a class="feature-card" href="/makers/luca-soprana/">
+        <div class="fc-eyebrow">Watchmaker Spotlight</div>
+        <div class="fc-img" style="background-image:url('https://sopranawatches.com/assets/lsto-rosegold-side-1920.webp?v=202605151704')"></div>
+        <div class="fc-body">
+          <div class="fc-name">Luca Soprana</div>
+          <div class="fc-country">Switzerland</div>
+          <div class="fc-blurb">WOSTEP's first Italian instructor and the known-unknown hand behind the Jacob &amp; Co. Astronomia — now signing watches under his own name.</div>
+          <span class="fc-link">Read the profile &#8599;</span>
+        </div>
+      </a>
+
+      <div class="hero-text">
+        <h1>Horology's <a href="/methodology.html" class="independent-link" title="How we define &#8220;independent&#8221; &#8212; read our methodology"><em class="brushed-gold">Independent</em><span class="curation-mark">*</span></a> Masters, Makers, Manufactures, and Micro-Brands</h1>
+        <p class="hero-sub">A living catalogue of independent watchmakers worldwide — those who operate outside the major brands and groups; who bring to their craft a pioneering spirit, an uncompromising vision, and a healthy dose of irreverence; who test the boundaries of the industry and push this art form forward with groundbreaking designs and technical advancements; who create timepieces with soul.</p>
+      </div>
+
+      <a class="feature-card" href="/makers/marcu-geneve/">
+        <div class="fc-eyebrow">One to Watch</div>
+        <div class="fc-img" style="background-image:url('https://monochrome-watches.com/app/uploads/2026/09/Marcu-Initial-Watch-Independent-Watchmaking-review-8.jpg')"></div>
+        <div class="fc-body">
+          <div class="fc-name">Marcu Geneve</div>
+          <div class="fc-country">Switzerland</div>
+          <div class="fc-blurb">A Genevan complications specialist trained under Gérald Genta debuts his own brand — its first watch sets a diamond into the tip of every hand.</div>
+          <span class="fc-link">Read the profile &#8599;</span>
+        </div>
+      </a>
+
+    </div><!-- /.hero-flank-layout -->
   </div><!-- /.hero-inner -->
 </section>
 
