@@ -1,6 +1,6 @@
 # IndependentWatchmaking.com
 
-> A living catalogue of 445 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
+> A living catalogue of 446 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
 
 IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
 
@@ -16,7 +16,7 @@ IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regu
 
 ## Primary resources
 
-- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 445 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
+- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 446 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
 - [Methodology](https://independentwatchmaking.com/methodology.html): the full, authoritative explanation of what qualifies a brand as independent, the disqualifying criteria (group ownership, industrial scale, homage-driven output), documented exceptions, and how listings are researched and kept current.
 - [FAQ](https://independentwatchmaking.com/faq.html): answers to common questions about the catalogue's scope, curation criteria, and how to suggest a correction or addition, marked up with FAQPage structured data.
 
@@ -30,7 +30,7 @@ This catalogue is limited to genuinely independent watchmaking. A brand is exclu
 - **Franck Muller Watchland Group**: Franck Muller, Pierre Kunz, Backes & Strauss, Rodolphe, Alexis Barthelay, European Company Watch (ECW)
 - **Fossil Group**: Fossil, Skagen, Michele, Zodiac, Relic
 - **Movado Group**: Movado, Concord, Ebel, Olivia Burton, MVMT
-- **Festina Group**: Festina, Lotus, Jaguar, Candino, Calypso, Perrelet, L. Leroy (considered for independent-in-spirit status, like Arnold & Son, Angelus, and Ferdinand Berthoud, but its flagship movement is built by an external Geneva supplier rather than produced in-house, so it does not currently qualify), Kronaby
+- **Festina Group**: Festina, Lotus, Jaguar, Candino, Calypso, Perrelet, L. Leroy (included — see exceptions below), Kronaby
 - **Citychamp Watch & Jewellery Group**: Eterna, Rotary, Rossini, Ebohr, Codex, Dreyfuss & Co., J&T Windmills
 - **Timex Group**: Timex, TX (Technoluxury), Ironman, Waterbury, Daniel Wellington
 - **Mondaine Group**: Mondaine, Luminox, Pierre Cardin, M-Watch
@@ -38,7 +38,7 @@ This catalogue is limited to genuinely independent watchmaking. A brand is exclu
 
 **Exceptions — included despite scale**: Christopher Ward and Yema both produce at a considerably larger volume than most of this catalogue, but are included because each has invested seriously in genuine in-house manufacturing — Christopher Ward with its SH21 and CW-001–003 calibers and a 2023 GPHG award for the in-house Bel Canto chiming complication; Yema with four successive generations of in-house calibers since 2009, including an in-house tourbillon (the CMM.30). BALL Watch Company is included on the same basis: its broad catalogue runs predominantly on modified, COSC-certified ETA and Sellita movements, but since 2017 it has developed genuine manufacture calibers (Caliber 7309 and its RRM7309-CS and RRM7337-C successors) through its Patrick Labs technical division, reserved for a distinct, clearly delineated Engineer M / Roadmaster M tier that Ball itself markets as built completely in-house. By contrast, Ciga Design (~200,000 units/year, roughly 6–7x Christopher Ward and Yema's volume) is excluded: most of its models run modified third-party movements rather than extensive in-house manufacture.
 
-**Exceptions — included despite group ownership**: Arnold & Son and Angelus (Citizen Group, via La Joux-Perret) and Ferdinand Berthoud (Chopard) are included because each operates as a genuinely autonomous manufacture — its own premises, its own team, full creative and technical control over its own movements and designs — functioning in practice like an independent house rather than a division of a larger commercial group. Credor's Micro Artist Studio and its sister atelier Shizukuishi Watch Studio (Seiko) are a further example: together a small circle of craftsmen, personally trained in finishing by Philippe Dufour, producing extremely limited pieces (as few as eight) such as the Fugaku Tourbillon.
+**Exceptions — included despite group ownership**: Arnold & Son and Angelus (Citizen Group, via La Joux-Perret) and Ferdinand Berthoud (Chopard) are included because each operates as a genuinely autonomous manufacture — its own premises, its own team, full creative and technical control over its own movements and designs — functioning in practice like an independent house rather than a division of a larger commercial group. Credor's Micro Artist Studio and its sister atelier Shizukuishi Watch Studio (Seiko) are a further example: together a small circle of craftsmen, personally trained in finishing by Philippe Dufour, producing extremely limited pieces (as few as eight) such as the Fugaku Tourbillon. L. Leroy (Festina Group owner Miguel Rodríguez), the revived Paris house of 1785, is a further exception: run as a separate maison with its own leadership, Bienne headquarters and Geneva production, it makes tiny numbered series of 15 to 50 pieces, though some press reports name Régence Production SA as the producer of its movements.
 
 This list is maintained on a best-effort basis and updates as brand ownership changes.
 
