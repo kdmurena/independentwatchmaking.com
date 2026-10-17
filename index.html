@@ -35,6 +35,7 @@
 </script>
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%231a1a2e' stroke='%23b8984a' stroke-width='3'/><circle cx='32' cy='32' r='24' fill='none' stroke='%23b8984a' stroke-width='1' opacity='0.4'/><circle cx='32' cy='32' r='2.5' fill='%23ffffff'/><line x1='32' y1='32' x2='23' y2='18' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/><line x1='32' y1='32' x2='47' y2='15' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round'/><line x1='32' y1='8' x2='32' y2='13' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><line x1='32' y1='51' x2='32' y2='56' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><line x1='8' y1='32' x2='13' y2='32' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><line x1='51' y1='32' x2='56' y2='32' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/></svg>">
+<link rel="alternate" type="application/rss+xml" title="IndependentWatchmaking.com — New Additions" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@1,700;1,800&family=DM+Sans:wght@300;400;500&family=Italianno&display=swap" rel="stylesheet">
@@ -94,6 +95,34 @@
     letter-spacing: 0.05em;
     white-space: nowrap;
     text-align: right;
+  }
+
+
+  .header-subscribe{background:none;border:0;padding:0;margin:0;font-family:var(--font-display);font-size:17px;font-weight:400;line-height:1.6;color:var(--gold);letter-spacing:.05em;cursor:pointer;transition:color .2s}
+  .header-subscribe:hover,.header-subscribe:focus-visible{color:var(--gold-pale)}
+  .sub-overlay{position:fixed;inset:0;background:rgba(14,13,11,.72);backdrop-filter:blur(3px);z-index:300;display:none;align-items:flex-start;justify-content:center;padding:96px 16px 16px}
+  .sub-overlay.open{display:flex}
+  .sub-card{position:relative;width:100%;max-width:420px;background:var(--dark-2);border:var(--border-hover);border-radius:var(--radius);padding:2rem 1.75rem 1.5rem;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  .sub-close{position:absolute;top:.6rem;right:.8rem;background:none;border:0;color:var(--muted);font-size:1.5rem;line-height:1;cursor:pointer}
+  .sub-close:hover{color:var(--gold-pale)}
+  .sub-eyebrow{font-family:var(--font-body);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .sub-title{font-family:var(--font-display);font-size:1.7rem;font-weight:400;color:var(--gold-pale);line-height:1.15;margin-bottom:.6rem}
+  .sub-text{font-size:14px;color:var(--light);opacity:.85;margin-bottom:1.1rem}
+  .sub-form{display:flex;gap:.5rem;flex-wrap:wrap}
+  .sub-form input{flex:1 1 200px;min-width:0;background:var(--dark);border:var(--border);color:var(--white);padding:.7rem .85rem;font:inherit;border-radius:var(--radius)}
+  .sub-form input:focus{outline:none;border:var(--border-hover)}
+  .sub-form button{background:var(--gold);color:var(--dark);border:0;padding:.7rem 1.2rem;font:inherit;font-weight:500;letter-spacing:.06em;border-radius:var(--radius);cursor:pointer}
+  .sub-form button:hover{background:var(--gold-light)}
+  .sub-fine{margin-top:.9rem;font-size:12px;color:var(--muted)}
+  .sub-fine a{color:var(--gold-light)}
+  .sub-msg{display:none;color:var(--gold-pale);font-size:14px}
+
+  @media (max-width:600px){
+    header{padding:.5rem 1rem !important;min-height:0 !important}
+    .site-title{width:100%;text-align:center}
+    .site-tag{display:block !important;margin-left:0 !important;white-space:nowrap}
+    .header-meta{flex-direction:row !important;align-items:baseline !important;justify-content:space-between !important;width:100% !important;gap:.25rem .7rem !important;flex-wrap:nowrap}
+    .header-meta .header-count,.header-meta .header-curator,.header-meta .header-subscribe{font-size:13px !important;letter-spacing:.02em !important;white-space:nowrap}
   }
 
   .header-curator a {
@@ -809,10 +838,11 @@
 <body>
 
 <header>
-  <div class="site-title"><a href="/" style="color:inherit;text-decoration:none;"><span class="brushed-gold">IndependentWatchmaking.com</span> <span style="margin-left:0.15rem;">A Global Catalogue</span></a></div>
-  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.15rem;">
+  <div class="site-title"><a href="/" style="color:inherit;text-decoration:none;"><span class="brushed-gold">IndependentWatchmaking.com</span> <span class="site-tag" style="margin-left:0.15rem;">A Global Catalogue</span></a></div>
+  <div class="header-meta" style="display:flex;flex-direction:column;align-items:flex-end;gap:0.15rem;">
     <div class="header-count"><span id="header-count">—</span> makers listed</div>
     <div class="header-curator"><a href="/methodology.html">Curated</a> by <a href="https://instagram.com/dante.miami" target="_blank" rel="noopener">@Dante.Miami</a></div>
+    <button type="button" class="header-subscribe" id="sub-open">&#9993; Subscribe</button>
   </div>
 </header>
 
@@ -12784,6 +12814,32 @@ initSky('sy-', 'Australia/Sydney',    -33.8688,   151.2093); // Sydney / Melbour
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(setHeaderH);
   }
+})();
+</script>
+
+<div class="sub-overlay" id="sub-overlay" role="dialog" aria-modal="true" aria-labelledby="sub-title">
+  <div class="sub-card">
+    <button class="sub-close" id="sub-close" aria-label="Close">&times;</button>
+    <div class="sub-eyebrow">Stay Informed</div>
+    <h2 class="sub-title" id="sub-title">New makers, delivered.</h2>
+    <p class="sub-text">Get an email when new independent watchmakers are added to the catalogue. No spam, unsubscribe any time.</p>
+    <form class="sub-form" id="sub-form" action="https://buttondown.com/api/emails/embed-subscribe/WatchmakerUpdates" method="post" target="sub-frame">
+      <input type="email" name="email" placeholder="Your email address" required autocomplete="email" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+    <iframe name="sub-frame" title="Subscription response" style="display:none" tabindex="-1"></iframe>
+    <p class="sub-msg" id="sub-msg">Thank you &mdash; please check your inbox to confirm.</p>
+    <p class="sub-fine">We use your email only to send catalogue updates. See our <a href="/methodology.html">methodology</a>.</p>
+  </div>
+</div>
+<script>
+(function(){var o=document.getElementById('sub-overlay'),b=document.getElementById('sub-open');
+function op(){o.classList.add('open');setTimeout(function(){o.querySelector('input').focus()},50)}
+function cl(){o.classList.remove('open')}
+b.addEventListener('click',op);document.getElementById('sub-close').addEventListener('click',cl);
+o.addEventListener('click',function(e){if(e.target===o)cl()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cl()});
+document.getElementById('sub-form').addEventListener('submit',function(){var f=this;setTimeout(function(){f.style.display='none';document.getElementById('sub-msg').style.display='block'},400)});
 })();
 </script>
 </body>
