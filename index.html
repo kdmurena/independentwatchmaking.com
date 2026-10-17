@@ -502,6 +502,14 @@
     transition: all 0.2s;
   }
   .filter-toggle-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .filters-label {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    white-space: nowrap;
+  }
   .filter-toggle-icon { transition: transform 0.2s; }
   .filter-toggle-btn[aria-expanded="true"] .filter-toggle-icon { transform: rotate(180deg); }
   .filter-toggle-btn[aria-expanded="true"] { border-color: var(--gold); color: var(--gold-light); }
@@ -829,9 +837,18 @@
     .header-count { font-size: 14px; }
     .header-curator { font-size: 14px; }
     .controls { padding: 1rem; top: var(--header-h, 67px); }
+    .controls-inner { gap: 0.5rem 0.4rem; }
+    .search-wrap { flex: 1 1 100%; max-width: none; min-width: 0; }
+    .filters-label { flex: 1 1 100%; font-size: 11px; letter-spacing: 0.1em; margin-top: 0.1rem; }
+    .filter-toggle-btn { flex: 1 1 auto; justify-content: center; font-size: 10.5px; letter-spacing: 0.02em; padding: 5px 6px; gap: 3px; }
+    .filter-toggle-icon { width: 8px; height: 8px; }
     .filter-group.open, .region-filters.open { max-height: calc(100dvh - 280px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
     .grid { grid-template-columns: 1fr; }
     .hero { padding: 1.75rem 1rem 0.85rem; }
+  }
+  @media (max-width: 380px) {
+    .filter-toggle-btn { font-size: 10px; padding: 5px 5px; letter-spacing: 0; }
+    .filter-toggle-icon { display: none; }
   }
 </style>
 </head>
@@ -2134,20 +2151,21 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input type="text" id="search" placeholder="Search for brand, maker, detail, keyword, . . ." autocomplete="off">
   </div>
+  <span class="filters-label">Filters</span>
   <button class="filter-toggle-btn" id="country-filter-toggle" type="button" aria-expanded="false">
-    <span>Filter by Country</span>
+    <span>Country</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-toggle-icon"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <button class="filter-toggle-btn" id="spec-filter-toggle" type="button" aria-expanded="false">
-    <span>Filter by Complication</span>
+    <span>Complication</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-toggle-icon"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <button class="filter-toggle-btn" id="dialtype-filter-toggle" type="button" aria-expanded="false">
-    <span>Filter by Dial Type</span>
+    <span>Dial</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-toggle-icon"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <button class="filter-toggle-btn" id="distinction-filter-toggle" type="button" aria-expanded="false">
-    <span>Filter by Distinction</span>
+    <span>Distinction</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-toggle-icon"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="filter-panel">
