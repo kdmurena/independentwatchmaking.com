@@ -283,6 +283,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://independentwatchmaking.com/makers/aw-labs/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://independentwatchmaking.com/makers/awake/</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -890,7 +896,7 @@
   </url>
   <url>
     <loc>https://independentwatchmaking.com/makers/favre-bulle/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
