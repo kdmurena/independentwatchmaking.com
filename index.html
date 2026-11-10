@@ -2280,8 +2280,11 @@
     <option value="name-desc">Sort: Name Z–A</option>
     <option value="country">Sort: Country</option>
     <option value="volume">Sort: Annual Volume</option>
+    <option value="price-high">Sort: Price, High to Low</option>
+    <option value="price-low">Sort: Price, Low to High</option>
   </select>
 </div>
+<div id="price-sort-note" style="display:none;max-width:1400px;margin:0 auto;padding:0 2rem 0.75rem;font-size:12px;color:var(--muted);">Price sorting uses approximate USD conversions, ranking by the low end of a price range (Low to High) or the high end (High to Low). Makers that don't publish a price (POA, on request and similar) are listed at the end.</div>
 
 <main class="grid" id="grid"></main>
 
@@ -7265,7 +7268,7 @@ const makers = [
   },
   {
     id: 473, slug: "mecexp", name: "Mecexp", brand: "Mecexp", location: "China", country: "China", region: "china",
-    founded: "Not stated (Kickstarter launch 2023)", volume: "Not published (Group63 edition limited to 63)", volumeNum: 0, price: "¥2,694–9,108 (MS1001); ¥7,015 (MS1002)", website: "https://mecexp.com/", instagram: "@mecexpwatch",
+    founded: "Not stated (Kickstarter launch 2023)", volume: "Not published (Group63 edition limited to 63)", volumeNum: 0, price: "RMB ¥2,694–9,108 (MS1001); RMB ¥7,015 (MS1002)", website: "https://mecexp.com/", instagram: "@mecexpwatch",
     desc: "Mecexp is a Chinese brand that replaces the rotating hands of a watch with two linear indicators moved along lead screws by a small motor. New Atlas, reporting on its Kickstarter campaign in November 2023, expanded the name as \"MEChanical EXPloration\" and described the first model, the MS1001, as a watch with two lead screws side by side, each carrying an arrow. The brand calls its movement self-developed and in-house, combining a CNC-driven motor, a control system and digital programming, and presents the watch as a bridge between traditional watchmaking and electronic intelligence under taglines such as \"Time, Electrified\" and \"The Origin of Electric Time\".\n\nIt is important to be clear about what this is: the MS1001 and MS1002 are battery-powered watches, not mechanical ones in the traditional sense. According to the brand, hours and minutes are each shown by a linear flyback indicator, so that an arrow travels along its lead screw and then resets in a single motion rather than sweeping round a dial. A streamlined structure with fewer gears is said to improve shock resistance and battery life, and a built-in lithium battery, charged magnetically, gives up to 30 days of use depending on how the watch is used. The MS1001 has a sapphire crystal, subtle LED illumination and, per the brand, 3 ATM water resistance, although New Atlas reported 5 ATM at the time of the campaign. Orders ship worldwide free, with a two-year warranty and 30-day returns.\n\nThe MS1001 is available in forged carbon, titanium, 316L stainless steel and PVD-coated cases, in green, red and yellow. The brand gives the titanium version as 42 by 50 by 14.5 mm and 86 g, the steel version as 38 by 48 by 14.5 mm and 100 g, and the forged carbon version as 38 by 48 by 14.5 mm and 77 g, with 22 mm lugs, on a fluororubber or leather strap. Standard models are listed at ¥2,694 to ¥3,369, the Forged Carbon Edition at ¥6,407, and special editions include a Christmas and a Halloween edition, an Arabic edition made with Watchcollectivetwo, which is sold out, and a Forged Carbon edition with Group63 limited to 63 pieces at ¥9,108, also sold out, which is sold on an enquiry basis. New Atlas reported a starting Kickstarter price of US$189.\n\nThe MS1002, at ¥7,015 in six PVD and steel variants in green, red and yellow, is a more complex watch. Its stainless steel case measures 39.6 by 48.2 mm and 16 mm thick, with a dual-curved sapphire crystal, and the brand lists a multi-function movement with a power reserve indicator, a chronograph, a sleep mode and a calendar that needs adjusting only once every four years. It pairs a linear flyback lead-screw display with what the brand describes as a coaxial, reverse-rotating digital display, and takes a 270 mAh battery and a charging cable. Water resistance is not stated for this model.\n\nThe brand's website names no founder, city or founding date; this listing places it in China on the strength of New Atlas's description of it as a Chinese brand, and the site's prices are shown in Chinese yuan. The site also lists design recognitions from iF Design, the French Design Award, iDesign Awards and the Museum Award, without dates or details. Prices differ between pages on the site, and the listing uses the collection pages. It draws on the brand's website and New Atlas (November 2023), not on independent reviews, and its inclusion reflects its unconventional approach to showing time rather than a traditional mechanical movement.",
     tags: ["China", "MS1001", "MS1002", "lead screw", "linear flyback display", "motor-driven", "electromechanical", "forged carbon", "titanium", "Group63", "Watchcollectivetwo", "Kickstarter", "MEChanical EXPloration", "linear display", "battery powered"],
     specialties: [],
@@ -12214,6 +12217,55 @@ let activeDistinction = 'all';
 let activeDialType = 'all';
 let activeRegion = 'all';
 let currentSort = 'name';
+
+/* ===== PRICE SORTING: parse free-text prices into approximate USD (ranges: low end / high end) ===== */
+const PRICE_RATES = {USD:1,CNY:0.14,CHF:1.25,EUR:1.15,GBP:1.30,JPY:0.0066,SGD:0.77,HKD:0.128,AUD:0.66,CAD:0.73,RUB:0.011,MYR:0.23};
+function parsePriceUSD(text){
+  if (!text) return null;
+  const segs = String(text).replace(/\([^)]*\)/g,' ').split(/[;\/]/);
+  let lows = [], highs = [], last = null;
+  for (const seg of segs){
+    const s = seg.trim();
+    if (!/\d/.test(s)) continue;
+    let cur = null;
+    if (/HK\s*\$|HKD/i.test(s)) cur='HKD';
+    else if (/(^|[^U])S\$|SGD/.test(s)) cur='SGD';
+    else if (/AU\$|AUD/.test(s)) cur='AUD';
+    else if (/CAD|C\$/.test(s)) cur='CAD';
+    else if (/US\$|USD|\$/.test(s)) cur='USD';
+    else if (/RMB|CNY/.test(s)) cur='CNY';
+    else if (/CHF/.test(s)) cur='CHF';
+    else if (/EUR|€/.test(s)) cur='EUR';
+    else if (/GBP|£/.test(s)) cur='GBP';
+    else if (/JPY|¥/.test(s)) cur='JPY';
+    else if (/RUB/.test(s)) cur='RUB';
+    else if (/MYR/.test(s)) cur='MYR';
+    else cur = last;
+    if (!cur) continue;
+    last = cur;
+    const nums = [...s.matchAll(/(\d[\d,]*(?:\.\d+)?)\s*(million|billion|m\b|bn\b)?/gi)].map(x => parseFloat(x[1].replace(/,/g,'')) * (x[2] ? (/^b/i.test(x[2]) ? 1e9 : 1e6) : 1)).filter(n => !isNaN(n) && n >= 1);
+    if (!nums.length) continue;
+    const r = PRICE_RATES[cur];
+    lows.push(Math.min(...nums)*r); highs.push(Math.max(...nums)*r);
+  }
+  if (!lows.length) return null;
+  return {low: Math.min(...lows), high: Math.max(...highs)};
+}
+
+makers.forEach(m => { const r = parsePriceUSD(m.price); m.priceLow = r ? r.low : null; m.priceHigh = r ? r.high : null; });
+const SORT_OPTIONS = ['name','name-desc','country','volume','price-high','price-low'];
+function pickStartingSort(){
+  let prev = null;
+  try { prev = localStorage.getItem('iw-last-sort'); } catch(e) {}
+  const pool = SORT_OPTIONS.filter(o => o !== prev);
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  try { localStorage.setItem('iw-last-sort', pick); } catch(e) {}
+  return pick;
+}
+function updatePriceNote(){
+  const n = document.getElementById('price-sort-note');
+  if (n) n.style.display = currentSort.indexOf('price') === 0 ? 'block' : 'none';
+}
 let searchTerm = '';
 
 // Brands intentionally left out of this catalogue (see "A Note on Curation" below).
@@ -12344,6 +12396,17 @@ function filter() {
   else if (currentSort === 'name-desc') data.sort((a,b) => b.name.localeCompare(a.name));
   else if (currentSort === 'country') data.sort((a,b) => a.country.localeCompare(b.country) || a.name.localeCompare(b.name));
   else if (currentSort === 'volume') data.sort((a,b) => b.volumeNum - a.volumeNum);
+  else if (currentSort === 'price-high' || currentSort === 'price-low') {
+    const hi = currentSort === 'price-high';
+    const key = hi ? 'priceHigh' : 'priceLow';
+    data.sort((a,b) => {
+      const av = a[key], bv = b[key];
+      if (av == null && bv == null) return a.name.localeCompare(b.name);
+      if (av == null) return 1;
+      if (bv == null) return -1;
+      return (hi ? bv - av : av - bv) || a.name.localeCompare(b.name);
+    });
+  }
 
   renderCards(data);
 }
@@ -12421,9 +12484,13 @@ document.querySelector('.region-filters').addEventListener('click', e => {
 
 document.getElementById('sort-select').addEventListener('change', e => {
   currentSort = e.target.value;
+  updatePriceNote();
   filter();
 });
 
+currentSort = pickStartingSort();
+document.getElementById('sort-select').value = currentSort;
+updatePriceNote();
 filter();
 
 /* ===== HERO CLOCKS: live perpetual-calendar style watches ===== */
