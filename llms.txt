@@ -1,6 +1,6 @@
 # IndependentWatchmaking.com
 
-> A living catalogue of 475 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
+> A living catalogue of 480 independent watchmakers, watch brands, manufactures, and microbrands worldwide — curated by @Dante.Miami. Each listing includes founding date, location, annual production volume, price range, official website, social handles, and a detailed history of the maker.
 
 IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regularly updated reference directory covering the full spectrum of independent horology: legendary masters (F.P. Journe, Philippe Dufour, Voutilainen, MB&F), AHCI members, one-person artisan workshops, historic manufactures, accessible microbrands, and emerging independents from every region — Switzerland, Germany, Japan, China, Finland, Russia, the United States, the United Kingdom, Austria, and beyond.
 
@@ -16,7 +16,7 @@ IndependentWatchmaking.com (https://independentwatchmaking.com/) is a free, regu
 
 ## Primary resources
 
-- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 475 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
+- [Full catalogue](https://independentwatchmaking.com/): the complete searchable, filterable directory of all 480 makers. The complete list of makers is also embedded in the page as schema.org JSON-LD structured data (ItemList of Brand entities) readable without JavaScript execution.
 - [Methodology](https://independentwatchmaking.com/methodology.html): the full, authoritative explanation of what qualifies a brand as independent, the disqualifying criteria (group ownership, industrial scale, homage-driven output), documented exceptions, and how listings are researched and kept current.
 - [FAQ](https://independentwatchmaking.com/faq.html): answers to common questions about the catalogue's scope, curation criteria, and how to suggest a correction or addition, marked up with FAQPage structured data.
 
@@ -27,7 +27,7 @@ This catalogue is limited to genuinely independent watchmaking. A brand is exclu
 - **Swatch Group**: Breguet, Harry Winston, Blancpain, Glashütte Original, Jaquet Droz, Omega, Longines, Rado, Union Glashütte, Tissot, Certina, Mido, Hamilton, Balmain, Swatch, Flik Flak
 - **Richemont**: A. Lange & Söhne, IWC Schaffhausen, Jaeger-LeCoultre, Panerai, Piaget, Roger Dubuis (founder's legacy included — see below), Vacheron Constantin, Cartier, Van Cleef & Arpels, Buccellati, Montblanc, Dunhill
 - **LVMH**: TAG Heuer, Hublot, Zenith, Bulgari, Louis Vuitton, Dior, Tiffany & Co., Daniel Roth and Gérald Genta (founders' legacies included — see below), L'Epée 1839, Chaumet, Fred
-- **Franck Muller Watchland Group**: Franck Muller, Pierre Kunz, Backes & Strauss, Rodolphe, Alexis Barthelay, European Company Watch (ECW)
+- **Franck Muller Watchland Group**: Franck Muller (founder's legacy included, see exceptions), Pierre Kunz, Backes & Strauss, Rodolphe, Alexis Barthelay, European Company Watch (ECW)
 - **Fossil Group**: Fossil, Skagen, Michele, Zodiac, Relic
 - **Movado Group**: Movado, Concord, Ebel, Olivia Burton, MVMT
 - **Festina Group**: Festina, Lotus, Jaguar, Candino, Calypso, Perrelet, L. Leroy (included — see exceptions below), Kronaby
@@ -38,7 +38,7 @@ This catalogue is limited to genuinely independent watchmaking. A brand is exclu
 
 **Independents with minority or family-office investors are included**: partial outside ownership does not disqualify a maker whose founders or independent owners keep creative, technical and operational control (for example F.P. Journe, Romain Gauthier and MB&F, each with a Chanel minority stake, and H. Moser & Cie., owned by the Meylan family's MELB Luxe). Brands owned or controlled outright by a global group are excluded.
 
-**Exceptions — included as pioneers of independent watchmaking**: Daniel Roth, Roger Dubuis and Gérald Genta are now owned by LVMH (Roth, Genta) and Richemont (Dubuis), but are included for their founders, pioneering masters of the independent movement. The listings state current ownership and focus on each founder's career.
+**Exceptions — included as pioneers of independent watchmaking**: Daniel Roth, Roger Dubuis, Gérald Genta and Franck Muller are now owned by LVMH (Roth, Genta), Richemont (Dubuis) and the privately held Franck Muller Watchland group (Muller), but are included for their founders, pioneering masters of the independent movement. The listings state current ownership and focus on each founder's career.
 
 **Exceptions — included despite scale**: Christopher Ward and Yema both produce at a considerably larger volume than most of this catalogue, but are included because each has invested seriously in genuine in-house manufacturing — Christopher Ward with its SH21 and CW-001–003 calibers and a 2023 GPHG award for the in-house Bel Canto chiming complication; Yema with four successive generations of in-house calibers since 2009, including an in-house tourbillon (the CMM.30). BALL Watch Company is included on the same basis: its broad catalogue runs predominantly on modified, COSC-certified ETA and Sellita movements, but since 2017 it has developed genuine manufacture calibers (Caliber 7309 and its RRM7309-CS and RRM7337-C successors) through its Patrick Labs technical division, reserved for a distinct, clearly delineated Engineer M / Roadmaster M tier that Ball itself markets as built completely in-house. By contrast, Ciga Design (~200,000 units/year, roughly 6–7x Christopher Ward and Yema's volume) is excluded: most of its models run modified third-party movements rather than extensive in-house manufacture.
 
